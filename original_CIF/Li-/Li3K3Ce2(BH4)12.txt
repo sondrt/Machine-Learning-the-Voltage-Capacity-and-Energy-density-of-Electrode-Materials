@@ -1,0 +1,32 @@
+CRYSTAL DATA
+Symmetry cell setting			Cubic
+Symmetry space group name H-M	I a -3 d
+Symmetry space group name Hall	-I 4bd 2c 3
+Cell length a (Å)				17.60756(4)
+Cell length b (Å)			17.60756(4)
+Cell length c (Å)				17.60756(4)
+Cell angle alpha				90.00000
+Cell angle beta				90.00000
+Cell angle gamma			90.00000
+Cell volume (Å3)			5458.80(2)
+Cell formula units Z			8
+Cell measurement temperature	 (K)	293
+
+ATOMIC COORDINATES AND DISPLACEMENT PARAMETERS
+atom_site_label
+atom_site_fract_x
+atom_site_fract_y
+atom_site_fract_z
+atom_site_U_iso_or_equiv
+atom_site_occupancy
+atom_site_adp_type              
+atom_site_type_symbol
+
+Ce11	0.50000  0.00000  0.00000	0.05050(11)	1.00000	Uiso	Ce  
+ K1	0.25000  0.87500  0.50000	0.0578(4)	1.00000	Uiso	K   
+ B2	0.39971  0.70333  0.28374	0.0637(13)	1.00000	Uiso	B   
+ H13	0.35130  0.68574  0.32305	0.0637(13)	1.00000	Uiso	H   
+ H14	0.40777  0.76754  0.28684	0.0637(13)	1.00000	Uiso	H   
+ H15	0.45434  0.67373  0.30222	0.0637(13)	1.00000	Uiso	H   
+ H16	0.38538  0.68622  0.22287	0.0637(13)	1.00000	Uiso	H   
+ Li8	0.37500  0.00000  0.25000	0.119(5)	1.00000	Uiso	Li  

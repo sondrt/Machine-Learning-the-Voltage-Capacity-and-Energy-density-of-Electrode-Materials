@@ -1,0 +1,33 @@
+cif
+"# generated using pymatgen
+data_Mg(MnN)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.62484771
+_cell_length_b   3.60737566
+_cell_length_c   5.09683420
+_cell_angle_alpha   90.00011801
+_cell_angle_beta   90.00034300
+_cell_angle_gamma   90.00009524
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Mg(MnN)2
+_chemical_formula_sum   'Mg1 Mn2 N2'
+_cell_volume   66.64715915
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Mg  Mg1  1  0.000003  -0.000002  0.249751  1
+  Mn  Mn2  1  0.499994  0.499998  0.995867  1
+  Mn  Mn3  1  0.499996  0.500008  0.504275  1
+  N  N4  1  0.500004  -0.000003  0.502150  1
+  N  N5  1  0.000003  0.499998  0.997956  1
+"

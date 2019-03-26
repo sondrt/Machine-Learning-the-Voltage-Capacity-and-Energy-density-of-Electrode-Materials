@@ -1,0 +1,46 @@
+cif
+"# generated using pymatgen
+data_Si2NiO6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.39195268
+_cell_length_b   8.51692100
+_cell_length_c   5.31782005
+_cell_angle_alpha   89.99012215
+_cell_angle_beta   74.75946428
+_cell_angle_gamma   48.17590263
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Si2NiO6
+_chemical_formula_sum   'Si4 Ni2 O12'
+_cell_volume   201.87889097
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Si  Si1  1  0.097406  0.789800  0.252118  1
+  Si  Si2  1  0.900771  0.210430  0.740258  1
+  Si  Si3  1  0.900470  0.388293  0.240502  1
+  Si  Si4  1  0.097445  0.612053  0.752031  1
+  Ni  Ni5  1  0.498980  0.914655  0.246337  1
+  Ni  Ni6  1  0.499151  0.085731  0.746369  1
+  O  O7  1  0.779196  0.363380  0.532061  1
+  O  O8  1  0.205254  0.918266  0.212352  1
+  O  O9  1  0.274667  0.196439  0.133375  1
+  O  O10  1  0.218591  0.636488  0.460112  1
+  O  O11  1  0.793443  0.081574  0.780173  1
+  O  O12  1  0.723251  0.804027  0.859497  1
+  O  O13  1  0.792683  0.624542  0.280728  1
+  O  O14  1  0.723290  0.972251  0.359571  1
+  O  O15  1  0.779579  0.356299  0.031995  1
+  O  O16  1  0.218584  0.643993  0.960272  1
+  O  O17  1  0.274858  0.028290  0.632828  1
+  O  O18  1  0.204623  0.376004  0.712887  1
+"

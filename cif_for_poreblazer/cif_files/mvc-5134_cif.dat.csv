@@ -1,0 +1,48 @@
+cif
+"# generated using pymatgen
+data_MgFe(SiO3)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.29773825
+_cell_length_b   6.72640410
+_cell_length_c   6.72640433
+_cell_angle_alpha   85.81526823
+_cell_angle_beta   77.20307235
+_cell_angle_gamma   77.20307639
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   MgFe(SiO3)2
+_chemical_formula_sum   'Mg2 Fe2 Si4 O12'
+_cell_volume   227.86201752
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Mg  Mg1  1  0.750000  0.253725  0.746275  1
+  Mg  Mg2  1  0.250001  0.746275  0.253726  1
+  Fe  Fe3  1  0.249999  0.097118  0.902883  1
+  Fe  Fe4  1  0.749999  0.902884  0.097117  1
+  Si  Si5  1  0.243427  0.208391  0.386768  1
+  Si  Si6  1  0.256572  0.613232  0.791609  1
+  Si  Si7  1  0.743427  0.386768  0.208391  1
+  Si  Si8  1  0.756573  0.791609  0.613232  1
+  O  O9  1  0.496862  0.317944  0.381339  1
+  O  O10  1  0.003138  0.618660  0.682057  1
+  O  O11  1  0.503139  0.682057  0.618661  1
+  O  O12  1  0.996861  0.381340  0.317943  1
+  O  O13  1  0.128584  0.140758  0.618788  1
+  O  O14  1  0.371416  0.381211  0.859241  1
+  O  O15  1  0.871416  0.859242  0.381212  1
+  O  O16  1  0.628583  0.618788  0.140759  1
+  O  O17  1  0.840935  0.218038  0.027720  1
+  O  O18  1  0.659065  0.972280  0.781961  1
+  O  O19  1  0.340934  0.027720  0.218039  1
+  O  O20  1  0.159066  0.781962  0.972280  1
+"
