@@ -9,7 +9,6 @@ from pprint import pprint
 cif_for_poreblazer = './cif_for_poreblazer/'
 outcsv = './cif_for_poreblazer/cif_files/'
 
-
 for filename in os.listdir(cif_for_poreblazer):
     try:
         with open('./cif_for_poreblazer/' + filename) as json_data:
@@ -26,3 +25,6 @@ for filename in os.listdir(cif_for_poreblazer):
 
     except:
         print('This did not work: ', filename)
+
+
+

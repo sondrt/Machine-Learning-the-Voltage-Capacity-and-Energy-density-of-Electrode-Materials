@@ -72,7 +72,7 @@ def main():
     #print(newframe)
     
     
-    newframe.to_csv(outcsv,sep=',')
+    newframe.to_csv(outcsv,sep=',',index=False)
 
 
 
