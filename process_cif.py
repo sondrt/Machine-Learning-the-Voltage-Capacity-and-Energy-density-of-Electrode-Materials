@@ -82,11 +82,15 @@ def save_poreblazer_input(d, dirout, fpatt):
     f.close()
 
 def get_info_from_poreblazer(fn):
+    helvol = []
+    geomvol = []
     f = open(fn, "r")
     lines = f.readlines()
     for line in lines:
-        if line.find("Helium volume in A^3:")>=0: helvol=line.split()[-1]
-        if line.find("Geometric (point accessible) volume in A^3:")>=0: geomvol=line.split()[-1]
+        if line.find("Helium volume in A^3:")>=0: 
+            helvol = line.split()[-1]
+        if line.find("Geometric (point accessible) volume in A^3:")>=0: 
+            geomvol = line.split()[-1]
     f.close()
     return helvol, geomvol
 
