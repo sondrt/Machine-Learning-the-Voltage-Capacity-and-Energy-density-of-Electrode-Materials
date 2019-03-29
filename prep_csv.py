@@ -27,17 +27,17 @@ def main():
     
     l_charged_atoms = True
     l_discharged_atoms= True
-    Target = 'Average_Voltage'
+    Target = 'Capacity_Vol'
     list_of_predictors = ['Battid',
     # 'Reduced_Cell_Formula',
     # 'Spacegroup',
     # 'Average_Voltage',
-    'Capacity_Grav',
-    'Capacity_Vol',
-    'Specific_E_Wh/kg',
-    'E Density Wh/l',
-    'Stability Discharge',
-    'Stability Charge'
+    # 'Capacity_Grav',
+    # 'Capacity_Vol',
+    # 'Specific_E_Wh/kg',
+    # 'E Density Wh/l',
+    # 'Stability Discharge',
+    # 'Stability Charge'
     ]
     if l_charged_atoms:
     	for ii in [

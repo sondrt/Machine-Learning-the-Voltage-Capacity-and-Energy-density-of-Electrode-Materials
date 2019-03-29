@@ -62,6 +62,7 @@ for id in data['Discharged_ID']:
         print('is Nan', id)
 
 
+
 # try:
 #     print(readElements(fn, energy))
 # except:

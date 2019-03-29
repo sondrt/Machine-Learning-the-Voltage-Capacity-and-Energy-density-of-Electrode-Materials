@@ -10,12 +10,12 @@ import sys
 
 #Files = ['manual.csv', 'out_csv']
 
-# df1 = pd.read_csv('out_csv_dis.csv',sep=",")
-# df2 = pd.read_csv("struc_info.csv",sep=",")
+df1 = pd.read_csv('out_csv_dis.csv',sep=",")
+df2 = pd.read_csv("struc_info.csv",sep=",")
 
-# df_new = pd.merge(df1, df2, on='Battid')
+df_new = pd.merge(df1, df2, on='Battid')
 
-# df_new.to_csv("allFiles.csv",sep=",", index=False)
+df_new.to_csv("allFiles.csv",sep=",", index=False)
 
 
 # for ifl, fl in enumerate(Files):
@@ -30,13 +30,6 @@ import sys
 #open("","r") 
 
 
-def thisthingyfunction():
-    data = pd.read_csv(csvfile, sep=',')
-    for iqid,qid in enumerate(data['Discharged_ID']):
-        mid = data['Battid'][iqid]
-        print(mid)
-
-thisthingyfunction()
 
 
 

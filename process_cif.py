@@ -90,7 +90,26 @@ def get_info_from_poreblazer(fn):
     f.close()
     return helvol, geomvol
 
+def thisthingyfunction():
+    data = pd.read_csv(csvfile, sep=',')
+    for iqid,qid in enumerate(data['Discharged_ID']):
+        mid = data['Battid'][iqid]
+        print(mid)
+        # if isNaN(qid) == False:
+        #     fn_dis = cif_info_dir + qid + '_prop.dat'
+#             try:
+#                 elements0, unit_cell_formula0, volume0 = readElements(fn_dis)
+#                 elems  = unit_cell_formula0
+# #            print('=====>', elements0, volume0, '  +    print("elems: ", elems)++  ', elems)
+#                 for iel, el in enumerate(elements0):
+#                 nel = elems[el]
+#                 normVol = nel*1000. / volume0  
+#                 data[el+'_vol_dis'][iqid] = normVol
+#             except: 
+#                 print('File not found', fn_dis)
 
+#     df_dis = pd.DataFrame(data)
+#     df_dis.to_csv("out_csv_dis.csv",sep=',',index=False)
 
 #def find_neihbors():
 #def get_electronegativity():
@@ -113,6 +132,9 @@ for file in files:
         os.system( cmd )
         helvol, geomvol = get_info_from_poreblazer(dirout + fpatt + '.log')
         print fpatt.replace("_cif.dat",""),",", helvol, ",", geomvol
+
+
+
 
 
 # Helium volume in A^3:           0.000
