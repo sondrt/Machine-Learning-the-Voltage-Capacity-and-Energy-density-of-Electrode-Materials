@@ -5,6 +5,7 @@ import pandas as pd
 
 struc_info = "./struc_info.csv"
 id_list_csv = 'manual.csv'
+outcsv = 'out_csv_dis.csv'
 
 struc_df = pd.read_csv(struc_info, sep=',')
 # HEADERS = list(struc_data.head())
