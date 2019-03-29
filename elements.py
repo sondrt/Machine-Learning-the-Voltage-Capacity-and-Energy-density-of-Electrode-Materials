@@ -70,7 +70,7 @@ for iqid,qid in enumerate(data['Charged_ID']):
             print('File not found', fn)
 
 df = pd.DataFrame(data)
-df.to_csv("out_csv_charged.csv",sep=',',index=False)
+#df.to_csv("out_csv_charged.csv",sep=',',index=False)
 ####################################################
 
 
