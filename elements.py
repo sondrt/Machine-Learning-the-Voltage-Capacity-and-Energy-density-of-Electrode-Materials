@@ -110,9 +110,7 @@ for el in AllE_dis:
 #print("nO= ", data["O_vol"])
 for iqid,qid in enumerate(data['Discharged_ID']):
     mid = data['Battid'][iqid]
-#    print("mid: ", mid)
 
-#    print('mid, qid=', mid, qid)
     if isNaN(qid) == False:
         fn_dis = cif_info_dir + qid + '_prop.dat'
         try:
