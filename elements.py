@@ -11,23 +11,13 @@ def isNaN(num):
 
 def readElements(filename):
     #Reads things you want form file 
-  with open(filename) as json_file:
-    data = json.load(json_file)[0]
-    elements = data['elements']
-    unit_cell_formula= data['unit_cell_formula']
-    volume = data['volume']
-  return elements, unit_cell_formula, volume
-
-def download_ALLstructures(allIDs):
-    #Gets structures from materialsproject API
-    with MPRester("GKDHNwKre8uiowqhPh") as m:
-        for id in allIDs:
-            material_prop = m.query(criteria={"task_id": id}, properties = ["unit_cell_formula", 
- "pretty_formula","elements", "nelements","material_id"]) 
-            print(material_prop)
-
+    with open(filename) as json_file:
+        data = json.load(json_file)[0]
+        elements = data['elements']
+        unit_cell_formula= data['unit_cell_formula']
+        volume = data['volume']
+    return elements, unit_cell_formula, volume
 ########################################################
-do_download = False # See fillproperties.py for this functionality
 csvfile = 'manual.csv'
 cif_info_dir = './cif_info_dir/'
 data = pd.read_csv(csvfile, sep=',')
