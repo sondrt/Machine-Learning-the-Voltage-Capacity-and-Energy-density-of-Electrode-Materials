@@ -22,11 +22,15 @@ def readElements(filename):
 
 ####################################################
 def main():
-    csv = 'out_csv_dis.csv' # Change for discharged or charged ids.
+    csv = 'allFiles.csv' # Change for discharged or charged ids.
     outcsv = 'for_ML.csv'
     
     l_charged_atoms = True
     l_discharged_atoms= True
+    helvol_charged = False
+    geomvol_charged = False
+    helvol_discharged = False
+    geomvol_discharged = False
     Target = 'Capacity_Vol'
     list_of_predictors = ['Battid',
     # 'Reduced_Cell_Formula',
@@ -38,6 +42,9 @@ def main():
     # 'E Density Wh/l',
     # 'Stability Discharge',
     # 'Stability Charge'
+    ''
+    ''
+    ''
     ]
     if l_charged_atoms:
     	for ii in [
