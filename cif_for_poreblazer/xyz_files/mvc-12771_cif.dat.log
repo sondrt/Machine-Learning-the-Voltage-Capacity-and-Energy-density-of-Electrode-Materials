@@ -1,6 +1,6 @@
  !-------------------------------------------------------!
- ! Welcome to Poreblazer_v3.0.2/Linux/Windows XP         !
- ! Developed by: Lev Sarkisov, 2012                      !
+ ! Welcome to Poreblazer_v3.0.5/Linux/Windows XP         !
+ ! Developed by: Lev Sarkisov, 2012/18                   !
  ! Cite: Sarkisov, Harrison, Molecular Simulation, 2011  !
  !-------------------------------------------------------!
 
@@ -55,7 +55,7 @@
  atoms from the adsrobent structure file
  ------------------------------------------------------
 
- Helium volume in A^3:           0.037
+ Helium volume in A^3:           0.038
  Helium volume in cm^3/g:        0.000
 
  Geometric (point accessible) volume in A^3:          39.496

@@ -1,6 +1,6 @@
  !-------------------------------------------------------!
- ! Welcome to Poreblazer_v3.0.2/Linux/Windows XP         !
- ! Developed by: Lev Sarkisov, 2012                      !
+ ! Welcome to Poreblazer_v3.0.5/Linux/Windows XP         !
+ ! Developed by: Lev Sarkisov, 2012/18                   !
  ! Cite: Sarkisov, Harrison, Molecular Simulation, 2011  !
  !-------------------------------------------------------!
 
@@ -36,6 +36,7 @@
  ! Generation of nitrogen-accessible lattice             !
  !-------------------------------------------------------!
 
+  The system is NOT percolated in ANY direction 
  !-------------------------------------------------------!
  ! Generation of nitrogen-accessible lattice complete    !
  !-------------------------------------------------------!
@@ -54,11 +55,11 @@
  atoms from the adsrobent structure file
  ------------------------------------------------------
 
- Helium volume in A^3:           6.620
- Helium volume in cm^3/g:        0.033
+ Helium volume in A^3:           7.098
+ Helium volume in cm^3/g:        0.036
 
- Geometric (point accessible) volume in A^3:          23.726
- Geometric (point accessible) volume in cm^3/g:        0.119
+ Geometric (point accessible) volume in A^3:          25.802
+ Geometric (point accessible) volume in cm^3/g:        0.130
 
  !-------------------------------------------------------!
  ! Pore volume calculations complete                     !
@@ -69,9 +70,24 @@
  ! Starting surface area calculations                    !
  !-------------------------------------------------------!
 
+ Accessible surface area in A^2:                         1.88
+ Accessible surface area per volume in m^2/cm^3:       293.71
+ Accessible surface area per mass in m^2/g:             94.44
+
+ !-------------------------------------------------------!
+ ! Surface area calculations complete                    !
+ !-------------------------------------------------------!
+
  Step 7/8
  !-------------------------------------------------------!
  ! Starting pore size distribution calculations          !
+ !-------------------------------------------------------!
+
+ Cumulative PSD and differential PSD 
+ have been stored in files psd_cumulative.txt
+ and psd.txt
+ !-------------------------------------------------------!
+ ! Pore size distribution calculations complete          !
  !-------------------------------------------------------!
 
  Step 8/8
@@ -80,8 +96,8 @@
  ! analysis                                              !
  !-------------------------------------------------------!
 
- Pore limiting diameter in A:         0.99
- Maximum pore diameter in A:          7.97
+ Pore limiting diameter in A:         0.98
+ Maximum pore diameter in A:          7.98
  !-------------------------------------------------------!
  ! Limiting pore diameter and maximum pore size          !
  ! analysis complete                                     !

@@ -1,6 +1,6 @@
  !-------------------------------------------------------!
- ! Welcome to Poreblazer_v3.0.2/Linux/Windows XP         !
- ! Developed by: Lev Sarkisov, 2012                      !
+ ! Welcome to Poreblazer_v3.0.5/Linux/Windows XP         !
+ ! Developed by: Lev Sarkisov, 2012/18                   !
  ! Cite: Sarkisov, Harrison, Molecular Simulation, 2011  !
  !-------------------------------------------------------!
 
@@ -58,8 +58,8 @@
  Helium volume in A^3:           0.000
  Helium volume in cm^3/g:        0.000
 
- Geometric (point accessible) volume in A^3:         240.605
- Geometric (point accessible) volume in cm^3/g:        0.089
+ Geometric (point accessible) volume in A^3:         242.843
+ Geometric (point accessible) volume in cm^3/g:        0.090
 
  !-------------------------------------------------------!
  ! Pore volume calculations complete                     !

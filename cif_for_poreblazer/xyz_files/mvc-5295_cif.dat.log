@@ -1,6 +1,6 @@
  !-------------------------------------------------------!
- ! Welcome to Poreblazer_v3.0.2/Linux/Windows XP         !
- ! Developed by: Lev Sarkisov, 2012                      !
+ ! Welcome to Poreblazer_v3.0.5/Linux/Windows XP         !
+ ! Developed by: Lev Sarkisov, 2012/18                   !
  ! Cite: Sarkisov, Harrison, Molecular Simulation, 2011  !
  !-------------------------------------------------------!
 
@@ -55,11 +55,11 @@
  atoms from the adsrobent structure file
  ------------------------------------------------------
 
- Helium volume in A^3:           0.002
+ Helium volume in A^3:           0.000
  Helium volume in cm^3/g:        0.000
 
- Geometric (point accessible) volume in A^3:         129.621
- Geometric (point accessible) volume in cm^3/g:        0.058
+ Geometric (point accessible) volume in A^3:         134.129
+ Geometric (point accessible) volume in cm^3/g:        0.060
 
  !-------------------------------------------------------!
  ! Pore volume calculations complete                     !
@@ -82,7 +82,7 @@
  !-------------------------------------------------------!
 
  Pore limiting diameter in A:         1.00
- Maximum pore diameter in A:          1.35
+ Maximum pore diameter in A:          1.34
  !-------------------------------------------------------!
  ! Limiting pore diameter and maximum pore size          !
  ! analysis complete                                     !
