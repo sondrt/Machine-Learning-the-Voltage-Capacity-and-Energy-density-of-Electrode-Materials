@@ -51,7 +51,7 @@ N_train = len(X_train)
 r2score_test = r2_score(y_test, pred,  multioutput='variance_weighted')
 r2score_train= r2_score(y_train, pred_train,  multioutput='variance_weighted')
 print ('r2score = ', r2score_test)
-print ( 'r2score_train = ', r2score_train)
+print ('r2score_train = ', r2score_train)
 
 if l_plot:
    maxp =  1.2*max(max(y_test), max(y_train))
