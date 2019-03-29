@@ -118,7 +118,10 @@ def thisthingyfunction():
 csvout = 'struc_info.csv'
 dirin = './cif_for_poreblazer/cif_files/'
 dirout = './cif_for_poreblazer/xyz_files/'
-porexe= '/home/fanourg/Packages/poreblazer_v3.0.2_d/poreblazer.exe'
+porexe= '/Users/sveintorp/Applications/poreblazer-master/src/poreblazer.exe'
+helvol_geomvol_output = open('helvol_geomvol_output.csv','w+')
+helvol_geomvol_output.write('mid,helvol,geomvol\n')
+
 
 files = os.listdir(dirin)
 for file in files:
@@ -131,9 +134,7 @@ for file in files:
         cmd = porexe +  '   ' + dirout + fpatt + '.inp > ' + dirout + fpatt + '.log'
         os.system( cmd )
         helvol, geomvol = get_info_from_poreblazer(dirout + fpatt + '.log')
-        print fpatt.replace("_cif.dat",""),",", helvol, ",", geomvol
-
-
+        helvol_geomvol_output.write(fpatt.replace("_cif.dat","")+ ","+ helvol+ ","+ geomvol+ '\n')
 
 
 
