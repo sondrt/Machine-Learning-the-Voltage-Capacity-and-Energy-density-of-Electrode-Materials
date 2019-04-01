@@ -25,7 +25,7 @@ exit()
 # print(type(struc_df["helvol"]))
 for ID in ['Battid','helvol', 'geomvol']:
     for struc_id in struc_df[ID]:
-        print(struc_id)
+#        print(struc_id)
 
     # print(helvol)
     # print(geomvol)
