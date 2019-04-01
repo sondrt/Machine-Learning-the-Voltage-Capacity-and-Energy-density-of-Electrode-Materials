@@ -40,7 +40,7 @@ csvfile = 'manual.csv'
 
 data = pd.read_csv(csvfile, sep=',')
 HEADERS = list(data.head())
-print('heads = ', HEADERS)
+#print('heads = ', HEADERS)
 #print data['Spacegroup']
 
 if do_download:
