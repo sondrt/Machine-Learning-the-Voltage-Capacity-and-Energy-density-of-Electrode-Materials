@@ -26,10 +26,14 @@ Steps for use of python scripts:
 	7:	Select predictors and targets for ML
 			Output files: for_ML.csv
 
-	8: Run ML
+	8: 	Run randomforrest
+			Output files: Depending on what being saved: ./Results/*
+
+	9: 	???
 
 
-	8: 	???
+	10:	Profit!
 
 
-	9:	Profit!
+cmd: 
+ python fillproperties.py; python elements.py; python forPoreblazer.py; python process_cif.py; python merger.py; python prep_csv.py; python randomforest.py; python rf_CROSSVAL.py
