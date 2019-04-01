@@ -34,7 +34,7 @@ def main():
     HEADERS = list(data.head()) 
     y = data[HEADERS[-1]]
     X = data[HEADERS[2:-1]]
-    ncv=5
+    ncv=10
     l_cv = True
     
     if l_cv:
