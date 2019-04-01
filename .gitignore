@@ -1,5 +1,6 @@
 .dropbox
 allFiles.csv
+./cif_for_poreblazer/*
 out_csv_dis.csv
 new.txt
 nitrogen_network.xyz
