@@ -10,6 +10,7 @@ import os
 import fnmatch
 
 def read_cif(fn):
+    print("Reading CIFs:")
     from numpy import pi
     f = open(fn, "r")
     lines = f.readlines()
@@ -37,8 +38,10 @@ def read_cif(fn):
                 atom = {'name': aname, 'fx': float(fx), 'fy': float(fy), 'fz': float(fz), 'x':0., 'y':0., 'z':0}
                 l.append(atom)
             except:
-                print('is it last line???', line)
+                pass
+                #print('is it last line?? Good.', line)
     d = {'a':a, 'b':b, 'c':c, 'alpha':alpha, 'beta':beta, 'gamma': gamma, 'conf':l} 
+    print('Done reading CIFS')
     return d
 
 def frac2cart(d):
@@ -98,7 +101,7 @@ def thisthingyfunction():
     data = pd.read_csv(csvfile, sep=',')
     for iqid,qid in enumerate(data['Discharged_ID']):
         mid = data['Battid'][iqid]
-        print(mid)
+#        print(mid)
         # if isNaN(qid) == False:
         #     fn_dis = cif_info_dir + qid + '_prop.dat'
 #             try:
