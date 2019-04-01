@@ -20,10 +20,11 @@ def readElements(filename):
 ########################################################
 csvfile = 'manual.csv'
 cif_info_dir = './cif_info_dir/'
+outcsv = "out_csv_dis.csv"
 data = pd.read_csv(csvfile, sep=',')
 #print(list(data.head()))
 #print(data['Charged_ID'])
-
+print("working on elements.py")
 #makes a list of all elements and 
 AllElements = []
 for id in data['Charged_ID']:
@@ -93,7 +94,7 @@ AllE_dis = list(set(AllElements))
 
 
 nfiles_dis = len(data['Discharged_ID'])
-print("AllE   ",AllE_dis)
+#print("AllE   ",AllE_dis)
 for el in AllE_dis:
 #   data[el + '_vol'] = np.linspace(0, nfiles, nfiles-1)
   data[el + '_vol_dis'] = [0.]*nfiles_dis
@@ -117,7 +118,8 @@ for iqid,qid in enumerate(data['Discharged_ID']):
             print('File not found', fn_dis)
 
 df_dis = pd.DataFrame(data)
-df_dis.to_csv("out_csv_dis.csv",sep=',',index=False)
+df_dis.to_csv(outcsv,sep=',',index=False)
+print("Done with adding normVol")
 
 
 
