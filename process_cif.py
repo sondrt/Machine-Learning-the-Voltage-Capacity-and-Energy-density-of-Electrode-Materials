@@ -41,7 +41,7 @@ def read_cif(fn):
                 pass
                 #print('is it last line?? Good.', line)
     d = {'a':a, 'b':b, 'c':c, 'alpha':alpha, 'beta':beta, 'gamma': gamma, 'conf':l} 
-    print('Done reading CIFS')
+    print('Done reading CIFS', fn)
     return d
 
 def frac2cart(d):
