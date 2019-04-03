@@ -1,6 +1,7 @@
 .dropbox
 allFiles.csv
 ./cif_for_poreblazer/*
+helvol_geomvol_output.csv
 out_csv_dis.csv
 new.txt
 new.xyz
