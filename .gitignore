@@ -3,6 +3,7 @@ allFiles.csv
 ./cif_for_poreblazer/*
 out_csv_dis.csv
 new.txt
+new.xyz
 nitrogen_network.xyz
 psd.txt
 psd_cumulative.txt
