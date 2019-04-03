@@ -14,7 +14,7 @@ def download_ALLstructures(allIDs):
         for id in allIDs:
             try:
                 material_prop = m.query(criteria={"task_id": id}, properties = ['cif'])
-                print(material_prop)
+#                print(material_prop)
 # ('energy', 'energy_per_atom', 'volume', 'formation_energy_per_atom', 'nsites', 'unit_cell_formula', 'pretty_formula', 'is_hubbard', 'elements', 'nelements', 'e_above_hull', 'hubbards', 'is_compatible', 'spacegroup', 'task_ids', 'band_gap', 'density', 'icsd_id', 'icsd_ids', 'cif', 'total_magnetization', 'material_id', 'oxide_type', 'tags', 'elasticity')
                 #print( 'I will downlaod: ', id, ' in dir ', cif_info_dir)
                 with open(Cif_jsondictformat + id + '_cif.dat','w+') as f:
