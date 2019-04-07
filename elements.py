@@ -46,7 +46,7 @@ AllE = list(set(AllElements))
 
 
 nfiles = len(data['Charged_ID'])
-print("AllE   ",AllE)
+#print("AllE   ",AllE)
 for el in AllE:
 #   data[el + '_vol'] = np.linspace(0, nfiles, nfiles-1)
   data[el + '_vol'] = [0.]*nfiles

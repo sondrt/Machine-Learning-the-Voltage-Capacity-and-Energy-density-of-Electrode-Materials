@@ -50,16 +50,14 @@ cif_info_dir = './cif_info_dir/'
 data = pd.read_csv(csvfile, sep=',')
 
 for id in data['Discharged_ID']:
-    if isNaN(id)==False:
-        fn_dis = cif_info_dir + id + '_prop.dat'
-        print("Empty: ",isEmpty(fn_dis))
-        try:
-            formation_energy_per_atom0 = readElements(fn_dis,id)
+    fn_dis = cif_info_dir + id + '_prop.dat'
+    print("Empty: ",isEmpty(fn_dis))
+    try:
+        formation_energy_per_atom0 = readElements(fn_dis,id)
 #            print(formation_energy_per_atom0)
-        except:
-            print('did not work for some reason',id)
-    else:
-        print('is Nan', id)
+    except:
+        print('did not work for some reason',id)
+
 
 
 
