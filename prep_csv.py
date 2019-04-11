@@ -27,21 +27,21 @@ def main():
     
     l_charged_atoms = True
     l_discharged_atoms= True
-    Target = 'E Density Wh/l'
+    Target = 'Stability Charge'
     list_of_predictors = ['Battid',
     # 'Reduced_Cell_Formula',
     # 'Spacegroup',
-    # 'Average_Voltage',
-    # 'Capacity_Grav',
-    # 'Capacity_Vol',
-    # 'Specific_E_Wh/kg',
+    'Average_Voltage',
+    'Capacity_Grav',
+    'Capacity_Vol',
+    'Specific_E_Wh/kg',
     # 'E Density Wh/l',
     # 'Stability Discharge',
     # 'Stability Charge',
     # 'helvol',
-    'geomvol',
+    # 'geomvol',
     # 'helvol_dis',
-    'geomvol_dis'
+    # 'geomvol_dis'
     ]
 
 
