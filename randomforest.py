@@ -77,7 +77,7 @@ if l_plot:
 #      plt.text(0.65*maxp, 0.40*maxp-2.*dx, 'RMSE=%.3f'%(rmse_test), color='red', fontsize=fnt)
 #      plt.text(0.65*maxp, 0.40*maxp-3.*dx, 'MAE=%.3f'%(mae_test), color='red', fontsize=fnt)
    # plt.show()
-   plt.savefig("Results/2019-04-11/target=SE_l_av_cgv.jpg", dpi=None, facecolor='w', edgecolor='w',
+   plt.savefig("Results/2019-04-17/T=GC;P=l_gv.jpg", dpi=None, facecolor='w', edgecolor='w',
         orientation='portrait', papertype=None, format=None,
         transparent=False, bbox_inches=None, pad_inches=0.1,
         frameon=None, metadata=None)
