@@ -23,8 +23,8 @@ for x in id_df['Discharged_ID']:
 
 exit()
 # print(type(struc_df["helvol"]))
-for ID in ['Battid','helvol', 'geomvol']:
-    for struc_id in struc_df[ID]:
+# for ID in ['Battid','helvol', 'geomvol']:
+#     for struc_id in struc_df[ID]:
 #        print(struc_id)
 
     # print(helvol)

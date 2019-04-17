@@ -116,7 +116,7 @@ for file in files:
     if fnmatch.fnmatch(file, "m*.csv"):
         fpatt = file.replace(".csv","")
         y = read_cif( dirin + file )
-        a=frac2cart(y)
+        a = frac2cart(y)
         save_poreblazer_input(y, dirout, fpatt)
         logfile = fpatt + '.log'
         cmd = porexe +  '   ' + dirout + fpatt + '.inp > ' + dirout + fpatt + '.log'

@@ -31,17 +31,17 @@ def main():
     list_of_predictors = ['Battid',
     # 'Reduced_Cell_Formula',
     # 'Spacegroup',
-    # 'Average_Voltage',
+    'Average_Voltage',
     # 'Capacity_Grav',
     # 'Capacity_Vol',
-    # 'Specific_E_Wh/kg',
+    'Specific_E_Wh/kg',
     # 'E Density Wh/l',
     # 'Stability Discharge',
     # 'Stability Charge',
     # 'helvol',
-    'geomvol',
+    # 'geomvol',
     # 'helvol_dis',
-    'geomvol_dis'
+    # 'geomvol_dis'
     ]
 
 
