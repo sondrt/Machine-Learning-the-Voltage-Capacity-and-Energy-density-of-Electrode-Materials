@@ -4,16 +4,7 @@ import numpy as np
 import random
 import pandas as pd
 import json
-
-def isNaN(num):
-    return num != num
-
-def isEmpty(a):
-    if not a:
-        log = True
-    else:
-        log = False
-    return log
+import fnmatch
 
 def readElements(filename,id):
     #Reads things you want from file 
@@ -38,31 +29,40 @@ def readElements(filename,id):
         elasticity = data['density']
     except:
         print("no data found: ", id)
-  return formation_energy_per_atom
+  return(str(energy),str(energy_per_atom),str(volume),str(formation_energy_per_atom),str(nsites),str(band_gap),str(density),str(total_magnetization),str(elasticity))
 
 def json_csv(filename):
     with open(filename) as data_file:
         data = json.load(data_file)
     return pd.DataFrame(data['profile_set'])
 
+
 csvfile = 'manual.csv'
+outcsv = 'material_properties.csv'
 cif_info_dir = './cif_info_dir/'
 data = pd.read_csv(csvfile, sep=',')
 
-for id in data['Discharged_ID']:
-    fn_dis = cif_info_dir + id + '_prop.dat'
-    print("Empty: ",isEmpty(fn_dis))
-    try:
-        formation_energy_per_atom0 = readElements(fn_dis,id)
-#            print(formation_energy_per_atom0)
-    except:
-        print('did not work for some reason',id)
+output = open(outcsv,'w+')
+output.write('mid,energy,energy_per_atom,volume,formation_energy_per_atom,nsites,band_gap,density,total_magnetization,elasticity\n')
+
+aa=[]
+try:
+    for ID in ['Discharged_ID','Charged_ID']:
+        for struct_id in data[ID]:
+            fn = cif_info_dir + struct_id + '_prop.dat'
+            fpatt = fn.replace(".csv","")
+            fpatt = fn.replace("./cif_info_dir/","")
+            energy0,energy_per_atom0,volume0,formation_energy_per_atom0,nsites0,band_gap0,density0,total_magnetization0,elasticity0  = readElements(fn,ID)
+            output.write(fpatt.replace("_prop.dat","") + ","+ energy0 + "," + energy_per_atom0+ ","+volume0+ ","+formation_energy_per_atom0+ ","+nsites0+ ","+band_gap0+ ","+density0+ ","+total_magnetization0+ ","+elasticity0+ '\n')
+
+except:
+    print('That did not work')
 
 
 
 
-# try:
-#     print(readElements(fn, energy))
-# except:
-#     print('did not work')
-	
+
+
+
+
+	 
