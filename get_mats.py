@@ -1,7 +1,5 @@
 #!/usr/bin/python
-from typing import Any
 
-import json
 import requests
 
 
