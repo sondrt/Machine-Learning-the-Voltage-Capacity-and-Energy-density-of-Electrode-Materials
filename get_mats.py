@@ -47,18 +47,17 @@ def scrape_battery_materials(batteries):
 
         battery_soup = BeautifulSoup(battery_get.text, "html.parser")
 
-        #print(battery_soup.prettify())
-
         material_spans = battery_soup("span", attrs={"class": "label-bg"})
 
-        assert not len(material_spans) > 2, "Found a battery with too many materials, write code to handle it." \
-                                               "" \
+        assert not len(material_spans) > 2, "Found a battery with too many materials, write code to handle it.\n" \
+                                               "\n" \
                                                "{}".format(material_spans)
 
-        print(material_spans)
-
-        
-        battery_materials[battery["battid"]] = material_spans
+        battery_materials.update(
+            map((lambda span_tag:
+                 (battery["battid"] + '-' + span_tag.string.split()[-1], # <battid>-charged / <battid>-discharged
+                  span_tag.parent.parent.a['href'].split('/')[-1])), # <material-id>
+                material_spans))
 
     return battery_materials
 
