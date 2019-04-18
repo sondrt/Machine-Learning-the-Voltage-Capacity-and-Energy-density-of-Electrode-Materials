@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import requests
+from pandas import DataFrame
 from bs4 import BeautifulSoup
 
 
@@ -26,10 +27,11 @@ def scrape_batteries(working_ion ="Mg",
         for battery in response_batteries_list:
             batteries[battery["battid"]] = battery
 
-        print(len(batteries))
-        print(len(set(batteries)))
+        print('Found {} batteries and {} unique batteries so far. Searches run: {}'\
+            .format(len(batteries), len(set(batteries)), i))
 
     return batteries
+
 
 def scrape_battery_materials(battery):
 
@@ -55,6 +57,23 @@ def scrape_battery_materials(battery):
                                    span_tag.parent.parent.a['href'].split('/')[-1])),  # <material-id>
                 material_spans)))
 
+
+def compose_battery_data(battery, battery_data):
+    return [battery[0],
+            battery[1]['discharged'],
+            battery[1]['charged'],
+            battery_data['reduced_cell_formula'],
+            battery_data['type'],
+            battery_data['spacegroup']['symbol'],
+            battery_data['average_voltage'],
+            battery_data['capacity_grav'],
+            battery_data['capacity_vol'],
+            battery_data['specific_e_wh/kg'],
+            battery_data['e_density_wh/l'],
+            battery_data['stability_charge'],
+            battery_data['stability_discharge']]
+
+
 sessionid = "on8w86ghahhxkdqu1xmtv8pfkgf0p7j4"
 assert not sessionid == "", "sessionid for materialsproject cannot be empty, insert it in the string after extracting it from your logged in user"
 
@@ -65,4 +84,26 @@ print(li_batteries)
 li_battery_materials = dict([scrape_battery_materials(battery) for battery in li_batteries.values()])
 
 print(li_battery_materials)
+
+data_columns = ['Battid',
+                'Discharged_ID',
+                'Charged_ID',
+                'Reduced_Cell_Formula',
+                'Type',
+                'Spacegroup',
+                'Average_Voltage',
+                'Capacity_Grav',
+                'Capacity_Vol',
+                'Specific_E_Wh/kg',
+                'E Density Wh/l',
+                'Stability Charge',
+                'Stability Discharge']
+
+battery_data = [compose_battery_data(battery, li_batteries[battery[0]])
+                for battery in li_battery_materials.items()]
+
+df = DataFrame.from_records(battery_data, columns=data_columns)
+
+print("Printing CSV")
+print(df.to_csv(index=False))
 # mg_batteries = scrape_batteries(working_ion="Mg")
