@@ -29,7 +29,7 @@ def scrape_batteries(working_ion ="Mg",
         print(len(batteries))
         print(len(set(batteries)))
 
-    return list(batteries.values())
+    return batteries
 
 def scrape_battery_materials(batteries):
 
@@ -66,9 +66,9 @@ assert not sessionid == "", "sessionid for materialsproject cannot be empty, ins
 
 li_batteries = scrape_batteries(working_ion="Li")
 
-print(li_batteries)
+# print(li_batteries)
 
-li_battery_materials = scrape_battery_materials(li_batteries)
+li_battery_materials = scrape_battery_materials(list(li_batteries.values()))
 
 print(li_battery_materials)
 # mg_batteries = scrape_batteries(working_ion="Mg")
