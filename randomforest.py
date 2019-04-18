@@ -26,7 +26,7 @@ infile = 'for_ML.csv'
 l_plot = True
 
 
-print ('working on file: %s'%(infile))
+# print ('working on file: %s'%(infile))
 data = pd.read_csv(infile, sep=',')
 HEADERS = list(data.head()) 
 y = data[HEADERS[-1]]
@@ -40,7 +40,7 @@ trsize=200
 clf = RandomForestRegressor(n_estimators=n_estimators, random_state=105)
 X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=trsize )#, stratify=X)
 trained_model=clf.fit(X_train, y_train)
-print ('train=', X_train)
+# print ('train=', X_train)
    # 9. Evaluate model pipeline on test data
 pred = clf.predict(X_test)
 pred_train = clf.predict(X_train)
@@ -76,10 +76,11 @@ if l_plot:
    plt.text(0.65*maxp, 0.40*maxp-dx, 'r2=%.3f'%(r2score_test), color='red', fontsize=fnt)
 #      plt.text(0.65*maxp, 0.40*maxp-2.*dx, 'RMSE=%.3f'%(rmse_test), color='red', fontsize=fnt)
 #      plt.text(0.65*maxp, 0.40*maxp-3.*dx, 'MAE=%.3f'%(mae_test), color='red', fontsize=fnt)
-   # plt.savefig("results_run_19_3/target=Capacity_Vol_ndensfrac.jpg", dpi=None, facecolor='w', edgecolor='w',
-   #      orientation='portrait', papertype=None, format=None,
-   #      transparent=False, bbox_inches=None, pad_inches=0.1,
-   #      frameon=None, metadata=None)
-#   plt.show()
+   # plt.show()
+   plt.savefig("Results/2019-04-17/T=GC;P=l_AV_SE.jpg", dpi=None, facecolor='w', edgecolor='w',
+        orientation='portrait', papertype=None, format=None,
+        transparent=False, bbox_inches=None, pad_inches=0.1,
+        frameon=None, metadata=None)
+
 
 exit()

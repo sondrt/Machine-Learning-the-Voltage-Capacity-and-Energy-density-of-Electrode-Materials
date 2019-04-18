@@ -1,4 +1,5 @@
 .dropbox
+.pptx
 allFiles.csv
 ./cif_for_poreblazer/*
 helvol_geomvol_output.csv
@@ -8,4 +9,4 @@ new.xyz
 nitrogen_network.xyz
 psd.txt
 psd_cumulative.txt
-./Results/*
+**/Results

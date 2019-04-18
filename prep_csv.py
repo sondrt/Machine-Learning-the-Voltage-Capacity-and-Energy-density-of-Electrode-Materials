@@ -27,21 +27,21 @@ def main():
     
     l_charged_atoms = True
     l_discharged_atoms= True
-    Target = 'E Density Wh/l'
+    Target = 'Capacity_Grav'
     list_of_predictors = ['Battid',
     # 'Reduced_Cell_Formula',
     # 'Spacegroup',
-    # 'Average_Voltage',
+    'Average_Voltage',
     # 'Capacity_Grav',
     # 'Capacity_Vol',
-    # 'Specific_E_Wh/kg',
+    'Specific_E_Wh/kg',
     # 'E Density Wh/l',
     # 'Stability Discharge',
     # 'Stability Charge',
     # 'helvol',
-    'geomvol',
+    # 'geomvol',
     # 'helvol_dis',
-    'geomvol_dis'
+    # 'geomvol_dis'
     ]
 
 
@@ -77,7 +77,6 @@ def main():
     
     list_of_predictors.append(Target)
     
-    #print(list_of_predictors)
     
     data = pd.read_csv(csv, sep=',')
     headers = list(data.head())
@@ -93,6 +92,7 @@ def main():
     
     newframe.to_csv(outcsv,sep=',',index=False)
 
+    print(Target)
 
 
 

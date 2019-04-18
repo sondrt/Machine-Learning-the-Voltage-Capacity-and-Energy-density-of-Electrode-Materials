@@ -29,12 +29,12 @@ def main():
     fnt = 24
     
     
-    print('working on file: %s'%(infile))
+    # print('working on file: %s'%(infile))
     data = pd.read_csv(infile, sep=',')
     HEADERS = list(data.head()) 
     y = data[HEADERS[-1]]
     X = data[HEADERS[2:-1]]
-    ncv=10
+    ncv = 10
     l_cv = True
     
     if l_cv:
@@ -42,6 +42,17 @@ def main():
         scores = cross_val_score(clf, X, y, cv=ncv)
         print('CROSS_VALIDATION: Accuracy: %0.4f (+/- %0.4f)\n\n' % (scores.mean(), scores.std() * 2))
         print('scores=', scores)
+
+        ss = sorted(scores)
+        SUM = 0
+
+        for i in range(len(scores)-2):
+            # print('ss[i+1]',ss[i+1])
+            SUM += ss[i+1]
+        mean = SUM/(len(scores)-2.)
+        print("mean: ",mean)
+        # print(ss)
+        print(" ")
 
 if __name__ == '__main__':
    main()

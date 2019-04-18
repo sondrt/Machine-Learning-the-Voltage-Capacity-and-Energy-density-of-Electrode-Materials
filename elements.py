@@ -122,25 +122,3 @@ df_dis.to_csv(outcsv,sep=',',index=False)
 print("Done with adding normVol")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
