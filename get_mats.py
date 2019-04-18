@@ -12,7 +12,7 @@ def scrape_batteries(working_ion ="Mg",
 
     batteries = {}
 
-    for i in range(0, 30):
+    for i in range(0, 17):
         url = 'https://www.materialsproject.org/batteries/search?query={{"working_ion":{{"$in":["{ion}"]}},"average_voltage":{{"$gte":{0},"$lte":{1}}}}}' \
             .format(-2.1 + i / 10.0, -1.9 + i / 10.0, ion=working_ion, property=filter_property)
 
@@ -31,35 +31,36 @@ def scrape_batteries(working_ion ="Mg",
 
     return batteries
 
-def scrape_battery_materials(batteries):
+def scrape_battery_materials(battery):
 
     print("Scraping battery info")
 
     battery_materials = {}
 
-    for battery in batteries:
-        print("Scraping battery {}".format(battery["battid"]))
+    print("Scraping battery {}".format(battery["battid"]))
 
-        url = "https://www.materialsproject.org/batteries/{}".format(battery["battid"])
-        battery_get = requests.get(url, cookies={"sessionid" : sessionid})
+    url = "https://www.materialsproject.org/batteries/{}".format(battery["battid"])
+    battery_get = requests.get(url, cookies={"sessionid" : sessionid})
 
-        assert battery_get.status_code == 200
+    assert battery_get.status_code == 200
 
-        battery_soup = BeautifulSoup(battery_get.text, "html.parser")
+    battery_soup = BeautifulSoup(battery_get.text, "html.parser")
 
-        material_spans = battery_soup("span", attrs={"class": "label-bg"})
+    material_spans = battery_soup("span", attrs={"class": "label-bg"})
 
-        if len(material_spans) > 2:
-            print("Found a battery with too many materials, write code to handle it.\n" \
-                                               "\n" \
-                                               "{}".format(material_spans))
-            continue
+    if len(material_spans) > 2:
+        print("Found a battery with too many materials, write code to handle it.\n" \
+                                           "\n" \
+                                           "{}".format(material_spans))
+        return None
 
-        battery_materials.update(
-            map((lambda span_tag:
-                 (battery["battid"] + '-' + span_tag.string.split()[-1], # <battid>-charged / <battid>-discharged
-                  span_tag.parent.parent.a['href'].split('/')[-1])), # <material-id>
+    battery_materials.update({
+        battery["battid"]:
+            dict(map(
+                (lambda span_tag:( span_tag.string.split()[-1],  # charged / discharged
+                                   span_tag.parent.parent.a['href'].split('/')[-1])),  # <material-id>
                 material_spans))
+    })
 
     return battery_materials
 
@@ -70,7 +71,7 @@ li_batteries = scrape_batteries(working_ion="Li")
 
 # print(li_batteries)
 
-li_battery_materials = scrape_battery_materials(list(li_batteries.values()))
+li_battery_materials = [scrape_battery_materials(battery) for battery in li_batteries.values()]
 
 print(li_battery_materials)
 # mg_batteries = scrape_batteries(working_ion="Mg")
