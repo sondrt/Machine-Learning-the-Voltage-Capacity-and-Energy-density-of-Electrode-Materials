@@ -49,9 +49,11 @@ def scrape_battery_materials(batteries):
 
         material_spans = battery_soup("span", attrs={"class": "label-bg"})
 
-        assert not len(material_spans) > 2, "Found a battery with too many materials, write code to handle it.\n" \
+        if len(material_spans) > 2:
+            print("Found a battery with too many materials, write code to handle it.\n" \
                                                "\n" \
-                                               "{}".format(material_spans)
+                                               "{}".format(material_spans))
+            continue
 
         battery_materials.update(
             map((lambda span_tag:
