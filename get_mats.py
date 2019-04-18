@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 def scrape_batteries(working_ion ="Mg",
                      filter_property="average_voltage"):
-    print("Making 14 requests to scrape batteries")
+    print("Scraping batteries from battery-explorer")
     print("Working ion: {}".format(working_ion))
     print("Filtering property: {}".format(filter_property))
 
