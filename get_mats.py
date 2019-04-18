@@ -33,10 +33,6 @@ def scrape_batteries(working_ion ="Mg",
 
 def scrape_battery_materials(battery):
 
-    print("Scraping battery info")
-
-    battery_materials = {}
-
     print("Scraping battery {}".format(battery["battid"]))
 
     url = "https://www.materialsproject.org/batteries/{}".format(battery["battid"])
@@ -54,24 +50,19 @@ def scrape_battery_materials(battery):
                                            "{}".format(material_spans))
         return None
 
-    battery_materials.update({
-        battery["battid"]:
-            dict(map(
+    return (battery["battid"], dict(map(
                 (lambda span_tag:( span_tag.string.split()[-1],  # charged / discharged
                                    span_tag.parent.parent.a['href'].split('/')[-1])),  # <material-id>
-                material_spans))
-    })
-
-    return battery_materials
+                material_spans)))
 
 sessionid = "on8w86ghahhxkdqu1xmtv8pfkgf0p7j4"
 assert not sessionid == "", "sessionid for materialsproject cannot be empty, insert it in the string after extracting it from your logged in user"
 
 li_batteries = scrape_batteries(working_ion="Li")
 
-# print(li_batteries)
+print(li_batteries)
 
-li_battery_materials = [scrape_battery_materials(battery) for battery in li_batteries.values()]
+li_battery_materials = dict([scrape_battery_materials(battery) for battery in li_batteries.values()])
 
 print(li_battery_materials)
 # mg_batteries = scrape_batteries(working_ion="Mg")
