@@ -33,11 +33,11 @@ def scrape_batteries(working_ion ="Mg",
     return batteries
 
 
-def fetch_battery_from_api(battery):
+def fetch_battery_from_api(battery, apikey):
 
     print("Scraping battery {}".format(battery["battid"]))
 
-    api_key_header = {"X-API-KEY": "GKDHNwKre8uiowqhPh"}
+    api_key_header = {"X-API-KEY": apikey}
     url = "https://www.materialsproject.org/rest/v2/battery/{}".format(battery["battid"])
     battery_get = requests.get(url, headers = api_key_header)
     response_obj = battery_get.json()
@@ -71,38 +71,39 @@ def compose_battery_data(battery):
             battery["adj_pairs"][0]['stability_discharge']]
 
 
-def scrape_battery_data_to_csv(working_ion, filename, sessionid):
-    None
+def scrape_battery_data_to_csv(working_ion, output_filename, apikey):
 
-sessionid = "on8w86ghahhxkdqu1xmtv8pfkgf0p7j4"
-assert not sessionid == "", "sessionid for materialsproject cannot be empty, insert it in the string after extracting it from your logged in user"
+    print("Fetching batteries from Materials Project")
 
-li_batteries = scrape_batteries(working_ion="Li")
+    batteries_list = scrape_batteries(working_ion=working_ion)
 
-print(li_batteries)
+    print("Found {} batteries with working ion {}".format(len(batteries_list.values()), working_ion))
 
-li_battery_materials = dict([fetch_battery_from_api(battery) for battery in li_batteries.values()])
+    battery_materials = dict([fetch_battery_from_api(battery, apikey) for battery in batteries_list.values()])
 
-print(li_battery_materials)
+    print("Fetched {} battery data objects from rest api".format(len(battery_materials.values())))
 
-data_columns = ['Battid',
-                'Discharged_ID',
-                'Charged_ID',
-                'Reduced_Cell_Formula',
-                'Type',
-                'Spacegroup',
-                'Average_Voltage',
-                'Capacity_Grav',
-                'Capacity_Vol',
-                'Specific_E_Wh/kg',
-                'E Density Wh/l',
-                'Stability Charge',
-                'Stability Discharge']
+    data_columns = ['Battid',
+                    'Discharged_ID',
+                    'Charged_ID',
+                    'Reduced_Cell_Formula',
+                    'Type',
+                    'Spacegroup',
+                    'Average_Voltage',
+                    'Capacity_Grav',
+                    'Capacity_Vol',
+                    'Specific_E_Wh/kg',
+                    'E Density Wh/l',
+                    'Stability Charge',
+                    'Stability Discharge']
 
-battery_data = [compose_battery_data(battery) for battery in list(li_battery_materials.values())]
+    battery_data = [compose_battery_data(battery) for battery in list(battery_materials.values())]
 
-df = DataFrame.from_records(battery_data, columns=data_columns)
+    df = DataFrame.from_records(battery_data, columns=data_columns)
 
-print("Printing CSV")
-print(df.to_csv(index=False))
-# mg_batteries = scrape_batteries(working_ion="Mg")
+    print("Exporting selected battery data to file: {}".format(output_filename))
+    df.to_csv(output_filename, index=False)
+
+
+# Example for scraping all Mg-batteries and exporting them to mg_batteries.csv
+scrape_battery_data_to_csv("Mg", "mg_batteries.csv", "GKDHNwKre8uiowqhPh")
