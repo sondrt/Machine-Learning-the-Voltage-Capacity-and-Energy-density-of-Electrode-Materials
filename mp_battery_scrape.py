@@ -57,22 +57,46 @@ def scrape_battery_materials(battery):
                                    span_tag.parent.parent.a['href'].split('/')[-1])),  # <material-id>
                 material_spans)))
 
+def scrape_battery_materials_api(battery):
 
-def compose_battery_data(battery, battery_data):
-    return [battery[0],
-            battery[1]['discharged'],
-            battery[1]['charged'],
-            battery_data['reduced_cell_formula'],
-            battery_data['type'],
-            battery_data['spacegroup']['symbol'],
-            battery_data['average_voltage'],
-            battery_data['capacity_grav'],
-            battery_data['capacity_vol'],
-            battery_data['specific_e_wh/kg'],
-            battery_data['e_density_wh/l'],
-            battery_data['stability_charge'],
-            battery_data['stability_discharge']]
+    print("Scraping battery {}".format(battery["battid"]))
 
+    api_key_header = {"X-API-KEY": "GKDHNwKre8uiowqhPh"}
+    url = "https://www.materialsproject.org/rest/v2/battery/{}".format(battery["battid"])
+    battery_get = requests.get(url, headers = api_key_header)
+    response_obj = battery_get.json()
+
+    assert battery_get.status_code == 200
+    assert response_obj["valid_response"] == True
+
+    battery_data = response_obj["response"][0]
+
+    if len(battery_data["adj_pairs"]) > 2:
+        print("Found a battery with too many materials, write code to handle it. {} material pairs found."
+              .format(len(battery_data["adj_pairs"])))
+        return None
+
+    return (battery_data["battid"], battery_data)
+
+
+def compose_battery_data(battery):
+    return [battery["battid"],
+            battery["adj_pairs"][0]['id_discharge'],
+            battery["adj_pairs"][0]['id_charge'],
+            battery['reduced_cell_formula'],
+            battery['type'],
+            battery['spacegroup']['symbol'],
+            battery['average_voltage'],
+            battery['capacity_grav'],
+            battery['capacity_vol'],
+            battery['energy_grav'],
+            battery['energy_vol'],
+            battery["adj_pairs"][0]['stability_charge'],
+            battery["adj_pairs"][0]['stability_discharge']]
+
+
+def scrape_battery_data_to_csv(working_ion, filename, sessionid):
+    None
 
 sessionid = "on8w86ghahhxkdqu1xmtv8pfkgf0p7j4"
 assert not sessionid == "", "sessionid for materialsproject cannot be empty, insert it in the string after extracting it from your logged in user"
@@ -81,7 +105,7 @@ li_batteries = scrape_batteries(working_ion="Li")
 
 print(li_batteries)
 
-li_battery_materials = dict([scrape_battery_materials(battery) for battery in li_batteries.values()])
+li_battery_materials = dict([scrape_battery_materials_api(battery) for battery in li_batteries.values()])
 
 print(li_battery_materials)
 
@@ -99,8 +123,7 @@ data_columns = ['Battid',
                 'Stability Charge',
                 'Stability Discharge']
 
-battery_data = [compose_battery_data(battery, li_batteries[battery[0]])
-                for battery in li_battery_materials.items()]
+battery_data = [compose_battery_data(battery) for battery in list(li_battery_materials.values())]
 
 df = DataFrame.from_records(battery_data, columns=data_columns)
 
