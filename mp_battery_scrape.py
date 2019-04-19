@@ -71,14 +71,15 @@ def compose_battery_data(battery):
 
 
 def scrape_battery_data_to_csv(working_ion, output_filename, apikey):
-
     print("Fetching batteries from Materials Project")
 
     batteries_list = scrape_batteries(working_ion=working_ion)
 
     print("Found {} batteries with working ion {}".format(len(batteries_list.values()), working_ion))
 
-    battery_materials = dict([fetch_battery_from_api(battery, apikey) for battery in batteries_list.values()])
+    battery_materials = dict(filter(
+        lambda element: element != None,
+        [fetch_battery_from_api(battery, apikey) for battery in batteries_list.values()]))
 
     print("Fetched {} battery data objects from rest api".format(len(battery_materials.values())))
 
