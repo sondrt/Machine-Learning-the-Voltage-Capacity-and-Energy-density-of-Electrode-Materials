@@ -4,7 +4,7 @@ import requests
 from pandas import DataFrame
 
 
-def scrape_batteries(working_ion ="Mg",
+def scrape_batteries(working_ion="Mg",
                      filter_property="average_voltage"):
     print("Scraping batteries from battery-explorer")
     print("Working ion: {}".format(working_ion))
@@ -27,19 +27,18 @@ def scrape_batteries(working_ion ="Mg",
         for battery in response_batteries_list:
             batteries[battery["battid"]] = battery
 
-        print('Found {} batteries and {} unique batteries so far. Searches run: {}'\
-            .format(len(batteries), len(set(batteries)), i))
+        print('Found {} batteries and {} unique batteries so far. Searches run: {}' \
+              .format(len(batteries), len(set(batteries)), i))
 
     return batteries
 
 
 def fetch_battery_from_api(battery, apikey):
-
     print("Scraping battery {}".format(battery["battid"]))
 
     api_key_header = {"X-API-KEY": apikey}
     url = "https://www.materialsproject.org/rest/v2/battery/{}".format(battery["battid"])
-    battery_get = requests.get(url, headers = api_key_header)
+    battery_get = requests.get(url, headers=api_key_header)
     response_obj = battery_get.json()
 
     assert battery_get.status_code == 200
