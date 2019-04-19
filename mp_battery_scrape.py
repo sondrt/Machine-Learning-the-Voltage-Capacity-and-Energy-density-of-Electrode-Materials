@@ -57,7 +57,7 @@ def scrape_battery_materials(battery):
                                    span_tag.parent.parent.a['href'].split('/')[-1])),  # <material-id>
                 material_spans)))
 
-def scrape_battery_materials_api(battery):
+def fetch_battery_from_api(battery):
 
     print("Scraping battery {}".format(battery["battid"]))
 
@@ -105,7 +105,7 @@ li_batteries = scrape_batteries(working_ion="Li")
 
 print(li_batteries)
 
-li_battery_materials = dict([scrape_battery_materials_api(battery) for battery in li_batteries.values()])
+li_battery_materials = dict([fetch_battery_from_api(battery) for battery in li_batteries.values()])
 
 print(li_battery_materials)
 
