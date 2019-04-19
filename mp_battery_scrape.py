@@ -2,7 +2,6 @@
 
 import requests
 from pandas import DataFrame
-from bs4 import BeautifulSoup
 
 
 def scrape_batteries(working_ion ="Mg",
@@ -32,30 +31,6 @@ def scrape_batteries(working_ion ="Mg",
 
     return batteries
 
-
-def scrape_battery_materials(battery):
-
-    print("Scraping battery {}".format(battery["battid"]))
-
-    url = "https://www.materialsproject.org/batteries/{}".format(battery["battid"])
-    battery_get = requests.get(url, cookies={"sessionid" : sessionid})
-
-    assert battery_get.status_code == 200
-
-    battery_soup = BeautifulSoup(battery_get.text, "html.parser")
-
-    material_spans = battery_soup("span", attrs={"class": "label-bg"})
-
-    if len(material_spans) > 2:
-        print("Found a battery with too many materials, write code to handle it.\n" \
-                                           "\n" \
-                                           "{}".format(material_spans))
-        return None
-
-    return (battery["battid"], dict(map(
-                (lambda span_tag:( span_tag.string.split()[-1],  # charged / discharged
-                                   span_tag.parent.parent.a['href'].split('/')[-1])),  # <material-id>
-                material_spans)))
 
 def fetch_battery_from_api(battery):
 
