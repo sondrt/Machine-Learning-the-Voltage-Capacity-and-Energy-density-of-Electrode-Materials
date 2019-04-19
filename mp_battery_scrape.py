@@ -12,7 +12,8 @@ def scrape_batteries(working_ion ="Mg",
 
     batteries = {}
 
-    for i in range(0, 17):
+    # Scrape over the full range of average voltage in the materials database
+    for i in range(0, 150):
         url = 'https://www.materialsproject.org/batteries/search?query={{"working_ion":{{"$in":["{ion}"]}},"average_voltage":{{"$gte":{0},"$lte":{1}}}}}' \
             .format(-2.1 + i / 10.0, -1.9 + i / 10.0, ion=working_ion, property=filter_property)
 
