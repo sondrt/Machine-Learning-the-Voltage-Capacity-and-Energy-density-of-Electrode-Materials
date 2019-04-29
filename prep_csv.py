@@ -12,15 +12,6 @@ import pickle
 import re 
 
 
-def readElements(filename):
-  with open(filename) as json_file:
-    data = json.load(json_file)[0]
-    elements = data['elements']
-    unit_cell_formula= data['unit_cell_formula']
-    volume = data['volume']
-  return elements, unit_cell_formula, volume
-
-####################################################
 def main():
     csv = 'allFiles.csv' # Change for discharged or charged ids.
     outcsv = 'for_ML.csv'
@@ -31,17 +22,50 @@ def main():
     list_of_predictors = ['Battid',
     # 'Reduced_Cell_Formula',
     # 'Spacegroup',
-    'Average_Voltage',
+
+    # 'Average_Voltage',
+    
     # 'Capacity_Grav',
     # 'Capacity_Vol',
-    'Specific_E_Wh/kg',
+    
+    # 'Specific_E_Wh/kg',
+    
     # 'E Density Wh/l',
-    # 'Stability Discharge',
-    # 'Stability Charge',
-    # 'helvol',
+    
+    # 'Stability Discharge',                                    # No predictions to talk about.
+    # 'Stability Charge',                                       # On stability
+
+    # 'helvol',                                                 # this is shit
     # 'geomvol',
     # 'helvol_dis',
-    # 'geomvol_dis'
+    # 'geomvol_dis',
+
+    # 'energy',
+    # 'energy_dis',                                               #  1
+
+    # # 'energy_per_atom',
+    # # 'energy_per_atom_dis',    
+
+    # 'volume',
+    # 'volume_dis',                                               #  1
+    
+    # 'formation_energy_per_atom',
+    # 'formation_energy_per_atom_dis',                            #  1
+    
+    # # 'band_gap',
+    # # 'band_gap_dis',
+    
+    # 'density',
+    # 'density_dis',                                              #  1
+    
+    # 'total_magnetization',
+    # 'total_magnetization_dis',                                  #  1
+
+    # 'nsites',
+    # 'nsites_dis',
+
+    # 'elasticity',
+    # 'elasticity_dis'    
     ]
 
 
@@ -80,19 +104,15 @@ def main():
     
     data = pd.read_csv(csv, sep=',')
     headers = list(data.head())
-    #print(headers)
-    
-    
+
     newframe = pd.DataFrame()
     for fld in list_of_predictors:
        newframe[fld] = data[fld]
-    #   print("fld: ", fld)
-    #print(newframe)
-    
+
     
     newframe.to_csv(outcsv,sep=',',index=False)
 
-    print(Target)
+    print(Target, list_of_predictors)
 
 
 
