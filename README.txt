@@ -2,7 +2,7 @@
 Steps for use of python scripts:
 
 
-	0: Manually pick out battids from Materialsproject.com
+	0: Scrape batteries with a given working ion from the Materials Project battery explorer(https://www.materialsproject.org/#search/batteries)
 
 
 	1:	Download all materials that match a material_id correlated to a battid.
