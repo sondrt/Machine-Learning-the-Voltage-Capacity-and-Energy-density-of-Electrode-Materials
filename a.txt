@@ -1,0 +1,6 @@
+r2score =  0.694494868495
+r2score_train =  0.940401543921
+/Users/sveintorp/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+CROSS_VALIDATION: Accuracy: 0.5306 (+/- 0.3857)
+

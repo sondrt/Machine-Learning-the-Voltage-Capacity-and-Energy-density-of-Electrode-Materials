@@ -18,48 +18,48 @@ def main():
     
     l_charged_atoms = True
     l_discharged_atoms= True
-    Target = 'Capacity_Grav'
+    Target = 'Average_Voltage'
     list_of_predictors = ['Battid',
     # 'Reduced_Cell_Formula',
     # 'Spacegroup',
 
-    # 'Average_Voltage',
+    # 'Average_Voltage',s
     
-    # 'Capacity_Grav',
-    # 'Capacity_Vol',
+    'Capacity_Grav',
+    'Capacity_Vol',
     
-    # 'Specific_E_Wh/kg',
+    'Specific_E_Wh/kg',
     
-    # 'E Density Wh/l',
+    'E Density Wh/l',
     
     # 'Stability Discharge',                                    # No predictions to talk about.
     # 'Stability Charge',                                       # On stability
 
-    # 'helvol',                                                 # this is shit
+    # 'helvol',                                                 # this is not ideal
     # 'geomvol',
     # 'helvol_dis',
     # 'geomvol_dis',
 
-    # 'energy',
-    # 'energy_dis',                                               #  1
+    'energy',
+    'energy_dis',                                               #  1
 
-    # # 'energy_per_atom',
-    # # 'energy_per_atom_dis',    
+    # 'energy_per_atom',
+    # 'energy_per_atom_dis',    
 
-    # 'volume',
-    # 'volume_dis',                                               #  1
+    'volume',
+    'volume_dis',                                               #  1
     
-    # 'formation_energy_per_atom',
-    # 'formation_energy_per_atom_dis',                            #  1
+    'formation_energy_per_atom',
+    'formation_energy_per_atom_dis',                            #  1
     
-    # # 'band_gap',
-    # # 'band_gap_dis',
+    # 'band_gap',
+    # 'band_gap_dis',
     
-    # 'density',
-    # 'density_dis',                                              #  1
+    'density',
+    'density_dis',                                              #  1
     
-    # 'total_magnetization',
-    # 'total_magnetization_dis',                                  #  1
+    'total_magnetization',
+    'total_magnetization_dis',                                  #  1
 
     # 'nsites',
     # 'nsites_dis',

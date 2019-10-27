@@ -36,14 +36,14 @@ def download_ALLstructures(id):
           print("That didn't work, id: ", id)            
 ########################################################
 do_download = True
-csvfile = 'manual.csv'
+csvfile = csvfile = 'manualOKT.csv'          # 'mg_batteries.csv'  'Li_batteries.csv' 
 cif_info_dir = './cif_info_dir/'
 #heads =  ['Battid', 'Discharged_ID', 'Charged_ID', 'Reduced_Cell_Formula', 'Type', 'Spacegroup', 'Average_Voltage', 'Capacity_Grav', 'Capacity_Vol', 'Specific_E_Wh/kg', 'E Density Wh/l', 'Stability Charge', 'Stability Discharge'
 
 
 data = pd.read_csv(csvfile, sep=',')
 HEADERS = list(data.head())
-#print('heads = ', HEADERS)
+print('heads = ', HEADERS)  #This cant be commented out. 
 #print data['Spacegroup']
 
 if do_download:
@@ -68,6 +68,7 @@ if do_download:
                 print("download is ", exist, Empty)
                 download_ALLstructures(struct_id)        
     print("Done!")
+    print("Number of charged_IDs: ", len(data["Charged_ID"]))
 
 
 

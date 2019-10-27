@@ -1,39 +1,72 @@
 
 Steps for use of python scripts:
 
-
+		mp_battery_scraper.py
 	0: Scrape batteries with a given working ion from the Materials Project battery explorer(https://www.materialsproject.org/#search/batteries)
 
 
-	1:	Download all materials that match a material_id correlated to a battid.
-			Output files: directory cif_info_dir/<material_id>_prop.dat 
+		fillproperties.py
+	1: Download all materials that match a material_id correlated to a battid.
+		Output files: directory cif_info_dir/<material_id>_prop.dat
 
-	2:	Calculate the density fractions for all materials. 
-			Output files: out_csv_dis.csv
+		add_features.py
+	2: Gets and adds the material specific features from the JSON dump to a csv.
+		Output files: material_properties.csv
 
-	3:	Download the CIF files as JSON for all materials correlated to a battid. 
-			Output files: directory cif_for_poreblazer/<material_id>_cif.dat
+		elements.py
+	3: Calculate the density fractions for all materials. 
+		Output files: out_csv_dis.csv
 
-	4:	Extract the CIF information from the previous JSON data.
-			Output files: directory cif_for_poreblazer/cif_files/<material_id>_cif.dat.csv
+		forPoreblazer.py
+	4: Download the CIF files as JSON for all materials correlated to a battid. 
+		Output files: directory cif_for_poreblazer/<material_id>_cif.dat
 
-	5:	Extract void fraction with poreblazer using the CIF files.
-			Output files: helvol_geomvol.csv 
+		process_cif.py
+	5: Extract the CIF information from the previous JSON data.
+		Output files: directory cif_for_poreblazer/cif_files/<material_id>_cif.dat.csv
+
+		process_cif.py
+	6: Extract void fraction with poreblazer using the CIF files.
+		Output files: helvol_geomvol.csv 
 	
-	6:	Merge charged and discharged helvol and geomvol
-			Output files: allFiles.csv
+		merger.py
+	7: Merge charged and discharged for all properties
+		Output files: allFiles.csv
 
-	7:	Select predictors and targets for ML
-			Output files: for_ML.csv
+		prep_csv.py
+	8: Select predictors and targets for ML
+		Output files: for_ML.csv
 
-	8: 	Run randomforrest
-			Output files: Depending on what being saved: ./Results/*
+		randomforest.py
+	9:  Run randomforrest
+		Output files: Depending on what being saved: ./Results/*
+	
+		crossvalidation.py
+	10: Run cross-validation, remove outliers.
 
-	9: 	???
-
-
-	10:	Profit!
 
 
 cmd: 
- python fillproperties.py; python elements.py; python forPoreblazer.py; python process_cif.py; python merger.py; python prep_csv.py; python randomforest.py; python rf_CROSSVAL.py
+
+#Open all relevant files.
+open 
+
+
+#Run point 0 through 10.
+python3 mp_battery_scrape.py; python3 fillproperties.py; python3 elements.py; python3 add_features.py; python3 forPoreblazer.py; python3 process_cif.py; python3 merger.py; python3 prep_csv.py; python3 randomforest.py; python3 rf_CROSSVAL.py
+
+#No poreblazer
+python3 mp_battery_scrape.py; python3 fillproperties.py; python3 elements.py; python3 add_features.py; python3 merger.py; python3 prep_csv.py; python3 randomforest.py; python3 rf_CROSSVAL.py
+
+
+#Dont need forPoreblazer?
+
+
+
+Things that does not work as it is supposed to.
+
+
+add_features.py
+
+A program to get the pure cif files in to the ./cif_for_poreblazer/cif_files/ 
+

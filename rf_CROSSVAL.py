@@ -34,7 +34,7 @@ def main():
     HEADERS = list(data.head()) 
     y = data[HEADERS[-1]]
     X = data[HEADERS[2:-1]]
-    ncv = 10
+    ncv = 5
     l_cv = True
     
     if l_cv:
@@ -51,7 +51,7 @@ def main():
             SUM += ss[i+1]
         mean = SUM/(len(scores)-2.)
         print("mean: ",mean)
-        # print(ss)
+        print(ss)
         print(" ")
 
 if __name__ == '__main__':

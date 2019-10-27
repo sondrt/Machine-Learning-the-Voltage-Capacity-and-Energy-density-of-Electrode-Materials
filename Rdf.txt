@@ -1,0 +1,44 @@
+To put in simple terms, the RDF is the
+interatomic separation histogram representing the weighted
+probability of finding a pair of atoms separated by a given
+distance
+
+Our adapted RDF
+scores in a MOF framework can be interpreted as the weighted
+probability distribution to find an atom pair in a spherical
+volume of radius R inside the unit cell according to the eq 1.
+
+
+The RDFs can be weighted to fit the
+requirements of the chemical information to be represented, by
+introducing the atomic properties Pi. We weight the radial
+probabilities by three tabulated atomic properties namely
+electronegativity, polarizability, and van der Waals volume,
+whose values are given in Table S1 of the Supporting
+Information. While a regular RDF function encodes geometric
+features, the atomic property weighted radial distribution
+
+function (AP-RDF) additionally characterizes the chemical
+features within a MOF.
+The AP-RDF profiles for two well-known MOFs, MIL-4744
+and IRMOF-1,45 are shown in Figure 1 for three atomic
+properties, the electronegativity, polarizability, and van der
+Waals volume. The effect of the smoothing parameter B on the
+AP-RDF profiles is also given in Figure 1. As can be observed,
+the lower the value of the parameter B, the higher the absolute
+value of the scores and the smoother the shape of the AP-RDF
+profile. Consequently, AP-RDF profiles for B = 100 were very
+noisy and those for B = 1 were featureless. Both extremes
+hindered the correlation with functional properties and, we
+found that B = 10 yielded an optimum trade-off between
+structural information content and smoothness.
+A smoothing parameter B = 10 was used for all AP-RDF
+profiles used in this work. Additionally, a distance range of 2.0
+to 30.0 Å in steps of 0.25 Å was used for all calculations. In this
+way, we computed 113 scores per atomic property, yielding a
+total of 339 AP-RDF scores or descriptors for each MOF. Both
+the AP-RDF scores and geometrical features were linearly
+normalized in the range [−1, 1], where −1 and 1 correspond to
+the minimum and maximum values of each variable,
+respectively.
+

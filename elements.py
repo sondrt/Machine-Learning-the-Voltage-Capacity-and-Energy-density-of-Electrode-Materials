@@ -18,7 +18,7 @@ def readElements(filename):
         volume = data['volume']
     return elements, unit_cell_formula, volume
 ########################################################
-csvfile = 'manual.csv'
+csvfile = 'manualOKT.csv'
 cif_info_dir = './cif_info_dir/'
 outcsv = "out_csv_dis.csv"
 data = pd.read_csv(csvfile, sep=',')

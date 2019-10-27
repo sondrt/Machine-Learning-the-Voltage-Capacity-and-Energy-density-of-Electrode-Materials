@@ -55,12 +55,14 @@ def fetch_battery_from_api(battery, apikey):
 
 
 def compose_battery_data(battery):
+    print(battery)
+    exit()
     return [battery["battid"],
             battery["adj_pairs"][0]['id_discharge'],
             battery["adj_pairs"][0]['id_charge'],
             battery['reduced_cell_formula'],
             battery['type'],
-            battery['spacegroup']['symbol'],
+            #battery['spacegroup']['symbol'],
             battery['average_voltage'],
             battery['capacity_grav'],
             battery['capacity_vol'],
@@ -68,6 +70,7 @@ def compose_battery_data(battery):
             battery['energy_vol'],
             battery["adj_pairs"][0]['stability_charge'],
             battery["adj_pairs"][0]['stability_discharge']]
+
 
 
 def scrape_battery_data_to_csv(working_ion, output_filename, apikey):
@@ -106,4 +109,6 @@ def scrape_battery_data_to_csv(working_ion, output_filename, apikey):
 
 
 # Example for scraping all Mg-batteries and exporting them to mg_batteries.csv
-scrape_battery_data_to_csv("Mg", "mg_batteries.csv", "GKDHNwKre8uiowqhPh")
+#scrape_battery_data_to_csv("Mg", "mg_batteries.csv", "GKDHNwKre8uiowqhPh")
+
+scrape_battery_data_to_csv("Li", "Li_batteries3.csv", "GKDHNwKre8uiowqhPh")

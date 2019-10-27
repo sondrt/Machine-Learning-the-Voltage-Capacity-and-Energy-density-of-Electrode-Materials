@@ -52,6 +52,8 @@ r2score_test = r2_score(y_test, pred,  multioutput='variance_weighted')
 r2score_train= r2_score(y_train, pred_train,  multioutput='variance_weighted')
 print ('r2score = ', r2score_test)
 print ('r2score_train = ', r2score_train)
+MSE = mean_squared_error(y_test, pred)
+print('MSE')
 
 if l_plot:
    maxp =  1.2*max(max(y_test), max(y_train))
@@ -76,11 +78,11 @@ if l_plot:
    plt.text(0.65*maxp, 0.40*maxp-dx, 'r2=%.3f'%(r2score_test), color='red', fontsize=fnt)
 #      plt.text(0.65*maxp, 0.40*maxp-2.*dx, 'RMSE=%.3f'%(rmse_test), color='red', fontsize=fnt)
 #      plt.text(0.65*maxp, 0.40*maxp-3.*dx, 'MAE=%.3f'%(mae_test), color='red', fontsize=fnt)
-   # plt.show()
-   plt.savefig("Results/2019-04-19/t=Gc_p=n.jpg", dpi=None, facecolor='w', edgecolor='w',
-        orientation='portrait', papertype=None, format=None,
-        transparent=False, bbox_inches=None, pad_inches=0.1,
-        frameon=None, metadata=None)
+   plt.show()
+#   plt.savefig("Results/2019-06-11/mg_2AV-t=AV_p=msp_n.jpg", dpi=None, facecolor='w', edgecolor='w',
+#        orientation='portrait', papertype=None, format=None,
+#        transparent=False, bbox_inches=None, pad_inches=0.1,
+#        frameon=None, metadata=None)
 
 
 exit()

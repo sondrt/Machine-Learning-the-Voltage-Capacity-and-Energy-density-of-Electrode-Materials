@@ -25,18 +25,12 @@ def download_ALLstructures(allIDs):
 ########################################################
 
 do_download = True
-csvfile = 'manual.csv'
+csvfile = 'manualOKT.csv'
 cif_info_dir = './cif_info_dir/'
 cif_for_poreblazer = './cif_for_poreblazer/'
 
 #heads =  ['Battid', 'Discharged_ID', 'Charged_ID', 'Reduced_Cell_Formula', 'Type', 'Spacegroup', 'Average_Voltage', 'Capacity_Grav', 'Capacity_Vol', 'Specific_E_Wh/kg', 'E Density Wh/l', 'Stability Charge', 'Stability Discharge'
 ###############################################################
-
-do_download = True
-csvfile = 'manual.csv'
-
-#heads =  ['Battid', 'Discharged_ID', 'Charged_ID', 'Reduced_Cell_Formula', 'Type', 'Spacegroup', 'Average_Voltage', 'Capacity_Grav', 'Capacity_Vol', 'Specific_E_Wh/kg', 'E Density Wh/l', 'Stability Charge', 'Stability Discharge'
-
 
 data = pd.read_csv(csvfile, sep=',')
 HEADERS = list(data.head())

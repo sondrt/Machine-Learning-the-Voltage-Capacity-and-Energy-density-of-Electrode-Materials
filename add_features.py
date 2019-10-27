@@ -10,6 +10,7 @@ def readElements(filename,id):
     #Reads things you want from file 
   with open(filename) as json_file:
     try:
+        print(filename,id)
         data = json.load(json_file)[0]
         energy = data['energy']
         energy_per_atom = data['energy_per_atom']
@@ -37,7 +38,7 @@ def json_csv(filename):
     return pd.DataFrame(data['profile_set'])
 
 
-csvfile = 'manual.csv'
+csvfile = 'manualOKT.csv'
 outcsv = 'material_properties.csv'
 cif_info_dir = './cif_info_dir/'
 data = pd.read_csv(csvfile, sep=',')
