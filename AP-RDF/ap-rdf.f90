@@ -54,7 +54,7 @@ if (narg>=1) then
          else if (ANY(['t', 'T'] == trim(atmp2) )) then
             repcell = .true.
          else
-            stop 'Wrong -repcell in namelist' // trim(atmp2)
+            stop 'Wrong -repcell in namelist' !// trim(atmp2)
          endif
       endif
       if (ANY(['-of   ', '-fpatt']==trim(atmp))) then

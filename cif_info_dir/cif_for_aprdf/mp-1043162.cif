@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_MgNi(GeO3)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.23011004
+_cell_length_b   6.63695613
+_cell_length_c   6.63695548
+_cell_angle_alpha   85.40264135
+_cell_angle_beta   81.41860750
+_cell_angle_gamma   81.41860334
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   MgNi(GeO3)2
+_chemical_formula_sum   'Mg2 Ni2 Ge4 O12'
+_cell_volume   224.85749265
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Mg  Mg0  1  0.750000  0.265650  0.734350  1
+  Mg  Mg1  1  0.250000  0.734350  0.265650  1
+  Ni  Ni2  1  0.750000  0.907393  0.092607  1
+  Ni  Ni3  1  0.250000  0.092607  0.907393  1
+  Ge  Ge4  1  0.785009  0.393707  0.203965  1
+  Ge  Ge5  1  0.714991  0.796035  0.606293  1
+  Ge  Ge6  1  0.214991  0.606293  0.796035  1
+  Ge  Ge7  1  0.285009  0.203965  0.393707  1
+  O  O8  1  0.588114  0.291943  0.428399  1
+  O  O9  1  0.911886  0.571601  0.708057  1
+  O  O10  1  0.411886  0.708057  0.571601  1
+  O  O11  1  0.088114  0.428399  0.291943  1
+  O  O12  1  0.116973  0.137349  0.627794  1
+  O  O13  1  0.383027  0.372206  0.862651  1
+  O  O14  1  0.883027  0.862651  0.372206  1
+  O  O15  1  0.616973  0.627794  0.137349  1
+  O  O16  1  0.867337  0.204665  0.023871  1
+  O  O17  1  0.632663  0.976129  0.795335  1
+  O  O18  1  0.132663  0.795335  0.976129  1
+  O  O19  1  0.367337  0.023871  0.204665  1

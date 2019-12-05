@@ -132,6 +132,9 @@ Contains
    else
       nxyz=1
    endif
+   print*,'r1=',r1
+   print*,'rp=', rprimd
+   print*,'gp=', gprimd
    !
    !
    !   replicate unit cell so that the three box linear dimensions are larger than 2*Rmax
@@ -474,6 +477,8 @@ Contains
    close(11)
    !
    call init_cell( boxl, boxa, rprimd, gprimd )
+   print*,'bbb= ' , boxl, boxa, rprimd, gprimd
+!   stop
 
    allocate(Rf(3, na)); 
    allocate(anames(na));

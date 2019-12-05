@@ -16,16 +16,16 @@ FC=ifort
 FFLAGS=-fpp
 FFLAGS=-C -debug -traceback -fpp #-openmp #-warn unused
 FFLAGS=-C -check all -debug -traceback -fpp -warn  notruncated_source -warn unused
-FFLAGS=-O2 -ftz -fpp #-openmp
+#FFLAGS=-O2 -ftz -fpp #-openmp
 LDFLAGS=${FFLAGS}
 #
 # ---- Uncomment the following for gfortran compiler
 #
-FC=gfortran
-FFLAGS=-fpp
-FFLAGS=-C -cpp #-openmp
+#FC=gfortran
+#FFLAGS=-fpp
+#FFLAGS=-C -cpp #-openmp
 #FFLAGS=-O2 -cpp #-openmp
-LDFLAGS=${FFLAGS}
+#LDFLAGS=${FFLAGS}
 
 DEFS=
 INC=

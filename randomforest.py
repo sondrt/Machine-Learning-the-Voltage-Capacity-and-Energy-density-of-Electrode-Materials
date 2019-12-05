@@ -11,10 +11,11 @@ from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score, accuracy_score
 from sklearn.metrics import confusion_matrix
-from sklearn.externals import joblib 
+import joblib
 import warnings
 import scipy.stats as st
 
+print("")
 fnt=18
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
@@ -28,9 +29,12 @@ l_plot = True
 
 # print ('working on file: %s'%(infile))
 data = pd.read_csv(infile, sep=',')
+#data['formation_energy_per_atom'].replace(to_replace = 'None', value = None, inplace = True)
+#data['formation_energy_per_atom_dis'].replace(to_replace = 'None', value = None, inplace = True)
 HEADERS = list(data.head()) 
+#print(HEADERS)
 y = data[HEADERS[-1]]
-X = data[HEADERS[2:-1]]
+X = data[HEADERS[1:-1]]
 trsize=200
 #trsize=10000
 #nruns=30
@@ -39,6 +43,8 @@ trsize=200
 
 clf = RandomForestRegressor(n_estimators=n_estimators, random_state=105)
 X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=trsize )#, stratify=X)
+print(X_train, "\n")
+print( y_train)
 trained_model=clf.fit(X_train, y_train)
 # print ('train=', X_train)
    # 9. Evaluate model pipeline on test data

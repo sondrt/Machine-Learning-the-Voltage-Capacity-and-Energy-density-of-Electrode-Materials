@@ -13,11 +13,11 @@ import re
 
 
 def main():
-    csv = 'allFiles.csv' # Change for discharged or charged ids.
+    csv = 'allFiles.csv' 
     outcsv = 'for_ML.csv'
     
-    l_charged_atoms = True
-    l_discharged_atoms= True
+    l_charged_atoms = False
+    l_discharged_atoms= False
     Target = 'Average_Voltage'
     list_of_predictors = ['Battid',
     # 'Reduced_Cell_Formula',
@@ -32,8 +32,8 @@ def main():
     
     'E Density Wh/l',
     
-    # 'Stability Discharge',                                    # No predictions to talk about.
-    # 'Stability Charge',                                       # On stability
+    'Stability Discharge',                                    # No predictions to talk about.
+    'Stability Charge',                                       # On stability
 
     # 'helvol',                                                 # this is not ideal
     # 'geomvol',
@@ -43,17 +43,17 @@ def main():
     'energy',
     'energy_dis',                                               #  1
 
-    # 'energy_per_atom',
-    # 'energy_per_atom_dis',    
+    #'energy_per_atom',
+    #'energy_per_atom_dis',    
 
     'volume',
     'volume_dis',                                               #  1
     
-    'formation_energy_per_atom',
-    'formation_energy_per_atom_dis',                            #  1
+    #'formation_energy_per_atom',
+    #'formation_energy_per_atom_dis',                            #  1
     
-    # 'band_gap',
-    # 'band_gap_dis',
+    'band_gap',
+    'band_gap_dis',
     
     'density',
     'density_dis',                                              #  1
@@ -61,11 +61,11 @@ def main():
     'total_magnetization',
     'total_magnetization_dis',                                  #  1
 
-    # 'nsites',
-    # 'nsites_dis',
+    'nsites',
+    'nsites_dis',
 
-    # 'elasticity',
-    # 'elasticity_dis'    
+    'elasticity',
+    'elasticity_dis'    
     ]
 
 

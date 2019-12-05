@@ -70,3 +70,8 @@ add_features.py
 
 A program to get the pure cif files in to the ./cif_for_poreblazer/cif_files/ 
 
+To be checked:
+- assuming that rf ignores NaN values. 
+
+
+#GOTTA ADD AP-RDF and run_aprdf
