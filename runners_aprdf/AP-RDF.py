@@ -79,15 +79,15 @@ def pdb_to_aprdf():
 		filein =file. replace(".pdb","")+ '.aprdf'
 		if fnmatch.fnmatch(file, "m*.pdb"):
 			#Fix the parameters!
-			cmd = "./ap-rdf.x -i " + file +" -bfac 1.0 -rmin 3.0 -rmax 50.0 -ngrid 50 -of " + filein
+			cmd = "./ap-rdf.x -i " + file +" -bfac 50.0 -rmin 2.0 -rmax 15.0 -ngrid 53 -of " + filein
 			print("running: " + cmd)
 			os.system(cmd)
 	return
 pdb_to_aprdf()
 #./ap-rdf.x -i mp-18900.pdb -bfac 1.0 -rmin 3.0 -rmax 50.0 -ngrid 50 -of mp-18900.aprdf
 
-
-
+#./ap-rdf.x -i mp-2343.pdb -bfac 1.0 -rmin 2.0 -rmax 25.0 -ngrid 93 -of mp-2343.aprdf
+#plot histogram.
 '''
 dirin = './cif_info_dir/cif_for_aprdf/'
 appin = './AP-RDF/'
