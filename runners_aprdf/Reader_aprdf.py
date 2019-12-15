@@ -145,32 +145,29 @@ def mergeBandS():
             # print(df)
             newframe = pd.read_csv(Bcsv)
             headers = list(newframe.head())
-            print(headers)
-            print(type(newframe))
             nan_value = float("NaN")
             newframe["elneg"] = nan_value
             #newframe = cartesian_product_simplified(bdf,sdf)
             newframe.to_csv('Bcsv.csv')
-            merge_aprdf_for_RF(newframe)
+            
+            aprdf_data = merge_aprdf_for_RF(newframe)
+            merged_aprdf_data = newframe.merge(aprdf_data, on='Battid')
+
+            merged_aprdf_data.to_csv('../battery_data_after_aprdf_merge.csv')
             exit()
 
 def merge_charged_discharged_aprdf(discharged: str, charged: str):
     charged_df = pd.read_csv(charged + ".csv").add_suffix('_charged')
     discharged_df = pd.read_csv(discharged + ".csv").add_suffix('_discharged')
-    #charged_df.drop(charged_df.columns[0], axis = 1, inplace = True)
-    #discharged_df.drop(discharged_df.columns[0], axis = 1, inplace = True)
-    # print(charged_df)
-    # print(discharged_df)
     return pd.concat([charged_df, discharged_df], axis=1)
 
 def merge_aprdf_for_RF(RF_data):
-    merged_aprdf_all_batteries = RF_data.apply(axis=1, func=f1, result_type='expand').map(lambda merged_df: RF_data.merge(merged_df, on='Battid'))
-    print(merged_aprdf_all_batteries)
-    return merged_aprdf_all_batteries
+    merged_aprdf_list = RF_data.apply(axis=1, func=f1)
+    return pd.concat(merged_aprdf_list.to_list())
 
 def f1(battery_row):
     merged_df = merge_charged_discharged_aprdf(battery_row[1],battery_row[2])
-    merged_df['Battid'] = battery_row[0]
+    merged_df.insert(0, 'Battid', battery_row[0])
     #print(merged_df)
     return merged_df
 
