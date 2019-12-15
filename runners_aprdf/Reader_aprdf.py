@@ -128,7 +128,7 @@ def cartesian_product_simplified(left, right):
 def mergeBandS():
     outcsv=()
     #Big old csv
-    Bcsv = '../allfiles.csv'
+    Bcsv = '../allFiles.csv'
     dirin = './'
 
     files=os.listdir(dirin)
