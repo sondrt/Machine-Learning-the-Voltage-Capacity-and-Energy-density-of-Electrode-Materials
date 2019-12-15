@@ -36,7 +36,9 @@ def read_aprdf(fn):
         vdw.append(float(a[2]))
         polar.append(float(a[3]))
 
-    return R,elneg,vdw,polar,lines
+        d = {'materialid':fn.strip('.aprdf'),'radius':R,'elneg':elneg,'vdw':vdw, 'polar':polar }
+        df = pd.DataFrame(data=d)
+    return df
 
 def readandplotaprdf():
     dirin = './'
@@ -92,17 +94,13 @@ def writer():
     for file in files:
         if fnmatch.fnmatch(file,'m*.aprdf'):
             print(file)
-            read_aprdf(file)
-            R,elneg,vdw,polar,a = read_aprdf(file)
 
-            d = {'R':R,'elneg':elneg,'vdw':vdw, 'polar':polar }
-
-            df = pd.DataFrame(data=d)
-            print(df)
+            df = read_aprdf(file)
+            # print(df)
             newfn = file.replace(".aprdf",".csv")
-            print(newfn)
-            df.to_csv(newfn)
-
+            # print(newfn)
+            df.to_csv(newfn, index=False)
+            # print(df)
             if sample is True:
                 print("round: ", count)
                 count += 1
@@ -125,37 +123,66 @@ def cartesian_product_simplified(left, right):
         np.column_stack([left.values[ia2.ravel()], right.values[ib2.ravel()]]))
 
 
-#print(cartesian_product_simplified(left, right))
+# print(cartesian_product_simplified(left, right))
 
 def mergeBandS():
     outcsv=()
     #Big old csv
     Bcsv = '../allfiles.csv'
-    #new small csv's
     dirin = './'
+
     files=os.listdir(dirin)
     for file in files:
         if fnmatch.fnmatch(file,'m*.csv'):
             print(file)
             sdf = pd.read_csv(file)
+
             headers = list(sdf.head())
             # print(headers)
             # print(sdf)
-            sdf.drop(sdf.columns[[0, 1]], axis = 1, inplace = True) 
-            # print(sdf)
+            sdf.drop(sdf.columns[0], axis = 1, inplace = True) 
+            # print("this thing: ", sdf)
             # print(df)
-            bdf = pd.read_csv(Bcsv)
-            headers = list(bdf.head())
-            # print(headers)
-            newframe = bdf
+            newframe = pd.read_csv(Bcsv)
+            headers = list(newframe.head())
+            print(headers)
+            print(type(newframe))
             nan_value = float("NaN")
             newframe["elneg"] = nan_value
             #newframe = cartesian_product_simplified(bdf,sdf)
             newframe.to_csv('Bcsv.csv')
+            merge_aprdf_for_RF(newframe)
             exit()
+
+def merge_charged_discharged_aprdf(discharged: str, charged: str):
+    charged_df = pd.read_csv(charged + ".csv").add_suffix('_charged')
+    discharged_df = pd.read_csv(discharged + ".csv").add_suffix('_discharged')
+    #charged_df.drop(charged_df.columns[0], axis = 1, inplace = True)
+    #discharged_df.drop(discharged_df.columns[0], axis = 1, inplace = True)
+    # print(charged_df)
+    # print(discharged_df)
+    return pd.concat([charged_df, discharged_df], axis=1)
+
+def merge_aprdf_for_RF(RF_data):
+    merged_aprdf_all_batteries = RF_data.apply(axis=1, func=f1, result_type='expand').map(lambda merged_df: RF_data.merge(merged_df, on='Battid'))
+    print(merged_aprdf_all_batteries)
+    return merged_aprdf_all_batteries
+
+def f1(battery_row):
+    merged_df = merge_charged_discharged_aprdf(battery_row[1],battery_row[2])
+    merged_df['Battid'] = battery_row[0]
+    #print(merged_df)
+    return merged_df
+
+
+
+
+
+#writer()
+#print(merge_charged_discharged_aprdf('mp-540570','mvc-12771'))
 #print("Yes, i'm doing something")
 #readandplotaprdf()
-#writer()
+
 
 
 mergeBandS()
