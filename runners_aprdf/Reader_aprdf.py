@@ -153,7 +153,7 @@ def mergeBandS():
             aprdf_data = merge_aprdf_for_RF(newframe)
             merged_aprdf_data = newframe.merge(aprdf_data, on='Battid')
 
-            merged_aprdf_data.to_csv('../battery_data_after_aprdf_merge.csv')
+            merged_ aprdf_data.to_csv('../battery_data_after_aprdf_merge.csv')
             exit()
 
 def merge_charged_discharged_aprdf(discharged: str, charged: str):
