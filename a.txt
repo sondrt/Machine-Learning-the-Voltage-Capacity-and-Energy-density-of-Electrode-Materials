@@ -4,3 +4,12 @@ r2score_train =  0.940401543921
   _nan_object_mask = _nan_object_array != _nan_object_array
 CROSS_VALIDATION: Accuracy: 0.5306 (+/- 0.3857)
 
+CROSS_VALIDATION: Accuracy: 0.2023 (+/- 0.7036)
+
+
+scores= [ 0.0889991   0.49520787  0.3598062   0.50191613 -0.43458143]
+mean:  0.31467105787257815
+[-0.43458143318180875, 0.08899909708947018, 0.35980620286408804, 0.4952078736641763, 0.501916133185446]
+ 
+
+python prep_csv.py; python randomforest.py >> Results/2020-01-01/2020-01-01.txt; python rf_crossvalidation.py >> Results/2020-01-01/2020-01-01.txt 

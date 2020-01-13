@@ -1,5 +1,6 @@
 
 Steps for use of python scripts:
+#There are two possible rutes for this script. To include the void fractions for all materials you use all steps, to ignore density fraction skip step 4-6.
 
 		mp_battery_scraper.py
 	0: Scrape batteries with a given working ion from the Materials Project battery explorer(https://www.materialsproject.org/#search/batteries)
@@ -25,9 +26,9 @@ Steps for use of python scripts:
 	5: Extract the CIF information from the previous JSON data.
 		Output files: directory cif_for_poreblazer/cif_files/<material_id>_cif.dat.csv
 
-		process_cif.py
+		process_cif_poreblazer.py
 	6: Extract void fraction with poreblazer using the CIF files.
-		Output files: helvol_geomvol.csv 
+		Output files: helvol_geomvol_output.csv 
 	
 		merger.py
 	7: Merge charged and discharged for all properties
@@ -41,10 +42,12 @@ Steps for use of python scripts:
 	9:  Run randomforrest
 		Output files: Depending on what being saved: ./Results/*
 	
-		crossvalidation.py
+		rf_crossvalidation.py
 	10: Run cross-validation, remove outliers.
 
 
+	
+python prep_csv.py >> Results/2020-01-05/2020-01-05.txt; python randomforest.py >>  Results/2020-01-05/2020-01-05.txt; python rf_crossvalidation.py >> Results/2020-01-05/2020-01-05.txt
 
 cmd: 
 

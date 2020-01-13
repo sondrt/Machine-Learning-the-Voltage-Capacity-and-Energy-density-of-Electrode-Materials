@@ -36,7 +36,6 @@
  ! Generation of nitrogen-accessible lattice             !
  !-------------------------------------------------------!
 
-  The system is NOT percolated in ANY direction 
  !-------------------------------------------------------!
  ! Generation of nitrogen-accessible lattice complete    !
  !-------------------------------------------------------!
@@ -55,11 +54,11 @@
  atoms from the adsrobent structure file
  ------------------------------------------------------
 
- Helium volume in A^3:           7.098
- Helium volume in cm^3/g:        0.036
+ Helium volume in A^3:          36.584
+ Helium volume in cm^3/g:        0.184
 
- Geometric (point accessible) volume in A^3:          25.802
- Geometric (point accessible) volume in cm^3/g:        0.130
+ Geometric (point accessible) volume in A^3:          46.858
+ Geometric (point accessible) volume in cm^3/g:        0.235
 
  !-------------------------------------------------------!
  ! Pore volume calculations complete                     !
@@ -70,9 +69,9 @@
  ! Starting surface area calculations                    !
  !-------------------------------------------------------!
 
- Accessible surface area in A^2:                         1.88
- Accessible surface area per volume in m^2/cm^3:       293.71
- Accessible surface area per mass in m^2/g:             94.44
+ Accessible surface area in A^2:                        80.90
+ Accessible surface area per volume in m^2/cm^3:     12629.42
+ Accessible surface area per mass in m^2/g:           4060.93
 
  !-------------------------------------------------------!
  ! Surface area calculations complete                    !
@@ -96,8 +95,9 @@
  ! analysis                                              !
  !-------------------------------------------------------!
 
- Pore limiting diameter in A:         0.98
- Maximum pore diameter in A:          7.98
+ Pore limiting diameter in A:         7.76
+ Maximum pore diameter in A:         18.06
+ The system is percolated in            3  dimensions (3D pores)
  !-------------------------------------------------------!
  ! Limiting pore diameter and maximum pore size          !
  ! analysis complete                                     !

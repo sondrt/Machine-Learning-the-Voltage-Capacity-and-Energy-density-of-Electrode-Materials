@@ -74,38 +74,17 @@ dirin = '../cif_info_dir/pdb_for_aprdf/'
 dir_aprdf = '../cif_info_dir/aprdf_for_rf/'
 files = os.listdir(dirin)
 def pdb_to_aprdf():
+	print("Calculating AP-RDF values.")
 	for file in files:
-		print('This is file: ', file)
+		#print('This is file: ', file)
 		filein =file. replace(".pdb","")+ '.aprdf'
 		if fnmatch.fnmatch(file, "m*.pdb"):
 			#Fix the parameters!
-			cmd = "./ap-rdf.x -i " + file +" -bfac 50.0 -rmin 2.0 -rmax 15.0 -ngrid 53 -of " + filein
-			print("running: " + cmd)
+			cmd = "./ap-rdf.x -i " + file +" -bfac 10.0 -rmin 2.0 -rmax 15.0 -ngrid 53 -of " + filein
+			#print("running: " + cmd)
 			os.system(cmd)
 	return
 pdb_to_aprdf()
-#./ap-rdf.x -i mp-18900.pdb -bfac 1.0 -rmin 3.0 -rmax 50.0 -ngrid 50 -of mp-18900.aprdf
-
-#./ap-rdf.x -i mp-2343.pdb -bfac 1.0 -rmin 2.0 -rmax 25.0 -ngrid 93 -of mp-2343.aprdf
-#plot histogram.
-'''
-dirin = './cif_info_dir/cif_for_aprdf/'
-appin = './AP-RDF/'
-files = os.listdir(dir_aprdf)
-i = 0
-for file in files:
-	if fnmatch.fnmatch(file, 'm*.pdb'):
-		print(file)
-		cmd = 'cd '+ appin+ '; ' + './ap-rdf.x -i ' + file + ' -bfac 1.0 -rmin 3.0 -rmax 10.0 -ngrid 50 -repcell T -of ' + file.replace('.pdb','') + '.aprdf'
-		print(cmd)
-		os.system( cmd )
-		exit()
-	i =+ 1 
-	if i == 4: 
-		exit()
-'''
-#./ap-rdf.x -i mp-1043530.pdb -bfac 1.0 -rmin 3.0 -rmax 50.0 -ngrid 50 -of mp-1043530.aprdf
-
 
 
 

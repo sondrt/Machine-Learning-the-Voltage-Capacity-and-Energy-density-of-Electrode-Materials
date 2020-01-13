@@ -4,7 +4,7 @@ import requests
 from pandas import DataFrame
 
 
-def scrape_batteries(working_ion="Mg",
+def scrape_batteries(working_ion="Li",
                      filter_property="average_voltage"):
     print("Scraping batteries from battery-explorer")
     print("Working ion: {}".format(working_ion))
@@ -111,4 +111,4 @@ def scrape_battery_data_to_csv(working_ion, output_filename, apikey):
 # Example for scraping all Mg-batteries and exporting them to mg_batteries.csv
 #scrape_battery_data_to_csv("Mg", "mg_batteries.csv", "GKDHNwKre8uiowqhPh")
 
-scrape_battery_data_to_csv("Li", "Li_batteries3.csv", "GKDHNwKre8uiowqhPh")
+scrape_battery_data_to_csv("Li", "Li_batteries.csv", "GKDHNwKre8uiowqhPh")

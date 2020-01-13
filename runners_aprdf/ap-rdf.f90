@@ -96,6 +96,5 @@ do i=1, ngrid
 enddo
 close(20)
 
-print*,'done!!'
 
 end program main

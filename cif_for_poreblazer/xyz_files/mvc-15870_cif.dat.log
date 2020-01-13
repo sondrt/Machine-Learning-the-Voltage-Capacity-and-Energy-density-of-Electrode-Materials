@@ -36,7 +36,6 @@
  ! Generation of nitrogen-accessible lattice             !
  !-------------------------------------------------------!
 
-  The system is NOT percolated in ANY direction 
  !-------------------------------------------------------!
  ! Generation of nitrogen-accessible lattice complete    !
  !-------------------------------------------------------!
@@ -55,11 +54,11 @@
  atoms from the adsrobent structure file
  ------------------------------------------------------
 
- Helium volume in A^3:           2.991
- Helium volume in cm^3/g:        0.003
+ Helium volume in A^3:         241.061
+ Helium volume in cm^3/g:        0.221
 
- Geometric (point accessible) volume in A^3:          91.795
- Geometric (point accessible) volume in cm^3/g:        0.084
+ Geometric (point accessible) volume in A^3:         217.589
+ Geometric (point accessible) volume in cm^3/g:        0.200
 
  !-------------------------------------------------------!
  ! Pore volume calculations complete                     !
@@ -70,9 +69,24 @@
  ! Starting surface area calculations                    !
  !-------------------------------------------------------!
 
+ Accessible surface area in A^2:                       309.65
+ Accessible surface area per volume in m^2/cm^3:     13011.39
+ Accessible surface area per mass in m^2/g:           2840.26
+
+ !-------------------------------------------------------!
+ ! Surface area calculations complete                    !
+ !-------------------------------------------------------!
+
  Step 7/8
  !-------------------------------------------------------!
  ! Starting pore size distribution calculations          !
+ !-------------------------------------------------------!
+
+ Cumulative PSD and differential PSD 
+ have been stored in files psd_cumulative.txt
+ and psd.txt
+ !-------------------------------------------------------!
+ ! Pore size distribution calculations complete          !
  !-------------------------------------------------------!
 
  Step 8/8
@@ -81,8 +95,8 @@
  ! analysis                                              !
  !-------------------------------------------------------!
 
- Pore limiting diameter in A:         1.80
- Maximum pore diameter in A:          1.94
+ Pore limiting diameter in A:         7.77
+ Maximum pore diameter in A:          8.54
   The system is percolated in            1  dimension (channels)
  !-------------------------------------------------------!
  ! Limiting pore diameter and maximum pore size          !

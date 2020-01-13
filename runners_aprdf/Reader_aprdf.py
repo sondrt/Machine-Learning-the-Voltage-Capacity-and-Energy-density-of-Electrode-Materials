@@ -15,6 +15,7 @@ today = date.today()
 d1 = today.strftime("%Y-%m-%d-")
 #print("d1 =", d1)
 
+outcsv = "../battery_data_after_aprdf_merge.csv" #name&location of csv file with aprdf and more.
 
 
 def read_aprdf(fn):
@@ -134,7 +135,6 @@ def mergeBandS():
     files=os.listdir(dirin)
     for file in files:
         if fnmatch.fnmatch(file,'m*.csv'):
-            print(file)
             sdf = pd.read_csv(file)
 
             headers = list(sdf.head())
@@ -153,7 +153,7 @@ def mergeBandS():
             aprdf_data = merge_aprdf_for_RF(newframe)
             merged_aprdf_data = newframe.merge(aprdf_data, on='Battid')
 
-            merged_ aprdf_data.to_csv('../battery_data_after_aprdf_merge.csv')
+            merged_aprdf_data.to_csv('../battery_data_after_aprdf_merge.csv')
             exit()
 
 def merge_charged_discharged_aprdf(discharged: str, charged: str):
@@ -162,12 +162,13 @@ def merge_charged_discharged_aprdf(discharged: str, charged: str):
     return pd.concat([charged_df, discharged_df], axis=1)
 
 def merge_aprdf_for_RF(RF_data):
-    merged_aprdf_list = RF_data.apply(axis=1, func=f1)
+    merged_aprdf_list = RF_data.apply(axis=1, func=aprdf_df_merger)
     return pd.concat(merged_aprdf_list.to_list())
 
-def f1(battery_row):
+def aprdf_df_merger(battery_row):
     merged_df = merge_charged_discharged_aprdf(battery_row[1],battery_row[2])
     merged_df.insert(0, 'Battid', battery_row[0])
+    merged_df.drop("")
     #print(merged_df)
     return merged_df
 
@@ -178,9 +179,9 @@ def f1(battery_row):
 #writer()
 #print(merge_charged_discharged_aprdf('mp-540570','mvc-12771'))
 #print("Yes, i'm doing something")
-#readandplotaprdf()
+# readandplotaprdf()
 
 
 
-mergeBandS()
+#mergeBandS()
 

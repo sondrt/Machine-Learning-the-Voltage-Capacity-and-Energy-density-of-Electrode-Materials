@@ -15,7 +15,7 @@ import joblib
 import warnings
 import scipy.stats as st
 
-print("")
+# print("1 \n")
 fnt=18
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
@@ -29,6 +29,7 @@ l_plot = True
 
 # print ('working on file: %s'%(infile))
 data = pd.read_csv(infile, sep=',')
+
 #data['formation_energy_per_atom'].replace(to_replace = 'None', value = None, inplace = True)
 #data['formation_energy_per_atom_dis'].replace(to_replace = 'None', value = None, inplace = True)
 HEADERS = list(data.head()) 
@@ -41,10 +42,13 @@ trsize=200
 #nshuffles=1
 #ncv=10
 
+np.where(np.isnan(X))
+X = np.nan_to_num(X)
+
 clf = RandomForestRegressor(n_estimators=n_estimators, random_state=105)
 X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=trsize )#, stratify=X)
 print(X_train, "\n")
-print( y_train)
+print(y_train)
 trained_model=clf.fit(X_train, y_train)
 # print ('train=', X_train)
    # 9. Evaluate model pipeline on test data
@@ -84,7 +88,7 @@ if l_plot:
    plt.text(0.65*maxp, 0.40*maxp-dx, 'r2=%.3f'%(r2score_test), color='red', fontsize=fnt)
 #      plt.text(0.65*maxp, 0.40*maxp-2.*dx, 'RMSE=%.3f'%(rmse_test), color='red', fontsize=fnt)
 #      plt.text(0.65*maxp, 0.40*maxp-3.*dx, 'MAE=%.3f'%(mae_test), color='red', fontsize=fnt)
-   plt.show()
+   # plt.show()
 #   plt.savefig("Results/2019-06-11/mg_2AV-t=AV_p=msp_n.jpg", dpi=None, facecolor='w', edgecolor='w',
 #        orientation='portrait', papertype=None, format=None,
 #        transparent=False, bbox_inches=None, pad_inches=0.1,
