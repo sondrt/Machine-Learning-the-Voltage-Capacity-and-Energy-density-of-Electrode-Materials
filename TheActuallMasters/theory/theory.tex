@@ -1,0 +1,428 @@
+\newcommand{\colVec}[1]{\begin{bmatrix} #1_0 \\ #1_1 \\ \vdots \\ #1_{n-1} \\ #1_{n} \end{bmatrix}}
+
+\section{Batteries}
+Before doing anything else, the basis of batteries needs an introduction. In this section, this will be done, and some of the most essential properties, in the writers opinion, will be introduced. 
+
+\subsection{Cell operation principles}
+Electrochemical cell and basic concepts
+
+	A magnesium- or lithium-ion cell or battery consists of a positive and a negative electrode(s) and a electrolyte in a casing. The electrodes function as active materials which can accept or release Mg or Li ions; a conductive additive which electrically connects the active material with a current collector; and a suitable binder which attaches the electrode particles to the current collectors. The current collector enable connection to an external circuit. The cell will normally also include a separator which usually is a semi-permeable membrane that is situated between the electrodes. The separator permits ionic charge carriers to travel through the electrolyte form one electrode to the other while separating the electrodes.  
+
+	While charging or discharging the battery over the external circuit, Mg- and Li- ions move between the positive and negative electrodes (IMAGE TIME!)- When the cell is discharge, electrochemical reduction takes place at the positive electrode as electrons flow through an external electrical load towards the positive electrode while cations move within the cell through the electrolyte to the positive electrode. At the negative electrode, oxidation occurs. The positive and negative electrode is commonly referred to as the \textit{cathode} and \textit{anode}, respectively. These two materials have different voltage, high and low. This difference is the cell voltage which is the driving force for the discharge of the battery. For secondary batteries, as are the one in question, it is possible to recharge batteries by reversing this process by applying an external electrical power source which applies an over-potential, that is a higher voltage than the one produced by the cell, with the same polarity. This reverses the movements of cations and electrons. 
+	
+	\myworries{Repeating some of this in the capacity section. Check this later.}
+	
+	The capacity can be defined as:
+	\begin{equation}
+	C = \int I(t)\cdot dt
+	\end{equation}
+	And is the i number of electrons or cations exchanged between the negative and positive electrodes. $I(t)$ is the current, i.e. the number of electrons flowing over the external circuit per time interval $dt$ which is integrated over the discharge period. The capacity is normally expressed as $\si{Ah/kg}$. The battery can deliver a power that is defined as
+	\begin{equation}
+	P(t)=V(t)I(t)
+	\end{equation}
+	Where $I(t)$ is the current, defined as earlier, drawn at a cell voltage $V(t)$. The amount of work that can be done by the battery, or the energy contained in the battery, is then defined as the power delivered over the discharge period
+	\begin{equation}
+	W = \int P(t) \cdot dt = \int V(t)I(t) \cdot dt
+	\end{equation}
+	
+	Specific capacity and energy densities of battery materials can be compared relative to mass, volume and cost. The more electrode material that a battery contains, the greater is its capacity and energy. The higher the cell voltage the greater its power and energy. 
+	
+	The active materials of the electrodes allow the reversible uptake and release of Mg, or Li ions. This may happen by; movement of the Li, or Mg ions into, i.e. \textit{intersection} or \textit{intercalation} or out of, i.e. \textit{extraction} or \textit{deintercalation}, their chemical structures, \textit{phases}, by conversion of the materials between Li/Mg poor amd rich i.e. \textit{alloying} or rich and poor, e.g. \textit{dealloying} phases, or by conversion of the electrode material into other more Li/Mg rich/poor chemical forms or mixtures, usually referred to as \textit{conversion} or \textit{displacement} reaction, with the average Li/Mg content of the entire electrode varying. 
+	The total Li or Mg content in the electrodes will thus either be varied by changing the composition of one phase or the ratio between coexisting phases. In this work \myworries{?}we will only look at \textit{intercalation} type batteries, due to the \textit{database}, more on this later.	
+	
+	
+	
+	
+
+
+\subsection{Cell limitations }
+	\subsubsection{Polarization}
+	
+	\subsubsection{Rate-capavity effect}
+	
+	\subsubsection{degradation/aging}
+
+
+\subsection{Battery chemistries}
+
+\subsection{Intercalation batteries}
+
+\subsection{Electrodes and features}
+	In this section the features used in ML as predictors will be introduces. First will the pair properties be introduced, before going into the more electrode specific features. 
+
+	As a general note. These features are based on optimal design and discharge conditions. These values are helpful to set a number on the "goodness" of a battery, the actual performance may vary under normal conditions of use. \myworries{Nice to give this note?}
+
+	
+	\subsubsection*{Average Voltage}
+	The theoretical voltage and capacity of a cell are function of the anode and cathode materials, with the composition of the electrolyte, and the temperature, normally $25^\circ\si{C}$.
+	
+	The active materials contained in the cell determines the standard potential, $E^0$, which can be calculated from the free-energy. 
+	The standard potential of a cell can be calculated from the standard electrode potential:
+	\begin{equation}
+	\text{Anode(oxidation potential)} + \text{cathode (reduction potential)} = \text{standard cell potential}
+	\end{equation}  
+	The cell voltage is also dependent on other factors including concentration and temperature, as expressed om the nernst equation. (REF)
+	\textit{Average Voltage} as we use, is defined as the voltage average during the discharge. It is lower then the theoretical voltage.
+	
+	\subsubsection*{Capacity}
+	Capacity represents specific energy in Ampere-hours($\si{Ah}$), and is the discharge current a battery can deliver over time. 
+	The capacity is also determined by the amount of active materials in the cell, expressed through the total quantity of electricity involved in the electrochemical reaction and is defined in terms of coulombs or ampere-hours. Theoretically, 1 gram equivalent weights of the active material in grams divided
+	 
+	\subsubsection*{Specific Energy}
+	Specific Energy, or gravimetric energy density, defines battery capacity in weight, energy density, or volumetric energy density, defined as: 
+	\begin{equation}
+	\text{Watthours/gram} = \text{Voltage} \cross \text{Ampere-hours/gram}
+	\end{equation}
+
+	\subsubsection*{Physical stability}
+	What we refer to as Physical stability is Energy above hull. The energy that is demanded for decomposition of the material into the set of most stable materials at that chemical composition. Some positive value indicates that the material is not stable. While a zero energy above hull indicates that this is the most stable material at its composition. 
+	
+	\subsubsection*{Cycle life}
+	
+	
+
+	\subsubsection*{Rate capability}
+	RC
+	\subsubsection*{Self discharge}
+	SD
+	\subsubsection*{Energy per atom}
+	EpA
+	\subsubsection*{volume}
+	Volume of the unit cell defined as 	\myworries{This is too dumb? No, Explain what type of volume}
+	\subsubsection*{Formation energy per atom}
+	Fepa
+	\subsubsection*{Band gap}
+	The band gaps of a solid is simply the range of energies an electrode in a solid can not have. While the bandstructurs.
+	\myworries{How much to include? Should I here have a page on quantum physics and the bandstructure? - Only include relevant stuff.}
+	
+	\subsubsection*{Total magnetization}
+	Tm
+	\subsubsection*{Elasticity}
+	E
+	\subsubsection*{Porous Electrodes}
+	In a fuel cell system, the reactant is supplied from the electrolyte åhase toe the catalytic electrode surface. Electrodes are often composites made of active reactants, binders and fillers, in batteries. To minimize the energy loss of both activation and concentration polarizations at the electrode surface and to increase the electrode efficiency or utilization, it is often preferd to have a large electrode surface area. This can be done by have a porous electrode design. A porous design can provide an interfacial area per unit volume that is considerable higher den that of a planar electrode. 
+	A porous electrode is a electrode that concists of porous matrice of solids and void space. The electrolyte penetrates the void space of a porous matrix. In such an active porous mass, the mass transfer condition in conjunction with the electrochemical reaction occuriing at the interface is very complicated. In a given time druing cell operation, the rate of reaction within the pores may vary significantly depending on the location. The distribution of current density within the porous electrode depends on the physical structure(pore size), the conductivity of the solid matrix and the electrolyte, and the electrochemical kinetic parameters of the electrochemical processes.  
+	
+	
+	
+\pagebreak
+\section{Machine Learning}
+
+In this chapter we summarize some concepts of machine learning and related ideas. The first section introduces the basic ideas behind machine learning and *some of the best known examples* will be presented. Secondly the concepts of supervised and unsupervised learning will be presented with a clarification on the difference between regression and classification problems, so that we can define where in the field of machine learning this work resides in. Before we round of this section with a brief explanation on the role of data, how features can affect the effectiveness of a model, and finalizing with the concepts of over- and under-fitting, and how these are related to the bias-variance-trade-off. 
+
+The following section explains the basics of methods utilized in this work, starting by first giving an introduction to Random forest and support vector regression(\textit{SVR}). Subsequently a short description of the validation methods used in this work is given. These are; K-fold cross validation and how it is used in optimizing our random forest method and mean square error(\textit{MSE}). 
+
+\myworries{Sondre: Did you forget something? Come back to this when done with the section.}
+
+
+\subsection{The basics of Machine Learning}
+
+Machine learning comes from the field of pattern recognition and learning theory, and is defined as the field of study that gives computers the ability to learn without being explicitly programmed. Or more precise: "… A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with the experience E…"(\cite{mitchell1997machine}). At its core the ability to learn by detecting patterns in usually huge amounts of data that, more often then not, is impossible to perceive for a human. 
+
+
+	\subsubsection{Example time!}
+	As an introduction on how machine learning was applied to learn and recognize patterns in our work, it will be useful to start with a simple example applied to the recognition of the handwritten number "5". (PICTURE TIME!)
+	
+	How two people writes a single digit may vary to an extensive degree. It might seem to be a easy problem, but if the recognition is to be done manually million of times, it is no longer a trivial task for any one human being. Therefore a model which can recognize these digits would be useful. A model that takes a picture of a digit and outputs that digit in a way that is recognizable for a machine, that is, a digital format.
+	
+	Machine learning only works when you have data, preferably a large amount of data. For instance data from the MNIST test dataset(REF). This database contain $60,000$ images of handwritten numbers for this very purpose. The images all are 18x18 pixels. The data is divided into two sets, one training set: $X_{Train}$ and one test set: $X_{test}$
+	
+	How do one represent an image as something that makes logical sense to a computer? Most learning algorithms take numbers as input. To a computer one image is nothing more then a grid of numbers that represent how dark a pixel is. So each picture contains a gray-scale value that ranges from $0$ to $255$. Where each sample can be viewed as a vector consisting of 324 \textit{features}. Every sample has a corresponding label value, or \textit{target}, which is the digital equivalent to the handwritten sample. We let the corresponding targets be denoted: $Y_{train}$ and $Y_{test}$. Next we designate our \textit{learner} denoted by function A. A is then given our training set S, where $S = (X_{train1}, Y_{train2}),..., (X_{trainN}, Y_{trainN})$ and returns a prediction rule: $h: X \rightarrow Y$. This rule is also called a predictor, in general, a classifier, or a regressor, depending on the problem in question. 
+	
+	The \textit{training phase} is a prosess where the learning algorithm gets tweaked to best capture the correlating structure of the data set, so that it can better predict new data. As mentioned in the last paragraph the output from the \textit{training phase} is called a \textit{predictor}. The next step is to introduce the \textit{predictor} for new, unseen data, so that it can be classified. Then we compare the $Y_{test}$ to our predicted value $Y_{pred}$ given by $h$ to see if our model generalizes well to unseen data in $X_{test}$. 
+	
+	\subsubsection{Supervised and Unsupervised Learning }
+	One of the most basic separations in machine learning is the partition between supervised learning(ref) and unsupervised learning. In the case of supervised learning one knows the answer to a problem, and let the computer deduce its own logic to figure out how we get to that result. With unsupervised learning the machine is tasked with finding patterns and relationships in data sets without any prior knowledge of the system. Some authors operate with a third category, namely reinforcement learning, where the machine learns by trial-and-error. (REF)
+		
+	In this thesis we only consider supervised learning. Algorithms and challenges specifically related to unsupervised learning, and reinforcement learning, is therefore not further examined. 
+
+	\subsubsection{Regression and Classification Problems}
+	A respons variable can either be qualitative or quantitative in nature 
+	
+	\subsubsection{Features and Feature Selection}
+	\par
+	Ref tilbake til "Batteries" seksjonen og utdyp hvorfor og hvorfor ikke det er gode prediktorer. 
+	
+\subsection{Random Forest}
+	
+\subsection{Support Vector Regression}
+
+	Dette bør brukes og kan da skrives om.
+	\subsubsection{Radial Basis Function Kernel}
+	\subsubsection{SVR and the Bias-Variance-Trade-off}
+	
+
+\subsection{Mean square error and Root mean square deviation}
+The Mean Square Error (\textit{MSE}) can give a measure of the quality of our estimator.(ref) It is defined as
+\begin{equation}\label{eq: mse}
+	\textit{MSE}(\epsilon) = \frac{1}{n}\sum_n^{n-1}\epsilon^2 = \frac{1}{n_\text{samples}} \sum_n^{n_{\text{samples}}-1}(y_i - \hat{y_i})^2
+	\end{equation}
+	Where $\hat{y_i}$ is the predicted value of the $i$-th sample, and $y_i$ is the corresponding true value.
+As such it can be thought of  as the average of the square of our residuals. Therefore the \textit{MSE} can never have negative values, and smaller values mean that we have a better prediction, where at zero there is a perfect fit.
+
+The Root mean square deviation, or root mean square Error(\textit{RSME}), is the squared for the MSE:
+$$RMSE = \sqrt{MSE} =  \sqrt{\frac{\sum^{n-1}_{n}(y_{i}-\hat{y_{i}})^2 }{n}} $$
+And is thus the distance, on average, of a data point from the fitted line, measured along a vertical line. The \textit{RSME} is directly interpretable in terms of measurement units, and so is a better measure of goodness of fit than a correlation coefficient. 
+
+\subsection{$R^2$ score - The Coefficient of Variation}
+
+	In regression validation the $R^2$ is the standard when it comes to measuring goodness of fit.(REF=?\cite{coef} \myworries{Needs new ref.}) In straight terms it is the proportion of the variance in the dependent variable that is predictable from the independent variable (S).
+
+\begin{equation}\label{eq: R squared}
+	R^2 =1 - \frac{SS_{res}}{SS_{tot}} =  1 - \frac{ \sum(y_i-f_i)^2 }{ \sum(y_i-\bar{y}_i)^2 }
+\end{equation}
+
+	Where $y_i$ are the indexed response variables (data  to be fitted) and $f_i$ the predictor variables from the model with $\epsilon_i = y_i - f_i$. The average of the response variables is denoted $\bar{y}_i$. The second term can also be considered as the ratio of \textit{MSE} to the variance (the $1/n$ factors null each other out in a fraction), or the total sum of squares (\textit{SS\textsubscript{tot}}). 
+	
+	If the residual sum of squares (\textit{SS\textsubscript{res}}) is low the fit is good. However, this should be compared to the spread of the response variables. After all, if the response variables are all nicely distributed close to the mean, then getting a good \textit{SS\textsubscript{res}} is not suspicious. We therefore do a normalization in the fraction, taking the scale of data into consideration. In the simplest polynomial fit, using a zero order polynomial (a constant), our model would just be a constant function of the mean. The sums being equal, returning unity on the fraction and the total $R^2$ score would be zero. In the other extreme, if the model fits perfectly, then \textit{SS\textsubscript{res}} would be zero and the $R^2$ score would be one. In this sense we have a span of possible $R^2$ scores between zero and one, from the baseline of the simplest model at zero, and a perfect fit at one. In contradiction to most scores the value can be negative, because the model can get arbitrarily worse, thus giving negative values.
+	The $R^2$ score is useful as a measure of how good our model is at predicting future samples.
+	 
+
+\subsection{Principle Component Analysis }
+	Principle Component Analysis(\textit{PCA}) is a procedure that uses orthogonal linear transformation to reduces the amount of feature subspaces. It goes under different names in different fields, but the most recognizable might be Singel Value Decomposition. This is done by converting a set of possible correlated variables into a set of uncorrelated variables, called principle components(\textit{PC}). 
+	
+	The \textit{PC} are arrange so that the first \textit{PC} has the largest variance, meaning that it accounts for as much of the variability in the data given as possible. The next \textit{PC} does the same, it accounts for as much of the variability as possible with the constraint that it is orthogonal to all the former components. These orthogonal vectors are linear combinations being an uncorrelated orthogonal basis set. Graphically the shortest vectors effects the predictions the least. \textit{PCA} is sensitive to the relative scaling of the original variables, so in \textit{sklearn.decomposition.PCA} the input data is centered but not scaled for each feature before the SVD of the date is applied. 
+
+\subsection{K-fold cross validation}
+	K-folding is a cross validation technique that allows us to generalize the trends in our data set to an independent data set. In this way we can circumvent typical problems like over-fitting and selection bias.(ref=\cite{cross-valid} )The approach for the technique is simple. Instead of doing a regression on the entire data set, it is first segmented into $k$ number of subsets of equal size (making sure to pick out the variables randomly before distributing them to the subsets). 
+	
+	Now one subset can be chosen to be the 'control' or 'validation' set while the rest of the subsets are the training sets. The desirable regression is then applied on the training set, arriving at some data fitting that is the prediction. From here it is a straight forward process to analyze how well our predicted variables compare to the validation variables, for example through the $R^2$ score function. However, even though the subsets are picked randomly, the validation subset used could potentially not be a representative selection of the entire set. Therefore the process is repeated \textit{k} times, each time using a new subset as the validation subset. After all this is done one can simply calculate the average of the scores to get the predictive power of our model. As an added benefit, since the calculations are done anyways, the average of the predictions can be used as the final fit. 
+	
+	Cross validation techniques are extremely useful when the gathering of new data is difficult or, sometimes, even impossible, as we are using the extra computational power at our disposal to squeeze the most amount of relevant information out of our data.\\
+
+FIGURE?
+link to good crossvalidation.
+\url{https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation}
+
+\subsection{Mutual Information**}
+Ranking of features. 
+This can be useful.
+
+\subsection{Machine Learning $\cross$ batteries}
+State of the art.
+What has been done in this field? 
+Similar predictions of the kind we are interested in, have been done by 
+Sandek: \cite{sendek2017holistic}
+%------------------------------------------------------------------------------------------------
+\begin{comment}
+\section{Batteries}
+Basic principles behind batteries, as well as some critical battery characteristics or specifications, including battery voltage, capacity, charging/dischargning regimes, efficiency, and more.
+
+Theoretical energy: Watthours per kilogram (Wh/k) is specific energy, on a volume basis. Watthour/liter is energydensity. 
+The maximum energy that can be delivered by an electrochemical system is based on the types of active msaterials used(this determines the voltage) and on the amount of the active materials that are used
+
+\myworries{something about theoretical vs practical batteries}
+\myworries{losses due to polarization occur when a load current i passes through the electrodes, accompanying the electrochemical reactions. These loses include: 1) activation polarization , which drives the electrochemical reaction at the electrode surface, and 2) concentration polarization, which arises from the concentration differenceof the reactants and productsat the electrode surface and in the bulk as a result of mass transer. These polarixation effects consume parts of the energy, which is given off as waste heat, and thus not all of the theoretically available energy stored in electrodes is fully converted into useful electrical energy. Can be calculated. look page 2.1 battery book}
+
+\subsection{Properties of matter that are used in the AP-RDF}
+Electronegativity 
+Electronegativity is an atoms ability to attract shared electrons towards itself. It is a property dictated by both its atomic number and  the distance to the outer valence electron
+
+van der Waals volume
+
+
+Polarizability
+Electronic polarizability is the likelyhood of a charge distribution to change shape when exposed to an external electrical field. 
+
+\subsection{Basic principles of Battery}
+
+Different metals have different affinites for electrons. When two dissimilar metals are put in contact through an electrolyte, there is a tendency for electrons to pass from one material to another. The metal with the smaller affinity for electrons loses electrons to the material with the greater affinity, becoming positively charged. The metal with the greater affinity becomes negatively charged. A potential difference between the two electrodes is thus built up until it balances the tendency of the electron transfer between the metals. At this point the potential difference si the equilibrium potential: the potential at which the net flow of electrons is 0 w.
+The electrochemical series represents the quantitative expression of the varying affinity of materials relative to eachother. In an aqueous electrolyte the stnadard electrode potential for an electrode reaction is expressed with respect to a reference electrode. Conventionally this is the H2/H+ cell, with reaction: H+ + e <-> 1/2 H2
+
+A battery is an electrochemical cell that converts chemical energy into electrical energy. It comprises of two electrodes: an anode ( the positive electrode) and a half-cell electrochemical reaction takes place as illustrated by the figure(See daniell Cell).
+
+
+\subsection{Battery Capacity}
+ Battery capacity(Ahr) is a measurement of the charge stored by the battery. It is determined by the mass of active material contained in the battery. The capacity represents the maximum amount of energy that can be extracted from a battery under specific conditions. It is important to note that the actual energy storage capabilities of the battery can vary significantly from the "nominal" rated capacity, as the battery capacity depends strongly on the age and history of the battery, the charging and discharging regimes of the battery and the temperature. 
+ 
+Most common measure of battery capacity is Ah, defined a the number of hours for which a battery can provide a current equal to the discharge rate at the nominal voltage of the battery. A more accurate approach takes into account the variation of voltage by integrating the Ah capacity times V(t) over time of the chargning cycle. However, because of the large impact from charging rates or temperature, for practical or accurate analysis, additional information about the variation of capacity is provided by battery manufacturers. 
+
+The charging or discharging rate affect the rated battery capacity. If the battery is being discharge very quickly, then the amount of energy that can be extracted from the battery is reduced and the battery capacity is lower, this is due to the necessary components for the reaction to occur does not necessarily have enough time to either move to their needed positions. Only a fraction of the total reactants are converted to other forms, and therefore the energy available is reduced. Alternately, the battery can be discharged using a low current, more energy can then be extracted from the battery and the capacity will be higher. Therefore, the battery battery of capacity should include the charging/discharging rate. A common way of specifying battery capacity is to provide the battery capacity as a function of time in which it takes to fully discharge the battery. 
+The temperature of the battery also affect the energy that can be extracted from it. At higher temperature, the battery capacity tends to be higher than at lower temperature. However, intentionally elevating battery temperature is not a effective method to increase battery capacity as this also decreases battery lifetime.
+
+Age and history of the battery have a major impact on the capacity. A battery will only stay close to the specifications on DOD for a certain amout of charge/discharge cycles. If the battery have been taen below its maximum DOD, then the battery capacity may be prematurely reduced and the rated number of charge/discharge cycles may not be available. 
+
+ \myworries{Trenger jeg kilde på dette?}
+ \myworries{Appendix stuff?}
+ 
+ 
+ \subsection{Energy Density}
+ Energy denity is a parameter used to compare one type od battery system to another. The energy density of a battery is the capacity of the battery divided by either the weight of the battery, which gives the gravimetric energy density(Wh/kg) or by the volume, which gives the volumetric energy density (Wh/dm3)
+ A battery with a higher energy density will be lighter than a similar capacity battery with lower energy density. For portable systems, this is critical. 
+ 
+ \subsection{Battery Voltage}
+ 
+ The voltage of a battery is determined by the chemical reaction in the battery, the concentrations of the battery components, and the pola rization of the battery. The voltage calculated from the equilibrium conditions is typically known as the nominal battery voltage. In practice, the nominal battery voltage cannot be readily measured, but for practical battery system (in which the overvoltage and non-ideal effects are low) the open circuit voltage is a good approximation to the nominal battery voltage. 
+ 
+Battery voltage will increase with temperature of the system, and can be calculated by the Nernst Equation for the equilibrium battery voltage.
+ 
+ Internal serial resistance determines the maximum discharge current of the battery. for applications in which the battery are required to provide hight instantaneous power, the internal series resistance should be low. will also affect the battery's efficiency but may change as the battery ages. 
+ 
+ self-discharge refers to the fact that even in the absence of a connected load, the discharge reaction will proceed to a limited extent and the battery will therefore discharge itself over time. The rate of self-discharge depends primarily on the materials involved in the chemical reaction and on the temperature of the battery.
+ 
+\subsection{n-cycles / cycle life} 
+\subsection{Electrolytes}
+\subsection{Electrodes}
+\subsection{Ionic conductivity}
+
+\section{Crystalline material/ batteries}
+
+\subsection{Crystal lattice}
+\subsection{Mobility and Conductivity}
+
+\subsection{battery properties}
+
+\subsection{Conduction}
+
+
+
+
+
+\section{Machine learning using Random forest}
+Random forest or random decision forests are an ensemble learning method uses multiple learning algorithms to obtain better predictive performance than what could be obtained by any of the constituent learning methods alone. It is a method which operates by constructing a multitude of decision trees.
+
+A decision tree is a decision support tool that uses a tree-like model of devisions and their possible consequences, including change event outcomes, resource costs, and utility. In the field of machine learning they are supervised learning algorithms used for both classification and regression tasks. A decision tree mainly contains of a root node, interior nodes, and lead nodes, which are then connected by branches. The main idea of decision trees is to find those descriptive features which contain the most information regarding the target feature and then split the dataset along the values of these features such that the target feature values for the resulting sub datasets are as pure as possible. 
+The descriptive feature, which leaves the target feature most purely, is said to be the most informative one. This process of finding the most informative feature is done until we accomplish a stopping criterion where we can then finally end up in a leaf node.
+The leaf nodes contain the predictions we will make for new query instances presented to our trained model. This is possible since the model has kind of learned the underlying structure of the training data and hence can make predictions about the target feature value of unseen query instances. 
+
+\subsection{Setting up a decision tree: }
+
+In over simplified terms, the process of training a decision tree and predicting the target features of query goes as follows: 
+\begin{enumerate}
+    \item
+        Present a dataset containing of a number of training instances characterised by a number of descriptive features and a target feature.
+    \item
+        Train the decision tree model by continuously splitting the target feature along the values of the descriptive features using a measure of information gain during the training process. 
+    \item
+        Grow the tree until we accomplish a stopping criteria create leaf nodes that represent the predictions we want to make for new query instances
+    \item
+        Show query instances to the tree and run down the tree until we arrive at leaf nodes. 
+\end{enumerate}
+
+Pros and cons of trees, pros:
+\begin{itemize}
+    \item 
+    It is a White box - a easy to interpret model. Some people believe that decision trees more closely mirror human decision-making than do the regression and classification approaches, like support vector machines (ref).
+    \item 
+    Trees are very easy to explain to people.
+    \item
+    No feature normalization needed
+    \item
+    Tree models can handle both continuous and categorical data
+    \item
+    Can model non linear relationships
+    \item 
+    Can model interactions between the different descriptive features
+\end{itemize}
+
+Disadvantages:
+\begin{itemize}
+    \item 
+    Trees generally have lower accuracy then some other regression and classification approaches. 
+    \item
+    If continuous features are used the tree may become quite large and hence is less interpretable.
+    \item
+    Prone to overfitting the training data and hence do not well generalize the data if no stopping criteria or improvements like pruning, boosting or bagging are implemented.
+    \item
+    Small changes in data may lead to a completely different tree. This issue can be addressed by using ensemble methods like bagging, boosting or random forest(*)
+    \item
+    Unbalanced datasets where some target feature values occur much more frequently that others may lead to biased trees since the frequency occurring feature values are preferred over the less frequently occurring ones. 
+    \item
+    If the number of features is relatively large and the number of instances is relatively low, the tree might overfit the data.
+\end{itemize}
+    
+    However, by aggregating many decision trees the predictive performance of trees can be substantially improved.
+
+    Random forest provide an improvement over bagged trees by way of a small tweak that de-correlates the trees:
+    As in bagging, we build a number of decision trees on bootstrapped training samples. But when building these decision trees, each time a split in a tree is considered, a random sample of m predictors is chosen as split candidates from the full set of $p$ predictors. The split is allowed to use only one of those $m$ predictors. A fresh sample of m predictors is taken at each split, and typically we choose:
+    $$m \approx \sqrt{p}$$
+
+    In building a random forest, at each split in the tree the algorithm is not even allowed to consider a majority of the available predictors. 
+        The reason fro this is rather clever. Suppose that there is one very strong predictor in the data set, along with a number of other moderately strong predictors. Then in teh collection of bagged variable importance random forest trees, most or all of the trees will use this strong predictor in the top split. Consequently, all of the bagged trees will look quite similar to each other. Hence the predictions from the bagged trees will be highly correlated. Unfortunately, reduction in variance as averaging many uncorrelated quantities. In particular, this means that bagging will not lead to a substantial reduction in variance over a single tree in this setting 
+
+
+The random forest algorithm outputs the mean prediction of the individual trees. This is done to solve the problem of overfitting that occurs in the method of decision trees. 
+
+
+\section{Overfitting and Cross-validation}
+
+Overfitting is "the production of an analysis that corresponds to closely or exactly to a particular set of data, and may therefor fail to fit additional data or predict future observations reliably"(ref oxford dic.). This problem occurs because the criterion for selecting the model is not the same as the criterion used to judge the suitability of the model. The model is trained on one set of data, but tested on a unseen set of data. Overfitting occurs when the model begins to memorize training data instead of learning to generalize.
+
+
+Cross-validation is a technique for assessing how the results of a statistical analysis will generalize to an independent data set.
+
+\section{Machine learning}
+	The more common methods of ML have three main topics in common, irrespective of whether we are dealing with supervised or unsupervised learning. The first one being our data set, which again is separated in to training and test data, the second item is a model, which is normally a function of some parameters. The model reflects our understanding of the system, or lack thereof. The last part is the cost function, which allows us to present an estimate of how good our model is in reproducing the data is is supposed to train.   
+		\section{Supervised learning}
+			\section{Decision trees}
+	Supervised, for both classification and regression tasks. 
+	Main idea: Find those descriptive features which contain the most information regarding the target feature and the nsplit the dataset along the values of these features such that the target feature values for the resulting sub dataset are as pure as possible. 
+	The descriptive feature which leaves the target feature most purely is said to be the most informative one. This process of finding the most informative feature is done until we accomplish a stopping criteria where we then finally end up in so called leaf nodes.
+	The leaf nodes contain the predictions we will make for new query instances presented to our trained model. This is possible since the model has kind of learned the underlying structure of the training data and hence can, given some assumptions, make predictions about the target feature value (class) of unseen query instances.
+	A decisiion tree mainly contain of a root node, interior nodes, and leaf node, which are then connected by brances. 
+				\section{How to set up a decision tree}
+\begin{itemize}
+	\item
+	1: give data set with descriptive features and a target feature. 
+	\item
+	2: Train the decision tree model by continuously splitting the target feature using a measure of information gain during the training process.
+	\item
+	3: Grow the tree until we accomplish a stopping criteria -> leaf node. which represent the prediction we want to make for new query instances. 
+	\item
+	4: Show query to the tree and run down the tree until we arrive at leaf nodes. 
+\end{itemize}
+				\section{Build a tree}
+\begin{itemize}
+\item
+	1: Split the predictor space into J distinct and non-non-overlapping regions, R1,R2,...,Rj
+\item
+	2: For every observation that falls into the region Rj, we make the same prediction, which is simply the mean of the response value for the training observations in Rj.
+\end{itemize}
+	How do we construct the Regions Ri? In theory, the regions could have any shape. However, we choose to divide the predictor space into high dimenstional rectangles, or boxes, for simplicity anf for ease interpretation of the resulting predic-tive model. The goal is to find boxes R1,...,Rj that minimizeed the MSE given by:
+
+	$\sum_j=1^J{Sum_Rj (y_i-\bar{y_{R_j}})^2}$
+	where $\bar{y_{R_j}}$ is the mean response for the training observations within the jth box.
+				- top-down, recursive binary splitting?
+	It is computationally infeasible to consider every possible partition of the feature space into J boxes. The common strategy is to take a top-down approach.
+	The approach is top-down because it begins at the top of the tree, with all observations belong a single region, and then successively splits the predictor space; each split is indicated via two new branches further down on the tree. It is greedy because at each step of the tree-building process, the best split is made at that particular step, rather than looking ahead and picking a split that will lead to a better tree in some future step. 
+				\subsection{Making a tree}
+	In order to implement the recursive binary splitting we start by selecting the predictor xj and a cutpoint s that pslits the predictor space into two regions R1 and R2, so we can obtain the lowest MSE which we want to minimize by considering all predictors x1,...,xp. We consider also all possible values of s for each predictor. These values could be determined by randomly assigned numbers or by staring at the midpoint and then proceed till we find a optimal value. 
+	For any j and s, we define the pair of half-planes where  $\bar{y_{R_1}}$ is the mean response for the training observations in $R1(j,s)$ and $\bar{y_{R_2}}$ is the mean respons for the training observations in $R2(j,s)$ and $\bar{y_{R_2}}$ is the mean response for the training observations in $R2(j,s)$.
+	Finding the values of j and s that minimize the above equation can be done quite quickly, especially when the number of features p is not too large. Next, we repeat the process, looking for the best predictor and the best cutpoint in order to split the data further so as to minimise the MSE within each of the resulting regions. However, this time, instead of splitting the entire predictor space, we split one of the two previously identified refions. We now have three regions. Again we look to split one of these regions further, so as to minimise the MSE. The process continues until a stopping criterion is reached; for instance, we may continue until no region contains more than five observations. 
+				\subsection{Pruning the tree}
+	The above procedure is rather straight forward, but leads often to overfitting and unnecessarily large and complicated trees. The basic idea is to grow a large tree T0 and then prune back in order to obtain a subtree. A msaller tree with few splits(fewer regions) can lead to smaller variance and better interpretation at the cost of a little more bias. 
+	The Cost comlexity pruning algorithm gives us a way to do just this. Rather than considering every possible subtree, we consider a sequence of tree indexed by a nonnegative tuning paramter $\alpha$
+					\subsection{Cost complexity pruning}
+	For each value of $\alpha$ the corresponds a subtree T within T0 such that.
+	$\sum_m=1^{\bar{T}}\sum_{xiinRm}(y_i - \bar{y}_Rm)^2 + \alpha \bar{T}$
+	is as small as possible. Here $\bar{T}$ is the number of terminal nodes of the tree $T$, $Rm$ is the rectangle(subset of predictor space) corresponding to the mth terminal node.
+	The tuning parameter $\alpha$ controls a trade-off between the subtree's complexity and its fit to the training data. When $\alpha = 0$, then the subtree T will simply equal T0, because then the above equation just measures the training error. However, as $\alpha$ increases, there is a prive to pay for having a tree with many terminal nodes. The above equation will tend to minimized for a smaller subtree.
+	It turnes out that as we increas alpha from zero branches get pruned form the tree in a nested and predictable fashin, so obtaing the whole sequence of subtrees as a function of alpha is easy. We can select a value of alpha using a validation set or using cross-validation. We then return to the full data set and obtain the subtree corresponding to alpha. 
+
+		Techniques:
+		\section{ Cross validation}
+		
+		\section{ R-squared score}
+R-squared, or the coefficient of determination, is a statistical measurement on how good a regression line fits the data. 
+The definition of R-square is: 
+$$  R^2 = 1 - \frac{SS_{res}}{SS_{tot}}$$
+
+
+	\section{ Batteries}
+		\subsection{ Electrolytes}
+		\subsection{Electrodes}
+
+	\subsection{Ap-RDF}
+	It would be desirable if during hte discharge all of the energy could be coverted to useful electric energy. However, losses due to plarization occur when a load current i passes through the electrodes, 
+	
+	Atomic property Weighted Radial Distribution Functions, or AP-RDF, is a predictor that we used inspired from the article of Fernandez \cite{Fernandez2013}. The idea of RDF scores in chemo informatics was first 	
+\end{comment}
+
+
+% \subsection{Ionic Conductivity}
+
+% \subsection{Computational screening (different form experimental screening, good things.)}
+
+% \subsection{Overfitting under fitting of our method}
+
+% \subsection{}

@@ -1,0 +1,59 @@
+\BOOKMARK [0][-]{part.1}{I Introduction}{}% 1
+\BOOKMARK [1][-]{section.1}{Introduction and Overview}{part.1}% 2
+\BOOKMARK [2][-]{subsection.1.1}{Motivation}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.2}{Scope of the thesis}{section.1}% 4
+\BOOKMARK [3][-]{subsubsection.1.2.1}{Research Question}{subsection.1.2}% 5
+\BOOKMARK [3][-]{subsubsection.1.2.2}{Approach}{subsection.1.2}% 6
+\BOOKMARK [2][-]{subsection.1.3}{Structure of the thesis}{section.1}% 7
+\BOOKMARK [0][-]{part.2}{II Foundations}{}% 8
+\BOOKMARK [1][-]{section.2}{Batteries}{part.2}% 9
+\BOOKMARK [2][-]{subsection.2.1}{Cell operation principles}{section.2}% 10
+\BOOKMARK [2][-]{subsection.2.2}{Cell limitations }{section.2}% 11
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Polarization}{subsection.2.2}% 12
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Rate-capavity effect}{subsection.2.2}% 13
+\BOOKMARK [3][-]{subsubsection.2.2.3}{degradation/aging}{subsection.2.2}% 14
+\BOOKMARK [2][-]{subsection.2.3}{Battery chemistries}{section.2}% 15
+\BOOKMARK [2][-]{subsection.2.4}{Intercalation batteries}{section.2}% 16
+\BOOKMARK [2][-]{subsection.2.5}{Electrodes and features}{section.2}% 17
+\BOOKMARK [1][-]{section.3}{Machine Learning}{part.2}% 18
+\BOOKMARK [2][-]{subsection.3.1}{The basics of Machine Learning}{section.3}% 19
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Example time!}{subsection.3.1}% 20
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Supervised and Unsupervised Learning }{subsection.3.1}% 21
+\BOOKMARK [3][-]{subsubsection.3.1.3}{Regression and Classification Problems}{subsection.3.1}% 22
+\BOOKMARK [3][-]{subsubsection.3.1.4}{Features and Feature Selection}{subsection.3.1}% 23
+\BOOKMARK [2][-]{subsection.3.2}{Random Forest}{section.3}% 24
+\BOOKMARK [2][-]{subsection.3.3}{Support Vector Regression}{section.3}% 25
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Radial Basis Function Kernel}{subsection.3.3}% 26
+\BOOKMARK [3][-]{subsubsection.3.3.2}{SVR and the Bias-Variance-Trade-off}{subsection.3.3}% 27
+\BOOKMARK [2][-]{subsection.3.4}{Mean square error and Root mean square deviation}{section.3}% 28
+\BOOKMARK [2][-]{subsection.3.5}{R2 score - The Coefficient of Variation}{section.3}% 29
+\BOOKMARK [2][-]{subsection.3.6}{Principle Component Analysis }{section.3}% 30
+\BOOKMARK [2][-]{subsection.3.7}{K-fold cross validation}{section.3}% 31
+\BOOKMARK [2][-]{subsection.3.8}{Mutual Information**}{section.3}% 32
+\BOOKMARK [2][-]{subsection.3.9}{Machine Learning \040batteries}{section.3}% 33
+\BOOKMARK [0][-]{part.3}{III Method}{}% 34
+\BOOKMARK [1][-]{section.4}{Some Method title}{part.3}% 35
+\BOOKMARK [2][-]{subsection.4.1}{Data set and Experimental Environment}{section.4}% 36
+\BOOKMARK [2][-]{subsection.4.2}{Volumetric number density }{section.4}% 37
+\BOOKMARK [2][-]{subsection.4.3}{Void Fraction}{section.4}% 38
+\BOOKMARK [2][-]{subsection.4.4}{AP-RDF Descriptors of Electrode materials}{section.4}% 39
+\BOOKMARK [2][-]{subsection.4.5}{Algorithm}{section.4}% 40
+\BOOKMARK [0][-]{part.4}{IV Result \046 Discussion}{}% 41
+\BOOKMARK [1][-]{section.5}{Result section title}{part.4}% 42
+\BOOKMARK [2][-]{subsection.5.1}{Random factors from database.}{section.5}% 43
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Average Voltage}{subsection.5.1}% 44
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Capacity}{subsection.5.1}% 45
+\BOOKMARK [3][-]{subsubsection.5.1.3}{Energy Density}{subsection.5.1}% 46
+\BOOKMARK [2][-]{subsection.5.2}{Volumetric number density}{section.5}% 47
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Average Voltage}{subsection.5.2}% 48
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Capacity}{subsection.5.2}% 49
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Energy Density}{subsection.5.2}% 50
+\BOOKMARK [2][-]{subsection.5.3}{Void fraction}{section.5}% 51
+\BOOKMARK [2][-]{subsection.5.4}{AP-RDF}{section.5}% 52
+\BOOKMARK [2][-]{subsection.5.5}{Stability}{section.5}% 53
+\BOOKMARK [2][-]{subsection.5.6}{Geometrical descriptors}{section.5}% 54
+\BOOKMARK [0][-]{part.5}{V Summary}{}% 55
+\BOOKMARK [1][-]{section.6}{Summary and future work}{part.5}% 56
+\BOOKMARK [2][-]{subsection.6.1}{Batteries}{section.6}% 57
+\BOOKMARK [2][-]{subsection.6.2}{future work}{section.6}% 58
+\BOOKMARK [3][-]{subsubsection.6.2.1}{improving method}{subsection.6.2}% 59

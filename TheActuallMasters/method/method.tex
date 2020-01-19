@@ -1,0 +1,172 @@
+\section{Some Method title}
+In this section we will introduce the overall approach to the research. First introducing the data set and experimental environment, before going through technicalities in the methods used to represent physical and chemical properties of the electrode materials.
+
+All codes are written in Python 3.7 or Fortran98 and can be found here: (www.github.com/Mahsciencepageiscool) ((Give a real REF)). And all computations are done on a (give computer specifics.), if nothing else is noted. The tool we used, for the most part, for our data mining and data analysis is scikit-learn.(REF) 
+
+\subsection{Data set and Experimental Environment}
+%Introduce the overall approach to the research. 
+
+	 These are the void fraction, the volumetric number density and the atomic property weighted radial distribution function(AP-RDF). Other properties used where introduces in the foundation section(ref back). Lastly we quickly mentions the basics of our algorithm. 
+
+%	Wanted to explore the possibility of using machine learning(ML) to predict different characteristics of batteries, based on their cathode and anode materials.
+ 
+	((Sendek(REF) and colleagues were right: They stated that they could not find a sufficient amount of data on ionic conductivity for a proper model to be created, or rather, they only found 40 materials that they used to make their prediction on ionic conductivity, something that our group deemed far to little for our use. ))
+
+	 Needed a database, found \textit{materialsproject}! \url{www.materialsproject.org/batteries} gave a database with a good amount of information available. First of all the reduced cell formula with consistent CIF files for all voltage pairs. Secondly many different characteristics or voltage pair properties; Average voltage, Capacity, both gravimetric and volumetric, Specific Energy $(Wh/kg)$, Energy density $(Wh/ l )$, and a measurement of the stability $(eV/atom)$. Other properties that where in \textit{materialsproject} and to some extent tested to see if they were good predictors are; space group, energy per atom, volume of the unit cell, volume change in percentage, band gap, density, total magnetization, number of sites, and elasticity. 
+
+The database contains in more then$4400$ intercalation electrodes, where we have used $2291$ Lithium- ion batteries,  $360$ Magnesium-ion batteries, $321$ Natrium-ion batteries, and $481$ Calcium-ion batteries for our analysis. With new compounds being added to the database continuously, including many new structural predictors. Our method were tested on these different types of intercalation batteries, both with respect to size of database and size of unit cell.
+
+	It is important to note that we have a minimum of two predictor per property of the material at any given run. This is due to how we defined each battery to have at least one charged and one discharged state. For any given property, i.e. Volumetric number density, we have one value calculated for the charged material, and one for the discharged material. This means that we predict for a specific charged or discharged half cell configuration.
+
+\subsection{Volumetric number density }
+
+	Volumetric number density, \textit{n}, is used to describe concentration of countable objects. And is defined as: 
+	
+\begin{equation}\label{eq:n}
+n= \frac{\#\text{of atoms}}{\text{Volume}}
+\end{equation}
+
+	Where \textit{Volume} is the volume of the unit cell. 
+	
+	Technically, in the volumetric number density, there is a predictor for each individual element. That is; if the material is $\ch{Mg(TiO2)2}$ then the the number density for magnesium, titanium, and oxygen, related only to that material, will be predictors.
+
+It is probable that such a direct measurement of a geometrical aspect would be a good predictor due to the amount of physical information. If RF were to be applied on to the entirety of the CIF file, it is probable that it would be a bad fit, due to the Bias-Variance-trade-off as mentioned in (REF), and because of the complexity of some of these files. 
+
+\subsection{Void Fraction} 
+
+	Void Fraction, or the porosity, is a measurement of the void space in the material. Calculated \textit{ab initio} with Poreblazer\ref{ongari2017accurate}. We measure the accessible void, that is, the total amount of void space accessible from the surface. The pore volume is obtainable if  Gurvich rule(\ref{ongari2017accurate}) is fulfilled. It states that "if the density of the saturated nitrogen in the pores is assumed equal to its liquid density, regardless of the shape of the internal void network and, because of the  weak interactions, regardless of the chemistry of the framework." The pore volume ($v_{pore}$) and the porosity ($\theta$) are computed from:
+
+\begin{equation}
+v_{pore} = \frac{n^{ads,satd}_{N_2}}{\rho^{liq}_{N_2}}
+\end{equation}
+\begin{equation}
+\theta = v_{pore} \cdot \rho_{cryst}
+\end{equation} 
+
+	Where $n^{ads,satd}_{N_2}$ is the specific amount of nitrogen adsorbed, $\rho^{liq}_{N_2}$ is the density of liquid nitrogen, and $\rho_{cryst}$ is the density of the crystal in question. 
+	
+	Two different pore volumes are calculated, the geometric pore volume,$Ge_{pv}$, which is defined as all the free volume of the unit cell, and Helium pore volume ,$He_{pv}$, where the unit cell that can fit a probe with realistic intermolecular potential is tested. The calculation are done on the fixed $0 \si{K}$ temperature. 
+
+	Void Fraction is a good characterization method for microporous crystals and have had great success in metal organic frameworks (MOFS), as demonstrated also by the team of supervisors.
+	
+	In case of dens materials like the one we consider in this work, the void fraction should not be a good predictor. However we decided to include it in our tests in case the space occupied by the ion in the discharged material would impact our prediction, as will be discussed later. (REF)
+
+\subsection{AP-RDF Descriptors of Electrode materials}
+
+	Atomic property weighted radial distribution function (AP-RDF)\ref{fernandez2013atomic} was found to be a good predictor which also, when tested by the PCA(REF to theory part), exhibited good discrimination of geometrical and other properties, in one of their cases, gas uptake.
+	
+	One of the methods found, that seemed to yield good predictions dependent on chemical properties where the Atomic property weighted radial distribution function, successfully used on MOFS. \ref{fernandez2013atomic} Due to it looking reasonable we decided to try it out.
+
+	The radial Distribution Function(RDF) is the interatomic separation histogram representing the weighted probability of finding a pair of atoms separated by a given distance.(REF) In a crystalline solid, the RDF plot has an infinite number of sharp peaks where the separation and height are characteristic of the lattice structure. We used the minimum image convention (boundary condition)\myworries{Do I need a ref here?} and the RDF scores will be uniquely defined inside of the unit cell, per material-ID. The RDF can be expressed as:
+\begin{equation}\label{eq:RDF}
+RDF^P(R) = f \sum^{\text{all atom pairs}}_{i,j} P_i P_j e^{-B(r_{ij} - R)^2}
+\end{equation}
+
+In our case the RDF scores in a electrode framework has been interpreted as the weighted probability distribution to find a atom pair in a spherical volume of radius $R$ inside the unit cell according to equation above. \ref{eq:RDF}
+
+Summing over all the atom pairs, where $R_{ij}$ is the minimum image convention distance of these pairs, $B$ is a smoothing parameter, and $F$ is a scaling or normalization factor. Our Own approach to this is written in Fortran, and can be found in the appendix with an operational pdf.(REF)
+
+The RDF can be weighted to fit the requirements of the chemical information to be represented, by introducing the atomic properties, $P_i$ and $P_j$. We weighted the radial probabilities by three tabulated atomic properties namely electronegativity, polarizability, and Van der Waals volume, which gives us the AP-RDF. While a regular RDF function encodes geometric features, the atomic property weighted RDF additionally characterizes the chemical features within a material. An atomic property weighted RDF can be seen on the screen. 
+
+To test our method, we used it to reproduce the results for the two MOFS, namely \textit{IRMOF-1} and \textit{MIL-45} found in the article by Fernandez.\ref{fernandez2013atomic}. We confirmed their findings .. though with drawback related to the size... which are flawed in our case.  In our opinion, we think that this is a fundamental drawback, and the results depends on the size of the simulation cell(which can be made by replicating the unit cell). 
+
+INSERT BILDET AV PLOT AV AP-RDF. 
+
+\subsection{Algorithm}
+
+First of all, a wrote a program for "scraping" the \textit{materialsproject}webpage for batteries(0). This gave us the possibility to gather all the available resources on the batteries in the database in a fast and effective manor, as well as updating these CSV files of  battery-IDs. (ref)
+
+We then run a second program that downloads all the information on the materials that matches a material-ID correlated to a battery-ID(1,2). (ref) Before constructing a CIF file structured so that all the battery-IDs, charged-material-IDs, and dischargerd-material-IDs are correlated with the information on the charged and discharged properties. 
+
+After, the volumetric density fraction is calculated(3) and added to the main CSV file for both charged and discharged materials. While the CIF files are being processed for Poreblazer(4) where the void fraction is calculated(5,6). 
+
+Then we merge all our CSV files based on what properties that we are interested in and makes a CSV file called for\_ML.csv(7,8) that we feed into our random forest algorithm(9). We then run cross validation, MSE, and plot what we are interested in(10).
+
+In addition we also tested for different machine learning algorithms, as mentioned(ref), but these were only to test the reliability of our model, and will be discussed in the discussion section(ref) 
+
+
+
+
+
+\begin{comment}
+\myworries{This is in the intro.}
+The original plan was to make a model that could predict Ionic conductivity for potential solid state electrolytes but after gathering and searching for information we found this article (REF:) by Sendek: Were they could not find a sufficient amount of data on ionic conductivity for a proper model to be created, or rather, they only found 40 materials that they used to make their prediction on ionic conductivity, something that our group deemed far to little for a proper prediction, even if we added the $ 40$ that we found from our own search. 
+
+We then tried to use the materialsproject's database (MPDB), which resulted in a change of focus from electrolytes to electrodes, due to the nature of that database and ML's demand for as much relevant data as possible.
+
+The MPDB included much information on electrodes that came to good use. First and foremost an organized list over reduction cell formulas, CIF files and Voltage pair properties, including, but not limited to; Energy above hull as an indicator of stability, Volume change of the battery, Capacity, both gravimetric and volumetric, and Voltage - of the specific pair. All of these are of interest to our model both as predictors and targets. 
+
+We wrote a highly versatile code that can easily run a random forest algorithm on whatever we deem fit as a target with what predictors to use. (see section; 'Random forest')
+
+From the CIF files we calculated the number density\myworries{ref?}, for both the charged and discharged - materials, which is the number of one particular atom in the unit cell and dividing it by the volume of the unit cell so that we could feed our machine with something that represented the density in a meaningful way, in the case that the machine would find any correlation between this and any of the chosen targets. Which it did. 
+\end{comment}
+
+
+\pagebreak
+
+\myworries{maybe add this in the appendix?}
+\begin{lstlisting}[basicstyle=\footnotesize]
+Algorithm: 
+Steps for use of python scripts:
+
+	mp_battery_scraper.py
+0:  Scrape batteries with a given working ion from the Materials Project battery explorer
+(https://www.materialsproject.org/#search/batteries)
+
+
+	fillproperties.py
+1:  Download all materials that match a material_id correlated to a battid.
+	Output files: directory cif_info_dir/<material_id>_prop.dat
+
+	add_features.py
+2:  Gets and adds the material specific features from the JSON dump to a csv.
+	Output files: material_properties.csv
+
+	elements.py
+3:  Calculate the density fractions for all materials. 
+	Output files: out_csv_dis.csv
+
+	forPoreblazer.py
+4:  Download the CIF files as JSON for all materials correlated to a battid. 
+	Output files: directory cif_for_poreblazer/<material_id>_cif.dat
+
+	process_cif.py
+5:  Extract the CIF information from the previous JSON data.
+	Output files: directory cif_for_poreblazer/cif_files/<material_id>_cif.dat.csv
+
+	process_cif.py
+6:  Extract void fraction with poreblazer using the CIF files.
+	Output files: helvol_geomvol.csv 
+	
+	merger.py
+7:  Merge charged and discharged for all properties
+	Output files: allFiles.csv
+
+	prep_csv.py
+8:  Select predictors and targets for ML
+	Output files: for_ML.csv
+
+	randomforest.py
+9:  Run randomforrest
+	Output files: Depending on what being saved: ./Results/*
+	
+	crossvalidation.py
+10: Run cross-validation, remove outliers.
+	
+11: ???
+
+12: Profit!
+\end{lstlisting}
+
+
+
+
+
+
+
+
+
+
+
+
+
