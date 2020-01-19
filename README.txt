@@ -47,7 +47,8 @@ Steps for use of python scripts:
 
 
 	
-python prep_csv.py >> Results/2020-01-05/2020-01-05.txt; python randomforest.py >>  Results/2020-01-05/2020-01-05.txt; python rf_crossvalidation.py >> Results/2020-01-05/2020-01-05.txt
+python prep_csv.py >> Results/2020-01-13/2020-01-13.txt; python randomforest.py >>  Results/2020-01-13/2020-01-13.txt; python rf_crossvalidation.py >> Results/2020-01-13/2020-01-13.txt
+
 
 cmd: 
 

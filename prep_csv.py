@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 #from pymatgen.ext.matproj import MPRester
-from pprint import pprint
 from os import path
 import numpy as np
 import random
@@ -30,16 +29,17 @@ def drop_zeros(df):
 T = True
 F = False
 def main():
-    csv = "battery_data_after_aprdf_merge.csv"                                        #'battery_data_after_aprdf_merge.csv' , "allFiles.csv"
+    csv = "allFiles.csv"            #'battery_data_after_aprdf_merge.csv' , "allFiles.csv"
     outcsv = 'for_ML.csv'
     
 
-    Target              = 'Average_Voltage'
+
+    Target              = 'Stability Charge'
 # Possinble Targets: Average_voltage, Capacity_Grav, Capacity_Vol, Specific_E_Wh/kg, 
 # E Density Wh/l, Stability Discharge, Stability Charge. 
 
-    l_charged_atoms     = False     #turns on fraction density predictor for charged material
-    l_discharged_atoms  = False     #turns on fraction density predictor for discharged material
+    l_charged_atoms     = T     #turns on fraction density predictor for charged material
+    l_discharged_atoms  = T     #turns on fraction density predictor for discharged material
 
     list_of_predictors= ['Battid', 
     # 'Reduced_Cell_Formula',   # Not operational.
@@ -61,6 +61,7 @@ def main():
     # 'geomvol',
     # 'helvol_dis',
     # 'geomvol_dis',
+
 
     # 'energy',
     # 'energy_dis',                                               #  1
@@ -90,13 +91,13 @@ def main():
     # 'elasticity_dis'   
 
 
-    'radius_charged',
-    'elneg_charged',
-    'elneg_discharged',
-    'vdw_charged',
-    'vdw_discharged',
-    'polar_charged',
-    'polar_discharged'
+    # 'radius_charged',
+    # 'elneg_charged',
+    # 'elneg_discharged',
+    # 'vdw_charged',
+    # 'vdw_discharged',
+    # 'polar_charged',
+    # 'polar_discharged'
     ]
 
 
@@ -133,19 +134,21 @@ def main():
     list_of_predictors.append(Target)
     
     
-    data = pd.read_csv(csv, sep=',')
+    data = pd.read_csv(csv, sep=',')    #Swap data and df in to_csv
 
     # headers = list(data.head())
 
     df = pd.DataFrame()
+
     for fld in list_of_predictors:
        df[fld] = data[fld]
-    df.loc[~(df==0).all(axis=1)]
+    # df.loc[~(df==0).all(axis=1)]
 
-    df = df.round(6)
-        # df.fillna(0)
+    # df = df.round(6)
+    #     # df.fillna(0)
 
-    df = drop_zeros(df)
+    # df = drop_zeros(df)
+
     df.to_csv(outcsv,sep=',',index=False)
 
     print(Target, list_of_predictors)
@@ -154,7 +157,6 @@ def main():
 
 if __name__ == '__main__':
     main()
-
 
 
 '''

@@ -47,8 +47,8 @@ X = np.nan_to_num(X)
 
 clf = RandomForestRegressor(n_estimators=n_estimators, random_state=105)
 X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=trsize )#, stratify=X)
-print(X_train, "\n")
-print(y_train)
+# print(X_train, "\n")
+# print(y_train)
 trained_model=clf.fit(X_train, y_train)
 # print ('train=', X_train)
    # 9. Evaluate model pipeline on test data
@@ -63,7 +63,7 @@ r2score_train= r2_score(y_train, pred_train,  multioutput='variance_weighted')
 print ('r2score = ', r2score_test)
 print ('r2score_train = ', r2score_train)
 MSE = mean_squared_error(y_test, pred)
-print('MSE')
+print('MSE', MSE)
 
 if l_plot:
    maxp =  1.2*max(max(y_test), max(y_train))
