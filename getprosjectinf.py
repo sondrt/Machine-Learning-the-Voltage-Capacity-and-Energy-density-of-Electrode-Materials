@@ -29,6 +29,6 @@ for i in df:
 
 
 li_df = pd.read_csv("Li_batteries.csv")
-li_df.replace(renamed_materials)
+li_df = li_df.replace(renamed_materials)
 li_df.to_csv(outcsv,sep=',',index=False)
 f.close()
