@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.8.26)  19 JAN 2020 21:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.8.26)  20 JAN 2020 01:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1949,9 +1949,6 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                main
 (biblatex)                and rerun LaTeX afterwards.
@@ -1963,7 +1960,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  51290 strings out of 492616
  1068216 string characters out of 6129481
- 1591272 words of memory out of 5000000
+ 1591271 words of memory out of 5000000
  54357 multiletter control sequences out of 15000+600000
  598349 words of font info for 139 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1985,7 +1982,7 @@ st/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts
 urw/ncntrsbk/uncb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/ncn
 trsbk/uncr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/ncntrsbk/u
 ncri8a.pfb>
-Output written on main.pdf (28 pages, 353042 bytes).
+Output written on main.pdf (28 pages, 353052 bytes).
 PDF statistics:
  658 PDF objects out of 1000 (max. 8388607)
  584 compressed objects within 6 object streams
