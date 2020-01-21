@@ -4,7 +4,6 @@ import sys
 from urllib.request import Request, urlopen
 
 input_material_ids = pd.read_csv("./mp.csv")
-outcsv= "newcsv.csv"
 renamed_materials = {}	# renamed ids mapped to new names
 missing_material_ids_path = "nfmps.csv"
 missing_material_ids_file = open(missing_material_ids_path,'w+')
@@ -25,9 +24,9 @@ for material_id in input_material_ids:
 		print("material id: ",material_id, " never existed or has been renamed wrongly.")
 		missing_material_ids_file.write(material_id + ",")
 
-
+renamed_li_batteries_path = "newcsv.csv"
 li_batteries = pd.read_csv("Li_batteries.csv")
 li_batteries = li_batteries.replace(renamed_materials)
-li_batteries.to_csv(outcsv,sep=',',index=False)
+li_batteries.to_csv(renamed_li_batteries_path, sep=',', index=False)
 
 missing_material_ids.close()
