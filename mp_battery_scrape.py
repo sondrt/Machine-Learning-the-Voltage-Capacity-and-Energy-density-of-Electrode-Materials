@@ -56,7 +56,6 @@ def fetch_battery_from_api(battery, apikey):
 
 def compose_battery_data(battery):
     print(battery)
-    exit()
     return [battery["battid"],
             battery["adj_pairs"][0]['id_discharge'],
             battery["adj_pairs"][0]['id_charge'],
