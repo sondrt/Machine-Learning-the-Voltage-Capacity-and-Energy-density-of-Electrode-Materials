@@ -91,7 +91,7 @@ def scrape_battery_data_to_csv(working_ion, output_filename, apikey):
                     'Charged_ID',
                     'Reduced_Cell_Formula',
                     'Type',
-                    'Spacegroup',
+                    #'Spacegroup',
                     'Average_Voltage',
                     'Capacity_Grav',
                     'Capacity_Vol',
