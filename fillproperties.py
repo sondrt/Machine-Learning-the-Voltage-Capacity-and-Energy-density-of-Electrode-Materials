@@ -34,7 +34,7 @@ def download_ALLstructures(id):
           print("That didn't work, id: ", id)            
 ########################################################
 do_download = True
-csvfile = 'manualOKT.csv'          # 'mg_batteries.csv'  'Li_batteries.csv' 
+csvfile = 'Li_batteries.csv' # Typical values: 'manualOKT.csv', 'mg_batteries.csv', 'Li_batteries.csv'
 cif_info_dir = './cif_info_dir/'
 #heads =  ['Battid', 'Discharged_ID', 'Charged_ID', 'Reduced_Cell_Formula', 'Type', 'Spacegroup', 'Average_Voltage', 'Capacity_Grav', 'Capacity_Vol', 'Specific_E_Wh/kg', 'E Density Wh/l', 'Stability Charge', 'Stability Discharge'
 

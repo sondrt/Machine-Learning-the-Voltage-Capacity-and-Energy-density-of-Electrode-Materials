@@ -3,17 +3,14 @@ import pandas as pd
 import sys
 from urllib.request import Request, urlopen
 
-df = pd.read_csv("./mp.csv")
-outcsv= "newcsv.csv"
-counter = 0
+input_material_ids = pd.read_csv("./mp.csv")
 renamed_materials = {}	# renamed ids mapped to new names
-mp_that_does_not_work = "nfmps.csv"
-f = open(mp_that_does_not_work,'w+')
+missing_material_ids_path = "nfmps.csv"
+missing_material_ids_file = open(missing_material_ids_path,'w+')
 
 
-for i in df:
-	material_id = i
-	print("fetching real id for: ", i)
+for material_id in input_material_ids:
+	print("fetching real id for: ", material_id)
 	url = 'https://materialsproject.org/materials/' + material_id
 	try:
 		req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
@@ -24,11 +21,12 @@ for i in df:
 		y = y.replace(" ","")
 		renamed_materials[material_id] = y
 	except:
-		print("material id: ",i, "did not function.")
-		f.write(i+",")
+		print("material id: ",material_id, " never existed or has been renamed wrongly.")
+		missing_material_ids_file.write(material_id + ",")
 
+renamed_li_batteries_path = "newcsv.csv"
+li_batteries = pd.read_csv("Li_batteries.csv")
+li_batteries = li_batteries.replace(renamed_materials)
+li_batteries.to_csv(renamed_li_batteries_path, sep=',', index=False)
 
-li_df = pd.read_csv("Li_batteries.csv")
-li_df = li_df.replace(renamed_materials)
-li_df.to_csv(outcsv,sep=',',index=False)
-f.close()
+missing_material_ids.close()
