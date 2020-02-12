@@ -13,7 +13,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score, accuracy_score
 from sklearn.metrics import confusion_matrix
-from sklearn.externals import joblib 
+import joblib 
 import warnings
 import scipy.stats as st
 

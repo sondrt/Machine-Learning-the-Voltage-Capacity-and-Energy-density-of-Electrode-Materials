@@ -26,35 +26,37 @@ def drop_zeros(df):
     #     df = df.drop(index)
     return df
 
+
 T = True
 F = False
+APRDF = False
+
 def main():
-    csv = "allFiles.csv"            #'battery_data_after_aprdf_merge.csv' , "allFiles.csv"
+    csv = 'allFiles.csv'          #'battery_data_after_aprdf_merge.csv' , "allFiles.csv"
     outcsv = 'for_ML.csv'
     
 
-
     Target              = 'Stability Charge'
-# Possinble Targets: Average_voltage, Capacity_Grav, Capacity_Vol, Specific_E_Wh/kg, 
+# Possinble Targets: Average_Voltage, Capacity_Grav, Capacity_Vol, Specific_E_Wh/kg, 
 # E Density Wh/l, Stability Discharge, Stability Charge. 
 
-    l_charged_atoms     = T     #turns on fraction density predictor for charged material
-    l_discharged_atoms  = T     #turns on fraction density predictor for discharged material
+    l_charged_atoms     = True     #turns on fraction density predictor for charged material
+    l_discharged_atoms  = True     #turns on fraction density predictor for discharged material
 
     list_of_predictors= ['Battid', 
     # 'Reduced_Cell_Formula',   # Not operational.
     # 'Spacegroup',             # Not operational.
 
-    # 'Average_Voltage',
+    'Average_Voltage',
     
-    # 'Capacity_Grav',
-    # 'Capacity_Vol',
+    'Capacity_Grav',
+    'Capacity_Vol',
     
-    # 'Specific_E_Wh/kg',
+    'Specific_E_Wh/kg',
     
-    # 'E Density Wh/l',
+    'E Density Wh/l',
     
-    # 'Stability Discharge',                                    # No predictions to talk about.
+    'Stability Discharge',                                    # No predictions to talk about.
     # 'Stability Charge',                                       # On stability
 
     # 'helvol',                                                 # this is not ideal
@@ -63,26 +65,26 @@ def main():
     # 'geomvol_dis',
 
 
-    # 'energy',
-    # 'energy_dis',                                               #  1
+    'energy',
+    'energy_dis',                                               
 
-    #'energy_per_atom',
-    #'energy_per_atom_dis',    
+    'energy_per_atom',
+    'energy_per_atom_dis',                                          #  1 
 
     # 'volume',
-    # 'volume_dis',                                               #  1
+    # 'volume_dis',                                               
     
-    #'formation_energy_per_atom',
-    #'formation_energy_per_atom_dis',                            #  1
+    # 'formation_energy_per_atom',
+    # 'formation_energy_per_atom_dis',                            #  This does not work
     
-    # 'band_gap',
-    # 'band_gap_dis',
+    'band_gap',
+    'band_gap_dis',                                                 #  1
     
-    # 'density',
-    # 'density_dis',                                              #  1
+    'density',
+    'density_dis',                                                  #  1
     
     # 'total_magnetization',
-    # 'total_magnetization_dis',                                  #  1
+    # 'total_magnetization_dis',                                  
 
     # 'nsites',
     # 'nsites_dis',
@@ -140,14 +142,16 @@ def main():
 
     df = pd.DataFrame()
 
+
     for fld in list_of_predictors:
        df[fld] = data[fld]
-    # df.loc[~(df==0).all(axis=1)]
+    # df.loc[~(df==0).all(axis=1)] #Not needed. 
 
-    # df = df.round(6)
-    #     # df.fillna(0)
+    # if APRDF:
+        # df = df.round(6)
+        # df = df.fillna(0)
 
-    # df = drop_zeros(df)
+        # df = drop_zeros(df)
 
     df.to_csv(outcsv,sep=',',index=False)
 
@@ -159,9 +163,4 @@ if __name__ == '__main__':
     main()
 
 
-'''
-For df.loc[]
-If abs(sum(line[1:-1])) < eps:
-                7_kol_er_null_liste.append(line)
 
-'''

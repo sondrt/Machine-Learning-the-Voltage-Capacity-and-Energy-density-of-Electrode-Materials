@@ -63,7 +63,9 @@ r2score_train= r2_score(y_train, pred_train,  multioutput='variance_weighted')
 print ('r2score = ', r2score_test)
 print ('r2score_train = ', r2score_train)
 MSE = mean_squared_error(y_test, pred)
-print('MSE', MSE)
+RMSE = np.sqrt(MSE) 
+print('MSE: ', MSE)
+print('RMSE: ', RMSE)
 
 if l_plot:
    maxp =  1.2*max(max(y_test), max(y_train))
