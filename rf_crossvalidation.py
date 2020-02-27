@@ -9,10 +9,7 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split, cross_val_score, cross_validate
 from sklearn import preprocessing
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.pipeline import make_pipeline
-from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score, accuracy_score
-from sklearn.metrics import confusion_matrix
 import joblib 
 import warnings
 import scipy.stats as st

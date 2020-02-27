@@ -1,4 +1,4 @@
-#AP-RDF.py
+o#AP-RDF.py
 
 
 # Need all the CIF files as .CIF. 													*Done

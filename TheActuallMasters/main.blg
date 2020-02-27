@@ -1,0 +1,18 @@
+[0] Config.pm:304> INFO - This is Biber 2.12
+[0] Config.pm:307> INFO - Logfile is 'main.blg'
+[41] biber-darwin:315> INFO - === Thu Feb 27, 2020, 18:51:13
+[70] Biber.pm:371> INFO - Reading 'main.bcf'
+[165] Biber.pm:889> INFO - Found 38 citekeys in bib section 0
+[179] Biber.pm:4093> INFO - Processing section 0
+[191] Biber.pm:4254> INFO - Looking for bibtex format file 'kilder.bib' for section 0
+[194] bibtex.pm:1523> INFO - LaTeX decoding ...
+[256] bibtex.pm:1340> INFO - Found BibTeX data source 'kilder.bib'
+[453] Utils.pm:193> WARN - I didn't find a database entry for 'coef' (section 0)
+[454] Utils.pm:193> WARN - I didn't find a database entry for 'cross-valid' (section 0)
+[508] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[508] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[508] Biber.pm:3921> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[508] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
+[554] bbl.pm:636> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[569] bbl.pm:739> INFO - Output to main.bbl
+[569] Biber.pm:110> INFO - WARNINGS: 2

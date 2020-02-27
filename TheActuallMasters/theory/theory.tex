@@ -1,51 +1,212 @@
 \newcommand{\colVec}[1]{\begin{bmatrix} #1_0 \\ #1_1 \\ \vdots \\ #1_{n-1} \\ #1_{n} \end{bmatrix}}
 
 \section{Batteries}
-Before doing anything else, the basis of batteries needs an introduction. In this section, this will be done, and some of the most essential properties, in the writers opinion, will be introduced. 
+The basis of batteries needs an introduction. In this section, batteries and how they are designed and how they operate will be explained. A special focus will be dedicated to electrodes which are the part of the battery that this work is focused on. Some of the more essential properties related to the chemistry of the work will also be introduced. 
 
-\subsection{Cell operation principles}
-Electrochemical cell and basic concepts
 
-	A magnesium- or lithium-ion cell or battery consists of a positive and a negative electrode(s) and a electrolyte in a casing. The electrodes function as active materials which can accept or release Mg or Li ions; a conductive additive which electrically connects the active material with a current collector; and a suitable binder which attaches the electrode particles to the current collectors. The current collector enable connection to an external circuit. The cell will normally also include a separator which usually is a semi-permeable membrane that is situated between the electrodes. The separator permits ionic charge carriers to travel through the electrolyte form one electrode to the other while separating the electrodes.  
+\myworries{ "The most advantageous combination of cathode and anode materials are those that will be lightest and give a high cell voltage and capacity. \cite{reddy2011linden}"\\
+Some of the most important properties in an anode are; Hight coulombic output(Ah/g), good conductivity, stability. \\¨
+Practically anodes are metalls. Li- are a good example of this, it is the lightest metal with a high value of electrochemical equivalence. With the development of intercalation electrodes, lithiated carbons are finding wide use. Lithium alloys are also being explored for use as anodes in lithium-ion battery.\\
+The cathode must be a good oxidizing agent, be stable, when in contact with a electrolyte, and have a useful working voltage. }
 
-	While charging or discharging the battery over the external circuit, Mg- and Li- ions move between the positive and negative electrodes (IMAGE TIME!)- When the cell is discharge, electrochemical reduction takes place at the positive electrode as electrons flow through an external electrical load towards the positive electrode while cations move within the cell through the electrolyte to the positive electrode. At the negative electrode, oxidation occurs. The positive and negative electrode is commonly referred to as the \textit{cathode} and \textit{anode}, respectively. These two materials have different voltage, high and low. This difference is the cell voltage which is the driving force for the discharge of the battery. For secondary batteries, as are the one in question, it is possible to recharge batteries by reversing this process by applying an external electrical power source which applies an over-potential, that is a higher voltage than the one produced by the cell, with the same polarity. This reverses the movements of cations and electrons. 
+\subsection{Cell operation principles and design}
+Batteries and fuel cells are electrochemical devices. They stort chemical energy that can be converted into electrical energy. This is done by a oxidation-reduction (redox) reaction where one of the species in the reaction gain or lose an electron by changing the oxidation number. 
+
+A battery consists of one or more \textit{cells}. A cell is composted of three parts; the anode, the cathode, and the electrolyte.
+
+The anode is an negative electrode, which refers to the direction of current through the electrode. It is a metal that would oxidize if given the opportunity. For a conventional current flow the electron moves from the anode to the cathode. The anode is normally low voltage.  
+
+The cathode is a positive electrode. The cathode is a metal that is normally combined with oxygen and is where the reduction occurs. A common example of a oxide is iron oxide, this oxide is very fragile, but their are oxides that are strong enough to be shaped before used in the cell. The cathode is normally high voltage. 
+
+The electrolyte is the material that, when introduced to the anode and the cathode, provides an electrically conducting medium for transfer of charge. The anode draws oxygen atoms toward it, creating an electrical flow, with electrons moving from the end of the anode to the end of the cathode not emerged in the electrolyte. The electrolyte is typically a liquid, to impart ionic conductivity. It is often alkaline and when this is the case the battery is a alkaline battery. It can be a solid, but this is less common. The cell will not produce electricity without a circuit that is complete. The electrolyte can, in some designes, act as both the electrolyte and the anode or cathode. If the anode is made from pure metal and has an external cathode of ambient air it is referred to as a metal-air electrochemical cell. These batteries have a much higher theoretical energy density. However there are technical issues confronting their development. \cite{li2017metal}
+
+
+The difference between high- and low voltage is referred to as the cell voltage, which is the driving force for the discharge of the battery. For secondary batteries, as are the one in question (\myworries{Not really true, we are only looking at Electrodes.}), it is possible to recharge batteries by reversing this process by applying an external electrical power source, so that it creates a over-potential - a higher voltage than the one produced by the cell, with the same polarity. 
+
+Changes in the design of the cell dictates the cells performance. If the compositions of the anode and cathode are changed, the cell will yield more or less electricity. Adjustments in the cell can affect the amount of electricity, the rate of production, the voltage, and the cell's ability to function in different temperatures. There is almost an endless amount of possibilities, even though the most common cell has been $1.5$ volt alkaline batteries. Other types of batteries include Lithium  batteries, Magnesium batteries, Zinc batteries,  Mercury batteries and others. \myworries{Should cover these shorty in another subsection? Write something about Magnesium and Li- as a minimum.}
+
+\subsubsection{The manufacturing process of an Alkaline battery}
+In alkaline batteries the cathode is used both as the container and the cathode. Manganese dioxide, graphite, and the electrolyte are mixed and ganulated and pressed into hollow cylinders called preforms. The preforms can be stacked or replaced by an extruded ring of the same material. The preforms are then combined with nickel-plated steal. These are then the containers of the battery. 
+
+A separator is then soaked in the electrolyte solution and inserted between the cathode and where the anode is supposed to be. The anode is then put into the can, in a Alkaline battery like this, it is a gel composed of zinc powder and other materials like potassium hydroxide electrolyte. The gel does not fill the whole can, so that their is room for the chemical reaction to occur. 
+
+The can is then sealed with three connected components. The first being a current collector, going to thirds of the way trough the anode with a plastic seal at the top before it is all closed by a metal cover with a metal cap. The current collector goes all the way through the plastic seal and is connected to the metal cap. The seal is thinner in some places, in case of gas build ups. In some battery designes, wax are used instead of a plastic seal, so excessive gas can push through the wall. Lastly a label is attached to the battery, with the necessary information about the battery. 
+
+The battery is then take through a complex quality control, to certify the batteries ability to resist corrosion, maintain a good shelf life, usage life, and other factors. 
+
+\myworries{useless section?}
+
+
+
+
+\subsubsection{Theoretical Cell voltage, Capacity, specific Energy, Energy density}\label{sec:msp}
 	
-	\myworries{Repeating some of this in the capacity section. Check this later.}
+	In a cell there are essentially two areas or sites in the device where the redox reactions occur. In general these half-cell reactions can be expressed as one reduction and one oxidation reaction:
 	
-	The capacity can be defined as:
+	$$aA + ne \leftrightharpoons cC $$
+	
+	where a is the number of molecules of substans A taken up by n electrons to form c molecules of C, and the oxidation reaction defined in the same way:
+	
+	$$bB \leftrightharpoons dD + ne $$ 
+	
+	with the overall reaction being: 
+	\begin{equation}
+	aA + bB \leftrightharpoons cC+ dD
+	\label{eq:redox}
+	\end{equation}
+	
+	Whenever there is a reaction, there is a decrease in the free energy of the system, namely standard Gibbs energy, and is defined as:  
+	
+	$$\Delta G^0 = -nFE^0$$
+	
+	Where $n$ is the number of electrons in the reaction, and $F$ is the Faraday constant. 
+	
+	$E^0$ is the standard potential of the cell is determined by the type of active material in the cell, and can be calculated from the free energy. The standard potential of a cell can be calculated form the standard electrode potential.
+	
+	$$\text{Anode} + \text{cathode} = \text{standard potential}$$ 
+	
+	\myworries{example?}
+	
+	In the situation where we are not in the standard state, the voltage $E$ of a cell is given by the Nernst equation.
+	
+	$$ E = E^0 -\frac{RT}{nF} \ln{\frac{a^c_C a^d_D} {a^a_A a^b_B} } $$ 
+	where $a_i$ is the activity of the species. $R$ is the gas constant, and $T$ is the absolute temperature. 
+	
+	Gibbs free energy of the reaction is the driving force of the battery, and enables it to deliver energy to an external circuit. 
+	
+	
+	The theoretical \textit{capacity} is determined by the amount of active material in the cell. If the calculation are based on only the  active materials participating in the electrochemical reaction the theoretical capacity of a $\ce{Zn/Cl_2}$ cell is $0.394 \si{Ah/g}$
+	
+	$$\ce{Ze} + \ce{Cl_2} \rightarrow \ce{ZnCl_2}$$
+	$$1.22 \si{g/Ah} + 1.32 \si{g/Ah} = 2.54 \si{g/Ah}$$
+	
+	Capacity can be defined as:
 	\begin{equation}
 	C = \int I(t)\cdot dt
 	\end{equation}
-	And is the i number of electrons or cations exchanged between the negative and positive electrodes. $I(t)$ is the current, i.e. the number of electrons flowing over the external circuit per time interval $dt$ which is integrated over the discharge period. The capacity is normally expressed as $\si{Ah/kg}$. The battery can deliver a power that is defined as
+	
+	And is the $i$ number of electrons or cations exchanged between the negative and positive electrodes. $I(t)$ is the current, i.e. the number of electrons flowing over the external circuit per time interval $dt$ which is integrated over the discharge period. The capacity is normally expressed as $\si{Ah/kg}$. Theoretically, 1 gram equivalent weights of the active material in grams divided by the number of electrons in the reaction.
+		
+	The battery can deliver a power that is defined as
 	\begin{equation}
 	P(t)=V(t)I(t)
 	\end{equation}
-	Where $I(t)$ is the current, defined as earlier, drawn at a cell voltage $V(t)$. The amount of work that can be done by the battery, or the energy contained in the battery, is then defined as the power delivered over the discharge period
+	Where $I(t)$ is defined as earlier, and drawn at a cell voltage $V(t)$. The amount of work that can be done by the battery, or; the energy contained in the battery, is then defined as the power delivered over the discharge period
 	\begin{equation}
 	W = \int P(t) \cdot dt = \int V(t)I(t) \cdot dt
 	\end{equation}
 	
 	Specific capacity and energy densities of battery materials can be compared relative to mass, volume and cost. The more electrode material that a battery contains, the greater is its capacity and energy. The higher the cell voltage the greater its power and energy. 
 	
-	The active materials of the electrodes allow the reversible uptake and release of Mg, or Li ions. This may happen by; movement of the Li, or Mg ions into, i.e. \textit{intersection} or \textit{intercalation} or out of, i.e. \textit{extraction} or \textit{deintercalation}, their chemical structures, \textit{phases}, by conversion of the materials between Li/Mg poor amd rich i.e. \textit{alloying} or rich and poor, e.g. \textit{dealloying} phases, or by conversion of the electrode material into other more Li/Mg rich/poor chemical forms or mixtures, usually referred to as \textit{conversion} or \textit{displacement} reaction, with the average Li/Mg content of the entire electrode varying. 
-	The total Li or Mg content in the electrodes will thus either be varied by changing the composition of one phase or the ratio between coexisting phases. In this work \myworries{?}we will only look at \textit{intercalation} type batteries, due to the \textit{database}, more on this later.	
+	The active materials of the electrodes allow the reversible uptake and release of Mg, or Li ions. This may happen by; movement of the  ions; into, i.e. \textit{intersection} or \textit{intercalation} or out of, i.e. \textit{extraction} or \textit{deintercalation}, their chemical structures, \textit{phases}. This is done by conversion of the materials between ion poor and rich i.e. \textit{alloying}, or rich and poor, e.g. \textit{dealloying} phases, this can also be done by conversion of the electrode material into other more ion rich/poor chemical forms or mixtures. Referred to as \textit{conversion} or \textit{displacement} reaction, with the average ion content of the entire electrode varying. 
 	
+	The total Li or Mg content in the electrodes will thus either be varied by changing the composition of one phase or the ratio between coexisting phases. In this work \myworries{?}we will only look at \textit{intercalation} type batteries, due to the \textit{database}, more on this later.
 	
+	\subsubsection*{Specific Energy}
+	Specific Energy, or gravimetric energy density, defines battery capacity in weight, energy density, or volumetric energy density, defined as: 
+	\begin{equation}
+	\text{Watthours/gram} = \text{Voltage} \cross \text{Ampere-hours/gram}
+	\end{equation}	
 	
 	
 
 
-\subsection{Cell limitations }
+\subsection{Cell limitations \& definitions }
+In this paper, especially under the section on general properties of battery, an amount of technical terms related to material details, from  is used. Here I will clarify what we mean by these terms. 
+
+	
+	
 	\subsubsection{Polarization}
+	Polarizability is a tabulated atomic properties, it is the ability to form instantaneous dipoles(REF), and is defined as: 
 	
-	\subsubsection{Rate-capavity effect}
+	$$	\alpha = \frac{P}{E}	$$
 	
-	\subsubsection{degradation/aging}
+	Where $\alpha $ is the polarizability in isotropic media, $p$ is the induced dipole moment of an atom to the electric field $E$ that, is the field that produces the dipole momentum. 
+	
+ 
+
+
+
+		
+
 
 
 \subsection{Battery chemistries}
 
-\subsection{Intercalation batteries}
+\subsection{Intercalation batteries and why Li}
+
+"Among the rechargeable battery technologies (Fig. 11
+), the
+current Li-ion battery technology offers the best useable energy
+and tap density, dominating the worldwide market for mobile
+electronic devices2 for decades. Li-ion batteries have minimal
+(unwanted) side reactions when a Li ion intercalates into or
+desorbs from the cathode/anode materials. Their energy efficiency
+may be further enhanced by lowering the internal resistance of the
+battery, and they exhibit limited self-discharge, and no memory
+effects that limit energy density after many cycles. Li-ion batteries
+as a result, receive considerable attention at both fundamental and
+applied research levels.
+
+
+The development
+of stable novel materials is the key to the success of development
+of novel and advanced rechargeable batteries. Current research
+and development has focused on upgrading the energy density
+of Li-ion batteries. 
+
+Most practical
+rechargeable batteries deliver capacities and energy densities
+far below their theoretical values(med kilder)due to limited utilization
+efficiency of the active materials that participate in electrochemical reactions. The major reasons for such limitations
+include effects that result from slow electrode process kinetics
+with high polarization and low ionic diffusion or electronic
+conductivity rates, particularly at the electrolyte–electrode interfaces. Material stability issues caused by a low Li content can
+also impact on its degree of charging. Therefore, the improvement
+in existing rechargeable battery systems involves exploring key
+materials and focusing our attention on the atomic, ionic, or
+molecular diffusion and transport. Charge transfer, the optimization of surface and interface structure, and the regulation of
+electrochemical reactions within Li-ion systems may pave the
+way for improved (i) capacity, and energy and power density,
+(ii) reactivity, reversibility, and structural stability during charge–
+discharge cycles, (iii) ionic diffusion and electronic transfer at
+high charge–discharge rate, and (iv) lower cost, increased safety
+and environmental compatibility
+
+
+inkluder litt om dette? og med bilder kanskje?
+
+The schematic diagram of the current Li-ion battery based on
+a carbon based anode (LixC6), cathode (LiCoO2), liquid electrolyte (LiPF6 dissolved in a mixture of EC and DMC or equivalent),
+and separator is shown in Fig. 2.9 In the foreseeable future,
+Li-ion batteries will be the most practical solution to a wide
+range of electrical energy storage applications.10
+
+
+. The majority new cathode
+materials for Li-ion batteries under research and development
+are transition metal oxides, which tend to provide lower discharge
+potential as the electric-capacity density increases. Carbon-based
+materials (usually graphite) are currently used as anode materials
+in Li-ion batteries. The other variety of carbon-based materials and
+pure Li metal are currently proposed as alternate anode materials,
+but many need further improvement with respect to electrode
+potential and charge–discharge cycle life concerns
+
+"\cite{bhatt2015recent}
+
+Working principle of Li-ion cell. 
+
+When a Li-ion battery discharges, a $\ce{Li^+}$ moves from the anode (i.e. graphite) to the cathode (i.e. \ce{LiMO_2} where $\ce{M}$ is a transition metal), through the electrolyte that commonly is  $\ce{Li^+}$ -containing salt. The reaction, as discussed above \ref{eq:redox}, are:
+
+
+$$\ce{LiMO_2} \leftrightharpoons   \ce{Li_{1-x}MO_2} + \ce{xLi^+} + \ce {xe^-}\text{ (cathode)} $$
+$$\ce{xLi+} + \ce{xe^-} + \ce{xC_6} \leftrightharpoons  \ce{xLiC_6} \text{ (anode)} $$
+The overall reaction:
+$$\ce{LiMO_2} + \ce{6C} \leftrightharpoons  \ce{Li_{1-x}MO_2} +  \ce{xLiC_6}$$
+
+The anode is graphite, thus there is noe metallic $\ce{Li}$, which makes the Li-ion battery less reactive, therefor safer, and the graphite anode offers a longer cycle life than their Li-metal counterpart. To progress the performance of Li-ion batteries a few design changes are needed; A cathode with a chemical potential that matches the electrolytes highest occupied molecular orbital, and an anode matching the lowest unoccupied molecular orbital of the electrolyte. A non-aqueous electrolyte of high $\ce{Li^+} $ ion conductivity under practical temperatures. 
+
 
 \subsection{Electrodes and features}
 	In this section the features used in ML as predictors will be introduces. First will the pair properties be introduced, before going into the more electrode specific features. 
@@ -63,19 +224,27 @@ Electrochemical cell and basic concepts
 	\end{equation}  
 	The cell voltage is also dependent on other factors including concentration and temperature, as expressed om the nernst equation. (REF)
 	\textit{Average Voltage} as we use, is defined as the voltage average during the discharge. It is lower then the theoretical voltage.
-	
-	\subsubsection*{Capacity}
-	Capacity represents specific energy in Ampere-hours($\si{Ah}$), and is the discharge current a battery can deliver over time. 
-	The capacity is also determined by the amount of active materials in the cell, expressed through the total quantity of electricity involved in the electrochemical reaction and is defined in terms of coulombs or ampere-hours. Theoretically, 1 gram equivalent weights of the active material in grams divided
+
 	 
-	\subsubsection*{Specific Energy}
-	Specific Energy, or gravimetric energy density, defines battery capacity in weight, energy density, or volumetric energy density, defined as: 
-	\begin{equation}
-	\text{Watthours/gram} = \text{Voltage} \cross \text{Ampere-hours/gram}
-	\end{equation}
+
 
 	\subsubsection*{Physical stability}
 	What we refer to as Physical stability is Energy above hull. The energy that is demanded for decomposition of the material into the set of most stable materials at that chemical composition. Some positive value indicates that the material is not stable. While a zero energy above hull indicates that this is the most stable material at its composition. 
+	
+	\subsubsection{Properties of materials}
+	Are These (or some of them) theoretically computed properties. If yes provide some details about how they computed (i.e. DFT methods)
+
+Total \textit{Magnetic Moment} ($\si{\mu_B}$) is calculated for the unit cell within the magnetic ordering provided. 
+
+
+The \textit{Formation Energy per Atom} is calculated from the formation energy from the elements normalized to per atom in the unit cell.
+
+\textit{Energy Above Hull per Atom}
+The energy of decomposition of the material into the set of most stable materials at this chemical composition, in $eV$ per atom. Stability is tested against all potential chemical combinations that result in the material's composition. For example a $\ce{Mg_3Sb_2}$ structure would be tested against other $\ce{Mg_3Sb_2}$ structures, against $\ce{Mg}$ and $\ce{Sb}$ mixtures, and against $\ce{MgSb}$ and $\ce{Sb_2}$ mixtures. 
+
+\textit{Density}, here defined as the calculated bulk crystalline density, typically underestimated due to the calculated cell volume being overestimated on average by $3\% (+\/- 6\%)$.
+
+The \textit{Band Gap}s are calculated a little different. In general, band gaps are computed with common exchange-correlation functionals such as the LDA \cite{perdew1983physical} and GGA are severely underestimated \cite{perdew1985density}. Typically the disagreement is reported to be $\tilde 50\%$ in the literature. Some internal testing by the Material Project supports these statements; typically, they found that band gaps are underestimated by $\tilde40\%$. We additionally find that several known insulators are predicted to be metallic. 
 	
 	\subsubsection*{Cycle life}
 	
@@ -88,7 +257,8 @@ Electrochemical cell and basic concepts
 	\subsubsection*{Energy per atom}
 	EpA
 	\subsubsection*{volume}
-	Volume of the unit cell defined as 	\myworries{This is too dumb? No, Explain what type of volume}
+	Volume of the unit cell defined as 
+	
 	\subsubsection*{Formation energy per atom}
 	Fepa
 	\subsubsection*{Band gap}
@@ -100,17 +270,22 @@ Electrochemical cell and basic concepts
 	\subsubsection*{Elasticity}
 	E
 	\subsubsection*{Porous Electrodes}
-	In a fuel cell system, the reactant is supplied from the electrolyte åhase toe the catalytic electrode surface. Electrodes are often composites made of active reactants, binders and fillers, in batteries. To minimize the energy loss of both activation and concentration polarizations at the electrode surface and to increase the electrode efficiency or utilization, it is often preferd to have a large electrode surface area. This can be done by have a porous electrode design. A porous design can provide an interfacial area per unit volume that is considerable higher den that of a planar electrode. 
+	In a fuel cell system, the reactant is supplied from the electrolyte phase toe the catalytic electrode surface. Electrodes are often composites made of active reactants, binders and fillers, in batteries. To minimize the energy loss of both activation and concentration polarizations at the electrode surface and to increase the electrode efficiency or utilization, it is often preferd to have a large electrode surface area. This can be done by have a porous electrode design. A porous design can provide an interfacial area per unit volume that is considerable higher den that of a planar electrode. 
+	
 	A porous electrode is a electrode that concists of porous matrice of solids and void space. The electrolyte penetrates the void space of a porous matrix. In such an active porous mass, the mass transfer condition in conjunction with the electrochemical reaction occuriing at the interface is very complicated. In a given time druing cell operation, the rate of reaction within the pores may vary significantly depending on the location. The distribution of current density within the porous electrode depends on the physical structure(pore size), the conductivity of the solid matrix and the electrolyte, and the electrochemical kinetic parameters of the electrochemical processes.  
+	
+
+\subsection{On Mg- and Li- batteries and their state today}
 	
 	
 	
 \pagebreak
 \section{Machine Learning}
 
-In this chapter we summarize some concepts of machine learning and related ideas. The first section introduces the basic ideas behind machine learning and *some of the best known examples* will be presented. Secondly the concepts of supervised and unsupervised learning will be presented with a clarification on the difference between regression and classification problems, so that we can define where in the field of machine learning this work resides in. Before we round of this section with a brief explanation on the role of data, how features can affect the effectiveness of a model, and finalizing with the concepts of over- and under-fitting, and how these are related to the bias-variance-trade-off. 
+In this chapter we summarize some concepts of machine learning and related ideas. The first section introduces the basic ideas behind machine learning and *some of the best known examples* will be presented. Secondly the concepts of supervised and unsupervised learning will be presented with a clarification on the difference between regression and classification problems, so that we can define where in the field of machine learning this work resides in. Basics of methods utilized in this work will be introduced, emphasizing Random forest. Subsequently a short description of the validation methods used is given. These are; K-fold cross validation and how it is used in optimizing our random forest method, mean square error(\textit{MSE}), root mean square error (\textit{RMSE}) and R-squared($R^2$). 
+   
+Before we round of this section with a brief explanation on the role of data, how features can affect the effectiveness of a model, and finalizing with the concepts of over- and under-fitting, and how these are related to the bias-variance-trade-off. 
 
-The following section explains the basics of methods utilized in this work, starting by first giving an introduction to Random forest and support vector regression(\textit{SVR}). Subsequently a short description of the validation methods used in this work is given. These are; K-fold cross validation and how it is used in optimizing our random forest method and mean square error(\textit{MSE}). 
 
 \myworries{Sondre: Did you forget something? Come back to this when done with the section.}
 
@@ -125,31 +300,127 @@ Machine learning comes from the field of pattern recognition and learning theory
 	
 	How two people writes a single digit may vary to an extensive degree. It might seem to be a easy problem, but if the recognition is to be done manually million of times, it is no longer a trivial task for any one human being. Therefore a model which can recognize these digits would be useful. A model that takes a picture of a digit and outputs that digit in a way that is recognizable for a machine, that is, a digital format.
 	
-	Machine learning only works when you have data, preferably a large amount of data. For instance data from the MNIST test dataset(REF). This database contain $60,000$ images of handwritten numbers for this very purpose. The images all are 18x18 pixels. The data is divided into two sets, one training set: $X_{Train}$ and one test set: $X_{test}$
+	Machine learning only works when you have data, preferably a large amount of data. For instance data from the MNIST test dataset(\cite{lecun1998gradient}). This database contain $60,000$ images of handwritten numbers that is commonly used for both various training, and testing in the field of machine learning. The images all are 18x18 pixels. The data is divided into two sets, one training set: $X_{Train}$ and one test set: $X_{test}$
 	
-	How do one represent an image as something that makes logical sense to a computer? Most learning algorithms take numbers as input. To a computer one image is nothing more then a grid of numbers that represent how dark a pixel is. So each picture contains a gray-scale value that ranges from $0$ to $255$. Where each sample can be viewed as a vector consisting of 324 \textit{features}. Every sample has a corresponding label value, or \textit{target}, which is the digital equivalent to the handwritten sample. We let the corresponding targets be denoted: $Y_{train}$ and $Y_{test}$. Next we designate our \textit{learner} denoted by function A. A is then given our training set S, where $S = (X_{train1}, Y_{train2}),..., (X_{trainN}, Y_{trainN})$ and returns a prediction rule: $h: X \rightarrow Y$. This rule is also called a predictor, in general, a classifier, or a regressor, depending on the problem in question. 
+	How do one represent an image as something that makes logical sense to a computer? Most learning algorithms take numbers as input. To a computer one image is nothing more than a grid of numbers that represent how dark a pixel is. So each picture contains a gray-scale value that ranges from $0$ to $255$. Where each sample can be viewed as a vector consisting of 324 \textit{features}. Every sample has a corresponding label value, or \textit{target}, which is the digital equivalent to the handwritten sample. We let the corresponding targets be denoted: $Y_{train}$ and $Y_{test}$, for training and testing data. Next we designate our \textit{learner} denoted by function A. A is then given our training set $S$, where $S = (X_{train1}, Y_{train2}),..., (X_{trainN}, Y_{trainN})$ and returns a prediction rule: $h: X \rightarrow Y$. This rule is also called a predictor, in general, a classifier, or a regressor, depending on the problem in question. 
 	
 	The \textit{training phase} is a prosess where the learning algorithm gets tweaked to best capture the correlating structure of the data set, so that it can better predict new data. As mentioned in the last paragraph the output from the \textit{training phase} is called a \textit{predictor}. The next step is to introduce the \textit{predictor} for new, unseen data, so that it can be classified. Then we compare the $Y_{test}$ to our predicted value $Y_{pred}$ given by $h$ to see if our model generalizes well to unseen data in $X_{test}$. 
 	
 	\subsubsection{Supervised and Unsupervised Learning }
-	One of the most basic separations in machine learning is the partition between supervised learning(ref) and unsupervised learning. In the case of supervised learning one knows the answer to a problem, and let the computer deduce its own logic to figure out how we get to that result. With unsupervised learning the machine is tasked with finding patterns and relationships in data sets without any prior knowledge of the system. Some authors operate with a third category, namely reinforcement learning, where the machine learns by trial-and-error. (REF)
+	One of the most basic separations in machine learning is the partition between supervised learning and unsupervised learning. \cite{gentle2012handbook}
+	
+	In the case of supervised learning one knows the answer to a problem, and let the computer deduce its own logic to figure out how we get to that result, thus the name complete-date problem is commonly used. This is the most common type of learning. With unsupervised learning the machine is tasked with finding patterns and relationships in data sets without any prior knowledge of the system, incomplete-data problems. Some authors operate with a third and a forth category, namely reinforcement learning, where the machine learns by trial-and-error(marsland2014machine), and evolutionary learning, where they account for the biological evolution and that it can be seen as a learning process.
 		
-	In this thesis we only consider supervised learning. Algorithms and challenges specifically related to unsupervised learning, and reinforcement learning, is therefore not further examined. 
+	In this thesis we only consider supervised learning. Algorithms and challenges specifically related to unsupervised learning, reinforcement learning, and evolutionary learning, is therefore not further examined. 
 
 	\subsubsection{Regression and Classification Problems}
-	A respons variable can either be qualitative or quantitative in nature 
+		A respons variable can either be qualitative or quantitative in nature. For the qualitative respons variable, let's assume a set of data points $ \vec{x}$ and a goal of finding the value of the output $y$ when $x = 0.5$. The value $x = 0.5$ is not in the data points given so it is needed a way to \textit{predict} the value. Given in the example above, we assume that there exists a function $h$ that the value comes from. When that function is found one can find any given $y$ for any given $x$. This is what is known as a regression problem - The respons takes form of a continuous numerical value. The regression problem is a problem of function approximation or interpolation. It may occur a scenario where there are multiple functions, lets say $h$ and $g$, that fits the given data perfectly. If this is the case one need to pick a value in between our data points and use our functions $h$ and $g$ to predict its values and compere the result to see which is better. \myworries{mby connect it tighter with the handwritten example?}
+	This does not seems as very intelligent behavior, but the problems of interpolation can be very difficult in higher dimensional space. This will also be observed in classification, the other aspect of what our algorithms can do.  
 	
-	\subsubsection{Features and Feature Selection}
-	\par
-	Ref tilbake til "Batteries" seksjonen og utdyp hvorfor og hvorfor ikke det er gode prediktorer. 
+	If the response variable is quantitative the problem is referred to as a classification problem. Such a problem consists of taking several input vectors and deciding which of $N$ classes they belong to. This decision or prediction comes from training on examples of each class. I underline again that classification problems are of a discrete nature - The input only belongs to one class.
 	
-\subsection{Random Forest}
+	In this work we want to predict characteristics of batteries , meaning  that our task is a regression problem.
 	
-\subsection{Support Vector Regression}
+	\subsubsection{Data collection, Preparation, Features and Feature Selection}
+	 
+	Normally the data collection is a enormous part of the work and not easily available, or, at the very least, needs to be assembled and prepared. If the problem is completely new it might be natural to engulf this step with the next one. (Which is, more or less, what this work tries to do.) With a small dataset with many different features one can experiment and try to figure out what features are the most useful before picking those and collecting a full dataset based on them before doing a complete analysis. 
+	
+	A common problem is that there is too much data that can be relevant, but that data is hard to find or represent in a way that makes sense for the machine. This can be because it requires too many measurements, or, something thing that is prevalent in this work\myworries{(How much should I refer to this here and not later?)}, that they are in a variety of places and formats. For instance; if the measurements are already taken, but at vastly different temperatures they might be hard to compare or merge. It is important to have a \textit{clean} dataset, this means that the dataset does not have missing data, significant errors, and so on. On top of all of this, supervised learning requires a target $y$, which demands time and involvement of experts. 
+	
+	The specific input to a model is normally referred to as a feature, that is, numerical representation of raw data. The amount of features are of importance for the machine learning algorithm to successfully make a good prediction. If there are to few relevant features one can not make an accurate prediction due to the lack of necessary data. And if there are to many features, or many of the features are irrelevant to the task the model will be more expensive.
+	
+	The amount of information needed is extensive, and should be of high quality. A bigger dataset demands a higher cost, and predicting the amount of data required is a futile endeavor. Luckily Machine Learning is still less computationally costly than modeling full systems at a micro or nanoscale, which makes it interesting in the field of material science. 
+	
+	
+\subsection{Bias-variance tradeoff}\label{sec:Bias-variance tradeoff}
 
-	Dette bør brukes og kan da skrives om.
-	\subsubsection{Radial Basis Function Kernel}
-	\subsubsection{SVR and the Bias-Variance-Trade-off}
+As the algorithm learns we need to make sure that it generalizes well to data not in our training set. Obviously the algorithm can not generalize beyond the limits of the training data. Therefore it is important to minimize the two sources of errors known as \textit{bias} and \textit{variance}. This is know as the \textit{bias-variance trade off}. It is the property of trying to minimize the two errors simultaneously, and should not be confused with the \textit{irreducible error} of a model which is a result of the noise of the data. These three together are the terms used to analyze an algorithms expected \textit{generalization error}, which will be handled later(Ref).    
+
+\begin{figure}[H]
+     \centering
+     \includegraphics[width=\linewidth]{theory/figures/Bias_variance.png}
+     \caption{Simplified illustration showing the concepts of bias-variance problem. Left to right; high bias, low bias and low variance, high variance. Adopted from \cite{fig:bias_var}}
+     \label{fig:bias_var}
+\end{figure}
+Our machine is bias if it generalizes to much. The error is due to low variability in our training data, or that it did not adapt to the training data appropriately. The machine misses the relevant relations in the data set between the features and the output. This effect leads to that which is commonly referred to as under-fitting, see left on figure \ref{fig:bias_var}. 
+
+Variance is the error that stems from high variability, and the number of degrees of variability in most machine learning algorithms is huge(\cite{marsland2014machine}). In simple terms there is a low degree of generalization. It might be a perfect fit, but as soon as new data is introduces our predictions plummet. This is commonly referred to as over-fitting, see right on figure \ref{fig:bias_var}. 
+
+A good way to understand the idea of bias-variance tradeoff is that a more complex model with an increased number of features is not necessarily better at predicting what you want to predict. 
+
+
+\subsection{Random Forest}
+
+\myworries{Should I use more math? I am trying to expaine these things as simple as possible with little mathematical syntax}	
+
+\subsubsection{Ensemble learning}
+	There are many different machine learning algorithms, in this work we have focused on the \textit{ensemble method}; \textit{Random forest}\cite{breiman2001random}. The idea of ensemble learning is that two heads are better than one, so why not have many learners that all get slightly different results on the same data, and then combine them.  
+	
+\begin{figure}[H]
+     \centering
+     \includegraphics[width=\linewidth]{theory/figures/ensemble_learning.png}
+     \caption{Combining a lot of different classifiers trained on the same data, which in combination can make a much better decision boundary on the target data. Adopted from \cite{marsland2014machine}}
+     \label{fig:ensemble_learning}
+\end{figure}	
+
+Ensemble methods are particularly usefull in machine learning when there is little data, as well as when there is much data, this is heavily due to cross-validation, see(Ref to other section on cross-validation). 
+
+\subsubsection{Decision tree}
+
+A decision tree is a low cost binary flowchart-like structure. It is one of the most common data structures in the field of computational science, both because of the low cost to make the tree, but also because the cost of using the tree is even lower; $\mathcal{O}(\log{N}$, where N is the number of datapoints.\cite{marsland2014machine}. 
+
+Decision trees are structured much like a regular tree\ref{fig:decision_tree}; at the top there is a base, or a \textit{root}, down the branches there are chance nodes, and at the end of the branches there are \textit{leaves}, or end nodes. Every internal node is structured like an conditional statement on a feature.\myworries{Example? If overcast, play. Rain -> more questions} The chance nodes are the results from these tests, and the leaves are the class labels. The full route from root to leaf is the classification rule. An advantage of random forest being based in decision trees is that the algorithm is much more like a "white box" compared to Neural networks black box approach, because we can retrace the decisions of each tree. This is especially helpful in the research done in this work where we want to figure out the roll of every feature, and how they affect the result.
+
+\begin{figure}
+\begin{tikzpicture}
+  [
+    grow                    = right,
+    sibling distance        = 6em,
+    level distance          = 10em,
+    edge from parent/.style = {draw, -latex},
+    every node/.style       = {font=\footnotesize},
+    sloped
+  ]
+  \node [root] {Outlook}  
+    child { node [dummy] {Humidity}
+      child { node  [env] {No} 
+        edge from parent node [below] {High}}
+	  child  { node  [env] {Yes}  
+	  edge from parent node [below] {Normal}}
+	  edge from parent node [below]{Sunny?}}
+%  --------------------------------------------------------  
+    child { node [env] {Yes}
+      edge from parent node [below] {Overcast?} }
+%  --------------------------------------------------------    
+    child { node [dummy] {Wind}
+      child { node  [env] {No} 
+        edge from parent node [below] {Strong}}
+	  child  { node  [env] {Yes}  
+	  edge from parent node [below] {Weak}}
+	  edge from parent node [below]{Rain?}};
+\end{tikzpicture}
+\caption{A simple example of a decision tree for playing tennis. Root in red, leaf node in blue. Adapted from \cite{fig:decision_tree}}
+\label{fig:decision_tree}
+\end{figure}
+
+
+
+\subsubsection{Random forest}
+Random forest is ensamble such a learning method, the idea is that one decision tree is good and many trees, or a forest, is better. The most interesting part of random forest is the randomness that is introduces. Several classifiers are achieved by using the simple combination method \textit{bagging}. Bagging stands for \textit{bootstrap} aggregating. Bootstrapping is the process of taking a sample from the original dataset at random, and replacing parts of it with other original data, so that it is not equal to the original data. There will then be several samples where some of the data is equal, while others are completely different. For the bootstrapping in random forest, one sample is taken from the dataset for each tree. 
+
+Then a new parameter is introduced, at each node a random subset of features are given to the tree, and it can only make decisions based on that specific subset, and not the original tree. This increases the randomness in the creation of each tree, and it speeds up the learning process. The reason to add randomness to the algorithm is to reduce variance without effecting bias. It also removes the need for decision tree \textit{pruning}, that is, reducing the complexity of decision tree by removing the parts of the tree that does not help the classifier. This reduces overfitting. The process of creating trees is repeated until the error stops decreasing. 
+
+When the forest is done, we use a majority vote system, which is a comparison of the mean response for regression. For a point by point algorithm, see the appendix(REF to appendix). 
+The reason for not using cross-validation in the learning algorithm, which is common in other machine learning methods (Ref to cross-val), is that our bootstrap method only uses about $65\%$ of the data, leaving $35\%$ on average which can give a estimated test error. 
+
+The main reason we decided to opt in for random forest is due to an article by .... that clearly states that random forest is the go to machine learning algorithm when you are not sure where to start. 
+
+
+%\subsection{Support Vector Regression}
+%	Dette bør brukes og kan da skrives om.
+%	\subsubsection{Radial Basis Function Kernel}
+%	\subsubsection{SVR and the Bias-Variance-Trade-off}
+	
 	
 
 \subsection{Mean square error and Root mean square deviation}
@@ -166,7 +437,7 @@ And is thus the distance, on average, of a data point from the fitted line, meas
 
 \subsection{$R^2$ score - The Coefficient of Variation}
 
-	In regression validation the $R^2$ is the standard when it comes to measuring goodness of fit.(REF=?\cite{coef} \myworries{Needs new ref.}) In straight terms it is the proportion of the variance in the dependent variable that is predictable from the independent variable (S).
+	In regression validation the $R^2$ is the standard when it comes to measuring goodness of fit.(\cite{coef} \myworries{Needs new ref.}) In straight terms it is the proportion of the variance in the dependent variable that is predictable from the independent variable (S).
 
 \begin{equation}\label{eq: R squared}
 	R^2 =1 - \frac{SS_{res}}{SS_{tot}} =  1 - \frac{ \sum(y_i-f_i)^2 }{ \sum(y_i-\bar{y}_i)^2 }
@@ -203,6 +474,24 @@ State of the art.
 What has been done in this field? 
 Similar predictions of the kind we are interested in, have been done by 
 Sandek: \cite{sendek2017holistic}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 %------------------------------------------------------------------------------------------------
 \begin{comment}
 \section{Batteries}

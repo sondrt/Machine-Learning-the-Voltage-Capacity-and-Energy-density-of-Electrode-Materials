@@ -2,37 +2,86 @@
 MSE, PCA, R2, compair.
 Ordered by target:
  
+ 
+ Write a paragraph on how the "extra" entries affected the prediction result, and how you removed the once with less then 3-5 entries.
+ 
+  
 \subsection{Random factors from database.}
 \subsubsection{Average Voltage}
 \subsubsection{Capacity}
 \subsubsection{Energy Density}
 
-\subsection{Volumetric number density}
 
-\begin{figure}
+
+\subsection{Volumetric number density}
+Volumetric number density or $n$ as described(section ref), are shown(Tablature ref), for the Li- and Mg- databases. There are a couple of different results that are particularly interesting. First of all; $n$ is overall better at predicting VC and with that  GC naturally follows. In the first figure(\ref{tab:mg-n}), the Mg-database, every prediction has a lower 'score' than in the Li-database. This is probably due to it being a much smaller database. 
+
+%\myworries{Should do better calculations on this, maybe when results and Battery-section is done.}
+
+As can be seen clearly; the evaluations of this method is somewhat splitt. The MSE is generally better for the Li-database, and is best at the AV. The CV is better for the capacities but there is somewhat a high degree of uncertainty. This is probably due to the database being small. As expected the results for volumetric capacity is the peak of these runs. 
+
+One can from these results conclude that volumetric number density is worth bringing on as a predictor, as it clearly ha a part of the pusle.  
+
+\begin{figure}[H]
+\scriptsize
+\title{Mg database on n}
 \begin{tabular}{|c|c|c|c|c|c|}
 	\hline 
-	 $\frac{Target:}{Accuracy:}$& Average Voltage & Gravimetric Capacity & Volumetric Capacity & Specific Energy & Energy Density $\si{Wh/kg}$ $\si{Wh/l}$ \\ 
+	$\frac{Target: \rightarrow}{Accuracy:\downarrow} $ & AV & GC & VC & SE & ED 
+	 \\ 
 	\hline
-	$R^2$-score & -0.0461 & 0.3426 & 0.3784 & -0.0011 & 0.0838\\ 
+	$R^2$-score & 0.5911 & 0.6815 & 0.6978 & 0.7103 &  0.5596\\ 
 	\hline 
-	$R^2$-train & 0.8676 & 0.8799 & 0.9052 & 0.8764 & 0.8786 \\ 
+	$R^2$-train & 0.9456 & 0.9279 & 0.9502 & 0.9241 & 0.9401 \\ 
 	\hline 
-	CV: & -0.7976(+/- 1.3547)& 0.1844 (+/- 0.2182) & 0.2983 (+/- 0.3636) & -0.3742 (+/- 0.9904) & -0.1623 (+/- 0.7009) \\ 
+	CV: &0.3180 (+/- 0.4977)& 0.5423 (+/- 0.4435) &  0.5943 (+/- 0.5877) & 0.4494 (+/- 0.4608) &0.4755 (+/- 0.4464) \\ 
 	\hline
-	MSE: & 1.1457 & 4521.6902 & 62785.2 & 92593.3 & 1613762.6538 \\ 
+	MSE: & 0.4407 & 2491& 41608 & 5284.5403 & 796956 \\ 
 	\hline
-	CV-mean: &-0.5899 & 0.1660 & 0.3166  &-0.2962 &-0.0398 \\
+	CV-mean: & 0.3076 & 0.5982 & 0.6511  & 0.4150 &0.4700 \\
 	\hline
 \end{tabular}
-\caption{Wall of numbers.}
+\label{tab:mg-n}
+\caption{Mg- prediction accuracy results on the Targets; Average Voltage(AV), gravimetric capacity(GV), volumetric capacity(VC), specific energy(SE), and energy density(ED). Each row showes the number representing that type of test, as included in section(REF). }
+\end{figure}
+
+\begin{figure}[H]
+\scriptsize
+\title{Li database}
+\begin{tabular}{|c|c|c|c|c|c|}
+	\hline 
+	 $\frac{Target: \rightarrow}{Accuracy:\downarrow} $ & AV & GC & VC & SE & ED \\ 
+	\hline
+	$R^2$-score & 0.3309 & 0.3867 & 0.5631 & 0.3796 & 0.4027\\ 
+	\hline 
+	$R^2$-train & 0.9193 & 0.9261 & 0.9286 & 0.9179 & 0.9266 \\ 
+	\hline 
+	CV: & -10.0739 (+/- 7.0309))& 0.5009 (+/- 0.1844) & 0.6095 (+/- 0.2123) & 0.0341 (+/- 1.6924) & 0.0298 (+/- 2.0854) \\ 
+	\hline
+	MSE: & 0.7683 & 3318 & 29971 & 45911 & 532777 \\ 
+	\hline
+	CV-mean: &-10.4347& 0.5200 & 0.6465  &0.4107 &0.5093 \\
+	\hline
+\end{tabular}
+\caption{Li- prediction accuracy results on the Targets; Average Voltage(AV), gravimetric capacity(GV), volumetric capacity(VC), specific energy(SE), and energy density(ED). Each row showes the number representing that type of test, as included in section(REF). }
 \end{figure}
 
 
+
 \subsubsection{Average Voltage}
+Mg db
 Charged:
 
+
 Discharged:
+Mg db:
+
+
+
+Li db:
+
+
+
 
 \subsubsection{Capacity}
 
@@ -46,12 +95,58 @@ Discharged:
 
 
 
+\begin{figure}[H]
+\scriptsize
+\title{Mg database void fraction}
+\begin{tabular}{|c|c|c|c|c|c|}
+	\hline 
+	$\frac{Target: \rightarrow}{Accuracy:\downarrow} $ & AV & GC & VC & SE & ED 
+	 \\ 
+	\hline
+	$R^2$-score & -0.0461 & 0.3426 & 0.3784 & -0.0011 & 0.0838\\ 
+	\hline 
+	$R^2$-train & 0.8676 & 0.8799 & 0.9052 & 0.8764 & 0.8786 \\ 
+	\hline 
+	CV: & -0.7976(+/- 1.3547)& 0.1844 (+/- 0.2182) & 0.2983 (+/- 0.3636) & -0.3742 (+/- 0.9904) & -0.1623 (+/- 0.7009) \\ 
+	\hline
+	MSE: & 1.1457 & 4521& 62785 & 92593 & 1613762 \\ 
+	\hline
+	CV-mean: &-0.5899 & 0.1660 & 0.3166  &-0.2962 &-0.0398 \\
+	\hline
+\end{tabular}
+\label{tab:mg-n}
+\caption{Mg- prediction accuracy results on the Targets; Average Voltage(AV), gravimetric capacity(GV), volumetric capacity(VC), specific energy(SE), and energy density(ED). Each row showes the number representing that type of test, as included in section(REF). }
+\end{figure}
 
 
 
 
 \subsection{AP-RDF}
 PCA, R2, MSE.
+
+
+\begin{figure}[H]
+\scriptsize
+\title{Mg database void fraction}
+\begin{tabular}{|c|c|c|c|c|c|}
+	\hline 
+	$\frac{Target: \rightarrow}{Accuracy:\downarrow} $ & AV & GC & VC & SE & ED 
+	 \\ 
+	\hline
+	$R^2$-score & -0.1031 & 0.0263 & 0.0159 & -0.0857 & -0.1346\\ 
+	\hline 
+	$R^2$-train & 0.8529 & 0.8434 & 0.8530 & 0.8519 & 0.8471 \\ 
+	\hline 
+	CV: & -0.7544 (+/- 1.2666) & -0.0272 (+/- 0.1926) & 0.0916 (+/- 0.1639) & -0.4965 (+/- 0.9204)) & -0.2823 (+/- 0.6630) \\ 
+	\hline
+	MSE: & 1.2888 & 6426& 110679 & 100803 & 1775980 \\ 
+	\hline
+	CV-mean: &-0.6110 & -0.0109 & 0.0897  & -0.4422 & -0.1690 \\
+	\hline
+\end{tabular}
+\label{tab:mg-n}
+\caption{Mg- prediction accuracy results on the Targets; Average Voltage(AV), gravimetric capacity(GV), volumetric capacity(VC), specific energy(SE), and energy density(ED). Each row showes the number representing that type of test, as included in section(REF). With the AP-RDF as predictor. }
+\end{figure}
 
 \subsection{Stability}
 

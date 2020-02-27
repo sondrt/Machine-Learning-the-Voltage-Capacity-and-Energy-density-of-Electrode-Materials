@@ -29,21 +29,29 @@ Steps for use of python scripts:
 		process_cif_poreblazer.py
 	6: Extract void fraction with poreblazer using the CIF files.
 		Output files: helvol_geomvol_output.csv 
-	
+
 		merger.py
 	7: Merge charged and discharged for all properties
 		Output files: allFiles.csv
 
+		AP-RDF.py
+	8: Writes all files in './cif_info_dir/' from .dat/csv to .cif in a new folder './cif_info_dir/cif_for_aprdf/'. Takes all the CIF files runs Obabel and makes pdb files in './cif_info_dir/cif_for_aprdf/'. Runs 'gfortran -C -cpp -o ap-rdf.x neighlist_mod.f90 ap-rdf.f90' on all pdb filene.
+		Output files: directory runners_aprdf/<material_id>.aprdf
+		
+	 	Reader_aprdf.py
+	9: Merges all <material_id>.aprdf on battid into a CIF file and takes the crossproduct with 'allFiles.csv
+		Output files: battery_data_after_aprdf_merge.csv 
+
 		prep_csv.py
-	8: Select predictors and targets for ML
+	10: Select predictors and targets for ML; if AP-RDF - removes zero rows.
 		Output files: for_ML.csv
 
 		randomforest.py
-	9:  Run randomforrest
+	11:  Run randomforrest on for_ML.csv
 		Output files: Depending on what being saved: ./Results/*
 	
 		rf_crossvalidation.py
-	10: Run cross-validation, remove outliers.
+	12: Run cross-validation, remove outliers.
 
 
 	

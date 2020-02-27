@@ -114,20 +114,8 @@ left = pd.DataFrame({'col1' : ['A', 'B', 'C'], 'col2' : [1, 2, 3]})
 right = pd.DataFrame({'col1' : ['X', 'Y', 'Z'], 'col2' : [20, 30, 50]})
 
 
-## Skriv en måte å ta kryssprodukt av csv df og stor CSV fil. 
-
-def cartesian_product_simplified(left, right):
-    la, lb = len(left), len(right)
-    ia2, ib2 = np.broadcast_arrays(*np.ogrid[:la,:lb])
-
-    return pd.DataFrame(
-        np.column_stack([left.values[ia2.ravel()], right.values[ib2.ravel()]]))
-
-
-# print(cartesian_product_simplified(left, right))
 
 def mergeBandS():
-    outcsv=()
     #Big old csv
     Bcsv = '../allFiles.csv'
     dirin = './'
@@ -145,9 +133,6 @@ def mergeBandS():
             # print(df)
             newframe = pd.read_csv(Bcsv)
             headers = list(newframe.head())
-            nan_value = float("NaN")
-            newframe["elneg"] = nan_value
-            #newframe = cartesian_product_simplified(bdf,sdf)
             newframe.to_csv('Bcsv.csv')
             
             aprdf_data = merge_aprdf_for_RF(newframe)

@@ -5,12 +5,16 @@
 %\documentclass{book}
 \usepackage{indentfirst}
 \usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{svg}
+\overfullrule=2cm
 
 
 \newcommand\myworries[1]{\textcolor{red}{#1}}
 
-\usepackage{babel, csquotes, newcent, textcomp}
+%\usepackage{babel, csquotes, newcent, textcomp}
 %\usepackage[backend=biber, sortcites]{biblatex}
+
 %\addbibresource{kilder.bib}
 
 \usepackage{titlesec}
@@ -25,14 +29,21 @@
 
 \numberwithin{equation}{section}
 
-
+\tikzset{
+  treenode/.style = {shape=rectangle, rounded corners,
+                     draw, align=center,
+                     top color=white, bottom color=blue!20},
+  root/.style     = {treenode, font=\Large, bottom color=red!30},
+  env/.style      = {treenode, font=\ttfamily\normalsize},
+  dummy/.style    = {circle,draw}
+}
 
 
 
 
 %-------------------------------------------------------------------- Doc starts here
 
-\title{Sondres master utkast 16.01.2020 }
+\title{Sondres master utkast 26.02.2020 }
 \pagenumbering{roman}	%Roman numbering of pages.
 \begin{document}
 	\mnfrontpage
@@ -104,9 +115,6 @@
 
 
 
-
-
-
 %\begin{align*}
 %&n \qquad &2^n - (-1)^n\\
 %&n+1 \qquad &2^{n+1} - (-1)^{n+1} \\
@@ -118,7 +126,15 @@
 %\end{align*}
 
 
+%single fig
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\linewidth]{result/bilder/Tc/e-Tc}
+%     \caption{}
+%     \label{fig:tc-E-M}
+% \end{figure}
 
+%multi fig
 % \begin{figure}[H]
 %     \centering
 %     \begin{subfigure}{0.5\textwidth}
