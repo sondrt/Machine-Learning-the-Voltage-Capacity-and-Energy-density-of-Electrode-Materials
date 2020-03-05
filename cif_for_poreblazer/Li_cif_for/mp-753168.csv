@@ -1,0 +1,50 @@
+,cif
+0,"# generated using pymatgen
+data_Li4Ti3(FeO4)3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.01384959
+_cell_length_b   6.04490544
+_cell_length_c   6.70375326
+_cell_angle_alpha   103.35015974
+_cell_angle_beta   102.47564529
+_cell_angle_gamma   91.10120032
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li4Ti3(FeO4)3
+_chemical_formula_sum   'Li4 Ti3 Fe3 O12'
+_cell_volume   230.90495935
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.833333  0.333333  0.333333  1
+  Li  Li1  1  0.507216  0.998613  0.998557  1
+  Li  Li2  1  0.333333  0.333333  0.333333  1
+  Li  Li3  1  0.159451  0.668054  0.668110  1
+  Ti  Ti4  1  0.161405  0.159319  0.685812  1
+  Ti  Ti5  1  0.833333  0.833333  0.333333  1
+  Ti  Ti6  1  0.505261  0.507347  0.980854  1
+  Fe  Fe7  1  0.669525  0.156796  0.671021  1
+  Fe  Fe8  1  0.333333  0.833333  0.333333  1
+  Fe  Fe9  1  0.997142  0.509871  0.995646  1
+  O  O10  1  0.732866  0.282323  0.995017  1
+  O  O11  1  0.262440  0.268021  0.986656  1
+  O  O12  1  0.933800  0.384344  0.671649  1
+  O  O13  1  0.593746  0.063649  0.340047  1
+  O  O14  1  0.404227  0.398646  0.680011  1
+  O  O15  1  0.084968  0.066459  0.355635  1
+  O  O16  1  0.923036  0.924821  0.643166  1
+  O  O17  1  0.581699  0.600208  0.311032  1
+  O  O18  1  0.398066  0.938433  0.655881  1
+  O  O19  1  0.072921  0.603018  0.326619  1
+  O  O20  1  0.743630  0.741846  0.023500  1
+  O  O21  1  0.268600  0.728234  0.010786  1
+"

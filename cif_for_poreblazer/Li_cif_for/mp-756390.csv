@@ -1,0 +1,43 @@
+,cif
+0,"# generated using pymatgen
+data_Li3MnCu3O8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   10.30394856
+_cell_length_b   10.30627032
+_cell_length_c   14.59818482
+_cell_angle_alpha   19.20845644
+_cell_angle_beta   19.19821916
+_cell_angle_gamma   33.09705072
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li3MnCu3O8
+_chemical_formula_sum   'Li3 Mn1 Cu3 O8'
+_cell_volume   145.27891583
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.999983  0.499981  0.500024  1
+  Li  Li1  1  0.499986  0.999989  0.500016  1
+  Li  Li2  1  0.500003  0.500008  0.499995  1
+  Mn  Mn3  1  -0.000004  0.000009  0.000000  1
+  Cu  Cu4  1  0.000002  0.499996  -0.000000  1
+  Cu  Cu5  1  0.499995  0.000002  -0.000002  1
+  Cu  Cu6  1  0.499991  0.499994  0.000008  1
+  O  O7  1  0.000387  0.999902  0.260114  1
+  O  O8  1  0.000126  0.528244  0.241314  1
+  O  O9  1  0.527742  0.999926  0.241758  1
+  O  O10  1  0.999603  0.000090  0.739893  1
+  O  O11  1  0.471913  0.471751  0.297787  1
+  O  O12  1  0.999888  0.471780  0.758664  1
+  O  O13  1  0.472287  0.000080  0.758219  1
+  O  O14  1  0.528099  0.528248  0.702210  1
+"

@@ -12,22 +12,24 @@ def isNaN(num):
 def download_ALLstructures(allIDs):
     with MPRester("GKDHNwKre8uiowqhPh") as m:
         for id in allIDs:
+            print(id)
             try:
                 material_prop = m.query(criteria={"task_id": id}, properties = ['cif'])
-#                print(material_prop)
-# ('energy', 'energy_per_atom', 'volume', 'formation_energy_per_atom', 'nsites', 'unit_cell_formula', 'pretty_formula', 'is_hubbard', 'elements', 'nelements', 'e_above_hull', 'hubbards', 'is_compatible', 'spacegroup', 'task_ids', 'band_gap', 'density', 'icsd_id', 'icsd_ids', 'cif', 'total_magnetization', 'material_id', 'oxide_type', 'tags', 'elasticity')
+                # print(material_prop)
+                df = pd.DataFrame(material_prop)
+                save_material_prop = (cif_for_poreblazer + id + ".csv")
+                # print(type(df),df)
+    # ('energy', 'energy_per_atom', 'volume', 'formation_energy_per_atom', 'nsites', 'unit_cell_formula', 'pretty_formula', 'is_hubbard', 'elements', 'nelements', 'e_above_hull', 'hubbards', 'is_compatible', 'spacegroup', 'task_ids', 'band_gap', 'density', 'icsd_id', 'icsd_ids', 'cif', 'total_magnetization', 'material_id', 'oxide_type', 'tags', 'elasticity')
                 #print( 'I will downlaod: ', id, ' in dir ', cif_info_dir)
-                with open(Cif_jsondictformat + id + '_cif.dat','w+') as f:
-                    json.dump(material_prop.as_dict(), f)
+                df.to_csv(save_material_prop)
             except:
                 print("That didn't work, id: ", id)        
-                exit()
 ########################################################
 
 do_download = True
-csvfile = 'manualOKT.csv'
-cif_info_dir = './cif_info_dir/'
-cif_for_poreblazer = './cif_for_poreblazer/'
+csvfile = 'Li_allFiles.csv'   #Li_allFiles.csv #manualOKT.csv
+# cif_info_dir = './cif_info_dir/'
+cif_for_poreblazer = './cif_for_poreblazer/cif_for_Li_PB/'
 
 #heads =  ['Battid', 'Discharged_ID', 'Charged_ID', 'Reduced_Cell_Formula', 'Type', 'Spacegroup', 'Average_Voltage', 'Capacity_Grav', 'Capacity_Vol', 'Specific_E_Wh/kg', 'E Density Wh/l', 'Stability Charge', 'Stability Discharge'
 ###############################################################
@@ -38,15 +40,15 @@ HEADERS = list(data.head())
 #print data['Spacegroup']
 
 if do_download:
-   list = []
-   for struct_id in data['Charged_ID']:
-       if isNaN(struct_id) == False:
-           list.append(struct_id)
-   download_ALLstructures(list)
-   del(list)
-   list = []
-   for struct_id in data['Discharged_ID']:
-       if isNaN(struct_id) == False:
-           list.append(struct_id)
-   download_ALLstructures(list)
-   del(list)
+    list = []
+    for struct_id in data['Charged_ID']:
+        if isNaN(struct_id) == False:
+            list.append(struct_id)
+    download_ALLstructures(list)
+    del(list)
+    list = []
+    for struct_id in data['Discharged_ID']:
+        if isNaN(struct_id) == False:
+            list.append(struct_id)
+    download_ALLstructures(list)
+    del(list)

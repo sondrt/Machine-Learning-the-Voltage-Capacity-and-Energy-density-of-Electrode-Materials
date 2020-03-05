@@ -1,0 +1,56 @@
+,cif
+0,"# generated using pymatgen
+data_Li4Ti3Mn5O16
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.91660308
+_cell_length_b   5.95191148
+_cell_length_c   9.72643284
+_cell_angle_alpha   89.98854547
+_cell_angle_beta   92.18514620
+_cell_angle_gamma   120.21173085
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li4Ti3Mn5O16
+_chemical_formula_sum   'Li4 Ti3 Mn5 O16'
+_cell_volume   295.70703980
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.350231  0.675093  0.893195  1
+  Li  Li1  1  0.979980  0.989939  0.995661  1
+  Li  Li2  1  0.973702  0.986949  0.496075  1
+  Li  Li3  1  0.674477  0.337265  0.393128  1
+  Ti  Ti4  1  0.175676  0.837449  0.216501  1
+  Ti  Ti5  1  0.175699  0.338233  0.216474  1
+  Ti  Ti6  1  0.340624  0.170351  0.710976  1
+  Mn  Mn7  1  0.333530  0.666812  0.489266  1
+  Mn  Mn8  1  0.661025  0.830512  0.209647  1
+  Mn  Mn9  1  0.679612  0.339778  0.986951  1
+  Mn  Mn10  1  0.837870  0.663602  0.716064  1
+  Mn  Mn11  1  0.837904  0.174365  0.716105  1
+  O  O12  1  0.151822  0.839972  0.606565  1
+  O  O13  1  0.038106  0.518945  0.332831  1
+  O  O14  1  0.329140  0.664587  0.106640  1
+  O  O15  1  0.992868  0.996369  0.309868  1
+  O  O16  1  0.004494  0.002242  0.810531  1
+  O  O17  1  0.151885  0.312067  0.606572  1
+  O  O18  1  0.474460  0.968621  0.336584  1
+  O  O19  1  0.474703  0.506102  0.336457  1
+  O  O20  1  0.307069  0.153561  0.106874  1
+  O  O21  1  0.665950  0.833034  0.608365  1
+  O  O22  1  0.533583  0.484488  0.836999  1
+  O  O23  1  0.533567  0.049137  0.837046  1
+  O  O24  1  0.660668  0.330385  0.607033  1
+  O  O25  1  0.839032  0.666681  0.097764  1
+  O  O26  1  0.983376  0.491740  0.829851  1
+  O  O27  1  0.838946  0.172021  0.097815  1
+"

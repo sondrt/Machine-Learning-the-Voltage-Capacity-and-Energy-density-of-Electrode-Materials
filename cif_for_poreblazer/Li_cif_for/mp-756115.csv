@@ -1,0 +1,50 @@
+,cif
+0,"# generated using pymatgen
+data_Li3Fe5(CoO6)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.14601767
+_cell_length_b   5.14601795
+_cell_length_c   9.83422487
+_cell_angle_alpha   84.76512376
+_cell_angle_beta   95.23487313
+_cell_angle_gamma   58.79811661
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li3Fe5(CoO6)2
+_chemical_formula_sum   'Li3 Fe5 Co2 O12'
+_cell_volume   218.87243521
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.327170  0.850198  0.991411  1
+  Li  Li1  1  0.850198  0.327170  0.508589  1
+  Li  Li2  1  0.920583  0.920583  0.750000  1
+  Fe  Fe3  1  0.078786  0.078786  0.250000  1
+  Fe  Fe4  1  0.986917  0.525541  0.984531  1
+  Fe  Fe5  1  0.525541  0.986917  0.515469  1
+  Fe  Fe6  1  0.416027  0.416027  0.250000  1
+  Fe  Fe7  1  0.567876  0.567876  0.750000  1
+  Co  Co8  1  0.254484  0.254484  0.750000  1
+  Co  Co9  1  0.751544  0.751544  0.250000  1
+  O  O10  1  0.120939  0.369672  0.361952  1
+  O  O11  1  0.369672  0.120939  0.138048  1
+  O  O12  1  0.273113  0.546683  0.868832  1
+  O  O13  1  0.038741  0.774118  0.137097  1
+  O  O14  1  0.546683  0.273113  0.631168  1
+  O  O15  1  0.233799  0.967501  0.626609  1
+  O  O16  1  0.479638  0.718853  0.361341  1
+  O  O17  1  0.774118  0.038741  0.362903  1
+  O  O18  1  0.607899  0.860322  0.867281  1
+  O  O19  1  0.967501  0.233799  0.873391  1
+  O  O20  1  0.718853  0.479638  0.138659  1
+  O  O21  1  0.860322  0.607899  0.632719  1
+"

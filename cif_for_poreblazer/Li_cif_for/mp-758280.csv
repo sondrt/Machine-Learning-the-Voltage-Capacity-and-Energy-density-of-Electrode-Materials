@@ -1,0 +1,57 @@
+,cif
+0,"# generated using pymatgen
+data_Li2V3(CO3)6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.80714004
+_cell_length_b   6.08332432
+_cell_length_c   12.18673035
+_cell_angle_alpha   100.89506290
+_cell_angle_beta   90.02526761
+_cell_angle_gamma   113.24108044
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li2V3(CO3)6
+_chemical_formula_sum   'Li2 V3 C6 O18'
+_cell_volume   320.44590259
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.261715  0.520254  0.938197  1
+  Li  Li1  1  0.404952  0.813079  0.395136  1
+  V  V2  1  0.671729  0.335131  0.328987  1
+  V  V3  1  0.333333  0.666667  0.666667  1
+  V  V4  1  0.994937  0.998202  0.004347  1
+  C  C5  1  0.868727  0.744675  0.532832  1
+  C  C6  1  0.541735  0.081504  0.865300  1
+  C  C7  1  0.797940  0.588659  0.800501  1
+  C  C8  1  0.211665  0.416025  0.199369  1
+  C  C9  1  0.455002  0.917308  0.133964  1
+  C  C10  1  0.124931  0.251829  0.468034  1
+  O  O11  1  0.818527  0.108939  0.882836  1
+  O  O12  1  0.848139  0.224395  0.450497  1
+  O  O13  1  0.910426  0.510894  0.714325  1
+  O  O14  1  0.949840  0.671211  0.897929  1
+  O  O15  1  0.716827  0.662122  0.435404  1
+  O  O16  1  0.399754  0.964251  0.765310  1
+  O  O17  1  0.756241  0.822439  0.619008  1
+  O  O18  1  0.404692  0.170202  0.938750  1
+  O  O19  1  0.482346  0.426032  0.212458  1
+  O  O20  1  0.519355  0.577449  0.792188  1
+  O  O21  1  0.565293  0.823227  0.048994  1
+  O  O22  1  0.261974  0.163131  0.394583  1
+  O  O23  1  0.610480  0.008123  0.230047  1
+  O  O24  1  0.266913  0.369082  0.568023  1
+  O  O25  1  0.056187  0.325210  0.103286  1
+  O  O26  1  0.101374  0.510106  0.284339  1
+  O  O27  1  0.147312  0.755884  0.541145  1
+  O  O28  1  0.184321  0.907301  0.120875  1
+"

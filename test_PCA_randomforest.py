@@ -54,14 +54,14 @@ pca = PCA(0.99) #pca = PCA(n_components=compontent)
 
 sc_train = sc.fit_transform(X_train)
 sc_test = sc.transform(X_test)
-print(sc_test)
-print(sc_train)
+# print(sc_test)
+# print(sc_train)
 # sc_y_train = sc.fit_transform(y_train)  #remove
 # sc_y_test = sc.transform(t_test)        #remove
 pca_sc_train = pca.fit_transform(sc_train)
 pca_sc_test = pca.fit(sc_test)
-print(pca_sc_train,"---------------------------------")
-print(pca_sc_test)
+# print(pca_sc_train,"---------------------------------")
+# print(pca_sc_test)
 
 PCA(copy=True, iterated_power ='auto', n_components=pca.n_components, random_state=None, svd_solver='auto', tol=0.0, whiten= False)
 print('pca explained_variance_ratio_: ')
@@ -81,9 +81,11 @@ print ('r2score = ', r2score_test)
 print ('r2score_train = ', r2score_train)
 
 MSE = mean_squared_error(y_test, pred)
+MAE = mean_absolute_error(y_test, pred)
 RMSE = np.sqrt(MSE) 
 print('MSE: ', MSE)
 print('RMSE: ', RMSE)
+print('MAE: ', MAE)
 # print("pred and pred_train: ", pred, pred_train)
 
 scores = cross_val_score(clf, X, y, cv=ncv) #only one CPU used
@@ -107,11 +109,11 @@ N= 1248
 # plt.scatter(trained_model2[:,0],trained_model2[:,1],c=colors)
 # plt.show()
    #213
-colors = np.random.rand(N)
+# colors = np.random.rand(N)
 
-plt.scatter(pca_sc_train[:,0],pca_sc_train[:,1],c=colors)
-plt.colorbar()
-plt.show()
+# plt.scatter(pca_sc_train[:,0],pca_sc_train[:,1],c=colors)
+# plt.colorbar()
+# plt.show()
 
 
 '''

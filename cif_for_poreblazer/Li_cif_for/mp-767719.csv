@@ -1,0 +1,56 @@
+,cif
+0,"# generated using pymatgen
+data_Li4Ti2Mn3Ni3O16
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.87065639
+_cell_length_b   5.76947956
+_cell_length_c   9.46772318
+_cell_angle_alpha   89.99260037
+_cell_angle_beta   91.84551298
+_cell_angle_gamma   119.43798337
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li4Ti2Mn3Ni3O16
+_chemical_formula_sum   'Li4 Ti2 Mn3 Ni3 O16'
+_cell_volume   279.08421545
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.321021  0.660514  0.894687  1
+  Li  Li1  1  0.990001  0.995043  0.992632  1
+  Li  Li2  1  0.004891  0.002448  0.496274  1
+  Li  Li3  1  0.664681  0.332335  0.394586  1
+  Ti  Ti4  1  0.343962  0.672051  0.497039  1
+  Ti  Ti5  1  0.663357  0.331684  0.994288  1
+  Mn  Mn6  1  0.174563  0.831869  0.215716  1
+  Mn  Mn7  1  0.174591  0.342712  0.215725  1
+  Mn  Mn8  1  0.345330  0.172678  0.717779  1
+  Ni  Ni9  1  0.659853  0.829958  0.213049  1
+  Ni  Ni10  1  0.830028  0.661404  0.714150  1
+  Ni  Ni11  1  0.830045  0.168697  0.714148  1
+  O  O12  1  0.187359  0.844433  0.595267  1
+  O  O13  1  0.038414  0.519147  0.332795  1
+  O  O14  1  0.313383  0.656778  0.106367  1
+  O  O15  1  0.015219  0.007540  0.307597  1
+  O  O16  1  0.010961  0.005637  0.804182  1
+  O  O17  1  0.187563  0.343003  0.595227  1
+  O  O18  1  0.467477  0.961061  0.342352  1
+  O  O19  1  0.467562  0.506534  0.342295  1
+  O  O20  1  0.326443  0.163250  0.102651  1
+  O  O21  1  0.679892  0.840121  0.595365  1
+  O  O22  1  0.502345  0.468870  0.844935  1
+  O  O23  1  0.502253  0.033401  0.844925  1
+  O  O24  1  0.659489  0.329616  0.613277  1
+  O  O25  1  0.844504  0.665274  0.091641  1
+  O  O26  1  0.950380  0.475122  0.837208  1
+  O  O27  1  0.844437  0.179120  0.091679  1
+"

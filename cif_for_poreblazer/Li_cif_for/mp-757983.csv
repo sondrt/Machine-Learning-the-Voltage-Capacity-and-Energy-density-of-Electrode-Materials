@@ -1,0 +1,52 @@
+,cif
+0,"# generated using pymatgen
+data_Cr3Co3(TeO8)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.81462440
+_cell_length_b   5.83842039
+_cell_length_c   9.11825660
+_cell_angle_alpha   90.00690769
+_cell_angle_beta   88.64518742
+_cell_angle_gamma   120.13666549
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Cr3Co3(TeO8)2
+_chemical_formula_sum   'Cr3 Co3 Te2 O16'
+_cell_volume   267.60745314
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cr  Cr0  1  0.165349  0.826268  0.217077  1
+  Cr  Cr1  1  0.165305  0.339717  0.216872  1
+  Cr  Cr2  1  0.336342  0.167888  0.718931  1
+  Co  Co3  1  0.653368  0.827008  0.212285  1
+  Co  Co4  1  0.825129  0.655516  0.712663  1
+  Co  Co5  1  0.825074  0.169005  0.712750  1
+  Te  Te6  1  0.339128  0.669408  0.493871  1
+  Te  Te7  1  0.671501  0.335880  0.989648  1
+  O  O8  1  0.167355  0.834707  0.596730  1
+  O  O9  1  0.037591  0.518972  0.351416  1
+  O  O10  1  0.337653  0.669323  0.108246  1
+  O  O11  1  0.984980  0.992700  0.298105  1
+  O  O12  1  0.987512  0.993470  0.797148  1
+  O  O13  1  0.167439  0.332318  0.596692  1
+  O  O14  1  0.488822  0.962690  0.340835  1
+  O  O15  1  0.488837  0.526479  0.340630  1
+  O  O16  1  0.337447  0.168920  0.096020  1
+  O  O17  1  0.674430  0.836953  0.596901  1
+  O  O18  1  0.523692  0.485750  0.842991  1
+  O  O19  1  0.523616  0.037618  0.843139  1
+  O  O20  1  0.671449  0.335349  0.611955  1
+  O  O21  1  0.832686  0.666000  0.094666  1
+  O  O22  1  0.962726  0.481157  0.831368  1
+  O  O23  1  0.832569  0.167101  0.094781  1
+"

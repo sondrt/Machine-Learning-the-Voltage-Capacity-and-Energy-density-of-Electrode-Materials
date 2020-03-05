@@ -54,8 +54,7 @@ Steps for use of python scripts:
 	12: Run cross-validation, remove outliers.
 
 
-	
-python prep_csv.py >> Results/2020-01-13/2020-01-13.txt; python randomforest.py >>  Results/2020-01-13/2020-01-13.txt; python rf_crossvalidation.py >> Results/2020-01-13/2020-01-13.txt
+python prep_csv.py >> Results/2020-03-04/2020-03-04.txt; python PCA_randomforest_crossvalidation.py >>  Results/2020-03-04/2020-03-04.txt;
 
 
 cmd: 

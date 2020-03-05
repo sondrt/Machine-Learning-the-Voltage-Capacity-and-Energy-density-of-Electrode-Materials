@@ -55,11 +55,11 @@
  atoms from the adsrobent structure file
  ------------------------------------------------------
 
- Helium volume in A^3:          12.042
- Helium volume in cm^3/g:        0.031
+ Helium volume in A^3:           1.984
+ Helium volume in cm^3/g:        0.005
 
- Geometric (point accessible) volume in A^3:          29.817
- Geometric (point accessible) volume in cm^3/g:        0.076
+ Geometric (point accessible) volume in A^3:          21.789
+ Geometric (point accessible) volume in cm^3/g:        0.055
 
  !-------------------------------------------------------!
  ! Pore volume calculations complete                     !
@@ -70,24 +70,9 @@
  ! Starting surface area calculations                    !
  !-------------------------------------------------------!
 
- Accessible surface area in A^2:                         1.58
- Accessible surface area per volume in m^2/cm^3:       215.02
- Accessible surface area per mass in m^2/g:             40.03
-
- !-------------------------------------------------------!
- ! Surface area calculations complete                    !
- !-------------------------------------------------------!
-
  Step 7/8
  !-------------------------------------------------------!
  ! Starting pore size distribution calculations          !
- !-------------------------------------------------------!
-
- Cumulative PSD and differential PSD 
- have been stored in files psd_cumulative.txt
- and psd.txt
- !-------------------------------------------------------!
- ! Pore size distribution calculations complete          !
  !-------------------------------------------------------!
 
  Step 8/8
@@ -96,8 +81,8 @@
  ! analysis                                              !
  !-------------------------------------------------------!
 
- Pore limiting diameter in A:         4.72
- Maximum pore diameter in A:          4.72
+ Pore limiting diameter in A:         2.28
+ Maximum pore diameter in A:          2.31
  !-------------------------------------------------------!
  ! Limiting pore diameter and maximum pore size          !
  ! analysis complete                                     !

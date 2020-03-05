@@ -1,0 +1,48 @@
+,cif
+0,"# generated using pymatgen
+data_Li3Cu(TeO3)4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.71546385
+_cell_length_b   11.49624419
+_cell_length_c   10.17843039
+_cell_angle_alpha   27.49623698
+_cell_angle_beta   50.00257641
+_cell_angle_gamma   55.26326763
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li3Cu(TeO3)4
+_chemical_formula_sum   'Li3 Cu1 Te4 O12'
+_cell_volume   236.54252326
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.272402  0.498671  0.274985  1
+  Li  Li1  1  0.790705  0.003124  0.789718  1
+  Li  Li2  1  0.794137  0.498370  0.793857  1
+  Cu  Cu3  1  0.255048  0.000588  0.252171  1
+  Te  Te4  1  0.006936  -0.000169  0.998053  1
+  Te  Te5  1  0.006511  0.505403  0.000781  1
+  Te  Te6  1  0.489867  0.992564  0.506854  1
+  Te  Te7  1  0.501103  0.506151  0.479751  1
+  O  O8  1  0.386266  0.300675  0.127324  1
+  O  O9  1  0.232761  0.132352  0.603298  1
+  O  O10  1  0.122588  0.340541  0.701441  1
+  O  O11  1  0.860903  0.175598  0.241739  1
+  O  O12  1  0.400025  0.799783  0.103735  1
+  O  O13  1  0.718019  0.363484  0.383302  1
+  O  O14  1  0.235519  0.637437  0.579461  1
+  O  O15  1  0.593240  0.186909  0.855247  1
+  O  O16  1  0.105666  0.837589  0.729546  1
+  O  O17  1  0.867629  0.677207  0.230421  1
+  O  O18  1  0.701646  0.859868  0.405580  1
+  O  O19  1  0.588629  0.683855  0.872338  1
+"

@@ -1,0 +1,62 @@
+,cif
+0,"# generated using pymatgen
+data_Li10Ti2Fe3Co3O16
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.99196005
+_cell_length_b   5.98625094
+_cell_length_c   9.87155591
+_cell_angle_alpha   90.31124102
+_cell_angle_beta   90.14984257
+_cell_angle_gamma   119.68132720
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li10Ti2Fe3Co3O16
+_chemical_formula_sum   'Li10 Ti2 Fe3 Co3 O16'
+_cell_volume   307.61762535
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.001706  0.999671  0.029749  1
+  Li  Li1  1  0.000186  0.007773  0.526625  1
+  Li  Li2  1  0.396504  0.196111  0.960527  1
+  Li  Li3  1  0.200685  0.398306  0.458704  1
+  Li  Li4  1  0.804852  0.187669  0.959371  1
+  Li  Li5  1  0.669796  0.330445  0.745754  1
+  Li  Li6  1  0.193601  0.807364  0.461960  1
+  Li  Li7  1  0.335365  0.670291  0.246629  1
+  Li  Li8  1  0.805420  0.608035  0.962152  1
+  Li  Li9  1  0.609190  0.803382  0.462080  1
+  Ti  Ti10  1  0.318151  0.649550  0.985509  1
+  Ti  Ti11  1  0.653787  0.316838  0.482372  1
+  Fe  Fe12  1  0.163954  0.830345  0.726929  1
+  Fe  Fe13  1  0.655900  0.820840  0.729987  1
+  Fe  Fe14  1  0.825824  0.657576  0.229674  1
+  Co  Co15  1  0.167654  0.339959  0.725421  1
+  Co  Co16  1  0.338937  0.167967  0.225432  1
+  Co  Co17  1  0.829531  0.166039  0.225691  1
+  O  O18  1  0.985341  0.001618  0.836897  1
+  O  O19  1  0.999451  0.995085  0.334788  1
+  O  O20  1  0.347657  0.182644  0.588296  1
+  O  O21  1  0.179103  0.345242  0.091352  1
+  O  O22  1  0.021725  0.506856  0.862181  1
+  O  O23  1  0.510398  0.021712  0.360091  1
+  O  O24  1  0.497561  0.513727  0.855486  1
+  O  O25  1  0.344809  0.670003  0.607961  1
+  O  O26  1  0.517554  0.499025  0.353738  1
+  O  O27  1  0.671230  0.338617  0.109516  1
+  O  O28  1  0.820839  0.173402  0.595071  1
+  O  O29  1  0.168260  0.819519  0.096394  1
+  O  O30  1  0.492097  0.975612  0.853821  1
+  O  O31  1  0.979190  0.498063  0.355350  1
+  O  O32  1  0.825688  0.668342  0.600442  1
+  O  O33  1  0.660147  0.818981  0.099330  1
+"

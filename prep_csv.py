@@ -31,20 +31,20 @@ T = True
 F = False
 
 def main():
-    csv = 'Li_allFiles.csv' #'newapproch_aprdf.csv'          #'battery_data_after_aprdf_merge.csv' , "allFiles.csv"
+    csv = 'Li_allFiles.csv'    #'newapproch_aprdf.csv' #Li_allFiles.csv #'battery_data_after_aprdf_merge.csv' , "allFiles.csv"
     outcsv = 'for_ML.csv'
     
 
     Target              = 'Capacity_Grav'
-# Possinble Targets: Average_Voltage, Capacity_Grav, Capacity_Vol, Specific_E_Wh/kg, 
+    # Possinble Targets: Average_Voltage, Capacity_Grav, Capacity_Vol, Specific_E_Wh/kg, 
 # E Density Wh/l, Stability Discharge, Stability Charge. 
+
 
     l_charged_atoms     = F     #turns on fraction density predictor for charged material
     l_discharged_atoms  = F    #turns on fraction density predictor for discharged material
     APRDF = False
-
-    l_charged_atoms_Li     = True
-    l_discharged_atoms_Li  = True 
+    l_charged_atoms_Li     = T
+    l_discharged_atoms_Li  = F
 
     list_of_predictors= ['Battid', 
     # 'Reduced_Cell_Formula',   # Not operational.
@@ -59,16 +59,18 @@ def main():
     
     # 'E Density Wh/l',
     
-    # 'Stability Discharge',                                    # No predictions to talk about.
-    # 'Stability Charge',                                       # On stability
+    # 'Stability Discharge',                                    
+    # 'Stability Charge',                                       
 
-    # 'helvol',                                                 # this is not ideal
+
+    # 'helvol',                                                 
     # 'geomvol',
     # 'helvol_dis',
-    # 'geomvol_dis',
+    # 'geomvol_dis'
 
 
     # 'energy',
+    # 'energy_dis',
 
     # 'energy_per_atom',
     # 'energy_per_atom_dis',                                          #  1 
@@ -77,7 +79,7 @@ def main():
     # 'volume_dis',                                               
     
     # 'formation_energy_per_atom',
-    # 'formation_energy_per_atom_dis',                            #  This does not work
+    # 'formation_energy_per_atom_dis',                            #  This does not work due to None values
     
     # 'band_gap',
     # 'band_gap_dis',                                                 #  1
@@ -163,7 +165,11 @@ def main():
     'S_vol','Cu_vol','B_vol','Li_vol','Si_vol',
 
     #Elements with to few data points
-'Cl_vol','Zr_vol','U_vol','Pr_vol','Cs_vol','Ta_vol','Ga_vol','Re_vol','Y_vol','Ca_vol','Rb_vol','Sc_vol','Pt_vol','Au_vol','Al_vol','In_vol','Pd_vol','Tl_vol','Nd_vol','Rb_vol','Sr_vol','Se_vol','Ge_vol','Zn_vol'
+    'Cl_vol','Zr_vol','U_vol','Pr_vol','Cs_vol',
+    'Ta_vol','Ga_vol','Re_vol','Y_vol','Ca_vol',
+    'Rb_vol','Sc_vol','Pt_vol','Au_vol','Al_vol',
+    'In_vol','Pd_vol','Tl_vol','Nd_vol','Rb_vol',
+    'Sr_vol','Se_vol','Ge_vol','Zn_vol'
 ]:
            list_of_predictors.append(ii)
     if l_discharged_atoms_Li:
@@ -175,7 +181,11 @@ def main():
 'Sn_vol_dis','F_vol_dis','Ba_vol_dis','Cr_vol_dis','S_vol_dis',
 'Cu_vol_dis','B_vol_dis','Li_vol_dis','Si_vol_dis','W_vol_dis',
 
-'Ge_vol_dis','Sr_vol_dis','Nd_vol_dis','Tl_vol_dis','Pd_vol_dis','In_vol_dis','Al_vol_dis','Au_vol_dis','Pt_vol_dis','Sc_vol_dis','Zn_vol_dis','Rb_vol_dis','Ca_vol_dis','Y_vol_dis','Re_vol_dis','Ga_vol_dis','Ta_vol_dis','Cs_vol_dis','Pr_vol_dis','U_vol_dis','Zr_vol_dis','Cl_vol_dis','Se_vol_dis' 
+'Ge_vol_dis','Sr_vol_dis','Nd_vol_dis','Tl_vol_dis','Pd_vol_dis',
+'In_vol_dis','Al_vol_dis','Au_vol_dis','Pt_vol_dis','Sc_vol_dis',
+'Zn_vol_dis','Rb_vol_dis','Ca_vol_dis','Y_vol_dis','Re_vol_dis',
+'Ga_vol_dis','Ta_vol_dis','Cs_vol_dis','Pr_vol_dis','U_vol_dis',
+'Zr_vol_dis','Cl_vol_dis','Se_vol_dis' 
 
     ]:
             list_of_predictors.append(ii)

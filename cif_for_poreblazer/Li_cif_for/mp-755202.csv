@@ -1,0 +1,50 @@
+,cif
+0,"# generated using pymatgen
+data_Li4Fe5NiO12
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.11912286
+_cell_length_b   5.11182587
+_cell_length_c   10.23636641
+_cell_angle_alpha   89.54379071
+_cell_angle_beta   89.24762056
+_cell_angle_gamma   59.92297413
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li4Fe5NiO12
+_chemical_formula_sum   'Li4 Fe5 Ni1 O12'
+_cell_volume   231.77812911
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.144972  0.512558  0.753810  1
+  Li  Li1  1  0.346690  0.498567  0.249016  1
+  Li  Li2  1  0.662861  0.476710  0.751459  1
+  Li  Li3  1  0.853057  0.486986  0.251531  1
+  Fe  Fe4  1  0.161821  0.676469  0.500216  1
+  Fe  Fe5  1  0.660352  0.677509  0.000981  1
+  Fe  Fe6  1  0.331402  0.335518  0.000912  1
+  Fe  Fe7  1  0.833896  0.331298  0.500956  1
+  Fe  Fe8  1  0.497729  0.003896  0.501931  1
+  Ni  Ni9  1  0.000178  0.997965  0.001364  1
+  O  O10  1  0.024906  0.631955  0.109771  1
+  O  O11  1  0.341044  0.632420  0.892359  1
+  O  O12  1  0.151922  0.344382  0.395158  1
+  O  O13  1  0.520623  0.646539  0.395057  1
+  O  O14  1  0.501639  0.345250  0.606120  1
+  O  O15  1  0.148919  0.018760  0.600016  1
+  O  O16  1  0.832377  0.643983  0.606277  1
+  O  O17  1  0.642647  0.364268  0.102946  1
+  O  O18  1  0.347751  0.000918  0.097175  1
+  O  O19  1  0.991199  0.364730  0.899342  1
+  O  O20  1  0.650408  0.000953  0.905201  1
+  O  O21  1  0.830102  0.021085  0.402061  1
+"

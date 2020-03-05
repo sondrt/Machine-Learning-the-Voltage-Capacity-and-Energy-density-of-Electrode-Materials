@@ -1,0 +1,43 @@
+,cif
+0,"# generated using pymatgen
+data_Li3Co2(SiO4)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.20570254
+_cell_length_b   5.23558308
+_cell_length_c   6.46877128
+_cell_angle_alpha   90.91198293
+_cell_angle_beta   89.26915611
+_cell_angle_gamma   88.49727531
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li3Co2(SiO4)2
+_chemical_formula_sum   'Li3 Co2 Si2 O8'
+_cell_volume   176.20737242
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.820540  0.822686  0.505006  1
+  Li  Li1  1  0.318901  0.683819  0.265999  1
+  Li  Li2  1  0.172764  0.173196  0.505389  1
+  Co  Co3  1  0.809062  0.804275  0.995851  1
+  Co  Co4  1  0.199365  0.189984  0.993254  1
+  Si  Si5  1  0.692280  0.314954  0.256613  1
+  Si  Si6  1  0.329721  0.677468  0.742340  1
+  O  O7  1  0.832989  0.182036  0.045135  1
+  O  O8  1  0.710920  0.629144  0.245965  1
+  O  O9  1  0.807832  0.183976  0.454581  1
+  O  O10  1  0.635947  0.723270  0.750695  1
+  O  O11  1  0.371415  0.273997  0.234680  1
+  O  O12  1  0.199706  0.790944  0.537065  1
+  O  O13  1  0.264933  0.369258  0.762390  1
+  O  O14  1  0.200212  0.814366  0.962116  1
+"

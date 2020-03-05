@@ -1,0 +1,52 @@
+,cif
+0,"# generated using pymatgen
+data_Al3Cr3(SbO8)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.78167198
+_cell_length_b   5.81752340
+_cell_length_c   9.29624139
+_cell_angle_alpha   89.97448959
+_cell_angle_beta   89.60719449
+_cell_angle_gamma   120.21387875
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Al3Cr3(SbO8)2
+_chemical_formula_sum   'Al3 Cr3 Sb2 O16'
+_cell_volume   270.19354446
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Al  Al0  1  0.665677  0.832857  0.202786  1
+  Al  Al1  1  0.835065  0.666186  0.703996  1
+  Al  Al2  1  0.834039  0.168236  0.703892  1
+  Cr  Cr3  1  0.172862  0.834577  0.216916  1
+  Cr  Cr4  1  0.172883  0.339404  0.218070  1
+  Cr  Cr5  1  0.340444  0.170935  0.724756  1
+  Sb  Sb6  1  0.340390  0.670593  0.494405  1
+  Sb  Sb7  1  0.678219  0.338610  0.990629  1
+  O  O8  1  0.163594  0.830191  0.603495  1
+  O  O9  1  0.039902  0.520106  0.340332  1
+  O  O10  1  0.331422  0.664521  0.109450  1
+  O  O11  1  0.993351  0.997430  0.300382  1
+  O  O12  1  0.003941  0.002357  0.801093  1
+  O  O13  1  0.163809  0.333457  0.603994  1
+  O  O14  1  0.481253  0.955837  0.335174  1
+  O  O15  1  0.481802  0.525428  0.336436  1
+  O  O16  1  0.337267  0.168201  0.102162  1
+  O  O17  1  0.673848  0.837158  0.606063  1
+  O  O18  1  0.514803  0.475154  0.837952  1
+  O  O19  1  0.510923  0.037886  0.838155  1
+  O  O20  1  0.651794  0.326105  0.611140  1
+  O  O21  1  0.831816  0.670395  0.102420  1
+  O  O22  1  0.949668  0.474447  0.830189  1
+  O  O23  1  0.831230  0.160132  0.101832  1
+"

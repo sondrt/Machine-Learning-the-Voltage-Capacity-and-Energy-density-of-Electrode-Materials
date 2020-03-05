@@ -1,0 +1,52 @@
+,cif
+0,"# generated using pymatgen
+data_Co5Te3O16
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.95578715
+_cell_length_b   5.97582042
+_cell_length_c   8.95469731
+_cell_angle_alpha   89.84350725
+_cell_angle_beta   90.84680259
+_cell_angle_gamma   120.13667163
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Co5Te3O16
+_chemical_formula_sum   'Co5 Te3 O16'
+_cell_volume   275.59077342
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Co  Co0  1  0.365286  0.680956  0.506547  1
+  Co  Co1  1  0.659490  0.829291  0.203782  1
+  Co  Co2  1  0.696320  0.347996  0.972455  1
+  Co  Co3  1  0.829637  0.660563  0.714605  1
+  Co  Co4  1  0.830703  0.171643  0.713798  1
+  Te  Te5  1  0.161832  0.828015  0.210721  1
+  Te  Te6  1  0.161842  0.333663  0.210296  1
+  Te  Te7  1  0.327285  0.163397  0.711421  1
+  O  O8  1  0.160415  0.833926  0.606128  1
+  O  O9  1  0.024330  0.511470  0.338763  1
+  O  O10  1  0.305843  0.653468  0.085071  1
+  O  O11  1  0.009973  0.004518  0.324295  1
+  O  O12  1  0.996378  0.999165  0.818739  1
+  O  O13  1  0.163129  0.330483  0.605461  1
+  O  O14  1  0.463597  0.956308  0.334095  1
+  O  O15  1  0.462987  0.502649  0.334438  1
+  O  O16  1  0.326743  0.163584  0.095582  1
+  O  O17  1  0.672515  0.837486  0.610814  1
+  O  O18  1  0.536343  0.481254  0.844120  1
+  O  O19  1  0.537862  0.055323  0.844057  1
+  O  O20  1  0.665048  0.333558  0.603583  1
+  O  O21  1  0.843962  0.669047  0.097701  1
+  O  O22  1  0.954661  0.477400  0.831562  1
+  O  O23  1  0.843821  0.175035  0.097686  1
+"

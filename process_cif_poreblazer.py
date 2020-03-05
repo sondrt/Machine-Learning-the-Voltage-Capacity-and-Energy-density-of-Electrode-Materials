@@ -36,6 +36,7 @@ def read_cif(fn):
             try:
                 aname,tmp1,tmp2,fx,fy, fz,tmp3 = line.split()
                 atom = {'name': aname, 'fx': float(fx), 'fy': float(fy), 'fz': float(fz), 'x':0., 'y':0., 'z':0}
+                # print(atom['name'])
                 l.append(atom)
             except:
                 pass
@@ -43,7 +44,7 @@ def read_cif(fn):
     d = {'a':a, 'b':b, 'c':c, 'alpha':alpha, 'beta':beta, 'gamma': gamma, 'conf':l} 
     print('Done reading CIFS', fn)
     return d
-"""
+
 def frac2cart(d):
    from numpy import sin, cos, sqrt, array, matmul
    cos_a = cos(d['alpha'])
@@ -64,8 +65,8 @@ def frac2cart(d):
        d['conf'][ia]['x'] = x
        d['conf'][ia]['y'] = y
        d['conf'][ia]['z'] = z
-   return na
-""" 
+   return d
+
 def save_poreblazer_input(d, dirout, fpatt):
     from numpy import pi
     f = open(dirout + fpatt + '.xyz', "w+")
@@ -76,7 +77,6 @@ def save_poreblazer_input(d, dirout, fpatt):
     for ia in range(na):
         f.write(  "%s %f %f %f\n" %(l[ia]['name'],  l[ia]['x'], l[ia]['y'], l[ia]['z']  )  )
     f.close()
-
     f = open(dirout + fpatt + '.inp', "w+")
     f.write('%s\n'%(dirout + 'UFF_all.atoms'))
     f.write('%s\n'%(dirout + fpatt + '.xyz'))
@@ -97,6 +97,7 @@ def get_info_from_poreblazer(fn):
         if line.find("Geometric (point accessible) volume in A^3:")>=0: 
             geomvol = line.split()[-1]
     f.close()
+    exit()
     return helvol, geomvol
 
 
@@ -105,11 +106,10 @@ def get_info_from_poreblazer(fn):
 #def get_electronegativity():
 
 
-csvout = 'struc_info.csv'
-dirin = './cif_for_poreblazer/cif_files/'
-dirout = './cif_for_poreblazer/xyz_files/'
+dirin = './cif_for_poreblazer/cif_for_Li_PB/'
+dirout = './cif_for_poreblazer/xyz_Li_files/'
 porexe= '/Users/torp/Dropbox/MetalHydrides/poreblazer-master/src/poreblazer.exe'
-helvol_geomvol_output = open('helvol_geomvol_output.csv','w+')
+helvol_geomvol_output = open('Li_helvol_geomvol_output.csv','w+')
 helvol_geomvol_output.write('mid,helvol,geomvol\n')
 
 
@@ -118,15 +118,20 @@ for file in files:
     if fnmatch.fnmatch(file, "m*.csv"):
         fpatt = file.replace(".csv","")
         y = read_cif( dirin + file )
-        # a = frac2cart(y)
-        save_poreblazer_input(y, dirout, fpatt)
+        a = frac2cart(y)
+        save_poreblazer_input(a, dirout, fpatt)
         logfile = fpatt + '.log'
         cmd = porexe +  '   ' + dirout + fpatt + '.inp > ' + dirout + fpatt + '.log'
+        print(cmd)
         os.system( cmd )
+        print("DONE=?")
+        exit()
         helvol, geomvol = get_info_from_poreblazer(dirout + fpatt + '.log')
-        # print("This is helvol:",helvol)
-        helvol_geomvol_output.write(fpatt.replace("_cif.dat","")+ ","+ helvol + ","+ geomvol+ '\n')
-
+        print("This is fpatt:",fpatt, type(fpatt))
+        print('helv: ', helvol)
+        print('geov: ', geomvol)
+        helvol_geomvol_output.write(fpatt.replace("_cif.dat","") + ","+ helvol + ","+ geomvol+ '\n')
+        exit()
 
 
 # Helium volume in A^3:           0.000
