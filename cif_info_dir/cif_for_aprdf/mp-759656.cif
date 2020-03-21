@@ -1,0 +1,56 @@
+# generated using pymatgen
+data_Li3MnP2HO8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.95988330
+_cell_length_b   7.77031520
+_cell_length_c   8.42345197
+_cell_angle_alpha   89.99175762
+_cell_angle_beta   89.98127801
+_cell_angle_gamma   76.29795245
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li3MnP2HO8
+_chemical_formula_sum   'Li6 Mn2 P4 H2 O16'
+_cell_volume   315.39961110
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.169122  0.066121  0.206471  1
+  Li  Li1  1  0.114820  0.361940  0.359957  1
+  Li  Li2  1  0.385097  0.138093  0.859993  1
+  Li  Li3  1  0.330767  0.433900  0.706359  1
+  Li  Li4  1  0.640134  0.805714  0.153476  1
+  Li  Li5  1  0.859894  0.694274  0.653500  1
+  Mn  Mn6  1  0.499510  0.001885  0.503460  1
+  Mn  Mn7  1  0.000475  0.498098  0.003464  1
+  P  P8  1  0.134341  0.723781  0.357454  1
+  P  P9  1  0.365644  0.776313  0.857281  1
+  P  P10  1  0.627316  0.220759  0.142345  1
+  P  P11  1  0.872563  0.279156  0.642241  1
+  H  H12  1  0.546994  0.507664  0.500376  1
+  H  H13  1  0.953090  0.992299  0.000340  1
+  O  O14  1  0.075803  0.176802  0.519452  1
+  O  O15  1  0.008760  0.663975  0.204858  1
+  O  O16  1  0.163529  0.656382  0.815183  1
+  O  O17  1  0.289664  0.550090  0.446285  1
+  O  O18  1  0.424095  0.323299  0.019316  1
+  O  O19  1  0.467786  0.185090  0.291508  1
+  O  O20  1  0.210286  0.949858  0.946304  1
+  O  O21  1  0.336427  0.843550  0.315122  1
+  O  O22  1  0.622974  0.197346  0.677841  1
+  O  O23  1  0.756474  0.026774  0.071896  1
+  O  O24  1  0.491178  0.835914  0.704988  1
+  O  O25  1  0.598561  0.672820  0.965910  1
+  O  O26  1  0.743461  0.473260  0.571951  1
+  O  O27  1  0.876999  0.302711  0.177738  1
+  O  O28  1  0.032200  0.315000  0.791638  1
+  O  O29  1  0.901530  0.827075  0.465816  1

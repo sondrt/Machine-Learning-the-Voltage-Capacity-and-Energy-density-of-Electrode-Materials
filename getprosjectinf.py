@@ -25,8 +25,8 @@ for material_id in input_material_ids:
 		missing_material_ids_file.write(material_id + ",")
 
 renamed_li_batteries_path = "newcsv.csv"
-li_batteries = pd.read_csv("Li_batteries.csv")
+li_batteries = pd.read_csv("Li_batteries_3-6.csv")
 li_batteries = li_batteries.replace(renamed_materials)
 li_batteries.to_csv(renamed_li_batteries_path, sep=',', index=False)
 
-missing_material_ids.close()
+missing_material_ids_file.close()

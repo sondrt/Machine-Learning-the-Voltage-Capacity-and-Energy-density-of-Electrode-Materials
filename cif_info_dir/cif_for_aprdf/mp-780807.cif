@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_Li2TiCr3O8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.00738414
+_cell_length_b   5.99756155
+_cell_length_c   6.01812133
+_cell_angle_alpha   59.03578902
+_cell_angle_beta   121.14774789
+_cell_angle_gamma   120.98326016
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li2TiCr3O8
+_chemical_formula_sum   'Li2 Ti1 Cr3 O8'
+_cell_volume   149.71256878
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.000031  0.000043  0.499973  1
+  Li  Li1  1  0.500037  0.500023  0.500017  1
+  Ti  Ti2  1  -0.000037  0.000051  0.999906  1
+  Cr  Cr3  1  0.499974  0.500100  -0.000020  1
+  Cr  Cr4  1  0.499968  0.999850  0.499983  1
+  Cr  Cr5  1  0.000103  0.500089  0.499985  1
+  O  O6  1  0.746681  0.271294  0.276502  1
+  O  O7  1  0.257917  0.232116  0.238881  1
+  O  O8  1  0.769195  0.741670  0.243485  1
+  O  O9  1  0.771078  0.243531  0.733505  1
+  O  O10  1  0.228869  0.756375  0.266448  1
+  O  O11  1  0.230840  0.258388  0.756584  1
+  O  O12  1  0.742078  0.767753  0.761284  1
+  O  O13  1  0.253267  0.728717  0.723468  1

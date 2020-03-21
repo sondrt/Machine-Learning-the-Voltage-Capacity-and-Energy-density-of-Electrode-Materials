@@ -1,11 +1,14 @@
 \documentclass[12 pt, a4paper]{article}
 
-
-\usepackage[style=numeric, backend=biber,sortcites,]{biblatex}
-\bibliography{kilder.bib}
-
-\usepackage[english]{babel}  								% For norsk oppsett
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc,url}
+\usepackage[english]{babel}
+\usepackage{csquotes,newcent,textcomp}
+\usepackage[backend=biber,sortlocale=nb_NO,sorting=none]{biblatex}
+\addbibresource{kilder.bib}
+%\bibliography{kilder.bib}
+
+%\usepackage[english]{babel}  								% For norsk oppsett
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
@@ -31,6 +34,11 @@
 \usepackage{todonotes}
 \usepackage{xcolor}
 \usepackage{listings}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{svg}
+
 %%%%
 \usepackage[bottom]{footmisc}
 \renewcommand\footnoterule{\rule{\linewidth}{0.5pt}}
@@ -45,45 +53,40 @@
   commentstyle=\color{red},
   keywordstyle=\color{blue}
 }
+
+\newcommand\myworries[1]{\textcolor{red}{#1}}
+
+\usepackage{titlesec}
+
+\titleclass{\part}{top} % make part like a chapter
+\titleformat{\part}[display]{\centering\normalfont\Huge\bfseries}{\partname\space\thepart}{1em}{} 
+
+\titleformat{\section}
+	{\normalfont\fontsize{16}{19}\bfseries\filcenter}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\fontsize{14}{17}\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\fontsize{14}{17}\selectfont}{\thesubsubsection}{1em}{}
+
+
+\numberwithin{equation}{section}
+
+\tikzset{
+  treenode/.style = {shape=rectangle, rounded corners,
+                     draw, align=center,
+                     top color=white, bottom color=blue!20},
+  root/.style     = {treenode, font=\Large, bottom color=red!30},
+  env/.style      = {treenode, font=\ttfamily\normalsize},
+  dummy/.style    = {circle,draw}
+}
+
+\usepackage[margin=10pt,font=small,labelfont=bf,labelsep=endash]{caption}
+\usepackage[onehalfspacing]{setspace}
+%\captionsetup[SCfigure]{caption}
+
 %\usepackage{showframe}  %Dette viser hvordan strukturen på sidene er
 
 
 \author{Sondre Torp  - Sondrt@student.matnat.uio.no }
 
 
-%\addbibresource{kilder.bib}
-%
-%\documentclass[a4paper, 12pt, norsk]{article}
-%\usepackage[english]{babel}
-%\usepackage[utf8]{inputenc}
-%\usepackage[T1]{fontenc}
-%\usepackage{graphicx}
-%\usepackage{siunitx}
-%\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
-%\usepackage{listings}
-%\usepackage{float}
-%\usepackage{fancyhdr}
-%\usepackage[includeheadfoot, margin =1 in]{geometry}
-%\usepackage[FYS, OnlyFrontpage]{mnfrontpage}
-%\usepackage{hyperref}
-%\usepackage{amsmath}
-%\usepackage{multirow}
-%\usepackage{caption}
-%\usepackage{subcaption}
-%\usepackage{enumitem}
-%\usepackage{amsmath,amssymb}
-%\usepackage{todonotes}
-%\renewcommand{\exp}[1]{\mathrm{e}^{#1}}
-%\renewcommand{\i}{\mathrm{i}}
-%\usepackage{tikz}
-%\usepackage{booktabs}
-%\usepackage{babel, csquotes, newcent, textcomp}
-%
-%\bibliography{kilder.bib}
-%%\usepackage{lastpage}
-%%\usepackage{showframe}  %Dette viser hvordan strukturen på sidene er
-%
-%
-%
-%\author{Sondre Torp  - Sondrt@student.matnat.uio.no }
-%

@@ -1,0 +1,56 @@
+# generated using pymatgen
+data_Li3CrFe3O8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.19835013
+_cell_length_b   7.86057682
+_cell_length_c   7.88047700
+_cell_angle_alpha   81.70537470
+_cell_angle_beta   70.96020008
+_cell_angle_gamma   83.96367325
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li3CrFe3O8
+_chemical_formula_sum   'Li6 Cr2 Fe6 O16'
+_cell_volume   300.63000089
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.000054  0.000086  0.000045  1
+  Li  Li1  1  0.998750  0.617641  0.120107  1
+  Li  Li2  1  0.999639  0.117164  0.625062  1
+  Li  Li3  1  0.000137  0.499814  0.500136  1
+  Li  Li4  1  0.000419  0.882428  0.375080  1
+  Li  Li5  1  0.000881  0.382318  0.879935  1
+  Cr  Cr6  1  0.491109  0.687689  0.437706  1
+  Cr  Cr7  1  0.509074  0.312295  0.562156  1
+  Fe  Fe8  1  0.495955  0.433336  0.186553  1
+  Fe  Fe9  1  0.517001  0.813136  0.056946  1
+  Fe  Fe10  1  0.505462  0.064037  0.307560  1
+  Fe  Fe11  1  0.494825  0.936042  0.692436  1
+  Fe  Fe12  1  0.482779  0.187000  0.943078  1
+  Fe  Fe13  1  0.503868  0.566670  0.813382  1
+  O  O14  1  0.276646  0.021810  0.151488  1
+  O  O15  1  0.275779  0.413786  0.018124  1
+  O  O16  1  0.275051  0.654696  0.287524  1
+  O  O17  1  0.293226  0.281620  0.412231  1
+  O  O18  1  0.284461  0.901480  0.514819  1
+  O  O19  1  0.269742  0.159730  0.771380  1
+  O  O20  1  0.287417  0.516207  0.641752  1
+  O  O21  1  0.715457  0.219293  0.095176  1
+  O  O22  1  0.284446  0.780766  0.904769  1
+  O  O23  1  0.712522  0.484048  0.358045  1
+  O  O24  1  0.730398  0.840290  0.228641  1
+  O  O25  1  0.715593  0.098368  0.485205  1
+  O  O26  1  0.707002  0.718227  0.587741  1
+  O  O27  1  0.724982  0.345431  0.712491  1
+  O  O28  1  0.724016  0.586369  0.981829  1
+  O  O29  1  0.723309  0.978217  0.848608  1

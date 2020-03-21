@@ -135,11 +135,11 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortlocale</bcf:key>
-      <bcf:value>english</bcf:value>
+      <bcf:value>nb_NO</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortingtemplatename</bcf:key>
-      <bcf:value>nty</bcf:value>
+      <bcf:value>none</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortsets</bcf:key>
@@ -1995,91 +1995,133 @@
     <bcf:datasource type="file" datatype="bibtex">kilder.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="11">volta1800electricity</bcf:citekey>
-    <bcf:citekey order="12">wiki:voltaicpile</bcf:citekey>
-    <bcf:citekey order="13">wiki:voltaicpile</bcf:citekey>
-    <bcf:citekey order="14">daniell1836xi</bcf:citekey>
-    <bcf:citekey order="15">wiki:Daniellcell</bcf:citekey>
-    <bcf:citekey order="16">wiki:Daniellcell</bcf:citekey>
-    <bcf:citekey order="17">daniel2012handbook</bcf:citekey>
-    <bcf:citekey order="18">whittingham1975lithium</bcf:citekey>
-    <bcf:citekey order="19">materialsproject:TiS2</bcf:citekey>
-    <bcf:citekey order="20">materialsproject:TiS2</bcf:citekey>
-    <bcf:citekey order="21">mizushima1980lixcoo2</bcf:citekey>
-    <bcf:citekey order="22">goodenough1980solid</bcf:citekey>
-    <bcf:citekey order="23">goodenough2013li</bcf:citekey>
-    <bcf:citekey order="24">goodenough2013li</bcf:citekey>
-    <bcf:citekey order="25">wiki:LiCoO2</bcf:citekey>
-    <bcf:citekey order="26">zhang2013understanding</bcf:citekey>
-    <bcf:citekey order="27">materialsproject:LiFePO4</bcf:citekey>
-    <bcf:citekey order="28">wiki:LiCoO2</bcf:citekey>
-    <bcf:citekey order="29">zhang2013understanding</bcf:citekey>
-    <bcf:citekey order="30">materialsproject:LiFePO4</bcf:citekey>
-    <bcf:citekey order="31">guzik2019lightweight</bcf:citekey>
-    <bcf:citekey order="32">international2018global</bcf:citekey>
-    <bcf:citekey order="33">reddy2011linden</bcf:citekey>
-    <bcf:citekey order="34">li2017metal</bcf:citekey>
-    <bcf:citekey order="35">bhatt2015recent</bcf:citekey>
-    <bcf:citekey order="36">perdew1983physical</bcf:citekey>
-    <bcf:citekey order="37">perdew1985density</bcf:citekey>
-    <bcf:citekey order="38">mitchell1997machine</bcf:citekey>
-    <bcf:citekey order="39">lecun1998gradient</bcf:citekey>
-    <bcf:citekey order="40">gentle2012handbook</bcf:citekey>
-    <bcf:citekey order="41">fig:bias_var</bcf:citekey>
-    <bcf:citekey order="42">fig:bias_var</bcf:citekey>
-    <bcf:citekey order="43">marsland2014machine</bcf:citekey>
-    <bcf:citekey order="44">breiman2001random</bcf:citekey>
-    <bcf:citekey order="45">marsland2014machine</bcf:citekey>
-    <bcf:citekey order="46">marsland2014machine</bcf:citekey>
-    <bcf:citekey order="47">marsland2014machine</bcf:citekey>
-    <bcf:citekey order="48">fig:decision_tree</bcf:citekey>
-    <bcf:citekey order="49">fig:decision_tree</bcf:citekey>
-    <bcf:citekey order="50">coef</bcf:citekey>
-    <bcf:citekey order="51">cross-valid</bcf:citekey>
-    <bcf:citekey order="52">sendek2017holistic</bcf:citekey>
-    <bcf:citekey order="53">van1995python</bcf:citekey>
-    <bcf:citekey order="54">backus1964fortran</bcf:citekey>
-    <bcf:citekey order="55">oliphant2006guide</bcf:citekey>
-    <bcf:citekey order="56">pezoa2016foundations</bcf:citekey>
-    <bcf:citekey order="57">mckinney-proc-scipy-2010</bcf:citekey>
-    <bcf:citekey order="58">scikit-learn</bcf:citekey>
-    <bcf:citekey order="59">doi:10.1038/sdata.2015.9</bcf:citekey>
-    <bcf:citekey order="60">ongari2017accurate</bcf:citekey>
+    <bcf:citekey order="9">blomgren2016development</bcf:citekey>
+    <bcf:citekey order="10">hosaka2020research</bcf:citekey>
+    <bcf:citekey order="11">cao2020batteries</bcf:citekey>
+    <bcf:citekey order="12">pang2020additive</bcf:citekey>
+    <bcf:citekey order="13">international2018global</bcf:citekey>
+    <bcf:citekey order="14">xiong2020overview</bcf:citekey>
+    <bcf:citekey order="15">schleder2019dft</bcf:citekey>
+    <bcf:citekey order="16">pour2011structural</bcf:citekey>
+    <bcf:citekey order="17">kirklin2013high</bcf:citekey>
+    <bcf:citekey order="18">kaneko2003local</bcf:citekey>
+    <bcf:citekey order="19">ammundsen1999lattice</bcf:citekey>
+    <bcf:citekey order="20">islam2000atomistic</bcf:citekey>
+    <bcf:citekey order="21">braithwaite2000computational</bcf:citekey>
+    <bcf:citekey order="22">curtarolo2013high</bcf:citekey>
+    <bcf:citekey order="23">Jain2013</bcf:citekey>
+    <bcf:citekey order="24">curtarolo2012aflowlib</bcf:citekey>
+    <bcf:citekey order="25">saal2013materials</bcf:citekey>
+    <bcf:citekey order="26">draxl2018nomad</bcf:citekey>
+    <bcf:citekey order="27">schleder2019dft</bcf:citekey>
+    <bcf:citekey order="28">sendek2018machine</bcf:citekey>
+    <bcf:citekey order="29">fanourgakis2019robust</bcf:citekey>
+    <bcf:citekey order="30">fanourgakis2020universal</bcf:citekey>
+    <bcf:citekey order="31">fernandez2013atomic</bcf:citekey>
+    <bcf:citekey order="32">github</bcf:citekey>
+    <bcf:citekey order="33">curtarolo2013high</bcf:citekey>
+    <bcf:citekey order="34">volta1800electricity</bcf:citekey>
+    <bcf:citekey order="35">decker2005volta</bcf:citekey>
+    <bcf:citekey order="36">decker2005volta</bcf:citekey>
+    <bcf:citekey order="37">daniell1836xi</bcf:citekey>
+    <bcf:citekey order="38">wiki:Daniellcell</bcf:citekey>
+    <bcf:citekey order="39">wiki:Daniellcell</bcf:citekey>
+    <bcf:citekey order="40">daniel2012handbook</bcf:citekey>
+    <bcf:citekey order="41">whittingham1975lithium</bcf:citekey>
+    <bcf:citekey order="42">materialsproject:TiS2</bcf:citekey>
+    <bcf:citekey order="43">materialsproject:TiS2</bcf:citekey>
+    <bcf:citekey order="44">nobprize</bcf:citekey>
+    <bcf:citekey order="45">mizushima1980lixcoo2</bcf:citekey>
+    <bcf:citekey order="46">goodenough1980solid</bcf:citekey>
+    <bcf:citekey order="47">goodenough2013li</bcf:citekey>
+    <bcf:citekey order="48">goodenough2013li</bcf:citekey>
+    <bcf:citekey order="49">wiki:LiCoO2</bcf:citekey>
+    <bcf:citekey order="50">zhang2013understanding</bcf:citekey>
+    <bcf:citekey order="51">materialsproject:LiFePO4</bcf:citekey>
+    <bcf:citekey order="52">wiki:LiCoO2</bcf:citekey>
+    <bcf:citekey order="53">zhang2013understanding</bcf:citekey>
+    <bcf:citekey order="54">materialsproject:LiFePO4</bcf:citekey>
+    <bcf:citekey order="55">xu2004nonaqueous</bcf:citekey>
+    <bcf:citekey order="56">kim2013metallic</bcf:citekey>
+    <bcf:citekey order="57">liu2016lithium</bcf:citekey>
+    <bcf:citekey order="58">zhang2015ex</bcf:citekey>
+    <bcf:citekey order="59">li2018self</bcf:citekey>
+    <bcf:citekey order="60">lee2017suppressing</bcf:citekey>
+    <bcf:citekey order="61">reddy2011linden</bcf:citekey>
+    <bcf:citekey order="62">yoo2013mg</bcf:citekey>
+    <bcf:citekey order="63">li2002aluminum</bcf:citekey>
+    <bcf:citekey order="64">van2014rechargeable</bcf:citekey>
+    <bcf:citekey order="65">guzik2019lightweight</bcf:citekey>
+    <bcf:citekey order="66">reddy2011linden</bcf:citekey>
+    <bcf:citekey order="67">muldoon2012electrolyte</bcf:citekey>
+    <bcf:citekey order="68">aurbach2003nonaqueous</bcf:citekey>
+    <bcf:citekey order="69">aurbach2001comparison</bcf:citekey>
+    <bcf:citekey order="70">gnanaraj2003improving</bcf:citekey>
+    <bcf:citekey order="71">van2014rechargeable</bcf:citekey>
+    <bcf:citekey order="72">attias2019anode</bcf:citekey>
+    <bcf:citekey order="73">li2017metal</bcf:citekey>
+    <bcf:citekey order="74">bhatt2015recent</bcf:citekey>
+    <bcf:citekey order="75">perdew1983physical</bcf:citekey>
+    <bcf:citekey order="76">perdew1985density</bcf:citekey>
+    <bcf:citekey order="77">mitchell1997machine</bcf:citekey>
+    <bcf:citekey order="78">lecun1998gradient</bcf:citekey>
+    <bcf:citekey order="79">gentle2012handbook</bcf:citekey>
+    <bcf:citekey order="80">marsland2014machine</bcf:citekey>
+    <bcf:citekey order="81">marsland2014machine</bcf:citekey>
+    <bcf:citekey order="82">breiman2001random</bcf:citekey>
+    <bcf:citekey order="83">marsland2014machine</bcf:citekey>
+    <bcf:citekey order="84">marsland2014machine</bcf:citekey>
+    <bcf:citekey order="85">marsland2014machine</bcf:citekey>
+    <bcf:citekey order="86">fig:decision_tree</bcf:citekey>
+    <bcf:citekey order="87">fig:decision_tree</bcf:citekey>
+    <bcf:citekey order="88">fernandez2014we</bcf:citekey>
+    <bcf:citekey order="89">fanourgakis2020automatedML</bcf:citekey>
+    <bcf:citekey order="90">shandiz2016application</bcf:citekey>
+    <bcf:citekey order="91">james2013introduction</bcf:citekey>
+    <bcf:citekey order="92">james2013introduction</bcf:citekey>
+    <bcf:citekey order="93">james2013introduction</bcf:citekey>
+    <bcf:citekey order="94">electromaterials</bcf:citekey>
+    <bcf:citekey order="95">reddy2011linden</bcf:citekey>
+    <bcf:citekey order="96">potyrailo2011combinatorial</bcf:citekey>
+    <bcf:citekey order="97">pang2020additive</bcf:citekey>
+    <bcf:citekey order="98">curtarolo2013high</bcf:citekey>
+    <bcf:citekey order="99">kalawoun2015novel</bcf:citekey>
+    <bcf:citekey order="100">chemali2018state</bcf:citekey>
+    <bcf:citekey order="101">hu2015battery</bcf:citekey>
+    <bcf:citekey order="102">ermon2013learning</bcf:citekey>
+    <bcf:citekey order="103">shandiz2016application</bcf:citekey>
+    <bcf:citekey order="104">Jain2013</bcf:citekey>
+    <bcf:citekey order="105">Zhou2004a</bcf:citekey>
+    <bcf:citekey order="106">Adams2011a</bcf:citekey>
+    <bcf:citekey order="107">sendek2017holistic</bcf:citekey>
+    <bcf:citekey order="108">joshi2019machine</bcf:citekey>
+    <bcf:citekey order="109">fanourgakis2019robust</bcf:citekey>
+    <bcf:citekey order="110">fanourgakis2020universal</bcf:citekey>
+    <bcf:citekey order="111">van1995python</bcf:citekey>
+    <bcf:citekey order="112">backus1964fortran</bcf:citekey>
+    <bcf:citekey order="113">oliphant2006guide</bcf:citekey>
+    <bcf:citekey order="114">pezoa2016foundations</bcf:citekey>
+    <bcf:citekey order="115">mckinney-proc-scipy-2010</bcf:citekey>
+    <bcf:citekey order="116">scikit-learn</bcf:citekey>
+    <bcf:citekey order="117">Jain2013</bcf:citekey>
+    <bcf:citekey order="118">doi:10.1038/sdata.2015.9</bcf:citekey>
+    <bcf:citekey order="119">Zhou2004a</bcf:citekey>
+    <bcf:citekey order="120">Adams2011a</bcf:citekey>
+    <bcf:citekey order="121">Ong_2015</bcf:citekey>
+    <bcf:citekey order="122">ongari2017accurate</bcf:citekey>
+    <bcf:citekey order="123">rappe1992uff</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
-  <bcf:sortingtemplate name="nty">
+  <bcf:sortingtemplate name="none">
     <bcf:sort order="1">
-      <bcf:sortitem order="1">presort</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="2" final="1">
-      <bcf:sortitem order="1">sortkey</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="3">
-      <bcf:sortitem order="1">sortname</bcf:sortitem>
-      <bcf:sortitem order="2">author</bcf:sortitem>
-      <bcf:sortitem order="3">editor</bcf:sortitem>
-      <bcf:sortitem order="4">translator</bcf:sortitem>
-      <bcf:sortitem order="5">sorttitle</bcf:sortitem>
-      <bcf:sortitem order="6">title</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="4">
-      <bcf:sortitem order="1">sorttitle</bcf:sortitem>
-      <bcf:sortitem order="2">title</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="5">
-      <bcf:sortitem order="1">sortyear</bcf:sortitem>
-      <bcf:sortitem order="2">year</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="6">
-      <bcf:sortitem order="1">volume</bcf:sortitem>
-      <bcf:sortitem order="2">0</bcf:sortitem>
+      <bcf:sortitem order="1">citeorder</bcf:sortitem>
     </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
   <bcf:datalist section="0"
-                name="nty/global//global/global"
+                name="none/global//global/global"
                 type="entry"
-                sortingtemplatename="nty"
+                sortingtemplatename="none"
                 sortingnamekeytemplatename="global"
                 labelprefix=""
                 uniquenametemplatename="global"

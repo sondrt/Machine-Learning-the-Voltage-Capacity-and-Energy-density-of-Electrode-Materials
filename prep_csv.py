@@ -10,22 +10,8 @@ import sys
 import pickle
 import re 
 
-   
-# def drop_zeros(df):
-#     #This thing dropes zeros, but it is not great, manually change what u want to use. 
-#     list_of_indexes =[]
-#     for index, row in df.iterrows():
-#         important_rows=abs(row['elneg_charged'] + row['elneg_discharged'] + row['vdw_charged'] + row['vdw_discharged'] + row['polar_charged'] + row['polar_discharged'])
-#         if (important_rows) == 0:
-#             # df = df.drop(index)
-#             list_of_indexes.append(index)
-#     df = df.drop(df.index[list_of_indexes])
-# #    df = df.drop(list_of_indexes)
 
-#     # for index in list_of_indexes:
-#     #     df = df.drop(index)
-#     return df
-
+#python prep_csv.py >> Results/2020-03-10/2020-03-10.txt; python PCA_randomforest_crossvalidation.py >>  Results/2020-03-10/2020-03-10.txt;
 
 T = True
 F = False
@@ -33,70 +19,70 @@ F = False
 def main():
     csv = 'Li_allFiles.csv'    #'newapproch_aprdf.csv' #Li_allFiles.csv #'battery_data_after_aprdf_merge.csv' , "allFiles.csv"
     outcsv = 'for_ML.csv'
-    
+    print('File: ', csv)
 
-    Target              = 'Capacity_Grav'
+    Target              = 'Average_Voltage'
     # Possinble Targets: Average_Voltage, Capacity_Grav, Capacity_Vol, Specific_E_Wh/kg, 
-# E Density Wh/l, Stability Discharge, Stability Charge. 
+    # E Density Wh/l, Stability Discharge, Stability Charge. 
 
 
-    l_charged_atoms     = F     #turns on fraction density predictor for charged material
+    l_charged_atoms     = F    #turns on fraction density predictor for charged material
     l_discharged_atoms  = F    #turns on fraction density predictor for discharged material
     APRDF = False
     l_charged_atoms_Li     = T
-    l_discharged_atoms_Li  = F
+    l_discharged_atoms_Li  = T
 
     list_of_predictors= ['Battid', 
-    # 'Reduced_Cell_Formula',   # Not operational.
-    # 'Spacegroup',             # Not operational.
+    # 'Reduced_Cell_Formula',           # Not operational.
+    # 'Spacegroup',                     # Not operational.  
+    # 'formation_energy_per_atom',      # Not operational.
+    # 'formation_energy_per_atom_dis',  # Not operational.
 
+    
     # 'Average_Voltage',
     
     # 'Capacity_Grav',
     # 'Capacity_Vol',
     
     # 'Specific_E_Wh/kg',
-    
     # 'E Density Wh/l',
     
     # 'Stability Discharge',                                    
     # 'Stability Charge',                                       
 
 
-    # 'helvol',                                                 
-    # 'geomvol',
-    # 'helvol_dis',
-    # 'geomvol_dis'
+    'energy',
+    'energy_dis',
 
+    'energy_per_atom',
+    'energy_per_atom_dis',                                          #  1 
 
-    # 'energy',
-    # 'energy_dis',
+    'volume',
+    'volume_dis',                                               
 
-    # 'energy_per_atom',
-    # 'energy_per_atom_dis',                                          #  1 
-
-    # 'volume',
-    # 'volume_dis',                                               
+    'band_gap',
+    'band_gap_dis',                                                 #  1
     
-    # 'formation_energy_per_atom',
-    # 'formation_energy_per_atom_dis',                            #  This does not work due to None values
+    'density',
+    'density_dis',                                                  #  1
     
-    # 'band_gap',
-    # 'band_gap_dis',                                                 #  1
-    
-    # 'density',
-    # 'density_dis',                                                  #  1
-    
-    # 'total_magnetization',
-    # 'total_magnetization_dis',                                  
+    'total_magnetization',
+    'total_magnetization_dis',                                  
 
-    # 'nsites',
-    # 'nsites_dis',
+    'nsites',
+    'nsites_dis',
 
-    # 'elasticity',
-    # 'elasticity_dis'   
+    'elasticity',
+    'elasticity_dis',
 
 
+    'helvol',                                                 
+    'geomvol',
+    'helvol_dis',
+    'geomvol_dis',
+
+
+#operational with right csv
     # 'radius_charged',
     # 'elneg_charged',
     # 'elneg_discharged',
@@ -141,17 +127,17 @@ def main():
     'elneg_r2.0','diselneg_r2.0','elneg_r2.25','diselneg_r2.25','elneg_r2.5','diselneg_r2.5','elneg_r2.75','diselneg_r2.75',
     'elneg_r3.0','diselneg_r3.0','elneg_r3.25','diselneg_r3.25','elneg_r3.5','diselneg_r3.5','elneg_r3.75','diselneg_r3.75',
     'elneg_r4.0','diselneg_r4.0','elneg_r4.25','diselneg_r4.25','elneg_r4.5','diselneg_r4.5','elneg_r4.75','diselneg_r4.75',
-    # 'elneg_r5.0','diselneg_r5.0','elneg_r5.25','diselneg_r5.25','elneg_r5.5','diselneg_r5.5','elneg_r5.75','diselneg_r5.75',
-    # 'elneg_r6.0','diselneg_r6.0','elneg_r6.25','diselneg_r6.25','elneg_r6.5','diselneg_r6.5','elneg_r6.75','diselneg_r6.75',
-    # 'elneg_r7.0','diselneg_r7.0','elneg_r7.25','diselneg_r7.25','elneg_r7.5','diselneg_r7.5','elneg_r7.75','diselneg_r7.75',
-    # 'elneg_r8.0','diselneg_r8.0','elneg_r8.25','diselneg_r8.25','elneg_r8.5','diselneg_r8.5','elneg_r8.75','diselneg_r8.75',
-    # 'elneg_r9.0','diselneg_r9.0','elneg_r9.25','diselneg_r9.25','elneg_r9.5','diselneg_r9.5','elneg_r9.75','diselneg_r9.75',
-    # 'elneg_r10.0','diselneg_r10.0','elneg_r10.25','diselneg_r10.25','elneg_r10.5','diselneg_r10.5','elneg_r10.75','diselneg_r10.75',
-    # 'elneg_r11.0','diselneg_r11.0','elneg_r11.25','diselneg_r11.25','elneg_r11.5','diselneg_r11.5','elneg_r11.75','diselneg_r11.75',
-    # 'elneg_r12.0','diselneg_r12.0','elneg_r12.25','diselneg_r12.25','elneg_r12.5','diselneg_r12.5','elneg_r12.75','diselneg_r12.75',
-    # 'elneg_r13.0','diselneg_r13.0','elneg_r13.25','diselneg_r13.25','elneg_r13.5','diselneg_r13.5','elneg_r13.75','diselneg_r13.75',
-    # 'elneg_r14.0','diselneg_r14.0','elneg_r14.25','diselneg_r14.25','elneg_r14.5','diselneg_r14.5','elneg_r14.75','diselneg_r14.75',
-    # 'elneg_r15.0','diselneg_r15.0'
+    'elneg_r5.0','diselneg_r5.0','elneg_r5.25','diselneg_r5.25','elneg_r5.5','diselneg_r5.5','elneg_r5.75','diselneg_r5.75',
+    'elneg_r6.0','diselneg_r6.0','elneg_r6.25','diselneg_r6.25','elneg_r6.5','diselneg_r6.5','elneg_r6.75','diselneg_r6.75',
+    'elneg_r7.0','diselneg_r7.0','elneg_r7.25','diselneg_r7.25','elneg_r7.5','diselneg_r7.5','elneg_r7.75','diselneg_r7.75',
+    'elneg_r8.0','diselneg_r8.0','elneg_r8.25','diselneg_r8.25','elneg_r8.5','diselneg_r8.5','elneg_r8.75','diselneg_r8.75',
+    'elneg_r9.0','diselneg_r9.0','elneg_r9.25','diselneg_r9.25','elneg_r9.5','diselneg_r9.5','elneg_r9.75','diselneg_r9.75',
+    'elneg_r10.0','diselneg_r10.0','elneg_r10.25','diselneg_r10.25','elneg_r10.5','diselneg_r10.5','elneg_r10.75','diselneg_r10.75',
+    'elneg_r11.0','diselneg_r11.0','elneg_r11.25','diselneg_r11.25','elneg_r11.5','diselneg_r11.5','elneg_r11.75','diselneg_r11.75',
+    'elneg_r12.0','diselneg_r12.0','elneg_r12.25','diselneg_r12.25','elneg_r12.5','diselneg_r12.5','elneg_r12.75','diselneg_r12.75',
+    'elneg_r13.0','diselneg_r13.0','elneg_r13.25','diselneg_r13.25','elneg_r13.5','diselneg_r13.5','elneg_r13.75','diselneg_r13.75',
+    'elneg_r14.0','diselneg_r14.0','elneg_r14.25','diselneg_r14.25','elneg_r14.5','diselneg_r14.5','elneg_r14.75','diselneg_r14.75',
+    'elneg_r15.0','diselneg_r15.0'
     ]:
             list_of_predictors.append(ii)
 
@@ -201,16 +187,15 @@ def main():
 
     df = pd.DataFrame()
 
-
     for fld in list_of_predictors:
        df[fld] = data[fld]
-    # df.loc[~(df==0).all(axis=1)] #Not needed. 
+  
 
-
-    # df = df.round(6)
-    # df = df.fillna(0)
-
-    # df = drop_zeros(df)
+    df.loc[~(df==0).all(axis=1)] #Not needed. 
+    df = df.round(6)
+    df = df.fillna(0)
+    
+    df = df.sample(frac=1)
 
     df.to_csv(outcsv,sep=',',index=False)
 

@@ -1,0 +1,39 @@
+# generated using pymatgen
+data_La4FeO8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.33888377
+_cell_length_b   7.01033154
+_cell_length_c   5.35578316
+_cell_angle_alpha   90.00034970
+_cell_angle_beta   89.99993650
+_cell_angle_gamma   112.37729433
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   La4FeO8
+_chemical_formula_sum   'La4 Fe1 O8'
+_cell_volume   185.35804720
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  La  La0  1  0.136228  0.272476  0.499985  1
+  La  La1  1  0.637824  0.275381  0.000003  1
+  La  La2  1  0.362164  0.724618  0.999997  1
+  La  La3  1  0.863778  0.727522  0.500002  1
+  Fe  Fe4  1  0.500011  0.000004  0.500005  1
+  O  O5  1  0.255225  0.000106  0.260346  1
+  O  O6  1  0.255225  0.000109  0.739659  1
+  O  O7  1  0.744774  0.999894  0.260344  1
+  O  O8  1  0.744775  0.999895  0.739659  1
+  O  O9  1  0.186828  0.373891  0.000011  1
+  O  O10  1  0.674892  0.349582  0.499994  1
+  O  O11  1  0.325102  0.650416  0.500000  1
+  O  O12  1  0.813173  0.626106  0.999996  1

@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_KLiMnO2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.48971090
+_cell_length_b   5.86529441
+_cell_length_c   7.68021180
+_cell_angle_alpha   76.87505554
+_cell_angle_beta   76.87201809
+_cell_angle_gamma   72.70511523
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   KLiMnO2
+_chemical_formula_sum   'K2 Li2 Mn2 O4'
+_cell_volume   144.00190146
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.161572  0.311381  0.366697  1
+  K  K1  1  0.838420  0.688616  0.633301  1
+  Li  Li2  1  0.338238  0.376655  0.946829  1
+  Li  Li3  1  0.661763  0.623345  0.053170  1
+  Mn  Mn4  1  0.954541  0.903804  0.187162  1
+  Mn  Mn5  1  0.045463  0.096198  0.812839  1
+  O  O6  1  0.533297  0.240442  0.692990  1
+  O  O7  1  0.160835  0.735011  0.943309  1
+  O  O8  1  0.839166  0.264989  0.056692  1
+  O  O9  1  0.466705  0.759556  0.307011  1

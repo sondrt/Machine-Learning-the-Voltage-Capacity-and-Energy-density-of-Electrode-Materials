@@ -47,7 +47,7 @@
  !-------------------------------------------------------!
 
  System volume in A^3:         518.726
- System mass, g/mol:          1074.030
+ System mass, g/mol:          1074.028
  System density, g/cm^3:         3.438
  -------------------------------------------------------
  If calculated density is  different from the  reported 
@@ -55,7 +55,7 @@
  atoms from the adsrobent structure file
  ------------------------------------------------------
 
- Helium volume in A^3:           2.997
+ Helium volume in A^3:           2.998
  Helium volume in cm^3/g:        0.002
 
  Geometric (point accessible) volume in A^3:         111.744

@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_Li3Fe2CuO6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   15.58820281
+_cell_length_b   9.94981377
+_cell_length_c   9.94981375
+_cell_angle_alpha   17.22034191
+_cell_angle_beta   16.61101019
+_cell_angle_gamma   16.61101032
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li3Fe2CuO6
+_chemical_formula_sum   'Li3 Fe2 Cu1 O6'
+_cell_volume   112.53103691
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.166667  0.500000  0.500000  1
+  Li  Li1  1  0.506521  0.496679  0.496679  1
+  Li  Li2  1  0.826813  0.503321  0.503321  1
+  Fe  Fe3  1  0.005282  0.996279  0.996279  1
+  Fe  Fe4  1  0.328052  0.003721  0.003721  1
+  Cu  Cu5  1  0.666667  0.000000  0.000000  1
+  O  O6  1  0.250262  0.255217  0.255217  1
+  O  O7  1  0.579397  0.257568  0.257568  1
+  O  O8  1  0.083071  0.744783  0.744783  1
+  O  O9  1  0.909901  0.259899  0.259899  1
+  O  O10  1  0.423432  0.740101  0.740101  1
+  O  O11  1  0.753936  0.742432  0.742432  1

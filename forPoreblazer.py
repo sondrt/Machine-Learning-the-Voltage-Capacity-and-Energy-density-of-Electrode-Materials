@@ -29,7 +29,7 @@ def download_ALLstructures(allIDs):
 do_download = True
 csvfile = 'Li_allFiles.csv'   #Li_allFiles.csv #manualOKT.csv
 # cif_info_dir = './cif_info_dir/'
-cif_for_poreblazer = './cif_for_poreblazer/cif_for_Li_PB/'
+cif_for_poreblazer = './cif_for_poreblazer/Li_cif_files/'
 
 #heads =  ['Battid', 'Discharged_ID', 'Charged_ID', 'Reduced_Cell_Formula', 'Type', 'Spacegroup', 'Average_Voltage', 'Capacity_Grav', 'Capacity_Vol', 'Specific_E_Wh/kg', 'E Density Wh/l', 'Stability Charge', 'Stability Discharge'
 ###############################################################

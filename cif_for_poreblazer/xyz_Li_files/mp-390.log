@@ -27,6 +27,7 @@
  ! Generation of helium-accessible lattice               !
  !-------------------------------------------------------!
 
+  The system is NOT percolated in ANY direction 
  !-------------------------------------------------------!
  ! Generation of helium-accessible lattice complete      !
  !-------------------------------------------------------!
@@ -36,6 +37,7 @@
  ! Generation of nitrogen-accessible lattice             !
  !-------------------------------------------------------!
 
+  The system is NOT percolated in ANY direction 
  !-------------------------------------------------------!
  ! Generation of nitrogen-accessible lattice complete    !
  !-------------------------------------------------------!
@@ -54,11 +56,11 @@
  atoms from the adsrobent structure file
  ------------------------------------------------------
 
- Helium volume in A^3:          21.832
- Helium volume in cm^3/g:        0.082
+ Helium volume in A^3:           0.000
+ Helium volume in cm^3/g:        0.000
 
- Geometric (point accessible) volume in A^3:          56.741
- Geometric (point accessible) volume in cm^3/g:        0.214
+ Geometric (point accessible) volume in A^3:           5.870
+ Geometric (point accessible) volume in cm^3/g:        0.022
 
  !-------------------------------------------------------!
  ! Pore volume calculations complete                     !
@@ -80,9 +82,8 @@
  ! analysis                                              !
  !-------------------------------------------------------!
 
- Pore limiting diameter in A:         3.50
- Maximum pore diameter in A:          4.84
-  The system is percolated in            2  dimensions (slits)
+ Pore limiting diameter in A:         0.68
+ Maximum pore diameter in A:          0.68
  !-------------------------------------------------------!
  ! Limiting pore diameter and maximum pore size          !
  ! analysis complete                                     !

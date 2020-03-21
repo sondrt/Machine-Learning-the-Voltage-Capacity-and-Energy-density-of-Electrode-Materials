@@ -1,49 +1,12 @@
-%COPYRIGHT!!!!!
-
-
 \input{preamble.tex}
-%\documentclass{book}
-\usepackage{indentfirst}
-\usepackage{hyperref}
-\usepackage{wrapfig}
-\usepackage{svg}
 \overfullrule=2cm
-
-
-\newcommand\myworries[1]{\textcolor{red}{#1}}
-
-%\usepackage{babel, csquotes, newcent, textcomp}
-%\usepackage[backend=biber, sortcites]{biblatex}
-
-%\addbibresource{kilder.bib}
-
-\usepackage{titlesec}
-
-\titleformat{\section}
-  {\normalfont\fontsize{16}{19}\bfseries}{\thesection}{1em}{}
-\titleformat{\subsection}
-  {\normalfont\fontsize{14}{17}\bfseries}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}
-  {\normalfont\fontsize{14}{17}\selectfont}{\thesubsubsection}{1em}{}
-
-
-\numberwithin{equation}{section}
-
-\tikzset{
-  treenode/.style = {shape=rectangle, rounded corners,
-                     draw, align=center,
-                     top color=white, bottom color=blue!20},
-  root/.style     = {treenode, font=\Large, bottom color=red!30},
-  env/.style      = {treenode, font=\ttfamily\normalsize},
-  dummy/.style    = {circle,draw}
-}
-
-
-
+\usepackage{acro}
+\acsetup{first-style=short}
+\input{acronyms.tex}
 
 %-------------------------------------------------------------------- Doc starts here
 
-\title{Sondres master utkast 26.02.2020 }
+\title{Sondres master utkast 16.03.2020 }
 \pagenumbering{roman}	%Roman numbering of pages.
 \begin{document}
 	\mnfrontpage
@@ -54,14 +17,12 @@
 \lhead{Sondre Torp}
 \fancyfoot[CE,CO]{\roman{page}}      %\number\value{page}}
 
-
 \renewcommand{\headrulewidth}{2pt}
 \renewcommand{\footrulewidth}{1pt}
 
 \setlength{\parindent}{2em}
 \setlength{\parskip}{1em}
 \renewcommand{\baselinestretch}{1.5}
-
 
 \setcounter{page}{1}
 \pagebreak
@@ -73,13 +34,12 @@
 \input{acknowledgments/acknowledgments.tex}
 \pagebreak
 
-
 \tableofcontents
 \listoffigures
 \listoftables
+\printacronyms[include-classes=abbrev,name=Abbreviations]
 
 \pagebreak
-
 \pagenumbering{arabic}	%Numbering of pages
 
 \fancyfoot[CE,LO]{\leftmark}
@@ -87,25 +47,28 @@
 \fancyfoot[CE,CO]{ }
 
 \part{Introduction}
-\input{intro/intro.tex}
-
 \pagebreak
+\input{intro/intro.tex}
+\pagebreak
+
 \part{Foundations}
+\pagebreak
 \input{theory/theory.tex}
 
 \pagebreak
-\part{Method}
+\part{Experimental method}
+\pagebreak
 \input{method/method.tex}
 
 \pagebreak
 \part{Result \& Discussion}
+\pagebreak
 \input{result/result.tex}
 
 \pagebreak
 \part{Summary}
+\pagebreak
 \input{conclusion/conclusion.tex}
-
-
 
 \pagebreak
 \printbibliography
@@ -198,18 +161,6 @@
 %		\caption{Atomene er gule kuler, de elementære vektorene er blå og a vektorene er grønne.}
 %		\label{fig:ab}
 %\end{figure}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -1,0 +1,56 @@
+# generated using pymatgen
+data_Li3Mn2(SiO4)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   10.61038136
+_cell_length_b   5.09422723
+_cell_length_c   6.68952453
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.82497168
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li3Mn2(SiO4)2
+_chemical_formula_sum   'Li6 Mn4 Si4 O16'
+_cell_volume   361.54265012
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.156692  0.182499  0.115534  1
+  Li  Li1  1  0.341622  0.681369  0.620290  1
+  Li  Li2  1  0.421274  0.286773  0.370720  1
+  Li  Li3  1  0.656692  0.317501  0.115534  1
+  Li  Li4  1  0.841622  0.818631  0.620290  1
+  Li  Li5  1  0.921274  0.213227  0.370720  1
+  Mn  Mn6  1  0.159787  0.177322  0.629518  1
+  Mn  Mn7  1  0.338568  0.694122  0.111165  1
+  Mn  Mn8  1  0.659787  0.322678  0.629518  1
+  Mn  Mn9  1  0.838568  0.805878  0.111165  1
+  Si  Si10  1  0.090696  0.686987  0.367765  1
+  Si  Si11  1  0.411958  0.179458  0.865223  1
+  Si  Si12  1  0.590696  0.813013  0.367765  1
+  Si  Si13  1  0.911958  0.320542  0.865223  1
+  O  O14  1  0.060563  0.249196  0.871788  1
+  O  O15  1  0.091427  0.362250  0.370360  1
+  O  O16  1  0.164119  0.799912  0.169546  1
+  O  O17  1  0.166251  0.794037  0.565948  1
+  O  O18  1  0.344862  0.292041  0.072915  1
+  O  O19  1  0.345099  0.295576  0.657320  1
+  O  O20  1  0.389053  0.858750  0.862860  1
+  O  O21  1  0.442803  0.699834  0.365356  1
+  O  O22  1  0.560563  0.250804  0.871788  1
+  O  O23  1  0.591427  0.137750  0.370360  1
+  O  O24  1  0.664119  0.700088  0.169546  1
+  O  O25  1  0.666251  0.705963  0.565948  1
+  O  O26  1  0.844862  0.207959  0.072915  1
+  O  O27  1  0.845099  0.204424  0.657320  1
+  O  O28  1  0.889053  0.641250  0.862860  1
+  O  O29  1  0.942803  0.800166  0.365356  1

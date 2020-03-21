@@ -55,11 +55,11 @@
  atoms from the adsrobent structure file
  ------------------------------------------------------
 
- Helium volume in A^3:          21.721
- Helium volume in cm^3/g:        0.068
+ Helium volume in A^3:           0.000
+ Helium volume in cm^3/g:        0.000
 
- Geometric (point accessible) volume in A^3:          56.927
- Geometric (point accessible) volume in cm^3/g:        0.179
+ Geometric (point accessible) volume in A^3:          11.385
+ Geometric (point accessible) volume in cm^3/g:        0.036
 
  !-------------------------------------------------------!
  ! Pore volume calculations complete                     !
@@ -81,9 +81,8 @@
  ! analysis                                              !
  !-------------------------------------------------------!
 
- Pore limiting diameter in A:         2.62
- Maximum pore diameter in A:          3.09
-  The system is percolated in            1  dimension (channels)
+ Pore limiting diameter in A:         0.41
+ Maximum pore diameter in A:          0.41
  !-------------------------------------------------------!
  ! Limiting pore diameter and maximum pore size          !
  ! analysis complete                                     !

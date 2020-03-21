@@ -141,9 +141,6 @@ for file in files:
         # print(cmd)
         os.system( cmd )
         helvol, geomvol = get_info_from_poreblazer(dirout + fpatt + '.log')
-        # # helvol_dis, geomvol_dis = get_info_from_poreblazer(dirout + fpatt + '.log')
-        # print("This is helvol: ", helvol)
-        # print('this is geomvol: ', geomvol)
         try:
             helvol_geomvol_output.write(fpatt.replace("_cif.dat","")+ ","+ helvol + ","+ geomvol+ '\n')
         except:

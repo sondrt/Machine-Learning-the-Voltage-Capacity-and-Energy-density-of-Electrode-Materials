@@ -1,68 +1,67 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {english}{}
 \contentsline {part}{I\hspace {1em}Introduction}{1}{part.1}% 
-\contentsline {section}{\numberline {1}Introduction and Overview}{1}{section.1}% 
-\contentsline {subsection}{\numberline {1.1}Motivation}{1}{subsection.1.1}% 
-\contentsline {subsection}{\numberline {1.2}History and evolution of batteries}{1}{subsection.1.2}% 
-\contentsline {subsection}{\numberline {1.3}Lithium based batteries}{4}{subsection.1.3}% 
-\contentsline {subsection}{\numberline {1.4}Magnesium batteries}{7}{subsection.1.4}% 
-\contentsline {subsection}{\numberline {1.5}Earlier work}{7}{subsection.1.5}% 
-\contentsline {subsection}{\numberline {1.6}Scope of the thesis}{7}{subsection.1.6}% 
-\contentsline {subsubsection}{\numberline {1.6.1}Research Question}{8}{subsubsection.1.6.1}% 
-\contentsline {subsubsection}{\numberline {1.6.2}Approach}{8}{subsubsection.1.6.2}% 
-\contentsline {subsection}{\numberline {1.7}Structure of the thesis}{9}{subsection.1.7}% 
-\contentsline {part}{II\hspace {1em}Foundations}{10}{part.2}% 
-\contentsline {section}{\numberline {2}Batteries}{10}{section.2}% 
-\contentsline {subsection}{\numberline {2.1}Cell operation principles and design}{10}{subsection.2.1}% 
-\contentsline {subsubsection}{\numberline {2.1.1}The manufacturing process of an Alkaline battery}{11}{subsubsection.2.1.1}% 
-\contentsline {subsubsection}{\numberline {2.1.2}Theoretical Cell voltage, Capacity, specific Energy, Energy density}{12}{subsubsection.2.1.2}% 
-\contentsline {subsection}{\numberline {2.2}Cell limitations \& definitions }{14}{subsection.2.2}% 
-\contentsline {subsubsection}{\numberline {2.2.1}Polarization}{14}{subsubsection.2.2.1}% 
-\contentsline {subsection}{\numberline {2.3}Battery chemistries}{14}{subsection.2.3}% 
-\contentsline {subsection}{\numberline {2.4}Intercalation batteries and why Li}{14}{subsection.2.4}% 
-\contentsline {subsection}{\numberline {2.5}Electrodes and features}{15}{subsection.2.5}% 
-\contentsline {subsubsection}{\numberline {2.5.1}Properties of materials}{16}{subsubsection.2.5.1}% 
-\contentsline {subsection}{\numberline {2.6}On Mg- and Li- batteries and their state today}{18}{subsection.2.6}% 
-\contentsline {section}{\numberline {3}Machine Learning}{19}{section.3}% 
-\contentsline {subsection}{\numberline {3.1}The basics of Machine Learning}{19}{subsection.3.1}% 
-\contentsline {subsubsection}{\numberline {3.1.1}Example time!}{19}{subsubsection.3.1.1}% 
-\contentsline {subsubsection}{\numberline {3.1.2}Supervised and Unsupervised Learning }{20}{subsubsection.3.1.2}% 
-\contentsline {subsubsection}{\numberline {3.1.3}Regression and Classification Problems}{20}{subsubsection.3.1.3}% 
-\contentsline {subsubsection}{\numberline {3.1.4}Data collection, Preparation, Features and Feature Selection}{21}{subsubsection.3.1.4}% 
-\contentsline {subsection}{\numberline {3.2}Bias-variance tradeoff}{21}{subsection.3.2}% 
-\contentsline {subsection}{\numberline {3.3}Random Forest}{22}{subsection.3.3}% 
-\contentsline {subsubsection}{\numberline {3.3.1}Ensemble learning}{22}{subsubsection.3.3.1}% 
-\contentsline {subsubsection}{\numberline {3.3.2}Decision tree}{23}{subsubsection.3.3.2}% 
-\contentsline {subsubsection}{\numberline {3.3.3}Random forest}{23}{subsubsection.3.3.3}% 
-\contentsline {subsection}{\numberline {3.4}Mean square error and Root mean square deviation}{25}{subsection.3.4}% 
-\contentsline {subsection}{\numberline {3.5}$R^2$ score - The Coefficient of Variation}{25}{subsection.3.5}% 
-\contentsline {subsection}{\numberline {3.6}Principle Component Analysis }{26}{subsection.3.6}% 
-\contentsline {subsection}{\numberline {3.7}K-fold cross validation}{26}{subsection.3.7}% 
-\contentsline {subsection}{\numberline {3.8}Mutual Information**}{26}{subsection.3.8}% 
-\contentsline {subsection}{\numberline {3.9}Machine Learning $\cross $ batteries}{27}{subsection.3.9}% 
-\contentsline {part}{III\hspace {1em}Method}{28}{part.3}% 
-\contentsline {section}{\numberline {4}Some Method title}{28}{section.4}% 
-\contentsline {subsection}{\numberline {4.1}Data set and Experimental Environment}{28}{subsection.4.1}% 
-\contentsline {subsection}{\numberline {4.2}Volumetric number density }{29}{subsection.4.2}% 
-\contentsline {subsection}{\numberline {4.3}Void Fraction}{29}{subsection.4.3}% 
-\contentsline {subsection}{\numberline {4.4}AP-RDF Descriptors of Electrode materials}{30}{subsection.4.4}% 
-\contentsline {subsection}{\numberline {4.5}Algorithm}{31}{subsection.4.5}% 
-\contentsline {part}{IV\hspace {1em}Result \& Discussion}{34}{part.4}% 
-\contentsline {section}{\numberline {5}Result section title}{34}{section.5}% 
-\contentsline {subsection}{\numberline {5.1}Random factors from database.}{34}{subsection.5.1}% 
-\contentsline {subsubsection}{\numberline {5.1.1}Average Voltage}{34}{subsubsection.5.1.1}% 
-\contentsline {subsubsection}{\numberline {5.1.2}Capacity}{34}{subsubsection.5.1.2}% 
-\contentsline {subsubsection}{\numberline {5.1.3}Energy Density}{34}{subsubsection.5.1.3}% 
-\contentsline {subsection}{\numberline {5.2}Volumetric number density}{34}{subsection.5.2}% 
-\contentsline {subsubsection}{\numberline {5.2.1}Average Voltage}{35}{subsubsection.5.2.1}% 
-\contentsline {subsubsection}{\numberline {5.2.2}Capacity}{36}{subsubsection.5.2.2}% 
-\contentsline {subsubsection}{\numberline {5.2.3}Energy Density}{36}{subsubsection.5.2.3}% 
-\contentsline {subsection}{\numberline {5.3}Void fraction}{36}{subsection.5.3}% 
-\contentsline {subsection}{\numberline {5.4}AP-RDF}{36}{subsection.5.4}% 
-\contentsline {subsection}{\numberline {5.5}Stability}{36}{subsection.5.5}% 
-\contentsline {subsection}{\numberline {5.6}Geometrical descriptors}{37}{subsection.5.6}% 
-\contentsline {part}{V\hspace {1em}Summary}{38}{part.5}% 
-\contentsline {section}{\numberline {6}Summary and future work}{38}{section.6}% 
-\contentsline {subsection}{\numberline {6.1}Batteries}{38}{subsection.6.1}% 
-\contentsline {subsection}{\numberline {6.2}future work}{38}{subsection.6.2}% 
-\contentsline {subsubsection}{\numberline {6.2.1}improving method}{38}{subsubsection.6.2.1}% 
+\contentsline {section}{\numberline {1}Introduction and Overview}{2}{section.1}% 
+\contentsline {subsection}{\numberline {1.1}Motivation}{2}{subsection.1.1}% 
+\contentsline {subsection}{\numberline {1.2}Scope of the thesis}{4}{subsection.1.2}% 
+\contentsline {subsubsection}{\numberline {1.2.1}Research Question}{5}{subsubsection.1.2.1}% 
+\contentsline {subsubsection}{\numberline {1.2.2}Approach}{5}{subsubsection.1.2.2}% 
+\contentsline {subsection}{\numberline {1.3}Structure of the thesis}{6}{subsection.1.3}% 
+\contentsline {part}{II\hspace {1em}Foundations}{8}{part.2}% 
+\contentsline {section}{\numberline {2}Batteries}{9}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}History and evolution of batteries}{9}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}Lithium based batteries}{12}{subsection.2.2}% 
+\contentsline {subsection}{\numberline {2.3}Magnesium based batteries}{15}{subsection.2.3}% 
+\contentsline {subsection}{\numberline {2.4}Cell operation principles and design}{16}{subsection.2.4}% 
+\contentsline {subsubsection}{\numberline {2.4.1}The manufacturing process of an Alkaline battery}{17}{subsubsection.2.4.1}% 
+\contentsline {subsubsection}{\numberline {2.4.2}Theoretical Cell voltage, Capacity, specific Energy, Energy density}{17}{subsubsection.2.4.2}% 
+\contentsline {subsection}{\numberline {2.5}Battery properties}{20}{subsection.2.5}% 
+\contentsline {subsection}{\numberline {2.6}Cell limitations \& definitions }{21}{subsection.2.6}% 
+\contentsline {subsubsection}{\numberline {2.6.1}Polarization}{22}{subsubsection.2.6.1}% 
+\contentsline {subsection}{\numberline {2.7}Battery chemistries}{22}{subsection.2.7}% 
+\contentsline {subsection}{\numberline {2.8}Intercalation batteries and why Li}{22}{subsection.2.8}% 
+\contentsline {subsection}{\numberline {2.9}Electrodes and features}{24}{subsection.2.9}% 
+\contentsline {subsubsection}{\numberline {2.9.1}Properties of materials}{24}{subsubsection.2.9.1}% 
+\contentsline {subsection}{\numberline {2.10}Mg- and Li- batteries: State-of-the-art}{27}{subsection.2.10}% 
+\contentsline {section}{\numberline {3}Machine Learning}{28}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}The basics of Machine Learning}{28}{subsection.3.1}% 
+\contentsline {subsubsection}{\numberline {3.1.1}Example time!}{28}{subsubsection.3.1.1}% 
+\contentsline {subsubsection}{\numberline {3.1.2}Supervised and Unsupervised Learning }{29}{subsubsection.3.1.2}% 
+\contentsline {subsubsection}{\numberline {3.1.3}Regression and Classification Problems}{30}{subsubsection.3.1.3}% 
+\contentsline {subsubsection}{\numberline {3.1.4}Data collection, Preparation, Features and Feature Selection}{30}{subsubsection.3.1.4}% 
+\contentsline {subsection}{\numberline {3.2}Bias-variance tradeoff}{31}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.3}Random Forest}{32}{subsection.3.3}% 
+\contentsline {subsubsection}{\numberline {3.3.1}Ensemble learning}{32}{subsubsection.3.3.1}% 
+\contentsline {subsubsection}{\numberline {3.3.2}Decision tree}{33}{subsubsection.3.3.2}% 
+\contentsline {subsubsection}{\numberline {3.3.3}Random forest}{34}{subsubsection.3.3.3}% 
+\contentsline {subsection}{\numberline {3.4}Evaluation method}{35}{subsection.3.4}% 
+\contentsline {subsubsection}{\numberline {3.4.1}Mean square error}{35}{subsubsection.3.4.1}% 
+\contentsline {subsubsection}{\numberline {3.4.2}Root mean square deviation}{35}{subsubsection.3.4.2}% 
+\contentsline {subsubsection}{\numberline {3.4.3}Mean absolute error}{36}{subsubsection.3.4.3}% 
+\contentsline {subsubsection}{\numberline {3.4.4}Weighted absolute percentage error}{36}{subsubsection.3.4.4}% 
+\contentsline {subsubsection}{\numberline {3.4.5}$R^2$ score - The Coefficient of Determination}{36}{subsubsection.3.4.5}% 
+\contentsline {subsubsection}{\numberline {3.4.6}K-fold cross validation}{37}{subsubsection.3.4.6}% 
+\contentsline {subsection}{\numberline {3.5}Principal Component Analysis }{38}{subsection.3.5}% 
+\contentsline {subsection}{\numberline {3.6}Machine Learning $\cross $ batteries}{39}{subsection.3.6}% 
+\contentsline {subsection}{\numberline {3.7}Earlier work}{39}{subsection.3.7}% 
+\contentsline {part}{III\hspace {1em}Experimental method}{41}{part.3}% 
+\contentsline {section}{\numberline {4}Method: Better section header}{42}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}Data set and Experimental Environment}{42}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}Volumetric number density }{43}{subsection.4.2}% 
+\contentsline {subsection}{\numberline {4.3}Void Fraction}{45}{subsection.4.3}% 
+\contentsline {subsection}{\numberline {4.4}AP-RDF Descriptors of Electrode materials}{46}{subsection.4.4}% 
+\contentsline {subsection}{\numberline {4.5}Algorithm}{47}{subsection.4.5}% 
+\contentsline {part}{IV\hspace {1em}Result \& Discussion}{50}{part.4}% 
+\contentsline {section}{\numberline {5}Result section title}{51}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}Material specific properties}{53}{subsection.5.1}% 
+\contentsline {subsection}{\numberline {5.2}Volumetric number density}{54}{subsection.5.2}% 
+\contentsline {subsection}{\numberline {5.3}Void fraction}{57}{subsection.5.3}% 
+\contentsline {subsection}{\numberline {5.4}AP-RDF cross-product approach}{58}{subsection.5.4}% 
+\contentsline {subsubsection}{\numberline {5.4.1}Row approach to AP-RDF }{59}{subsubsection.5.4.1}% 
+\contentsline {subsection}{\numberline {5.5}Combining predictors}{60}{subsection.5.5}% 
+\contentsline {subsection}{\numberline {5.6}Combining target and predictors}{61}{subsection.5.6}% 
+\contentsline {part}{V\hspace {1em}Summary}{62}{part.5}% 
+\contentsline {section}{\numberline {6}Conclusion and future work}{63}{section.6}% 
+\contentsline {subsection}{\numberline {6.1}Batteries}{63}{subsection.6.1}% 
+\contentsline {subsection}{\numberline {6.2}future work}{63}{subsection.6.2}% 
+\contentsline {subsubsection}{\numberline {6.2.1}improving method}{63}{subsubsection.6.2.1}% 

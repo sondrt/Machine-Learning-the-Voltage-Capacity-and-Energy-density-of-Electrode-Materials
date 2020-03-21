@@ -1,0 +1,50 @@
+# generated using pymatgen
+data_Ti3Fe3(SbO8)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.02295009
+_cell_length_b   5.99449168
+_cell_length_c   9.36533941
+_cell_angle_alpha   90.00083850
+_cell_angle_beta   90.39654802
+_cell_angle_gamma   119.83672487
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ti3Fe3(SbO8)2
+_chemical_formula_sum   'Ti3 Fe3 Sb2 O16'
+_cell_volume   293.30138145
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ti  Ti0  1  0.169036  0.832592  0.210411  1
+  Ti  Ti1  1  0.169050  0.336485  0.210421  1
+  Ti  Ti2  1  0.328958  0.164505  0.713746  1
+  Fe  Fe3  1  0.662153  0.831082  0.208836  1
+  Fe  Fe4  1  0.830297  0.661796  0.707541  1
+  Fe  Fe5  1  0.830278  0.168541  0.707552  1
+  Sb  Sb6  1  0.338341  0.669221  0.489613  1
+  Sb  Sb7  1  0.670774  0.335407  0.987293  1
+  O  O8  1  0.180763  0.834967  0.603977  1
+  O  O9  1  0.048063  0.524043  0.339511  1
+  O  O10  1  0.318254  0.659129  0.103389  1
+  O  O11  1  0.007940  0.003970  0.302415  1
+  O  O12  1  0.000873  0.000587  0.802850  1
+  O  O13  1  0.180808  0.345859  0.603953  1
+  O  O14  1  0.469833  0.953775  0.340420  1
+  O  O15  1  0.469841  0.516077  0.340453  1
+  O  O16  1  0.348703  0.174364  0.106515  1
+  O  O17  1  0.663491  0.831786  0.600209  1
+  O  O18  1  0.513896  0.470736  0.841720  1
+  O  O19  1  0.513903  0.043126  0.841726  1
+  O  O20  1  0.662112  0.330864  0.604299  1
+  O  O21  1  0.833579  0.658025  0.103909  1
+  O  O22  1  0.955481  0.477687  0.841027  1
+  O  O23  1  0.833575  0.175577  0.103931  1

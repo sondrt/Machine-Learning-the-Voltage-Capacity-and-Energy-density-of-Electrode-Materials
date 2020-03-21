@@ -1,0 +1,40 @@
+# generated using pymatgen
+data_FePO4F
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.36020223
+_cell_length_b   5.35585063
+_cell_length_c   7.43280835
+_cell_angle_alpha   109.84142951
+_cell_angle_beta   107.49828449
+_cell_angle_gamma   96.06241964
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   FePO4F
+_chemical_formula_sum   'Fe2 P2 O8 F2'
+_cell_volume   186.22942868
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  O  O0  1  0.266789  0.810753  0.109995  1
+  O  O1  1  0.737002  0.847680  0.099098  1
+  O  O2  1  0.657568  0.187824  0.396151  1
+  O  O3  1  0.633199  0.692499  0.347605  1
+  O  O4  1  0.262998  0.152320  0.900902  1
+  O  O5  1  0.342432  0.812176  0.603849  1
+  O  O6  1  0.366801  0.307501  0.652395  1
+  O  O7  1  0.733211  0.189247  0.890005  1
+  F  F8  1  0.158968  0.319507  0.263623  1
+  F  F9  1  0.841032  0.680493  0.736377  1
+  P  P10  1  0.429858  0.110147  0.761327  1
+  P  P11  1  0.570142  0.889853  0.238673  1
+  Fe  Fe12  1  0.000000  0.000000  0.000000  1
+  Fe  Fe13  1  0.500000  0.500000  0.500000  1

@@ -48,7 +48,7 @@
  !-------------------------------------------------------!
 
  System volume in A^3:          39.313
- System mass, g/mol:           137.890
+ System mass, g/mol:           137.889
  System density, g/cm^3:         5.824
  -------------------------------------------------------
  If calculated density is  different from the  reported 
@@ -82,7 +82,7 @@
  ! analysis                                              !
  !-------------------------------------------------------!
 
- Pore limiting diameter in A:          NaN
+ Pore limiting diameter in A:         0.00
  Maximum pore diameter in A:           NaN
  !-------------------------------------------------------!
  ! Limiting pore diameter and maximum pore size          !

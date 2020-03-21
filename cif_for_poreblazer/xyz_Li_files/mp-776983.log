@@ -27,6 +27,7 @@
  ! Generation of helium-accessible lattice               !
  !-------------------------------------------------------!
 
+  The system is NOT percolated in ANY direction 
  !-------------------------------------------------------!
  ! Generation of helium-accessible lattice complete      !
  !-------------------------------------------------------!
@@ -36,6 +37,7 @@
  ! Generation of nitrogen-accessible lattice             !
  !-------------------------------------------------------!
 
+  The system is NOT percolated in ANY direction 
  !-------------------------------------------------------!
  ! Generation of nitrogen-accessible lattice complete    !
  !-------------------------------------------------------!
@@ -46,7 +48,7 @@
  !-------------------------------------------------------!
 
  System volume in A^3:         205.229
- System mass, g/mol:           512.642
+ System mass, g/mol:           512.638
  System density, g/cm^3:         4.148
  -------------------------------------------------------
  If calculated density is  different from the  reported 
@@ -54,11 +56,11 @@
  atoms from the adsrobent structure file
  ------------------------------------------------------
 
- Helium volume in A^3:         218.415
- Helium volume in cm^3/g:        0.257
+ Helium volume in A^3:           0.000
+ Helium volume in cm^3/g:        0.000
 
- Geometric (point accessible) volume in A^3:         197.900
- Geometric (point accessible) volume in cm^3/g:        0.232
+ Geometric (point accessible) volume in A^3:          20.156
+ Geometric (point accessible) volume in cm^3/g:        0.024
 
  !-------------------------------------------------------!
  ! Pore volume calculations complete                     !
@@ -69,24 +71,9 @@
  ! Starting surface area calculations                    !
  !-------------------------------------------------------!
 
- Accessible surface area in A^2:                        38.07
- Accessible surface area per volume in m^2/cm^3:      1854.91
- Accessible surface area per mass in m^2/g:            447.20
-
- !-------------------------------------------------------!
- ! Surface area calculations complete                    !
- !-------------------------------------------------------!
-
  Step 7/8
  !-------------------------------------------------------!
  ! Starting pore size distribution calculations          !
- !-------------------------------------------------------!
-
- Cumulative PSD and differential PSD 
- have been stored in files psd_cumulative.txt
- and psd.txt
- !-------------------------------------------------------!
- ! Pore size distribution calculations complete          !
  !-------------------------------------------------------!
 
  Step 8/8
@@ -95,9 +82,8 @@
  ! analysis                                              !
  !-------------------------------------------------------!
 
- Pore limiting diameter in A:         6.31
- Maximum pore diameter in A:          6.55
-  The system is percolated in            2  dimensions (slits)
+ Pore limiting diameter in A:         0.49
+ Maximum pore diameter in A:          0.49
  !-------------------------------------------------------!
  ! Limiting pore diameter and maximum pore size          !
  ! analysis complete                                     !

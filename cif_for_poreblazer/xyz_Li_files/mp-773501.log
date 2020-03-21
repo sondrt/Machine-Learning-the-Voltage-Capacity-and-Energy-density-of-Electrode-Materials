@@ -9,4 +9,100 @@
  ! Proceed with initialization and data input            !
  !-------------------------------------------------------!
 
- No such atom type:   LiC         
+ !-------------------------------------------------------!
+ ! Initialization complete                               !
+ !-------------------------------------------------------!
+
+ Step 2/8
+ !-------------------------------------------------------!
+ ! Starting preliminary lattice calculations             !
+ !-------------------------------------------------------!
+
+ !-------------------------------------------------------!
+ ! Preliminary lattice complete                          !
+ !-------------------------------------------------------!
+
+ Step 3/8
+ !-------------------------------------------------------!
+ ! Generation of helium-accessible lattice               !
+ !-------------------------------------------------------!
+
+ !-------------------------------------------------------!
+ ! Generation of helium-accessible lattice complete      !
+ !-------------------------------------------------------!
+
+ Step 4/8
+ !-------------------------------------------------------!
+ ! Generation of nitrogen-accessible lattice             !
+ !-------------------------------------------------------!
+
+ !-------------------------------------------------------!
+ ! Generation of nitrogen-accessible lattice complete    !
+ !-------------------------------------------------------!
+
+ Step 5/8
+ !-------------------------------------------------------!
+ ! Starting pore volume calculations                     !
+ !-------------------------------------------------------!
+
+ System volume in A^3:         114.775
+ System mass, g/mol:           273.643
+ System density, g/cm^3:         3.959
+ -------------------------------------------------------
+ If calculated density is  different from the  reported 
+ crystallagraphic one,  make sure you remove unresolved 
+ atoms from the adsrobent structure file
+ ------------------------------------------------------
+
+ Helium volume in A^3:          23.251
+ Helium volume in cm^3/g:        0.051
+
+ Geometric (point accessible) volume in A^3:          49.311
+ Geometric (point accessible) volume in cm^3/g:        0.109
+
+ !-------------------------------------------------------!
+ ! Pore volume calculations complete                     !
+ !-------------------------------------------------------!
+
+ Step 6/8
+ !-------------------------------------------------------!
+ ! Starting surface area calculations                    !
+ !-------------------------------------------------------!
+
+ Accessible surface area in A^2:                        51.31
+ Accessible surface area per volume in m^2/cm^3:      4470.25
+ Accessible surface area per mass in m^2/g:           1129.13
+
+ !-------------------------------------------------------!
+ ! Surface area calculations complete                    !
+ !-------------------------------------------------------!
+
+ Step 7/8
+ !-------------------------------------------------------!
+ ! Starting pore size distribution calculations          !
+ !-------------------------------------------------------!
+
+ Cumulative PSD and differential PSD 
+ have been stored in files psd_cumulative.txt
+ and psd.txt
+ !-------------------------------------------------------!
+ ! Pore size distribution calculations complete          !
+ !-------------------------------------------------------!
+
+ Step 8/8
+ !-------------------------------------------------------!
+ ! Starting limiting pore diameter and maximum pore size !
+ ! analysis                                              !
+ !-------------------------------------------------------!
+
+ Pore limiting diameter in A:         2.72
+ Maximum pore diameter in A:          6.63
+  The system is percolated in            2  dimensions (slits)
+ !-------------------------------------------------------!
+ ! Limiting pore diameter and maximum pore size          !
+ ! analysis complete                                     !
+ !-------------------------------------------------------!
+
+ !-------------------------------------------------------!
+ ! Simulation complete                                   !
+ !-------------------------------------------------------!

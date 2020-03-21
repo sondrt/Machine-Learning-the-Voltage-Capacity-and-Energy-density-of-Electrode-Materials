@@ -4,7 +4,10 @@ Steps for use of python scripts:
 
 		mp_battery_scraper.py
 	0: Scrape batteries with a given working ion from the Materials Project battery explorer(https://www.materialsproject.org/#search/batteries)
-
+	
+		getprojectinf.py
+	0.5: Search through the mp's making sure they match with the API, by fetching html title. 
+		Output files: <ion>_batteries.csv
 
 		fillproperties.py
 	1: Download all materials that match a material_id correlated to a battid.
@@ -26,7 +29,7 @@ Steps for use of python scripts:
 	5: Extract the CIF information from the previous JSON data.
 		Output files: directory cif_for_poreblazer/cif_files/<material_id>_cif.dat.csv
 
-		process_cif_poreblazer.py
+		process_cif_poreblazer_Mg/Li.py 
 	6: Extract void fraction with poreblazer using the CIF files.
 		Output files: helvol_geomvol_output.csv 
 
@@ -54,7 +57,8 @@ Steps for use of python scripts:
 	12: Run cross-validation, remove outliers.
 
 
-python prep_csv.py >> Results/2020-03-04/2020-03-04.txt; python PCA_randomforest_crossvalidation.py >>  Results/2020-03-04/2020-03-04.txt;
+    python prep_csv.py >> Results/2020-03-09/2020-03-09.txt; python PCA_randomforest_crossvalidation.py >>  Results/2020-03-09/2020-03-09.txt;
+
 
 
 cmd: 
@@ -86,3 +90,11 @@ To be checked:
 
 
 #GOTTA ADD AP-RDF and run_aprdf
+
+FOR DISCUSSION 
+
+ward2016general
+A general-purpose machine learning framework for predicting properties of inorganic material
+
+joshi2019machine
+Machine Learning the Voltage of Electrode Materials in Metal-ion Batteries

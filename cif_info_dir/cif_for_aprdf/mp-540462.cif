@@ -1,0 +1,54 @@
+# generated using pymatgen
+data_LiCrPO4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.50310468
+_cell_length_b   9.71597341
+_cell_length_c   5.99378565
+_cell_angle_alpha   98.69503740
+_cell_angle_beta   98.83385697
+_cell_angle_gamma   70.43941983
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LiCrPO4
+_chemical_formula_sum   'Li4 Cr4 P4 O16'
+_cell_volume   350.59231601
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.360704  0.675575  0.418146  1
+  Li  Li1  1  0.832435  0.705515  0.410020  1
+  Li  Li2  1  0.639296  0.324425  0.581854  1
+  Li  Li3  1  0.167565  0.294485  0.589980  1
+  Cr  Cr4  1  0.361987  0.927504  0.793788  1
+  Cr  Cr5  1  0.900813  0.276173  0.014936  1
+  Cr  Cr6  1  0.638013  0.072496  0.206212  1
+  Cr  Cr7  1  0.099187  0.723827  0.985064  1
+  P  P8  1  0.816307  0.986272  0.708234  1
+  P  P9  1  0.183693  0.013729  0.291766  1
+  P  P10  1  0.726784  0.610988  0.845503  1
+  P  P11  1  0.273216  0.389012  0.154497  1
+  O  O12  1  0.741373  0.669647  0.096176  1
+  O  O13  1  0.941166  0.104944  0.206867  1
+  O  O14  1  0.793478  0.151631  0.730402  1
+  O  O15  1  0.499796  0.308002  0.286150  1
+  O  O16  1  0.664344  0.961634  0.864956  1
+  O  O17  1  0.335656  0.038366  0.135044  1
+  O  O18  1  0.247832  0.556616  0.190735  1
+  O  O19  1  0.206522  0.848369  0.269598  1
+  O  O20  1  0.500204  0.691998  0.713850  1
+  O  O21  1  0.058834  0.895056  0.793133  1
+  O  O22  1  0.240989  0.073990  0.536728  1
+  O  O23  1  0.759011  0.926010  0.463272  1
+  O  O24  1  0.752168  0.443384  0.809265  1
+  O  O25  1  0.088036  0.365119  0.271232  1
+  O  O26  1  0.911964  0.634881  0.728768  1
+  O  O27  1  0.258627  0.330353  0.903824  1

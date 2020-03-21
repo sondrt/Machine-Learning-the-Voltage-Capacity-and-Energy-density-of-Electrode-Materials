@@ -27,6 +27,7 @@
  ! Generation of helium-accessible lattice               !
  !-------------------------------------------------------!
 
+  The system is NOT percolated in ANY direction 
  !-------------------------------------------------------!
  ! Generation of helium-accessible lattice complete      !
  !-------------------------------------------------------!
@@ -36,6 +37,7 @@
  ! Generation of nitrogen-accessible lattice             !
  !-------------------------------------------------------!
 
+  The system is NOT percolated in ANY direction 
  !-------------------------------------------------------!
  ! Generation of nitrogen-accessible lattice complete    !
  !-------------------------------------------------------!
@@ -46,19 +48,19 @@
  !-------------------------------------------------------!
 
  System volume in A^3:          74.017
- System mass, g/mol:           165.884
- System density, g/cm^3:         3.722
+ System mass, g/mol:           165.882
+ System density, g/cm^3:         3.721
  -------------------------------------------------------
  If calculated density is  different from the  reported 
  crystallagraphic one,  make sure you remove unresolved 
  atoms from the adsrobent structure file
  ------------------------------------------------------
 
- Helium volume in A^3:          28.102
- Helium volume in cm^3/g:        0.102
+ Helium volume in A^3:           0.000
+ Helium volume in cm^3/g:        0.000
 
- Geometric (point accessible) volume in A^3:          65.793
- Geometric (point accessible) volume in cm^3/g:        0.239
+ Geometric (point accessible) volume in A^3:           8.224
+ Geometric (point accessible) volume in cm^3/g:        0.030
 
  !-------------------------------------------------------!
  ! Pore volume calculations complete                     !
@@ -80,9 +82,8 @@
  ! analysis                                              !
  !-------------------------------------------------------!
 
- Pore limiting diameter in A:         3.02
- Maximum pore diameter in A:          3.26
-  The system is percolated in            1  dimension (channels)
+ Pore limiting diameter in A:         0.22
+ Maximum pore diameter in A:          0.22
  !-------------------------------------------------------!
  ! Limiting pore diameter and maximum pore size          !
  ! analysis complete                                     !

@@ -54,7 +54,7 @@ if (narg>=1) then
          else if (ANY(['t', 'T'] == trim(atmp2) )) then
             repcell = .true.
          else
-            stop 'Wrong -repcell in namelist' !// trim(atmp2)
+            stop 'Wrong -repcell in namelist' // trim(atmp2)
          endif
       endif
       if (ANY(['-of   ', '-fpatt']==trim(atmp))) then
@@ -68,13 +68,13 @@ if (fcif=='') then
    print*,'ERROR! no input cif file was provided'
    stop
 endif
-print*,' rmin= ',rmin, ' rmax= ', rmax,' ngrid= ', ngrid,' bfac= ', bfac
+!print*,' rmin= ',rmin, ' rmax= ', rmax,' ngrid= ', ngrid,' bfac= ', bfac
 
 call read_atomic_properties('atomic_properties.dat', ap)
 
 !call read_cif(trim(fcif), b(1:3), b(4:6), anames, rf)
 call read_pdb(trim(fcif), b(1:3), b(4:6), anames, rf)
-print*,'box=', b
+!print*,'box=', b
 
 allocate(grid_elneg( ngrid ))
 allocate(grid_pol( ngrid ))

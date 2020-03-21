@@ -1,0 +1,56 @@
+# generated using pymatgen
+data_Co2P3O10
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.70851494
+_cell_length_b   8.47365956
+_cell_length_c   8.94441667
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   98.35236695
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Co2P3O10
+_chemical_formula_sum   'Co4 P6 O20'
+_cell_volume   353.08235316
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  O  O0  1  0.480688  0.750000  0.024485  1
+  O  O1  1  0.829198  0.902227  0.213018  1
+  O  O2  1  0.829198  0.597773  0.213018  1
+  O  O3  1  0.781583  0.250001  0.234506  1
+  O  O4  1  0.170802  0.097773  0.786983  1
+  O  O5  1  0.170802  0.402227  0.786983  1
+  O  O6  1  0.218417  0.750000  0.765493  1
+  O  O7  1  0.224278  0.597596  0.489772  1
+  O  O8  1  0.224278  0.902403  0.489772  1
+  O  O9  1  0.301147  0.250001  0.453811  1
+  O  O10  1  0.308112  0.099652  0.179371  1
+  O  O11  1  0.308112  0.400347  0.179371  1
+  O  O12  1  0.775722  0.097596  0.510228  1
+  O  O13  1  0.404934  0.750000  0.284275  1
+  O  O14  1  0.595066  0.250001  0.715726  1
+  O  O15  1  0.775722  0.402403  0.510228  1
+  O  O16  1  0.691888  0.599654  0.820629  1
+  O  O17  1  0.691888  0.900347  0.820629  1
+  O  O18  1  0.698853  0.750000  0.546190  1
+  O  O19  1  0.519312  0.250001  0.975515  1
+  P  P20  1  0.387891  0.750000  0.461285  1
+  P  P21  1  0.529700  0.750000  0.851064  1
+  P  P22  1  0.470299  0.250001  0.148937  1
+  P  P23  1  0.612108  0.250001  0.538714  1
+  P  P24  1  0.331333  0.250001  0.811749  1
+  P  P25  1  0.668669  0.750000  0.188252  1
+  Co  Co26  1  0.951364  0.929612  0.669573  1
+  Co  Co27  1  0.951364  0.570388  0.669573  1
+  Co  Co28  1  0.048637  0.429612  0.330427  1
+  Co  Co29  1  0.048637  0.070388  0.330427  1

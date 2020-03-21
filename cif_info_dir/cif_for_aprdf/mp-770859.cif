@@ -1,0 +1,50 @@
+# generated using pymatgen
+data_Mn3Co3(CuO8)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.67230766
+_cell_length_b   5.68313616
+_cell_length_c   8.87920628
+_cell_angle_alpha   90.08427001
+_cell_angle_beta   92.22209370
+_cell_angle_gamma   120.04346619
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Mn3Co3(CuO8)2
+_chemical_formula_sum   'Mn3 Co3 Cu2 O16'
+_cell_volume   247.51922537
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Mn  Mn0  1  0.660434  0.830488  0.213949  1
+  Mn  Mn1  1  0.834347  0.663737  0.712224  1
+  Mn  Mn2  1  0.834693  0.170591  0.712210  1
+  Co  Co3  1  0.164558  0.832065  0.207339  1
+  Co  Co4  1  0.164551  0.332387  0.207296  1
+  Co  Co5  1  0.332755  0.166142  0.706348  1
+  Cu  Cu6  1  0.333005  0.666603  0.486745  1
+  Cu  Cu7  1  0.668924  0.334531  0.989209  1
+  O  O8  1  0.165228  0.840543  0.605400  1
+  O  O9  1  0.048919  0.524672  0.333130  1
+  O  O10  1  0.323316  0.661515  0.101421  1
+  O  O11  1  0.009369  0.004947  0.316958  1
+  O  O12  1  0.010585  0.005355  0.818115  1
+  O  O13  1  0.165238  0.323776  0.605563  1
+  O  O14  1  0.478782  0.965434  0.335005  1
+  O  O15  1  0.478608  0.514440  0.335348  1
+  O  O16  1  0.311094  0.155548  0.107879  1
+  O  O17  1  0.667399  0.833522  0.599885  1
+  O  O18  1  0.521764  0.474731  0.838519  1
+  O  O19  1  0.521991  0.047256  0.838592  1
+  O  O20  1  0.659501  0.329426  0.600197  1
+  O  O21  1  0.834222  0.668773  0.104095  1
+  O  O22  1  0.976393  0.488416  0.836237  1
+  O  O23  1  0.834325  0.165304  0.104055  1

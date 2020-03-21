@@ -1,0 +1,56 @@
+# generated using pymatgen
+data_Ba2LiVP2O9
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.39381398
+_cell_length_b   9.52293038
+_cell_length_c   9.76514066
+_cell_angle_alpha   70.94769336
+_cell_angle_beta   90.06296724
+_cell_angle_gamma   73.60655931
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ba2LiVP2O9
+_chemical_formula_sum   'Ba4 Li2 V2 P4 O18'
+_cell_volume   452.42474364
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ba  Ba0  1  0.291313  0.336375  0.421873  1
+  Ba  Ba1  1  0.317609  0.336347  0.922773  1
+  Ba  Ba2  1  0.624485  0.669896  0.585631  1
+  Ba  Ba3  1  0.650981  0.670534  0.085166  1
+  Li  Li4  1  0.400226  0.020379  0.311553  1
+  Li  Li5  1  0.512354  0.023772  0.809167  1
+  V  V6  1  0.024240  0.000408  0.999372  1
+  V  V7  1  0.916692  0.000552  0.499555  1
+  P  P8  1  0.070844  0.738697  0.325949  1
+  P  P9  1  0.134824  0.738253  0.826473  1
+  P  P10  1  0.805373  0.260573  0.675103  1
+  P  P11  1  0.877333  0.261292  0.174549  1
+  O  O12  1  0.033444  0.114968  0.308378  1
+  O  O13  1  0.026519  0.323698  0.701617  1
+  O  O14  1  0.025766  0.383478  0.150753  1
+  O  O15  1  0.364243  0.001174  0.983993  1
+  O  O16  1  0.071795  0.790074  0.462417  1
+  O  O17  1  0.087767  0.788137  0.963931  1
+  O  O18  1  0.128452  0.884360  0.691966  1
+  O  O19  1  0.575709  0.000920  0.484041  1
+  O  O20  1  0.355425  0.663913  0.305909  1
+  O  O21  1  0.409484  0.618900  0.852474  1
+  O  O22  1  0.536125  0.384275  0.648988  1
+  O  O23  1  0.592736  0.326434  0.198920  1
+  O  O24  1  0.789886  0.115238  0.808617  1
+  O  O25  1  0.847511  0.211590  0.537308  1
+  O  O26  1  0.886129  0.212467  0.036572  1
+  O  O27  1  0.917379  0.617992  0.355017  1
+  O  O28  1  0.925522  0.662114  0.808270  1
+  O  O29  1  0.926507  0.883253  0.191074  1

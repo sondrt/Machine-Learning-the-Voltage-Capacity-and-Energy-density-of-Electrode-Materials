@@ -1,38 +1,171 @@
-\newcommand{\colVec}[1]{\begin{bmatrix} #1_0 \\ #1_1 \\ \vdots \\ #1_{n-1} \\ #1_{n} \end{bmatrix}}
-
 \section{Batteries}
-The basis of batteries needs an introduction. In this section, batteries and how they are designed and how they operate will be explained. A special focus will be dedicated to electrodes which are the part of the battery that this work is focused on. Some of the more essential properties related to the chemistry of the work will also be introduced. 
+	In this section, a brief summery of some of the vocal points in the history and evolution of batteries, with a following consideration of lithium ion batteries and magnesium batteries, and their roll in todays battery market, is given. The basic principles of batteries will then be explained, with a special emphasis on electrodes. Lastly, some of the more essential properties related to the chemistry of this work will be introduced. 
+
+\subsection{History and evolution of batteries}
+One of the main issues regarding the development of sustainable and clean-energy technologies are the lack of efficient energy systems \cite{curtarolo2013high}. Tremendous amount of resources are used on an international level to produce batteries with higher; capacity, voltage and energy density. The evolution of batteries started in Italy by Alessandro Volta (1745 - 1827). Who built the first known battery in the year 1800 \cite{volta1800electricity}. His invention consisted in the voltaic pile, with zinc and copper plates stacked on top of each other and sheets of  bine-soaked cardboard between each plate. The revolutionary property of the voltaic pile was that it could produce a stable current for longer periods of time, not just short sparks of electricity. This invention was the foundation of todays modern battery. See figure: \ref{fig:voltaicpile}.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.4\textwidth]{volta.jpg}
+    \caption{A voltaic pile, the first battery \cite{decker2005volta}}
+    \label{fig:voltaicpile}
+\end{figure}
+
+Almost $40$ years later the British inventor John Frederic Daniell Voltas continued this line of work, with the discovery of the Daniell cell \cite{daniell1836xi} in 1836. The Daniell cell , as sketched below \ref{fig:DaniellCell}, is constructed with two half cells, one with a zinc electrode in a zinc sulfate dissolution, and another copper electrode in a copper sulfate solution. These half cells are connected by a salt bridge. This cell could give a voltage of $\SI{1.1}{V}$ through the reaction shown below \ref{eq:Daniell}. 
 
 
-\myworries{ "The most advantageous combination of cathode and anode materials are those that will be lightest and give a high cell voltage and capacity. \cite{reddy2011linden}"\\
-Some of the most important properties in an anode are; Hight coulombic output(Ah/g), good conductivity, stability. \\¨
-Practically anodes are metalls. Li- are a good example of this, it is the lightest metal with a high value of electrochemical equivalence. With the development of intercalation electrodes, lithiated carbons are finding wide use. Lithium alloys are also being explored for use as anodes in lithium-ion battery.\\
-The cathode must be a good oxidizing agent, be stable, when in contact with a electrolyte, and have a useful working voltage. }
+\begin{align}\label{eq:Daniell}
+\ce{Zn_{(s)}} + \ce{Cu^{2+}_{(aq)}} \rightarrow \ce{Zn^2+_{(aq)}} + \ce{Cu_{(s)}} 
+\end{align}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[angle=270,width=0.8\textwidth]{600px-Galvanic_cell_labeled.pdf}
+    \caption[format=plain]{A draft of a Daniell cell. The anode is a piece of zinc and the cathode a piece of copper. The salt bridge transports ions between the solutions and the electrons moves through an external circuit \cite{wiki:Daniellcell}. }
+    \label{fig:DaniellCell}
+\end{figure}
+
+
+In 1859 the French physicist Gaston Planté constructed the first led-acid battery. The battery could be charged by applying an external opposite potential, and it was the first secondary battery every made. Planté rolled two led plates into a spiral, separated by rubber stripps, so that the plates would not touch. The lead-acid battery was special due to the electrolyte being a active part of the chemical reaction in the battery. The electrodes in the battery were led anode, and led(IV)oxide cathode, immersed in sulfuric acid. The overall reaction is shown beneath \ref{eq:Plante}. Both the anode and the cathode are made into led(II)sulfate during discharged. The charge is depleted in the electrolyte when the battery is completely discharged (The sulfuric acid has a lower density). Charging changes the electrolyte back into concentrated sulfuric acid. 
+
+\begin{align}\label{eq:Plante}
+\ce{PbO_{2(s)}} + \ce{Pb_{(s)}} \ce{2H_2SO_{4(s)}} \rightarrow \ce{2PbSO_{4(s)}} +\ce{2H_2O_{(l)}}
+\end{align}
+
+The open circuit voltage $(V_{OC})$ (i.e. the voltage between the terminals with no load applied) for a led-acid battery are approximately $\SI{2}{V}$. It is custom to attach these batteries in series to attain a higher voltage, typical $\SI{6}{V}$ or $\SI{12}{V}$. These batteries have a shelf- and cycle life of more than $10$ years or $1000-2000$ cycles. They are still being used in modern cars. Led-acid batteries have a relative low specific energy, which means that the current is low compared to its weight, they are also renowned for their high environmental impact. Therefor, one of the many goals of battery producers is to replace led-acid batteries with higher preforming alternatives.  
+
+Nickel-cadmium $(\ce{NiCd})$ batteries were first described by the swede Waldemar Jungner in 1899 \cite{daniel2012handbook}. These batteries rose in popularity due to their high energy density, low weight, long shelf life, and their relative fast recharge. Typically, they yield a nominal cell voltage (i.e. the reported or referenced voltage) of $\SI{1.4}{V}$. The cathode is made of Nickel oxide hydroxide, the anode of metallic cadmium, while the alkaline electrolyte is a basic solution of potassium hydroxide. The specific energy of a typical Nickel-cadmium is $40-60\text{ }\si{W h/kg}$. Equation \ref{eq:NiCdb} shows the overall reaction of such a battery.
+
+\begin{align}\label{eq:NiCdb}
+\ce{2NiOOH} + \ce{Cd} + \ce{2H_2O} \rightarrow \ce{2Ni(OH)_2} + \ce{Cd(OH)_2}
+\end{align}
+
+Nickel-metal hydride $(\ce{NiMH})$  batteries were first commercialized in the 1980's and had several similarities with the $\ce{NiCd}$ batteries. The main difference is the anode with $\ce{Cd}$, while in $\ce{NiMH}$ it is replaced by an alloy of metal hydrides (\ce{MH}). $\ce{NiMH}$ batteries have the same electrolyte as $\ce{NiCd}$ batteries, a solution of potassium hydroxide. The nominal cell voltage of such a battery is typically around $\SI{1.2}{V}$ and the specific energy is $60-120\text{ } \si{Wh/kg}$. Equation \ref{eq:NiMH} shows the overall reaction of a $\ce{NiMH}$ battery.
+
+\begin{align}\label{eq:NiMH}
+\ce{Ni(OH)_2} + \ce{M} \rightarrow \ce{NiO(OH)} + \ce{MH}
+\end{align}
+
+A primary cell is a non-rechargeable battery. These batteries are usually used in remote controls, flashlights, and other small household appliances. Alkaline manganese batteries, or just alkaline batteries, are one of the most common primary cells in modern society, with anodes of zinc, cathodes of manganese oxide and a electrolyte of potassium hydroxide. A typical alkaline battery delivers a nominal cell voltage of $\SI{1.5}{V}$. The overall reaction for a alkaline battery is shown below (\ref{eq:alkalineb}).
+
+\begin{align}\label{eq:alkalineb}
+\ce{Zn} + \ce{2MnO} +\ce{H_2O} \rightarrow \ce{ZnO} + \ce{2MnO(OH)}
+\end{align}
+
+%---------------------------------------------------------------
+\subsection{Lithium based batteries}
+
+The intercalation electrodes for lithium and other alkaline metals were discovered in 1975 by Micheal Stanley Whittingham \cite{whittingham1975lithium}. This led to the first lithium batteries with titanium disulfide $(\ce{TiS_2})$ as the cathode and metallic lithium as the anode. $\ce{TiS_2} $ - structure is divided into layers and lithium-ions are inserted or extracted from interstitial space between atomic layers of the active materials, without significant changes in the structure, which makes the reaction reversible. Figure \ref{fig:MPTiS2} shows the layered structure of $\ce{TiS_2}$. During discharge of the battery, lithium-ions leave the anode of metallic lithium and moves through the electrolyte and into the empty octahedral position in the $\ce{TiS_2}$-structure, while titanium(IV) reduces to titanium(III). Applying an over-potential to the material charges it and lithium-ions move out of the $\ce{TiS_2}$-structure and titanium oxidizes back to titanium(IV). This discovery was the start of a major research investment in cathode materials of sulfite and other chalcogens in the 70-80's. 
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{TiS2.png}
+    \caption{The two-dimensional trigonal omega-like structure of $\ce{TiS_2}$. Observing from a slight angle along the b-axis. The titanium in \textcolor{gray}{grey}, are occupying the octahedral holes of sulfur, in \textcolor{yellow}{\textbf{yellow}}. Lithium-ions would intercalate into the space between the $\ce{TiS_2}$ layers \cite{materialsproject:TiS2}.}
+    \label{fig:MPTiS2}
+\end{figure}
+
+Their layered structures allow their reversible behavior. In 1980 John B. Goodenough introduced $\ce{LiCoO_2}$ (\ac{LCO}) as the cathode material for lithium batteries, and earned him, M. Stanley Whittingham and Akira Yoshino the Nobel Prize in Chemistry in 2019 \cite{nobprize}. Goodenough and colleagues found a current density of up to $\SI{4}{mAcm^{-2}}$ \cite{mizushima1980lixcoo2} \cite{goodenough1980solid}. Even though the properties where exceptionally good at the time, the batteries were still not commercialized due to metallic lithium being to unstable, ergo an unsafe anode material. This was due to dendrites growing out of the anode that short circuited the battery. 
+
+In 1991 Sony introduced lithium batteries, with LCO as the cathode, on the commercial market. LCO provides good electrical performance, are relatively safe, easy to prepare, and is not especially sensitive to process variation and moisture. The metallic lithium anode was substituted with for graphite which reduced the growth of dendrites at the anode. The electrolyte was an organic solvent with a lithium salt. 
+
+A lithium-ion battery refers to a battery where lithium intercalates in both electrode materials, both the cathode and the anode. Lithium batteries has a anode of metallic lithium. This nomenclature is transferable to other type of batteries like, magnesium-ion/magnesium batteries. 
+
+Figure \ref{fig:LiCoO2} shows a typical of a lithium-ion battery with $\ce{LiCoO_2}$ as the cathode and graphite as the anode. During discharged the lithium-ions move from the anode, through the electrolyte and separator to the cathode. The electrons move from the anode to the cathode through a separat external circuit, where the electrical energy can be extracted. When charged a over-potential is applied the reaction is reversed. The overall reaction is shown in equation: (\ref{eq:LiB})
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Li-ion_inter.png}
+    \caption{Schematic illustration of the first Li-ion battery $\ce{LiCoO_2/Li^+}$ electrolyte/graphite \cite{goodenough2013li}.}
+    \label{fig:LiCoO2}
+\end{figure}
+
+\begin{align}\label{eq:LiB}
+\ce{LiCoO_2} + \ce{C_6} \rightarrow \ce{Li_{1-x}CoO_2} + \ce{Li_xC_6}
+\end{align}
+
+The cathode materials used in lithium-ion batteries have evolved since the 1990s. Typical cathode materials, as of today, are $\ce{LiMn_2O_4}$ (spinel) and $\ce{LiFePO_4}$. $\ce{LiMn_2O_4}$ is a good ionic conductor due to the structure having channels in all three dimensions where lithium can be transported \ref{fig:LiMnO2}. $\ce{LiFePO_4}$ has a lower ionic conductivity of the two, $\ce{LiMn_2O_4}$, due to only having channels in one dimension, see figure \ref{fig:LiFePO4}. Even with a lower ionic conductivity, it is still a popular material due to its long cycle life. 
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.30\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Lithium-cobalt-oxide-3D-balls.png}
+        \caption{}
+        \label{fig:LiCoO2_pic}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}{0.36\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{a-Crystalline-structure-of-spinel-LiMn2O4-and-b-its-corresponding-lithium-diffusion}
+         \caption{}
+         \label{fig:LiMnO2}
+    \end{subfigure}
+    ~ 
+        \begin{subfigure}{0.30\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{LiFePO4.png}
+        \caption{}
+        \label{fig:LiFePO4}
+    \end{subfigure}
+	\caption{Crystal structures of the layers in a) $\ce{LiCoO_2}, $ \cite{wiki:LiCoO2} b) the 3-dimensional canals in $\ce{LiMn_2O_4}$ \cite{zhang2013understanding}, c) and the 2-dimensional channles in $\ce{LiFePO_4}$ \cite{materialsproject:LiFePO4} are illustrated.}
+	\label{fig:Li_a-c}
+\end{figure}
+
+The most used anode materials for lithium-ion batteries are graphite and other forms of carbon based materials. Graphite has a high energy density, making the cathode material the limiting factor for energy density of Lithium-ion batteries. To improve the cathode material is therefore high in priority among many research groups. Other recent anode materials are $\ce{Li_{4/3}Ti_{5/4}O_4}$ spinel, which has a lower specific capacity and capacity density than graphite, but has a longer cycle life and good termal stability characteristics. Nanostructured $\ce{Sn-Co-C}$ alloys commercialized in 2005 by Sony and Si-based negative electrodes seems promising for Li-ion cells with higher specific energy and energy density.
+
+The main reasons for the use of Li-ion batteries can be summarized as; they have sealed cells - which means that their is no requirement of maintenance - they have a long shelf and cycle life, low self discharge rate, high energy efficiency, high energy density, high rate and power discharge capabilities, no memory effect and many possible chemistries offer design flexibility. While some common drawbacks are; moderate initial cost, degeneration when discharged below $\SI{2}{V}$, degrades at high temperature ( above $65^{\circ}\si{C}$ they can permanently lose capacity ), their need for protective circuitry, capacity loss and potential for thermal runaway when overcharged and when crushed. Some also become unsafe if rapidly charged at sub zero temperatures.
+
+For more then 40 years, the search for batteries with efficient energy storage, high capacity and long cycling and shelf life has been necessary to satisfy our demands for cheap, transportable power. Lithium batteries using lithium metal anode have attracted attention due to their promises of high energy storage capacity. However the batteries are prone to dendrites when plated, which results in short circuit and fire hazards \cite{xu2004nonaqueous}\cite{kim2013metallic}, many possible solutions are being proposed \cite{liu2016lithium} \cite{zhang2015ex} \cite{li2018self} \cite{lee2017suppressing}. In recent years a desire to move towards an ultimate energy density technology has forced researchers to evaluate technologies beyond Li-ion batteries, other metals such as magnesium and aluminum are pointed out \cite{reddy2011linden} \cite{yoo2013mg}. Aluminum and magnesium are considered because of to their abundance. In the case of aluminum it has a high theoretical voltage, a high specific energy, and it is the most abundant metal in the world. It is hindered by a oxide layer on its surface \cite{li2002aluminum}, but solutions to this problem is being offered for large-scale applications \cite{van2014rechargeable}. 
+\myworries{Sabrina: Aluminum not relevant?}
+
+There is also an ongoing search for candidates for solid-state electrolytes, due to energy density and safety being the main factors that govern the development of the rechargeable battery technology \cite{guzik2019lightweight}. Solid-state electrolytes would enable stable and reliable operation of all-solid-state Li-, Na-, and Mg-based batteries. Special focus is given to lightweight complex metal hydrides, due to them showing high ionic conductivity, and in some cases electrochemical properties that enable battery reversibility. 
+
+
+%----------------------------------------------------------------------
+\subsection{Magnesium based batteries}
+	
+	Magnesium batteries have been used as a primary battery, but historically, there has been little interest due to hydrogen gas generation during discharge, and relatively poor storage-ability of partly discharged cells. When fully charged the storage-ability, even under high temperature, is good \cite{reddy2011linden}, which has made the battery relevant for military application. 
+
+	It has attracted increased attention due to its higher volumetric capacity than lithium (i.e. $3832 \si{mAh cm^{-3}}$ vs $2061 \si{mAh cm^{-3}}$), being the fifth most abundant element \cite{muldoon2012electrolyte}, combined with its low atomic weight, low cost, and electrochemically active nature, makes magnesium a good candidate for battery applications. It can serve as a possible negative electrode with its electrochemical potential of $\SI{-2.37}{V}$, and it is environmentally friendly. 
+
+	 While not competitive with Li metal on both specific capacity ($2205\text{ } \si{mAh g^{-1}}$ vs $3862\text{ } \si{mAh g^{-1}}$) and redox potential ($700\text{ }\si{mV}$ less), dendrite formation is absent, which alleviates the safety concerns \cite{aurbach2003nonaqueous}. Even still, there are several roadblocks ahead when looking at the possible electrolytes. One is the unique electrochemistry which prohibits its reversible deposition in aprotic solvents containing currently commercial ionic salts such as magnesium bisimide or magnesium perchlorate. Reduction of these electrolytes creates blocking surface layer that inhibits deposition and conduction of magnesium ions \cite{aurbach2001comparison} \cite{gnanaraj2003improving}.
+	
+	There is an ongoing search for high performance cathode magnesium materials for the realization of a practical, rechargeable Mg battery. The $\ce{Mg^2+}$ showes promises of a instant multiplication of the electrical energy that can be released for the same volume, but the strong interaction between the $\ce{Mg^2+}$ ions and the host create problems \cite{van2014rechargeable}. This have lead to a search for electrodes and electrolytes that will allow the double charged magnesium ions to move through the host more easily. It is almost two decades since the first secondary magnesium battery was made, but these batteries are still in the research stage \cite{attias2019anode}.
+ 
+
+
+%----------------------------------------------------------------------
+
+%"The most advantageous combination of cathode and anode materials are those that will be lightest and give a high cell voltage and capacity. \cite{reddy2011linden}"\\
+%Some of the most important properties in an anode are; Hight coulombic output(Ah/g), good conductivity, stability. \\¨
+%Lithium is the lightest metal with a high value of electrochemical equivalence. With the development of intercalation electrodes, lithiated carbons are finding wide use. Lithium alloys are also being explored for use as anodes in lithium-ion battery.\\
+%The cathode must be a good oxidizing agent, be stable, when in contact with a electrolyte, and have a useful working voltage.
 
 \subsection{Cell operation principles and design}
-Batteries and fuel cells are electrochemical devices. They stort chemical energy that can be converted into electrical energy. This is done by a oxidation-reduction (redox) reaction where one of the species in the reaction gain or lose an electron by changing the oxidation number. 
+Batteries and fuel cells are electrochemical devices. They store chemical energy that can be converted into electrical energy. This is done by an oxidation-reduction (redox) reaction where one of the species in the reaction gain or lose an electron by changing the oxidation number.  One battery consists of one or more \textit{cells}. A cell is fundamentally made of three parts; the anode, the cathode, and the electrolyte.
 
-A battery consists of one or more \textit{cells}. A cell is composted of three parts; the anode, the cathode, and the electrolyte.
+The anode is a negative electrode, which refers to the direction of current through the electrode. It is commonly a metal that would oxidize if given the opportunity. For a conventional current flow the electron moves from the anode to the cathode. The anode is often low voltage.  
 
-The anode is an negative electrode, which refers to the direction of current through the electrode. It is a metal that would oxidize if given the opportunity. For a conventional current flow the electron moves from the anode to the cathode. The anode is normally low voltage.  
+The cathode is a positive electrode. The cathode is a metal that is normally combined with oxygen and is where the reduction occurs. A common example of a oxide is iron oxide. The cathode is normally high voltage. 
 
-The cathode is a positive electrode. The cathode is a metal that is normally combined with oxygen and is where the reduction occurs. A common example of a oxide is iron oxide, this oxide is very fragile, but their are oxides that are strong enough to be shaped before used in the cell. The cathode is normally high voltage. 
+The electrolyte is the material that, when introduced to the anode and the cathode, provides an electrically conducting medium for transfer of charge. Electrolytes are typically liquid, to impart the ionic conductivity. It can be a solid, but this is, at least for now, less common. The cell will produce electricity when the circuit is complete. The electrolyte can, in some designs, act as both electrolyte and anode or cathode. 
 
-The electrolyte is the material that, when introduced to the anode and the cathode, provides an electrically conducting medium for transfer of charge. The anode draws oxygen atoms toward it, creating an electrical flow, with electrons moving from the end of the anode to the end of the cathode not emerged in the electrolyte. The electrolyte is typically a liquid, to impart ionic conductivity. It is often alkaline and when this is the case the battery is a alkaline battery. It can be a solid, but this is less common. The cell will not produce electricity without a circuit that is complete. The electrolyte can, in some designes, act as both the electrolyte and the anode or cathode. If the anode is made from pure metal and has an external cathode of ambient air it is referred to as a metal-air electrochemical cell. These batteries have a much higher theoretical energy density. However there are technical issues confronting their development. \cite{li2017metal}
+If the anode is made from pure metal and has an external cathode of ambient air it is referred to as a metal-air electrochemical cell. These batteries have a much higher theoretical energy density. However there are technical issues confronting their development. \cite{li2017metal}
 
+The difference between high- and low voltage is referred to as the cell voltage, which is the driving force for the discharge of the battery. For secondary batteries, it is possible to recharge batteries by reversing this process by applying an external electrical power source, it creates an over-potential, i.e. a higher voltage than the one produced by the cell, with the same polarity. 
 
-The difference between high- and low voltage is referred to as the cell voltage, which is the driving force for the discharge of the battery. For secondary batteries, as are the one in question (\myworries{Not really true, we are only looking at Electrodes.}), it is possible to recharge batteries by reversing this process by applying an external electrical power source, so that it creates a over-potential - a higher voltage than the one produced by the cell, with the same polarity. 
-
-Changes in the design of the cell dictates the cells performance. If the compositions of the anode and cathode are changed, the cell will yield more or less electricity. Adjustments in the cell can affect the amount of electricity, the rate of production, the voltage, and the cell's ability to function in different temperatures. There is almost an endless amount of possibilities, even though the most common cell has been $1.5$ volt alkaline batteries. Other types of batteries include Lithium  batteries, Magnesium batteries, Zinc batteries,  Mercury batteries and others. \myworries{Should cover these shorty in another subsection? Write something about Magnesium and Li- as a minimum.}
+Changes in the design of the cell dictates the cells performance. If the compositions of the electrodes are changed, the cell will yield a different amount of electricity. Adjustments in the cell can affect the amount of electricity, the rate of production, the voltage, and the cell's ability to function in different temperatures. There is almost an endless amount of possibilities, even though the most common cell has been $1.5$ volt alkaline batteries. Other types of batteries include Lithium  batteries, Magnesium batteries, Zinc batteries,  Mercury batteries and others.
 
 \subsubsection{The manufacturing process of an Alkaline battery}
 In alkaline batteries the cathode is used both as the container and the cathode. Manganese dioxide, graphite, and the electrolyte are mixed and ganulated and pressed into hollow cylinders called preforms. The preforms can be stacked or replaced by an extruded ring of the same material. The preforms are then combined with nickel-plated steal. These are then the containers of the battery. 
 
-A separator is then soaked in the electrolyte solution and inserted between the cathode and where the anode is supposed to be. The anode is then put into the can, in a Alkaline battery like this, it is a gel composed of zinc powder and other materials like potassium hydroxide electrolyte. The gel does not fill the whole can, so that their is room for the chemical reaction to occur. 
+A separator is then soaked in the electrolyte solution and inserted between the cathode and where the anode is supposed to be. The anode is then put into the can, it is a gel composed of zinc powder and other materials like potassium hydroxide electrolyte. The gel does not fill the whole can, so that their is room for the chemical reaction to occur. 
 
 The can is then sealed with three connected components. The first being a current collector, going to thirds of the way trough the anode with a plastic seal at the top before it is all closed by a metal cover with a metal cap. The current collector goes all the way through the plastic seal and is connected to the metal cap. The seal is thinner in some places, in case of gas build ups. In some battery designes, wax are used instead of a plastic seal, so excessive gas can push through the wall. Lastly a label is attached to the battery, with the necessary information about the battery. 
 
-The battery is then take through a complex quality control, to certify the batteries ability to resist corrosion, maintain a good shelf life, usage life, and other factors. 
+The battery is then taken through a complex quality control, to certify the batteries ability to resist corrosion, maintain a good shelf life, usage life, and other factors. 
+
 
 \myworries{useless section?}
 
@@ -41,11 +174,11 @@ The battery is then take through a complex quality control, to certify the batte
 
 \subsubsection{Theoretical Cell voltage, Capacity, specific Energy, Energy density}\label{sec:msp}
 	
-	In a cell there are essentially two areas or sites in the device where the redox reactions occur. In general these half-cell reactions can be expressed as one reduction and one oxidation reaction:
+	In a cell there are essentially two areas, or sites, in the device where the redox reactions occur. In general these half-cell reactions can be expressed as one reduction and one oxidation reaction:
 	
 	$$aA + ne \leftrightharpoons cC $$
 	
-	where a is the number of molecules of substans A taken up by n electrons to form c molecules of C, and the oxidation reaction defined in the same way:
+	Where $a$ is the number of molecules of substance $A$ taken up by $n$ electrons to form $c$  molecules of $C$, and the oxidation reaction defined in the same way:
 	
 	$$bB \leftrightharpoons dD + ne $$ 
 	
@@ -55,39 +188,79 @@ The battery is then take through a complex quality control, to certify the batte
 	\label{eq:redox}
 	\end{equation}
 	
-	Whenever there is a reaction, there is a decrease in the free energy of the system, namely standard Gibbs energy, and is defined as:  
+	Whenever there is a reaction, there is a decrease in the free energy of the system, namely standard Gibbs energy, and it is defined as:  
 	
 	$$\Delta G^0 = -nFE^0$$
 	
-	Where $n$ is the number of electrons in the reaction, and $F$ is the Faraday constant. 
+	Where $n$ is the number of electrons in the reaction, and $F$ is the Faraday constant. Gibbs free energy of the reaction is the driving force of the battery, and enables it to deliver energy to an external circuit. $E^0$ is the standard potential of the cell, it is determined by the type of active material in the cell, and can be calculated from the free energy or from the standard electrode potential.
 	
-	$E^0$ is the standard potential of the cell is determined by the type of active material in the cell, and can be calculated from the free energy. The standard potential of a cell can be calculated form the standard electrode potential.
+	$$\text{oxidation potential} + \text{reduction potential} = \text{standard potential}$$ 
 	
-	$$\text{Anode} + \text{cathode} = \text{standard potential}$$ 
+	Direct measurements of the absolute electrode potential is very hard, so a reference point, the standard potential of \ce{H_2/H^+} is taken as zero and all other standard potentials are referred to this potential. 
 	
-	\myworries{example?}
+	In situations where the system is not in the standard state, the \textit{voltage} $E$ of a cell is given by the Nernst equation.
 	
-	In the situation where we are not in the standard state, the voltage $E$ of a cell is given by the Nernst equation.
+	\begin{align} 
+	E = E^0 -\frac{RT}{nF} \ln{\frac{a^c_C a^d_D} {a^a_A a^b_B} } 
+	\end{align} 	
+	where $a_i$ is the activity of the species. $R$ is the gas constant, and $T$ is the absolute temperature.  
 	
-	$$ E = E^0 -\frac{RT}{nF} \ln{\frac{a^c_C a^d_D} {a^a_A a^b_B} } $$ 
-	where $a_i$ is the activity of the species. $R$ is the gas constant, and $T$ is the absolute temperature. 
+	The voltage can be defined as the difference between two electrical potentials. In most batteries, the electrical potential difference occurs due to the two chemical reactions, redox reaction, in the electrodes that creates a potential gap between the electrode and the electrolyte, when a outer circuit is connected this gap is lowered, but due to the reaction rates going up, the potential gap is maintained.
 	
-	Gibbs free energy of the reaction is the driving force of the battery, and enables it to deliver energy to an external circuit. 
+%	In this work we will refer to the \textit{Average Voltage} (\ac{AV}) of the battery, that is, the average voltage during discharged. It is lower then the 
 	
 	
-	The theoretical \textit{capacity} is determined by the amount of active material in the cell. If the calculation are based on only the  active materials participating in the electrochemical reaction the theoretical capacity of a $\ce{Zn/Cl_2}$ cell is $0.394 \si{Ah/g}$
+	The theoretical \textit{capacity} is determined by the amount of active material in the cell. If the calculation are based on only the active materials participating in the electrochemical reaction the theoretical capacity of a $\ce{Zn/Cl_2}$ cell is $2.54 \si{g/Ah}$ or $0.394 \si{Ah/g}$.
 	
 	$$\ce{Ze} + \ce{Cl_2} \rightarrow \ce{ZnCl_2}$$
 	$$1.22 \si{g/Ah} + 1.32 \si{g/Ah} = 2.54 \si{g/Ah}$$
 	
-	Capacity can be defined as:
+	
+	The active materials of the electrodes allow the reversible uptake and release of ions. This may happen by; movement of the  ions; into, i.e. \textit{intersection} or \textit{intercalation} or out of, i.e. \textit{extraction} or \textit{deintercalation}, their chemical structures, \textit{phases}. This is done by conversion of the materials between ion poor and rich i.e. \textit{alloying}, or rich and poor, e.g. \textit{dealloying} phases, this can also be done by conversion of the electrode material into other more ion rich/poor chemical forms or mixtures. Referred to as \textit{conversion} or \textit{displacement} reaction, with the average ion content of the entire electrode varying. 
+	
+	The total Li or Mg content in the electrodes will thus either be varied by changing the composition of one phase or the ratio between coexisting phases. In this work \myworries{?}we will only look at \textit{intercalation} type batteries, due to the \textit{database}, more on this later.
+
+------------	
+	\subsubsection*{Specific Energy}
+	Specific Energy, or gravimetric energy density, defines battery capacity in weight, energy density, or volumetric energy density, defined as: 
+	\begin{equation}
+	\text{Watthours/gram} = \text{Voltage} \cross \text{Ampere-hours/gram}
+	\end{equation}	
+	
+	theoretical specific energy - based on the active anode and cathode only
+	theoretical specific energy of a practival battery, accounting for electrolye and nonreactive components
+	The actual specific energy of these battereis when discharged at 20C under optimal discharge conditions.  
+	
+
+	Electrode processes
+	To characterize an electrode it is custom to use both chemical and electrical changes. The electrode reaction may be simple, but despite this simplicity the overall process involves many more steps, which makes it more complex. \myworries{rewirte}. Transport of electroactive species prior to the electron transfer step. Adsorption of the electroactive material may be involved. Chemical reaction is often involved in the overall electrode reaction. Any reaction rate is dictated by its slowest step. \myworries{what are you trying to say.}
+	
+	Experimentally, it is shown that there is an exponential relationship between current and applied voltage \\
+------------
+\subsection{Battery properties}\label{sec:battery-properties}
+
+Batteries are characterized according to several different properties, both chemical and electrical. Some of the most important once are the physical properties energy, energy density, capacity, power, and current ($I$). These relate to each other as shown in equation \ref{eq:battery-properties}, where $E$ is the energy ($\si{Wh}$), $V$ is the voltage ($\si{V}$), $C$ is the capacity ($\si{Ah}$), $U$ is the energy density ($\si{J/m^3}$), $P$ is the power ($\si{W}$), $I$ is the current ($\si{A}$) and $t$ is the time $\si{h}$
+
+\begin{align}\label{eq:battery-properties}
+V \cdot C &= E \\
+\frac{E}{Volume} &= U  \\
+V \cdot I &= P \\
+W \cdot t &= E 
+\end{align}
+
+Average voltage
+The voltage of a battery is determined by the types of active materials that are used. The cell voltage are also limited by concentration and temperatures, as expressed by the Nernst equation. 
+
+Capacity can be defined as:
 	\begin{equation}
 	C = \int I(t)\cdot dt
 	\end{equation}
 	
-	And is the $i$ number of electrons or cations exchanged between the negative and positive electrodes. $I(t)$ is the current, i.e. the number of electrons flowing over the external circuit per time interval $dt$ which is integrated over the discharge period. The capacity is normally expressed as $\si{Ah/kg}$. Theoretically, 1 gram equivalent weights of the active material in grams divided by the number of electrons in the reaction.
+	And is the $i$ number of electrons or cations exchanged between the negative and positive electrodes, i.e. how much charged a battery can store. $I(t)$ is the current, the number of electrons flowing over the external circuit per time interval $dt$, which is integrated over the discharge period. The capacity is normally expressed as capacity per mass (specific or gracimetric capacity), $\si{Ah/kg}$, or per volume (volumetric capacity), due to its dependency on the amount of active material. Theoretically, capacity is $1$ gram equivalent weights of the active material (in grams) divided by the number of electrons in the reaction.
+	
+	Energy is the cells ability to preform work, which is a property of high interest for practical applications. 
 		
-	The battery can deliver a power that is defined as
+	The battery can deliver power which is defined as:
 	\begin{equation}
 	P(t)=V(t)I(t)
 	\end{equation}
@@ -96,18 +269,12 @@ The battery is then take through a complex quality control, to certify the batte
 	W = \int P(t) \cdot dt = \int V(t)I(t) \cdot dt
 	\end{equation}
 	
-	Specific capacity and energy densities of battery materials can be compared relative to mass, volume and cost. The more electrode material that a battery contains, the greater is its capacity and energy. The higher the cell voltage the greater its power and energy. 
+	This is particularly interesting for applications that require a lot of work in a short time period.
 	
-	The active materials of the electrodes allow the reversible uptake and release of Mg, or Li ions. This may happen by; movement of the  ions; into, i.e. \textit{intersection} or \textit{intercalation} or out of, i.e. \textit{extraction} or \textit{deintercalation}, their chemical structures, \textit{phases}. This is done by conversion of the materials between ion poor and rich i.e. \textit{alloying}, or rich and poor, e.g. \textit{dealloying} phases, this can also be done by conversion of the electrode material into other more ion rich/poor chemical forms or mixtures. Referred to as \textit{conversion} or \textit{displacement} reaction, with the average ion content of the entire electrode varying. 
+	Energy density 
 	
-	The total Li or Mg content in the electrodes will thus either be varied by changing the composition of one phase or the ratio between coexisting phases. In this work \myworries{?}we will only look at \textit{intercalation} type batteries, due to the \textit{database}, more on this later.
 	
-	\subsubsection*{Specific Energy}
-	Specific Energy, or gravimetric energy density, defines battery capacity in weight, energy density, or volumetric energy density, defined as: 
-	\begin{equation}
-	\text{Watthours/gram} = \text{Voltage} \cross \text{Ampere-hours/gram}
-	\end{equation}	
-	
+	Gravimetric capacity and energy densities of battery materials can be compared relative to mass, volume and cost. The more electrode material that a battery contains, the greater is its capacity and energy. The higher the cell voltage the greater its power and energy. 
 	
 
 
@@ -134,26 +301,10 @@ In this paper, especially under the section on general properties of battery, an
 \subsection{Battery chemistries}
 
 \subsection{Intercalation batteries and why Li}
-
-"Among the rechargeable battery technologies (Fig. 11
-), the
-current Li-ion battery technology offers the best useable energy
-and tap density, dominating the worldwide market for mobile
-electronic devices2 for decades. Li-ion batteries have minimal
-(unwanted) side reactions when a Li ion intercalates into or
-desorbs from the cathode/anode materials. Their energy efficiency
-may be further enhanced by lowering the internal resistance of the
-battery, and they exhibit limited self-discharge, and no memory
-effects that limit energy density after many cycles. Li-ion batteries
-as a result, receive considerable attention at both fundamental and
-applied research levels.
+The current Li-ion batteries offer some of the best combination of high specific energy, energy density, long cycle life and high-power capability, among the rechargeable battery technologies. They have dominate the worldwide market in portable and consumer electronic equipment, electric vehicles, space applications, as well as electrical energy storage. Li-ion batteries have minimal side reactions when a Li ion intercalates into the cathode/anode materials. They exhibit limited self-discharge, and no memory effects that limit energy density after many cycles. Their energy efficiency may be further enhanced by lowering the internal resistance of the battery, and Li-ion batteries as a result, receive considerable attention at both fundamental and applied research levels.
 
 
-The development
-of stable novel materials is the key to the success of development
-of novel and advanced rechargeable batteries. Current research
-and development has focused on upgrading the energy density
-of Li-ion batteries. 
+The development of stable novel materials is the key to the successful development of novel and advanced rechargeable batteries. Current research and development has focused on upgrading the energy density of Li-ion batteries. 
 
 Most practical
 rechargeable batteries deliver capacities and energy densities
@@ -215,21 +366,20 @@ The anode is graphite, thus there is noe metallic $\ce{Li}$, which makes the Li-
 
 	
 	\subsubsection*{Average Voltage}
-	The theoretical voltage and capacity of a cell are function of the anode and cathode materials, with the composition of the electrolyte, and the temperature, normally $25^\circ\si{C}$.
+	The theoretical voltage and capacity of a cell are function of the anode and cathode materials, with the composition of the electrolyte, and at the temperature of $25^\circ\si{C}$. \myworries{write better}
 	
 	The active materials contained in the cell determines the standard potential, $E^0$, which can be calculated from the free-energy. 
 	The standard potential of a cell can be calculated from the standard electrode potential:
 	\begin{equation}
 	\text{Anode(oxidation potential)} + \text{cathode (reduction potential)} = \text{standard cell potential}
 	\end{equation}  
-	The cell voltage is also dependent on other factors including concentration and temperature, as expressed om the nernst equation. (REF)
-	\textit{Average Voltage} as we use, is defined as the voltage average during the discharge. It is lower then the theoretical voltage.
-
+	The cell voltage is also dependent on other factors including concentration and temperature, as expressed by the nernst equation. (REF)
+	\textit{Average Voltage} as we use, is defined as the voltage average during the discharge. It is lower then the theoretical voltage.\myworries{explain why this is, ref}
 	 
 
 
 	\subsubsection*{Physical stability}
-	What we refer to as Physical stability is Energy above hull. The energy that is demanded for decomposition of the material into the set of most stable materials at that chemical composition. Some positive value indicates that the material is not stable. While a zero energy above hull indicates that this is the most stable material at its composition. 
+	What we refer to as Physical stability is Energy above hull. The energy that is demanded for decomposition of the material into the set of most stable materials at that chemical composition. Positive values indicate that the material is not stable. While a zero energy above hull indicates that this is the most stable material at its composition. 
 	
 	\subsubsection{Properties of materials}
 	Are These (or some of them) theoretically computed properties. If yes provide some details about how they computed (i.e. DFT methods)
@@ -237,7 +387,7 @@ The anode is graphite, thus there is noe metallic $\ce{Li}$, which makes the Li-
 Total \textit{Magnetic Moment} ($\si{\mu_B}$) is calculated for the unit cell within the magnetic ordering provided. 
 
 
-The \textit{Formation Energy per Atom} is calculated from the formation energy from the elements normalized to per atom in the unit cell.
+The \textit{Formation Energy per Atom} is calculated from the formation energy from the elements normalized per atom in the unit cell.
 
 \textit{Energy Above Hull per Atom}
 The energy of decomposition of the material into the set of most stable materials at this chemical composition, in $eV$ per atom. Stability is tested against all potential chemical combinations that result in the material's composition. For example a $\ce{Mg_3Sb_2}$ structure would be tested against other $\ce{Mg_3Sb_2}$ structures, against $\ce{Mg}$ and $\ce{Sb}$ mixtures, and against $\ce{MgSb}$ and $\ce{Sb_2}$ mixtures. 
@@ -270,19 +420,19 @@ The \textit{Band Gap}s are calculated a little different. In general, band gaps 
 	\subsubsection*{Elasticity}
 	E
 	\subsubsection*{Porous Electrodes}
-	In a fuel cell system, the reactant is supplied from the electrolyte phase toe the catalytic electrode surface. Electrodes are often composites made of active reactants, binders and fillers, in batteries. To minimize the energy loss of both activation and concentration polarizations at the electrode surface and to increase the electrode efficiency or utilization, it is often preferd to have a large electrode surface area. This can be done by have a porous electrode design. A porous design can provide an interfacial area per unit volume that is considerable higher den that of a planar electrode. 
+	In a battery, the reactant is supplied from the electrolyte phase toe the catalytic electrode surface. Electrodes are often composites made of active reactants, binders and fillers, in batteries. To minimize the energy loss of both activation and concentration polarizations at the electrode surface and to increase the electrode efficiency or utilization, it is often preferred to have a large electrode surface area. This can be done by have a porous electrode design. A porous design can provide an interfacial area per unit volume that is considerable higher den that of a planar electrode. 
 	
-	A porous electrode is a electrode that concists of porous matrice of solids and void space. The electrolyte penetrates the void space of a porous matrix. In such an active porous mass, the mass transfer condition in conjunction with the electrochemical reaction occuriing at the interface is very complicated. In a given time druing cell operation, the rate of reaction within the pores may vary significantly depending on the location. The distribution of current density within the porous electrode depends on the physical structure(pore size), the conductivity of the solid matrix and the electrolyte, and the electrochemical kinetic parameters of the electrochemical processes.  
+	A porous electrode is a electrode that concists of porous matrice of solids and void space. The electrolyte penetrates the void space of a porous matrix. In such an active porous mass, the mass transfer condition in conjunction with the electrochemical reaction occurring at the interface is very complicated. In a given time during cell operation, the rate of reaction within the pores may vary significantly depending on the location. The distribution of current density within the porous electrode depends on the physical structure(pore size), the conductivity of the solid matrix and the electrolyte, and the electrochemical kinetic parameters of the electrochemical processes.  
 	
 
-\subsection{On Mg- and Li- batteries and their state today}
+\subsection{Mg- and Li- batteries: State-of-the-art}
 	
 	
 	
 \pagebreak
 \section{Machine Learning}
 
-In this chapter we summarize some concepts of machine learning and related ideas. The first section introduces the basic ideas behind machine learning and *some of the best known examples* will be presented. Secondly the concepts of supervised and unsupervised learning will be presented with a clarification on the difference between regression and classification problems, so that we can define where in the field of machine learning this work resides in. Basics of methods utilized in this work will be introduced, emphasizing Random forest. Subsequently a short description of the validation methods used is given. These are; K-fold cross validation and how it is used in optimizing our random forest method, mean square error(\textit{MSE}), root mean square error (\textit{RMSE}) and R-squared($R^2$). 
+In this chapter we summarize some concepts of machine learning and related ideas. The first section introduces the basic ideas behind machine learning and *some of the best known examples* will be presented. Secondly the concepts of supervised and unsupervised learning will be presented with a clarification on the difference between regression and classification problems, so that we can define where in the field of machine learning this work resides in. Basics of methods utilized in this work will be introduced, emphasizing Random forest. Subsequently a short description of the validation methods used is given. These are; K-fold cross validation and how it is used in optimizing our random forest method, mean square error(MSE), root mean square error (RMSE) and R-squared($R^2$). 
    
 Before we round of this section with a brief explanation on the role of data, how features can affect the effectiveness of a model, and finalizing with the concepts of over- and under-fitting, and how these are related to the bias-variance-trade-off. 
 
@@ -302,14 +452,14 @@ Machine learning comes from the field of pattern recognition and learning theory
 	
 	Machine learning only works when you have data, preferably a large amount of data. For instance data from the MNIST test dataset(\cite{lecun1998gradient}). This database contain $60,000$ images of handwritten numbers that is commonly used for both various training, and testing in the field of machine learning. The images all are 18x18 pixels. The data is divided into two sets, one training set: $X_{Train}$ and one test set: $X_{test}$
 	
-	How do one represent an image as something that makes logical sense to a computer? Most learning algorithms take numbers as input. To a computer one image is nothing more than a grid of numbers that represent how dark a pixel is. So each picture contains a gray-scale value that ranges from $0$ to $255$. Where each sample can be viewed as a vector consisting of 324 \textit{features}. Every sample has a corresponding label value, or \textit{target}, which is the digital equivalent to the handwritten sample. We let the corresponding targets be denoted: $Y_{train}$ and $Y_{test}$, for training and testing data. Next we designate our \textit{learner} denoted by function A. A is then given our training set $S$, where $S = (X_{train1}, Y_{train2}),..., (X_{trainN}, Y_{trainN})$ and returns a prediction rule: $h: X \rightarrow Y$. This rule is also called a predictor, in general, a classifier, or a regressor, depending on the problem in question. 
+	How do one represent an image as something that makes logical sense to a computer? Most learning algorithms take numbers as input. To a computer one image is nothing more than a grid of numbers that represent how dark a pixel is. So each picture contains a gray-scale value that ranges from $0$ to $255$. Where each sample can be viewed as a vector consisting of 324 \textit{features}. Every sample has a corresponding label value, or \textit{target}, which is the digital equivalent to the handwritten sample. We let the corresponding targets be denoted: $y_{train}$ and $y_{test}$, for training and testing data. Next we designate our \textit{learner} denoted by function A. A is then given our training set $S$, where $S = (X_{train1}, y_{train2}),..., (X_{trainN}, y_{trainN})$ and returns a prediction rule: $h: X \rightarrow y$. This rule is also called a predictor, in general, a classifier, or a regressor, depending on the problem in question. 
 	
-	The \textit{training phase} is a prosess where the learning algorithm gets tweaked to best capture the correlating structure of the data set, so that it can better predict new data. As mentioned in the last paragraph the output from the \textit{training phase} is called a \textit{predictor}. The next step is to introduce the \textit{predictor} for new, unseen data, so that it can be classified. Then we compare the $Y_{test}$ to our predicted value $Y_{pred}$ given by $h$ to see if our model generalizes well to unseen data in $X_{test}$. 
+	The \textit{training phase} is a prosess where the learning algorithm gets tweaked to best capture the correlating structure of the data set, so that it can better predict new data. As mentioned in the last paragraph the output from the \textit{training phase} is called a \textit{predictor}. The next step is to introduce the \textit{predictor} for new, unseen data, so that it can be classified. Then we compare the $y_{test}$ to our predicted value $y_{pred}$ given by $h$ to see if our model generalizes well to unseen data in $X_{test}$. 
 	
 	\subsubsection{Supervised and Unsupervised Learning }
 	One of the most basic separations in machine learning is the partition between supervised learning and unsupervised learning. \cite{gentle2012handbook}
 	
-	In the case of supervised learning one knows the answer to a problem, and let the computer deduce its own logic to figure out how we get to that result, thus the name complete-date problem is commonly used. This is the most common type of learning. With unsupervised learning the machine is tasked with finding patterns and relationships in data sets without any prior knowledge of the system, incomplete-data problems. Some authors operate with a third and a forth category, namely reinforcement learning, where the machine learns by trial-and-error(marsland2014machine), and evolutionary learning, where they account for the biological evolution and that it can be seen as a learning process.
+	In the case of supervised learning one knows the answer to a problem, and let the computer deduce its own logic to figure out how we get to that result, thus the name complete-date problem is commonly used. This is the most common type of learning. With unsupervised learning the machine is tasked with finding patterns and relationships in data sets without any prior knowledge of the system, incomplete-data problems. Some authors operate with a third and a forth category, namely reinforcement learning, where the machine learns by trial-and-error \cite{marsland2014machine}, and evolutionary learning, where they account for the biological evolution and that it can be seen as a learning process.
 		
 	In this thesis we only consider supervised learning. Algorithms and challenges specifically related to unsupervised learning, reinforcement learning, and evolutionary learning, is therefore not further examined. 
 
@@ -317,7 +467,7 @@ Machine learning comes from the field of pattern recognition and learning theory
 		A respons variable can either be qualitative or quantitative in nature. For the qualitative respons variable, let's assume a set of data points $ \vec{x}$ and a goal of finding the value of the output $y$ when $x = 0.5$. The value $x = 0.5$ is not in the data points given so it is needed a way to \textit{predict} the value. Given in the example above, we assume that there exists a function $h$ that the value comes from. When that function is found one can find any given $y$ for any given $x$. This is what is known as a regression problem - The respons takes form of a continuous numerical value. The regression problem is a problem of function approximation or interpolation. It may occur a scenario where there are multiple functions, lets say $h$ and $g$, that fits the given data perfectly. If this is the case one need to pick a value in between our data points and use our functions $h$ and $g$ to predict its values and compere the result to see which is better. \myworries{mby connect it tighter with the handwritten example?}
 	This does not seems as very intelligent behavior, but the problems of interpolation can be very difficult in higher dimensional space. This will also be observed in classification, the other aspect of what our algorithms can do.  
 	
-	If the response variable is quantitative the problem is referred to as a classification problem. Such a problem consists of taking several input vectors and deciding which of $N$ classes they belong to. This decision or prediction comes from training on examples of each class. I underline again that classification problems are of a discrete nature - The input only belongs to one class.
+	If the response variable is quantitative the problem is referred to as a classification problem. Such a problem consists of taking several input vectors and deciding which of $N$ classes they belong to. This decision or prediction comes from training on examples of each class. To be clear, classification problems are of a discrete nature - The input only belongs to one class.
 	
 	In this work we want to predict characteristics of batteries , meaning  that our task is a regression problem.
 	
@@ -325,7 +475,7 @@ Machine learning comes from the field of pattern recognition and learning theory
 	 
 	Normally the data collection is a enormous part of the work and not easily available, or, at the very least, needs to be assembled and prepared. If the problem is completely new it might be natural to engulf this step with the next one. (Which is, more or less, what this work tries to do.) With a small dataset with many different features one can experiment and try to figure out what features are the most useful before picking those and collecting a full dataset based on them before doing a complete analysis. 
 	
-	A common problem is that there is too much data that can be relevant, but that data is hard to find or represent in a way that makes sense for the machine. This can be because it requires too many measurements, or, something thing that is prevalent in this work\myworries{(How much should I refer to this here and not later?)}, that they are in a variety of places and formats. For instance; if the measurements are already taken, but at vastly different temperatures they might be hard to compare or merge. It is important to have a \textit{clean} dataset, this means that the dataset does not have missing data, significant errors, and so on. On top of all of this, supervised learning requires a target $y$, which demands time and involvement of experts. 
+	A common problem is that there is too much data that can be relevant, but that data is hard to find or represent in a way that makes sense for the machine. This can be because it requires too many measurements, or, something thing that is prevalent in this work, that they are in a variety of places and formats. For instance; if the measurements are already taken, but at vastly different temperatures they might be hard to compare or merge. It is important to have a \textit{clean} dataset, this means that the dataset does not have missing data, significant errors, and so on. On top of all of this, supervised learning requires a target $y$, which demands time and involvement of experts. 
 	
 	The specific input to a model is normally referred to as a feature, that is, numerical representation of raw data. The amount of features are of importance for the machine learning algorithm to successfully make a good prediction. If there are to few relevant features one can not make an accurate prediction due to the lack of necessary data. And if there are to many features, or many of the features are irrelevant to the task the model will be more expensive.
 	
@@ -339,7 +489,7 @@ As the algorithm learns we need to make sure that it generalizes well to data no
 \begin{figure}[H]
      \centering
      \includegraphics[width=\linewidth]{theory/figures/Bias_variance.png}
-     \caption{Simplified illustration showing the concepts of bias-variance problem. Left to right; high bias, low bias and low variance, high variance. Adopted from \cite{fig:bias_var}}
+     \caption{Simplified illustration showing the concepts of bias-variance problem. Left to right; high bias, low bias and low variance, high variance \ref{fig:bias_var}}.
      \label{fig:bias_var}
 \end{figure}
 Our machine is bias if it generalizes to much. The error is due to low variability in our training data, or that it did not adapt to the training data appropriately. The machine misses the relevant relations in the data set between the features and the output. This effect leads to that which is commonly referred to as under-fitting, see left on figure \ref{fig:bias_var}. 
@@ -350,8 +500,6 @@ A good way to understand the idea of bias-variance tradeoff is that a more compl
 
 
 \subsection{Random Forest}
-
-\myworries{Should I use more math? I am trying to expaine these things as simple as possible with little mathematical syntax}	
 
 \subsubsection{Ensemble learning}
 	There are many different machine learning algorithms, in this work we have focused on the \textit{ensemble method}; \textit{Random forest}\cite{breiman2001random}. The idea of ensemble learning is that two heads are better than one, so why not have many learners that all get slightly different results on the same data, and then combine them.  
@@ -413,8 +561,7 @@ Then a new parameter is introduced, at each node a random subset of features are
 When the forest is done, we use a majority vote system, which is a comparison of the mean response for regression. For a point by point algorithm, see the appendix(REF to appendix). 
 The reason for not using cross-validation in the learning algorithm, which is common in other machine learning methods (Ref to cross-val), is that our bootstrap method only uses about $65\%$ of the data, leaving $35\%$ on average which can give a estimated test error. 
 
-The main reason we decided to opt in for random forest is due to an article by .... that clearly states that random forest is the go to machine learning algorithm when you are not sure where to start. 
-
+The main reason we decided to opt in for random forest is due to an article by \cite{fernandez2014we} and the findings from both our group \cite{fanourgakis2020automatedML} and Shandiz and colleagues \cite{shandiz2016application}, that clearly states that random forest is the go to machine learning algorithm when you are not sure where to start. Another reason and another of the main advantages of RF is that it is fast and does not require any particular optimization of its hyper-parameters (i.e. number of decision trees). On the other hand, methods like support vector regression (SVR) requires an extensive search for the optimum hyper-parameters before providing reasonable results.
 
 %\subsection{Support Vector Regression}
 %	Dette bør brukes og kan da skrives om.
@@ -423,39 +570,58 @@ The main reason we decided to opt in for random forest is due to an article by .
 	
 	
 
-\subsection{Mean square error and Root mean square deviation}
-The Mean Square Error (\textit{MSE}) can give a measure of the quality of our estimator.(ref) It is defined as
+\subsection{Evaluation method}\label{sec:evaluation_method} %Mean square error, Root mean square deviation and Mean absolute error, Weighted absolute percentage error}
+%In this section different evaluation methods used in the work will be explained. 
+%These are Mean square error, Root mean square deviation, Mean absolute error, Weighted absolute percentage error, The Coefficient of Determination, k-fold cross validation.
+
+\subsubsection{Mean square error} 
+ 
+The Mean Square Error (\ac{MSE}) can give a measure of the quality of our estimator.(ref) It is defined as
 \begin{equation}\label{eq: mse}
-	\textit{MSE}(\epsilon) = \frac{1}{n}\sum_n^{n-1}\epsilon^2 = \frac{1}{n_\text{samples}} \sum_n^{n_{\text{samples}}-1}(y_i - \hat{y_i})^2
+	\text{MSE}(\epsilon) = \frac{1}{n}\sum_n^{n-1}\epsilon^2 = \frac{1}{n_\text{samples}} \sum_n^{n_{\text{samples}}-1}(y_i - \hat{y_i})^2
 	\end{equation}
 	Where $\hat{y_i}$ is the predicted value of the $i$-th sample, and $y_i$ is the corresponding true value.
-As such it can be thought of  as the average of the square of our residuals. Therefore the \textit{MSE} can never have negative values, and smaller values mean that we have a better prediction, where at zero there is a perfect fit.
+As such it can be thought of  as the average of the square of our residuals. Therefore the MSE can never have negative values, and smaller values mean that we have a better prediction, where at zero there is a perfect fit.
 
-The Root mean square deviation, or root mean square Error(\textit{RSME}), is the squared for the MSE:
-$$RMSE = \sqrt{MSE} =  \sqrt{\frac{\sum^{n-1}_{n}(y_{i}-\hat{y_{i}})^2 }{n}} $$
-And is thus the distance, on average, of a data point from the fitted line, measured along a vertical line. The \textit{RSME} is directly interpretable in terms of measurement units, and so is a better measure of goodness of fit than a correlation coefficient. 
+\subsubsection{Root mean square deviation} 
+The Root mean square deviation, or root mean square Error (\ac{RMSE}), is the squared for the MSE:
+$$\text{RMSE} = \sqrt{\text{MSE}} =  \sqrt{\frac{\sum^{n-1}_{n}(y_{i}-\hat{y_{i}})^2 }{n}} $$
+And is thus the distance, on average, of a data point from the fitted line, measured along a vertical line. The RSME is directly interpretable in terms of measurement units, and is therefore a better measure of goodness of fit than a correlation coefficient. 
 
-\subsection{$R^2$ score - The Coefficient of Variation}
+\subsubsection{Mean absolute error}
+Mean absolute error (\ac{MAE}) is another statistical tool that is used to measure the difference between two continuous variables, in our case; the predicted values and the observed values. It corresponds to the expected values of the absolute error loss. The MAE is defined as:
 
-	In regression validation the $R^2$ is the standard when it comes to measuring goodness of fit.(\cite{coef} \myworries{Needs new ref.}) In straight terms it is the proportion of the variance in the dependent variable that is predictable from the independent variable (S).
+\begin{align}\label{eq:MAE}
+\text{MAE} = \frac{1}{n_{samples}}\sum^{n_{samples}-1}_{i=0}\abs{y_i - \hat{y_i}}
+\end{align}
+
+where $y_i$ and $\hat{y_i}$ are defined as above. In geometrical terms, it is the average absolute vertical/horizontal distance between each point in a scatter plot and the $Y=X$ line. 
+
+\subsubsection{Weighted absolute percentage error}
+
+Weighted absolute percentage error (\ac{WAPE}) is the mean absolute error divided by the mean ($\bar{y_i}$) multiplied by a hundred. This yields the mean error in percentage. 
+
+\begin{align}\label{eq:WAPE}
+\text{WAPE} = \frac{\text{MAE}}{\bar{y}_{i}} \cross 100 
+\end{align}
+ 
+
+
+\subsubsection{$R^2$ score - The Coefficient of Determination}
+
+	In regression validation the $R^2$ is the standard when it comes to measuring goodness of fit \cite{james2013introduction}. In straight terms it is the proportion of the variance in the dependent variable that is predictable from the independent variable.
 
 \begin{equation}\label{eq: R squared}
 	R^2 =1 - \frac{SS_{res}}{SS_{tot}} =  1 - \frac{ \sum(y_i-f_i)^2 }{ \sum(y_i-\bar{y}_i)^2 }
 \end{equation}
 
-	Where $y_i$ are the indexed response variables (data  to be fitted) and $f_i$ the predictor variables from the model with $\epsilon_i = y_i - f_i$. The average of the response variables is denoted $\bar{y}_i$. The second term can also be considered as the ratio of \textit{MSE} to the variance (the $1/n$ factors null each other out in a fraction), or the total sum of squares (\textit{SS\textsubscript{tot}}). 
+	Where $y_i$ are the indexed response variables (data  to be fitted) and $f_i$ the predictor variables from the model with $\epsilon_i = y_i - f_i$. The average of the response variables is denoted $\bar{y}_i$. The second term can also be considered as the ratio of MSE to the variance (the $1/n$ factors null each other out in a fraction), or the total sum of squares ($\ac{SS}_{tot}$). 
 	
-	If the residual sum of squares (\textit{SS\textsubscript{res}}) is low the fit is good. However, this should be compared to the spread of the response variables. After all, if the response variables are all nicely distributed close to the mean, then getting a good \textit{SS\textsubscript{res}} is not suspicious. We therefore do a normalization in the fraction, taking the scale of data into consideration. In the simplest polynomial fit, using a zero order polynomial (a constant), our model would just be a constant function of the mean. The sums being equal, returning unity on the fraction and the total $R^2$ score would be zero. In the other extreme, if the model fits perfectly, then \textit{SS\textsubscript{res}} would be zero and the $R^2$ score would be one. In this sense we have a span of possible $R^2$ scores between zero and one, from the baseline of the simplest model at zero, and a perfect fit at one. In contradiction to most scores the value can be negative, because the model can get arbitrarily worse, thus giving negative values.
+	If the residual sum of squares ($SS_{res}$) is low the fit is good. However, this should be compared to the spread of the response variables. After all, if the response variables are all nicely distributed close to the mean, than getting a good $SS_{res}$ is not suspicious. We therefore do a normalization in the fraction, taking the scale of data into consideration. In the simplest polynomial fit, using a zero order polynomial (a constant), our model would just be a constant function of the mean. The sums being equal, returning unity on the fraction and the total $R^2$ score would be zero. In the other extreme, if the model fits perfectly, than $SS_{res}$ would be zero and the $R^2$ score would be one. In this sense we have a span of possible $R^2$ scores between zero and one, from the baseline of the simplest model at zero, and a perfect fit at one. In contradiction to most scores the value can be negative, because the model can get arbitrarily worse, thus giving negative values.
 	The $R^2$ score is useful as a measure of how good our model is at predicting future samples.
 	 
-
-\subsection{Principle Component Analysis }
-	Principle Component Analysis(\textit{PCA}) is a procedure that uses orthogonal linear transformation to reduces the amount of feature subspaces. It goes under different names in different fields, but the most recognizable might be Singel Value Decomposition. This is done by converting a set of possible correlated variables into a set of uncorrelated variables, called principle components(\textit{PC}). 
-	
-	The \textit{PC} are arrange so that the first \textit{PC} has the largest variance, meaning that it accounts for as much of the variability in the data given as possible. The next \textit{PC} does the same, it accounts for as much of the variability as possible with the constraint that it is orthogonal to all the former components. These orthogonal vectors are linear combinations being an uncorrelated orthogonal basis set. Graphically the shortest vectors effects the predictions the least. \textit{PCA} is sensitive to the relative scaling of the original variables, so in \textit{sklearn.decomposition.PCA} the input data is centered but not scaled for each feature before the SVD of the date is applied. 
-
-\subsection{K-fold cross validation}
-	K-folding is a cross validation technique that allows us to generalize the trends in our data set to an independent data set. In this way we can circumvent typical problems like over-fitting and selection bias.(ref=\cite{cross-valid} )The approach for the technique is simple. Instead of doing a regression on the entire data set, it is first segmented into $k$ number of subsets of equal size (making sure to pick out the variables randomly before distributing them to the subsets). 
+\subsubsection{K-fold cross validation}
+	K-folding is a cross validation technique that allows us to generalize the trends in our data set to an independent data set. In this way we can circumvent typical problems like over-fitting and selection bias \cite{james2013introduction}.The approach for the technique is simple. Instead of doing a regression on the entire data set, it is first segmented into $k$ number of subsets of equal size (making sure to pick out the variables randomly before distributing them to the subsets). 
 	
 	Now one subset can be chosen to be the 'control' or 'validation' set while the rest of the subsets are the training sets. The desirable regression is then applied on the training set, arriving at some data fitting that is the prediction. From here it is a straight forward process to analyze how well our predicted variables compare to the validation variables, for example through the $R^2$ score function. However, even though the subsets are picked randomly, the validation subset used could potentially not be a representative selection of the entire set. Therefore the process is repeated \textit{k} times, each time using a new subset as the validation subset. After all this is done one can simply calculate the average of the scores to get the predictive power of our model. As an added benefit, since the calculations are done anyways, the average of the predictions can be used as the final fit. 
 	
@@ -465,253 +631,70 @@ FIGURE?
 link to good crossvalidation.
 \url{https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation}
 
-\subsection{Mutual Information**}
-Ranking of features. 
-This can be useful.
+
+\subsection{Principal Component Analysis }\label{sec:PCA}
+	Principal Component Analysis (\ac{PCA}) \cite{james2013introduction} is a procedure that uses orthogonal linear transformation to reduces the amount of feature subspaces. It goes under different names in different fields, but the most recognizable might be Singel Value Decomposition. This is done by converting a set of possible correlated variables into a set of uncorrelated variables, called principal components (PC). 
+	
+	The PC are arrange so that the first PC has the largest variance, meaning that it accounts for as much of the variability in the data as possible. The second PC does the same, it accounts for as much of the variability as possible with the constraint that it is orthogonal to all the former components. These orthogonal vectors are linear combinations being an uncorrelated orthogonal basis set. Graphically the shortest vectors effects the predictions the least. PCA is sensitive to the relative scaling of the original variables, so in \textit{sklearn.decomposition.PCA}, from the library we use, the input data is centered but not scaled, in this step, for each feature before the PCA is done on the date.
+	
+%\begin{figure}[h]
+%     \centering
+%     \includegraphics[width=\linewidth]{theory/figures/Pcafigure.png}
+%     \caption{A scatter plot of three principal components in our data, showing that there are clearly distinguishable classes}
+%     \label{fig:bias_var}
+%\end{figure}
+%beforePCA.png
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{theory/figures/beforePCA.png}
+        \caption{}
+        \label{fig:vPCA}
+    \end{subfigure}%
+    ~ 
+        \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{theory/figures/Pcafigure.png}
+        \caption{}
+        \label{fig:PCA}
+    \end{subfigure}
+	\caption{Two scatter plots; First, some of our data before PCA. Second, our data after PCA, showing that there are clearly distinguishable classes.}
+	\label{fig:PCA}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{theory/figures/PCA_reduction_of_dimensionality.png}
+    \end{subfigure}%
+	\caption{Principal component analysis for the feature vectors leads to a reduction of $43.6\%$ of the dimensionality}
+	\label{fig:PCA_dim}
+\end{figure}
+
+
+%\subsection{Mutual Information**}
+%Ranking of features. 
+%This can be useful.
 
 \subsection{Machine Learning $\cross$ batteries}
-State of the art.
-What has been done in this field? 
-Similar predictions of the kind we are interested in, have been done by 
-Sandek: \cite{sendek2017holistic}
 
 
+\subsection{Earlier work}
 
+The field of material science is blooming in an immaculate rate due to computing power being cheaper and more available than ever before. When the Human genome project started in the 1990 the main problem was lack of computational power, but because of Moore's law, the sequencing of all 3 billion letters of DNA is not even a challenge in todays computational standard. While in the field of material science, researchers have known how to simulate materials since the early 1900, due to the discovery of quantum mechanics. The problem being that a advanced material have an order of $10^{23}$ electrons that demands computational methods to simplify the problem \cite{electromaterials}. And the gap between the energy storage needed and what state-of-the-art systems are providing is increasing \cite{reddy2011linden}.
 
 
 
+In the field of computational material design a subfield called 'high-throughput' (\ac{HT}) computational material science is on the rise \cite{potyrailo2011combinatorial} \cite{pang2020additive}. This burgeoning area is based on computational quantum - mechanical - thermodynamic approaches, and a multitude of techniques both in database construction and in the field of intelligent data mining. The idea is simple; first construct a large enough database of accurate thermodynamic and electronic properties of existing and hypothesized materials. Secondly, use different algorithms and statistical models to intelligently analyze the data and find materials with desired properties. This method should continuously be validated by comparing the calculated values with real  (already known) materials, and later also on new hypothetical materials, to create a feedback loop to further improve the algorithm \cite{curtarolo2013high}. A computational HT method consists of three tightly connected steps: Virtual material growth, rational material storage, and material characterizations and selection. This work is based in the second and third step, rational material storage and material characterization and selection, on intercalation type batteries.
 
+Several studies on batteries have applied machine learning and different degrees of HT, in particular on electrical vehicles and how to estimate their state of charge accurately and in the direction of energy system management  \cite{kalawoun2015novel} \cite{chemali2018state} \cite{hu2015battery} \cite{ermon2013learning}.
+	In the direction of predicting battery properties only a handful of studies were found. Shandiz \textit{et al.} \cite{shandiz2016application} used classification methods to determine the crystal system of silicate cathodes. They found that the classifier random forrest gave the highest accuracy of prediction, and that there is a strong correlation between the three major crystal system (monoclinic, orthorhombic and triclinic) that they did their predictions on, and other features of cathodes. They used the online database Materials project \cite{Jain2013} \cite{Zhou2004a} \cite{Adams2011a}.
+	Sendek and \textit{et al.} \cite{sendek2017holistic}, constructed a classification model using logistic regression to find possible solid state electrolytes for lithium ion batteries. They concluded that finding that simple atomistic descriptors alone, were not enough to get useful prediction. Combined these and using a multi-descriptor model can yield good predictions. Their screening utilized information from the Materials project database.
+	Similar to this work Joshi \textit{et al.} \cite{joshi2019machine} employed ML techniques to predict electrode voltage for metal-ion batteries from the Materials Project database. Much like this work, their emphasis were on finding proper features vectors that could accurately represent the compounds.
 
-
-
-
-
-
-
-
-
-
-
-%------------------------------------------------------------------------------------------------
-\begin{comment}
-\section{Batteries}
-Basic principles behind batteries, as well as some critical battery characteristics or specifications, including battery voltage, capacity, charging/dischargning regimes, efficiency, and more.
-
-Theoretical energy: Watthours per kilogram (Wh/k) is specific energy, on a volume basis. Watthour/liter is energydensity. 
-The maximum energy that can be delivered by an electrochemical system is based on the types of active msaterials used(this determines the voltage) and on the amount of the active materials that are used
-
-\myworries{something about theoretical vs practical batteries}
-\myworries{losses due to polarization occur when a load current i passes through the electrodes, accompanying the electrochemical reactions. These loses include: 1) activation polarization , which drives the electrochemical reaction at the electrode surface, and 2) concentration polarization, which arises from the concentration differenceof the reactants and productsat the electrode surface and in the bulk as a result of mass transer. These polarixation effects consume parts of the energy, which is given off as waste heat, and thus not all of the theoretically available energy stored in electrodes is fully converted into useful electrical energy. Can be calculated. look page 2.1 battery book}
-
-\subsection{Properties of matter that are used in the AP-RDF}
-Electronegativity 
-Electronegativity is an atoms ability to attract shared electrons towards itself. It is a property dictated by both its atomic number and  the distance to the outer valence electron
-
-van der Waals volume
-
-
-Polarizability
-Electronic polarizability is the likelyhood of a charge distribution to change shape when exposed to an external electrical field. 
-
-\subsection{Basic principles of Battery}
-
-Different metals have different affinites for electrons. When two dissimilar metals are put in contact through an electrolyte, there is a tendency for electrons to pass from one material to another. The metal with the smaller affinity for electrons loses electrons to the material with the greater affinity, becoming positively charged. The metal with the greater affinity becomes negatively charged. A potential difference between the two electrodes is thus built up until it balances the tendency of the electron transfer between the metals. At this point the potential difference si the equilibrium potential: the potential at which the net flow of electrons is 0 w.
-The electrochemical series represents the quantitative expression of the varying affinity of materials relative to eachother. In an aqueous electrolyte the stnadard electrode potential for an electrode reaction is expressed with respect to a reference electrode. Conventionally this is the H2/H+ cell, with reaction: H+ + e <-> 1/2 H2
-
-A battery is an electrochemical cell that converts chemical energy into electrical energy. It comprises of two electrodes: an anode ( the positive electrode) and a half-cell electrochemical reaction takes place as illustrated by the figure(See daniell Cell).
-
-
-\subsection{Battery Capacity}
- Battery capacity(Ahr) is a measurement of the charge stored by the battery. It is determined by the mass of active material contained in the battery. The capacity represents the maximum amount of energy that can be extracted from a battery under specific conditions. It is important to note that the actual energy storage capabilities of the battery can vary significantly from the "nominal" rated capacity, as the battery capacity depends strongly on the age and history of the battery, the charging and discharging regimes of the battery and the temperature. 
- 
-Most common measure of battery capacity is Ah, defined a the number of hours for which a battery can provide a current equal to the discharge rate at the nominal voltage of the battery. A more accurate approach takes into account the variation of voltage by integrating the Ah capacity times V(t) over time of the chargning cycle. However, because of the large impact from charging rates or temperature, for practical or accurate analysis, additional information about the variation of capacity is provided by battery manufacturers. 
-
-The charging or discharging rate affect the rated battery capacity. If the battery is being discharge very quickly, then the amount of energy that can be extracted from the battery is reduced and the battery capacity is lower, this is due to the necessary components for the reaction to occur does not necessarily have enough time to either move to their needed positions. Only a fraction of the total reactants are converted to other forms, and therefore the energy available is reduced. Alternately, the battery can be discharged using a low current, more energy can then be extracted from the battery and the capacity will be higher. Therefore, the battery battery of capacity should include the charging/discharging rate. A common way of specifying battery capacity is to provide the battery capacity as a function of time in which it takes to fully discharge the battery. 
-The temperature of the battery also affect the energy that can be extracted from it. At higher temperature, the battery capacity tends to be higher than at lower temperature. However, intentionally elevating battery temperature is not a effective method to increase battery capacity as this also decreases battery lifetime.
-
-Age and history of the battery have a major impact on the capacity. A battery will only stay close to the specifications on DOD for a certain amout of charge/discharge cycles. If the battery have been taen below its maximum DOD, then the battery capacity may be prematurely reduced and the rated number of charge/discharge cycles may not be available. 
-
- \myworries{Trenger jeg kilde på dette?}
- \myworries{Appendix stuff?}
- 
- 
- \subsection{Energy Density}
- Energy denity is a parameter used to compare one type od battery system to another. The energy density of a battery is the capacity of the battery divided by either the weight of the battery, which gives the gravimetric energy density(Wh/kg) or by the volume, which gives the volumetric energy density (Wh/dm3)
- A battery with a higher energy density will be lighter than a similar capacity battery with lower energy density. For portable systems, this is critical. 
- 
- \subsection{Battery Voltage}
- 
- The voltage of a battery is determined by the chemical reaction in the battery, the concentrations of the battery components, and the pola rization of the battery. The voltage calculated from the equilibrium conditions is typically known as the nominal battery voltage. In practice, the nominal battery voltage cannot be readily measured, but for practical battery system (in which the overvoltage and non-ideal effects are low) the open circuit voltage is a good approximation to the nominal battery voltage. 
- 
-Battery voltage will increase with temperature of the system, and can be calculated by the Nernst Equation for the equilibrium battery voltage.
- 
- Internal serial resistance determines the maximum discharge current of the battery. for applications in which the battery are required to provide hight instantaneous power, the internal series resistance should be low. will also affect the battery's efficiency but may change as the battery ages. 
- 
- self-discharge refers to the fact that even in the absence of a connected load, the discharge reaction will proceed to a limited extent and the battery will therefore discharge itself over time. The rate of self-discharge depends primarily on the materials involved in the chemical reaction and on the temperature of the battery.
- 
-\subsection{n-cycles / cycle life} 
-\subsection{Electrolytes}
-\subsection{Electrodes}
-\subsection{Ionic conductivity}
-
-\section{Crystalline material/ batteries}
-
-\subsection{Crystal lattice}
-\subsection{Mobility and Conductivity}
-
-\subsection{battery properties}
-
-\subsection{Conduction}
-
-
-
-
-
-\section{Machine learning using Random forest}
-Random forest or random decision forests are an ensemble learning method uses multiple learning algorithms to obtain better predictive performance than what could be obtained by any of the constituent learning methods alone. It is a method which operates by constructing a multitude of decision trees.
-
-A decision tree is a decision support tool that uses a tree-like model of devisions and their possible consequences, including change event outcomes, resource costs, and utility. In the field of machine learning they are supervised learning algorithms used for both classification and regression tasks. A decision tree mainly contains of a root node, interior nodes, and lead nodes, which are then connected by branches. The main idea of decision trees is to find those descriptive features which contain the most information regarding the target feature and then split the dataset along the values of these features such that the target feature values for the resulting sub datasets are as pure as possible. 
-The descriptive feature, which leaves the target feature most purely, is said to be the most informative one. This process of finding the most informative feature is done until we accomplish a stopping criterion where we can then finally end up in a leaf node.
-The leaf nodes contain the predictions we will make for new query instances presented to our trained model. This is possible since the model has kind of learned the underlying structure of the training data and hence can make predictions about the target feature value of unseen query instances. 
-
-\subsection{Setting up a decision tree: }
-
-In over simplified terms, the process of training a decision tree and predicting the target features of query goes as follows: 
-\begin{enumerate}
-    \item
-        Present a dataset containing of a number of training instances characterised by a number of descriptive features and a target feature.
-    \item
-        Train the decision tree model by continuously splitting the target feature along the values of the descriptive features using a measure of information gain during the training process. 
-    \item
-        Grow the tree until we accomplish a stopping criteria create leaf nodes that represent the predictions we want to make for new query instances
-    \item
-        Show query instances to the tree and run down the tree until we arrive at leaf nodes. 
-\end{enumerate}
-
-Pros and cons of trees, pros:
-\begin{itemize}
-    \item 
-    It is a White box - a easy to interpret model. Some people believe that decision trees more closely mirror human decision-making than do the regression and classification approaches, like support vector machines (ref).
-    \item 
-    Trees are very easy to explain to people.
-    \item
-    No feature normalization needed
-    \item
-    Tree models can handle both continuous and categorical data
-    \item
-    Can model non linear relationships
-    \item 
-    Can model interactions between the different descriptive features
-\end{itemize}
-
-Disadvantages:
-\begin{itemize}
-    \item 
-    Trees generally have lower accuracy then some other regression and classification approaches. 
-    \item
-    If continuous features are used the tree may become quite large and hence is less interpretable.
-    \item
-    Prone to overfitting the training data and hence do not well generalize the data if no stopping criteria or improvements like pruning, boosting or bagging are implemented.
-    \item
-    Small changes in data may lead to a completely different tree. This issue can be addressed by using ensemble methods like bagging, boosting or random forest(*)
-    \item
-    Unbalanced datasets where some target feature values occur much more frequently that others may lead to biased trees since the frequency occurring feature values are preferred over the less frequently occurring ones. 
-    \item
-    If the number of features is relatively large and the number of instances is relatively low, the tree might overfit the data.
-\end{itemize}
-    
-    However, by aggregating many decision trees the predictive performance of trees can be substantially improved.
-
-    Random forest provide an improvement over bagged trees by way of a small tweak that de-correlates the trees:
-    As in bagging, we build a number of decision trees on bootstrapped training samples. But when building these decision trees, each time a split in a tree is considered, a random sample of m predictors is chosen as split candidates from the full set of $p$ predictors. The split is allowed to use only one of those $m$ predictors. A fresh sample of m predictors is taken at each split, and typically we choose:
-    $$m \approx \sqrt{p}$$
-
-    In building a random forest, at each split in the tree the algorithm is not even allowed to consider a majority of the available predictors. 
-        The reason fro this is rather clever. Suppose that there is one very strong predictor in the data set, along with a number of other moderately strong predictors. Then in teh collection of bagged variable importance random forest trees, most or all of the trees will use this strong predictor in the top split. Consequently, all of the bagged trees will look quite similar to each other. Hence the predictions from the bagged trees will be highly correlated. Unfortunately, reduction in variance as averaging many uncorrelated quantities. In particular, this means that bagging will not lead to a substantial reduction in variance over a single tree in this setting 
-
-
-The random forest algorithm outputs the mean prediction of the individual trees. This is done to solve the problem of overfitting that occurs in the method of decision trees. 
-
-
-\section{Overfitting and Cross-validation}
-
-Overfitting is "the production of an analysis that corresponds to closely or exactly to a particular set of data, and may therefor fail to fit additional data or predict future observations reliably"(ref oxford dic.). This problem occurs because the criterion for selecting the model is not the same as the criterion used to judge the suitability of the model. The model is trained on one set of data, but tested on a unseen set of data. Overfitting occurs when the model begins to memorize training data instead of learning to generalize.
-
-
-Cross-validation is a technique for assessing how the results of a statistical analysis will generalize to an independent data set.
-
-\section{Machine learning}
-	The more common methods of ML have three main topics in common, irrespective of whether we are dealing with supervised or unsupervised learning. The first one being our data set, which again is separated in to training and test data, the second item is a model, which is normally a function of some parameters. The model reflects our understanding of the system, or lack thereof. The last part is the cost function, which allows us to present an estimate of how good our model is in reproducing the data is is supposed to train.   
-		\section{Supervised learning}
-			\section{Decision trees}
-	Supervised, for both classification and regression tasks. 
-	Main idea: Find those descriptive features which contain the most information regarding the target feature and the nsplit the dataset along the values of these features such that the target feature values for the resulting sub dataset are as pure as possible. 
-	The descriptive feature which leaves the target feature most purely is said to be the most informative one. This process of finding the most informative feature is done until we accomplish a stopping criteria where we then finally end up in so called leaf nodes.
-	The leaf nodes contain the predictions we will make for new query instances presented to our trained model. This is possible since the model has kind of learned the underlying structure of the training data and hence can, given some assumptions, make predictions about the target feature value (class) of unseen query instances.
-	A decisiion tree mainly contain of a root node, interior nodes, and leaf node, which are then connected by brances. 
-				\section{How to set up a decision tree}
-\begin{itemize}
-	\item
-	1: give data set with descriptive features and a target feature. 
-	\item
-	2: Train the decision tree model by continuously splitting the target feature using a measure of information gain during the training process.
-	\item
-	3: Grow the tree until we accomplish a stopping criteria -> leaf node. which represent the prediction we want to make for new query instances. 
-	\item
-	4: Show query to the tree and run down the tree until we arrive at leaf nodes. 
-\end{itemize}
-				\section{Build a tree}
-\begin{itemize}
-\item
-	1: Split the predictor space into J distinct and non-non-overlapping regions, R1,R2,...,Rj
-\item
-	2: For every observation that falls into the region Rj, we make the same prediction, which is simply the mean of the response value for the training observations in Rj.
-\end{itemize}
-	How do we construct the Regions Ri? In theory, the regions could have any shape. However, we choose to divide the predictor space into high dimenstional rectangles, or boxes, for simplicity anf for ease interpretation of the resulting predic-tive model. The goal is to find boxes R1,...,Rj that minimizeed the MSE given by:
-
-	$\sum_j=1^J{Sum_Rj (y_i-\bar{y_{R_j}})^2}$
-	where $\bar{y_{R_j}}$ is the mean response for the training observations within the jth box.
-				- top-down, recursive binary splitting?
-	It is computationally infeasible to consider every possible partition of the feature space into J boxes. The common strategy is to take a top-down approach.
-	The approach is top-down because it begins at the top of the tree, with all observations belong a single region, and then successively splits the predictor space; each split is indicated via two new branches further down on the tree. It is greedy because at each step of the tree-building process, the best split is made at that particular step, rather than looking ahead and picking a split that will lead to a better tree in some future step. 
-				\subsection{Making a tree}
-	In order to implement the recursive binary splitting we start by selecting the predictor xj and a cutpoint s that pslits the predictor space into two regions R1 and R2, so we can obtain the lowest MSE which we want to minimize by considering all predictors x1,...,xp. We consider also all possible values of s for each predictor. These values could be determined by randomly assigned numbers or by staring at the midpoint and then proceed till we find a optimal value. 
-	For any j and s, we define the pair of half-planes where  $\bar{y_{R_1}}$ is the mean response for the training observations in $R1(j,s)$ and $\bar{y_{R_2}}$ is the mean respons for the training observations in $R2(j,s)$ and $\bar{y_{R_2}}$ is the mean response for the training observations in $R2(j,s)$.
-	Finding the values of j and s that minimize the above equation can be done quite quickly, especially when the number of features p is not too large. Next, we repeat the process, looking for the best predictor and the best cutpoint in order to split the data further so as to minimise the MSE within each of the resulting regions. However, this time, instead of splitting the entire predictor space, we split one of the two previously identified refions. We now have three regions. Again we look to split one of these regions further, so as to minimise the MSE. The process continues until a stopping criterion is reached; for instance, we may continue until no region contains more than five observations. 
-				\subsection{Pruning the tree}
-	The above procedure is rather straight forward, but leads often to overfitting and unnecessarily large and complicated trees. The basic idea is to grow a large tree T0 and then prune back in order to obtain a subtree. A msaller tree with few splits(fewer regions) can lead to smaller variance and better interpretation at the cost of a little more bias. 
-	The Cost comlexity pruning algorithm gives us a way to do just this. Rather than considering every possible subtree, we consider a sequence of tree indexed by a nonnegative tuning paramter $\alpha$
-					\subsection{Cost complexity pruning}
-	For each value of $\alpha$ the corresponds a subtree T within T0 such that.
-	$\sum_m=1^{\bar{T}}\sum_{xiinRm}(y_i - \bar{y}_Rm)^2 + \alpha \bar{T}$
-	is as small as possible. Here $\bar{T}$ is the number of terminal nodes of the tree $T$, $Rm$ is the rectangle(subset of predictor space) corresponding to the mth terminal node.
-	The tuning parameter $\alpha$ controls a trade-off between the subtree's complexity and its fit to the training data. When $\alpha = 0$, then the subtree T will simply equal T0, because then the above equation just measures the training error. However, as $\alpha$ increases, there is a prive to pay for having a tree with many terminal nodes. The above equation will tend to minimized for a smaller subtree.
-	It turnes out that as we increas alpha from zero branches get pruned form the tree in a nested and predictable fashin, so obtaing the whole sequence of subtrees as a function of alpha is easy. We can select a value of alpha using a validation set or using cross-validation. We then return to the full data set and obtain the subtree corresponding to alpha. 
-
-		Techniques:
-		\section{ Cross validation}
-		
-		\section{ R-squared score}
-R-squared, or the coefficient of determination, is a statistical measurement on how good a regression line fits the data. 
-The definition of R-square is: 
-$$  R^2 = 1 - \frac{SS_{res}}{SS_{tot}}$$
-
-
-	\section{ Batteries}
-		\subsection{ Electrolytes}
-		\subsection{Electrodes}
-
-	\subsection{Ap-RDF}
-	It would be desirable if during hte discharge all of the energy could be coverted to useful electric energy. However, losses due to plarization occur when a load current i passes through the electrodes, 
-	
-	Atomic property Weighted Radial Distribution Functions, or AP-RDF, is a predictor that we used inspired from the article of Fernandez \cite{Fernandez2013}. The idea of RDF scores in chemo informatics was first 	
-\end{comment}
-
-
-% \subsection{Ionic Conductivity}
-
-% \subsection{Computational screening (different form experimental screening, good things.)}
-
-% \subsection{Overfitting under fitting of our method}
-
-% \subsection{}
+%The idea of using higher valence cation such as magnesium or aluminum, which could increase capacity while at the same time reducing weight and volume, had not yet been considered in computational studies, in 2013. 
+Other areas where ML have shown promise are in the field of Nanoporous Materials \cite{fanourgakis2019robust}. Where a set of new descriptors for predictions on methane adsorption was proposed. Fanourgakis \textit{et al.} combined structural features, such as the helium void fraction, surface area, and pore volume, with other descriptors found by using probe atoms of various size on MOFS they could predict the methane uptake capability even under low pressure. Which later lead to a more general application of ML on nanoporous materials \cite{fanourgakis2020universal}. Where it was found that introducing "atom types" as descriptors in the ML algorithm to account for chemical character of both the MOFs and the Covalent Organic Frameworks (COFs) improved the ML predictions significantly. This also showes that these predictors might be applicable on other type of materials, due to the different nature of MOFs and COFS. 

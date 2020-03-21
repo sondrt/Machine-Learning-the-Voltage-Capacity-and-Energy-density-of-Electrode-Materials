@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_LiNiF3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.14262917
+_cell_length_b   5.14284562
+_cell_length_c   5.53524200
+_cell_angle_alpha   62.30863593
+_cell_angle_beta   89.99723602
+_cell_angle_gamma   60.00430693
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LiNiF3
+_chemical_formula_sum   'Li2 Ni2 F6'
+_cell_volume   106.99172567
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.297408  0.405168  0.892248  1
+  Li  Li1  1  0.702591  0.594833  0.107754  1
+  Ni  Ni2  1  0.000000  0.999998  0.000004  1
+  Ni  Ni3  1  0.500001  0.999998  0.500002  1
+  F  F4  1  0.891696  0.837334  0.768120  1
+  F  F5  1  0.605439  0.502841  0.768129  1
+  F  F6  1  0.271014  0.123611  0.768132  1
+  F  F7  1  0.728985  0.876390  0.231866  1
+  F  F8  1  0.394562  0.497157  0.231871  1
+  F  F9  1  0.108304  0.162670  0.231879  1

@@ -1,220 +1,127 @@
 \section{Introduction and Overview}
-Introduce the task at hand.
+%Introduce the task at hand.
 
+	This work focus in Machine Learning (\ac{ML}) applied in the field of batteries. Specifically, a new method is developed to predict chemical properties like voltage, capacity and energy density of chosen electrode materials.
 
-In this chapter the background and motivation for this paper is presented. The historical development of batteries are presented shortly and former work are presented. 
-
+	In the introduction a general background for this work will be given. The chapter includes a motivation, the scope of the thesis and its structure. 
  
+
 \subsection{Motivation}
 %*) Why batteries are important (i.e. cell phones, cars). 
 
-The motivation for this work originates from the rapidly increasing demand for better batteries, both for vehicular and stationary applications. Better batteries mean better products, with longer life, lower cost, and adequate energy storage options. Due to the complexity of the chemical processes involved, it is of high importance to be able to develop predictive modeling methods to improve the search for better compositions and performances
+The motivation for this work originates from the rapidly increasing demand for improved batteries, both for vehicular and stationary applications, with longer life, lower cost, and adequate energy storage options.
 
+%\myworries{elaborate more on predictive modeling ... }
 
-
-
-
-
-\subsection{History and evolution of batteries}
-Never been a more needing market for batteries. Tremendous amount of resources are used on an international level to produce batteries with higher capacity, voltage and energy density. The evolution of batteries started in Italy in the year 1800 by Alessandro Volta (1745 - 1827) that made the first known battery\cite{volta1800electricity}. His invention was the voltaic pile, zinc and copper plates stacked on top of each other with sheets of  bine-soaked cardboard between each plate. The revolutionary property of the voltaic pile was that it could produce a stable current over some time, and not just short sparks of electricity. This invention was the foundation of todays modern battery. \ref{fig:voltaicpile}
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.2\textwidth]{Pila_di_Volta.jpg}
-    \caption{A voltaic pile, the first battery \cite{wiki:voltaicpile} }
-    \label{fig:voltaicpile}
-\end{figure}
-
-It took almost $40$ years, 1836, before the British inventor John Frederic Daniell Voltas continuation with the discovery of the Daniell cell \cite{daniell1836xi}. The Daniell cell is constructed with to half cells, one with a zinc electrode in a zinc sulfate dissolution, and another copper electrode in a copper sulfate solution. These half cells are connected by a salt bridge. This cell could give a voltage of $\SI{1.1}{V}$ through the reaction shown below, \ref{eq:Daniell}. 
-
-
-\begin{align}\label{eq:Daniell}
-\ce{Zn_{(s)}} + \ce{Cu^{2+}_{(aq)}} \rightarrow \ce{Zn^2+_{(aq)}} + \ce{Cu_{(s)}} 
-\end{align}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[angle=270,width=0.8\textwidth]{600px-Galvanic_cell_labeled.pdf}
-    \caption{A draft of a Daniell cell. The anode is a piece of zinc and the cathode a piece of copper. The salt bridge transports ions between the solutions and the electrons moves through an external circuit. Figure recovered from \cite{wiki:Daniellcell} }
-    \label{fig:DaniellCell}
-\end{figure}
-
-
-In 1859 constructed the french physicist Gaston Planté the first led-acid battery. The battery could be charged by applying an external opposite potential, and it was the first secondary battery every made. Planté rolled two led plates into a spiral, separated by rubber stripps, so that the plates would not touch. The lead-acid battery was special due to the electrolyte being a active part of the chemical reaction in the battery. The electrodes in the battery were led anode, and led$(IV)$oxide cathode, immerse din sulfuric acid. The overall reaction is shown beneath: \ref{eq:Plante}. Both the anode and the cathode are made into led(II)sulfate during discharged. The charge is depleted in the electrolyte when the battery is completely discharged(The sulfuric acid has a lower density). Charging changes the electrolyte back into concentrated sulfuric acid. 
-
-\begin{align}\label{eq:Plante}
-\ce{PbO_{2(s)}} + \ce{Pb_{(s)}} \ce{2H_2SO_{4(s)}} \rightarrow \ce{2PbSO_{4(s)}} +\ce{2H_2O_{(l)}}
-\end{align}
-
-The open circuit voltage$(V_{OC})$ for a led-acid battery are approximately $\SI{2}{V}$. It is custom to attach these batteries in series to attain a higher voltage, typical $6$ or $\SI{12}{V}$. These batteries have a shelf- and cycle life. Normally more then $10$ years or 1000-2000 cycles. They are still in use in modern cars. Led-acid batteries have a relative low \textit{specific energy}, which means that the current is low compared to its weight, they are also renowned for their high environmental impact. Therefor, one of the many goals of battery producers are to replace led-acid batteries with better alternatives.  
-
-Nickel-cadmium$(\ce{NiCd})$ batteries was first described by the swede Waldemar Jungner in 1899 \cite{daniel2012handbook}. These batteries rose fast in popularity due to their high energy density, low weight, long shelf life, and their relative fast recharge. Typically they yield a voltage of $\SI{1.4}{V}$. The cathode is made of Nickel oxide hydroxide, and the anode is made of metallic cadmium, while the alkaline electrolyte is a basic solution of potassium hydroxide. The Specific energy of a typical Nickel-cadmium is $40-60\text{ }\si{W h/kg}$. Equation \ref{eq:NiCdb} shows the overall reaction of such a battery.
-
-\begin{align}\label{eq:NiCdb}
-\ce{2NiOOH} + \ce{Cd} + \ce{2H_2O} \rightarrow \ce{2Ni(OH)_2} + \ce{Cd(OH)_2}
-\end{align}
-
-Nickel-metal hydride $(\ce{NiMH})$  batteries was first commercialized in the 1980's and had several similarities with the $\ce{NiCd}$ batteries. The main difference is the anode where in  $\ce{NiCd}$ batteries it is  $\ce{Cd}$, while in $\ce{NiMH}$ it is replaced by an alloy that makes metal hydrides (\ce{MH}). $\ce{NiMH}$ batteries has the same electrolyte as $\ce{NiCd}$ batteries, a watery solution of potassium hydroxide. The nominal cell voltage of such a battery is typically around $\SI{1.2}{V}$ and the Specific energy is $60-120\text{ } \si{Wh/kg}$. Equation \ref{eq:NiMH} shows the overall reaction of a $\ce{NiMH}$ battery.
-
-\begin{align}\label{eq:NiMH}
-\ce{Ni(OH)_2} + \ce{M} \rightarrow \ce{NiO(OH)} + \ce{MH}
-\end{align}
-
-A primary cell is a battery that can not be recharged after use. These batteries are normally used in remote controls, flashlights, and other small household appliances. Alkaline manganese batteries, or just alkaline batteries, are one of the most common primary cells in modern society. Anodes of zinc, cathodes of manganese oxide and a electrolyte of potassium hydroxide, from where it gets its nickname. A typical alkaline battery delivers a nominal cell voltage of $\SI{1.5}{V}$. The overall reaction for a alkaline battery is shown below \ref{eq:alkalineb}.
-
-\begin{align}\label{eq:alkalineb}
-\ce{Zn} + \ce{2MnO} +\ce{H_2O} \rightarrow \ce{ZnO} + \ce{2MnO(OH)}
-\end{align}
-
-%---------------------------------------------------------------
-\subsection{Lithium based batteries}
-
-In 1975 discovered Micheal Stanley Whittingham the intercalation electrodes for lithium and other alkaline metals \cite{whittingham1975lithium}. This led to the first lithium batteries with titanium disulfide$(\ce{TiS_2})$ as the cathode and metallic lithium as the anode. $\ce{TiS_2}$ -structure is divided into layers and lithium-ions can easily move in and out of the structure without significant changes in the structure, which makes the reaction reversible. Figure \ref{fig:MPTiS2} shows the layered structure of $\ce{TiS_2}$. During discharge of the battery, lithium-ions leave the anode of metallic lithium and moves through the electrolyte and into the empty octahedral position in the $\ce{TiS_2}$-structure, while titanium(IV) reduces to titanium(III). While applying an over-potential to the material, or charging, the lithium-ions moves out of the $\ce{TiS_2}$-structure and titanium oxides back to titanium(IV) again. This discovery was the start of a major research investment in cathode materials of sulfite and other chalcogens in the 70-80's. 
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.4\textwidth]{TiS2.png}
-    \caption{The two-dimensional trigonal omega-like structure of $\ce{TiS_2}$. Observing from a slight angle along the b-axis. The titanium in \textcolor{gray}{grey}, are occupying the octahedral holes of sulfur, in \textcolor{yellow}{\textbf{yellow}}. Lithium-ions would intercalate into the space between the $\ce{TiS_2}$ layers. Figure attained from materialspoject \cite{materialsproject:TiS2}.}
-    \label{fig:MPTiS2}
-\end{figure}
-
-It is of the utmost importans that the Lithium-ions in a lithium battery can easily be intercalated and extracted (\myworries{Can I phrase it like this?}) in a reversible manor, and such layered structures are especially good for this purpose. In 1980 introduced John B. Goodenough $\ce{LiCoO_2}$ as the cathode material for lithium batteries, a material that gave a $V_{OC}$ of $4-5\text{ } \si{V}$, which opened up many possibilities to alternate the negative electrodes, and earned him, M. Stanley Whittingham and Akira Yoshino the Nobel Prize in Chemistry. Goodenough and colleagues  found a current density of up to $\SI{4}{mAcm^{-2}}$ \cite{mizushima1980lixcoo2} \cite{goodenough1980solid}. Even though the properties where exceptionally good at the time, the batteries were still not commercialized due to metallic lithium being unstable, and deemed to be an unsafe anode. This was due to dendrites growing out of the anode that short circuited the battery. 
-
-In $1990$ introduces Sony lithium batteries on the commercial market. They had exchanged the metallic lithium anode for graphite which reduced the growth of dendrites on the anode. The electrolyte was a organic solvent with a lithium salt. A lithium-ion battery refers to a battery where lithium intercalates in both electrode materials, both the cathode and the anode. While lithium batteries has a anode of metallic lithium. This nomenclature is transferable to other type of batteries like, magnesium/magnesium-ion batteries. 
-
-Figure \ref{fig:LiCoO2} shows a draft of a lithium-ion battery with $\ce{LiCoO_2}$ as the cathode and graphite as the anode. During discharged the lithium-ions moves from the anode, through the electrolyte and separator to the cathode. The electron moves from the anode to the cathode through a separat circuit, where the electrical energy can be extracted. The overall reaction is shown in equation: \ref{eq:LiB}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.4\textwidth]{Li-ion_inter.png}
-    \caption{Schematic illustration of the first Li-ion battery $\ce{LiCoO_2/Li^+}$ electrolyte/graphite), Figure acquired from  \cite{goodenough2013li}.}
-    \label{fig:LiCoO2}
-\end{figure}
-
-\begin{align}\label{eq:LiB}
-\ce{LiCoO_2} + \ce{C_6} \rightarrow \ce{Li_{1-x}CoO_2} + \ce{Li_xC_6}
-\end{align}
-
-The cathode materials used in lithium-ion batteries have evolved since the 1990 until today. Normal cathode materials today are $\ce{LiMn_2O_4}$ and $\ce{LiFePO_4}$. Neither of the two has a layered structure as in the $\ce{SO_2}$ structure, but $\ce{LiMn_2O_4}$ is a good ionic conductor due to the structure having canals in all three dimensions where lithium can be transported, see \ref{fig:LiMnO2}. While $\ce{LiFePO_4}$ has a lower ionic conductivity, due to it only having  canals in one dimension, see figure \ref{fig:LiFePO4}. It is still a popular material due to its high cycle life. There still exist layered structures that are in use in batteries.
-
-
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}{0.30\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{Lithium-cobalt-oxide-3D-balls.png}
-        \label{fig:LiCoO2_pic}
-        \caption{}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}{0.36\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{a-Crystalline-structure-of-spinel-LiMn2O4-and-b-its-corresponding-lithium-diffusion}
-         \label{fig:LiMnO2}
-        \caption{}
-    \end{subfigure}
-    ~ 
-        \begin{subfigure}{0.30\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{LiFePO4.png}
-        \caption{}
-        \label{fig:LiFePO4}
-    \end{subfigure}
-	\caption{Crystal structures of a)$\ce{LiCoO_2}$\cite{wiki:LiCoO2} b) $\ce{LiMn_2O_4}$\cite{zhang2013understanding}, c) $\ce{LiFePO_4}$\cite{materialsproject:LiFePO4}. The layers in $a)$, the canals in $b)$ and $c)$ are illustrated.}
-	\label{fig:Li_a-c}
-\end{figure}
-
-The most used anode materials for lithium-ion batteries are graphite and other forms of carbon based materials. Graphite has a high energy density, making the cathode material the limiting factor for energy density of Lithium-ion batteries. To improve the cathode material is therefore high in priority. 
-
-There is an ongoing search for candidates for solid-state electrolytes, due to energy density and safety being the main factors that govern the development of the rechargeable battery technology \cite{guzik2019lightweight}. This is not just limited to Lithium-ion batteries other active elements as Na and Mg are also being explored. Solid-state electrolytes would enable stable and reliable operation of all-solid-state Li-, Na-, and Mg-based batteries. Special focus is given to lightweight complex metal hydrides, due to them showing high ionic conductivity, and in some cases electrochemical properties that enable battery reversibility. \myworries{move this to later.}
-
-
-%----------------------------------------------------------------------
-\subsection{Magnesium batteries}
-The abundance of magnesium in the earth's crust, combined with its low atomic weight, low cost, and electrochemically active nature, makes magnesium a great candidate for battery applications. It can serve as a potential negative electrode with its electrochemical potential of $\SI{-2.37}{V}$. It is environmentally friendly due to its by-products being safely excreted through urin.  
-
-renowned as a primary battery
-
-secondary battery rising!
-The first prototype of a Magnesium secondary cell was produced 
-
-
-%----------------------------------------------------------------------
-\subsection{Earlier work}
-
-
-
-%----------------------------------------------------------------------
-\subsection{Scope of the thesis}
 %Clarify what you want to cover. 
-Write more about: PV, wind, solar -> storage.
+%Write more about: PV, wind, solar -> storage.
 
-"At what cost can one charge stationary secondary batteries with solar/wind power efficiently, and provide a centralized energy storage? For what shelf and cycle life? with how rapid a respons  a power outage or fluctuation in the grid. And with how large a capacity, at a competitive cost? " \myworries{where?}
+%"At what cost can one charge stationary secondary batteries with solar/wind power efficiently, and provide a centralized energy storage? For what shelf and cycle life? with how rapid a respons  a power outage or fluctuation in the grid. And with how large a capacity, at a competitive cost? " \myworries{where?}
 
 
 %Why batteries are important(Cars how many in how long? )
-Batteries are vastly complex and much efforts have been devoted to the development of these. Yet, with all the efforts put in to electrochemical cells, there are still a never ending chase for batteries that can push the limits of their properties even further. The demand for better batteries are growing faster then ever. The global electric car fleet, for instance, exceeding 5.1 milion\cite{international2018global}, almost doubling the number of new electric car registrations in the last year. And if we follow the policies of the EV30@30 Scenario which aims to reach a $30\%$ market share for EVs in all models except two wheelers by 2030, due to one quarter of global greenhouse gas(GHG) emissions comes from this sector. The EV sales per year are then predicted to be more then 43 milion, and the stock numbering more than 250 milion.  
+Batteries are vastly complex and much efforts have been devoted to their development, in recent times \cite{blomgren2016development} \cite{hosaka2020research} \cite{cao2020batteries}, and even 3-D printed batteries are on the rise \cite{pang2020additive}. Yet, with all the efforts put in to electrochemical cells, there are still a never ending chase for batteries that can push the limits of their properties even further. The demand for better batteries are growing faster then ever. The global electric car fleet, for instance, is exceeding 5.1 million , almost doubling the number of new electric car registrations in the last year. According to the EV30@30 Scenario \cite{international2018global} the aim is to reach a $30\%$ market share for electric vehicles (\ac{EV}) in all models except two wheelers by 2030. This is because more than one quarter of global greenhouse gas emissions comes from this sector alone. The EV sales per year are then predicted to be more then 43 milion, and the stock numbering more than 250 milion. It is clear that millions of EVs will push the demands on the battery technology sector \cite{xiong2020overview}, with the market requiring high capacity and energy density batteries. 
 
-This work proposes a methodology to predict these properties accurately without the need of big scale simulations, or computer heavy calculations. Using state of the art machine learning, and base properties of all ready existing databases, we propose a set of predictors to see if we can predict the properties of new, undiscovered electrodes, or even new properties in already well known electrodes.
 
 %*) What are the most important properties that todays batteries should improved (i.e. higher capacities, longer life times (durability) etc.)
-Some of the most important cell properties are; voltage, energy density, specific energy or capacity, flammability, available cell constructions, operating temperature range, shelf life or self discharge, low cost, and worldwide consumer distribution. Most of these properties are to an extent dictated by battery chemistry. And it is of the general publics interest to improve several of these characteristics, both for once pleasure (i.e. several more hours to play candy crush), and the peoples general safety (i.e. electric car crashes, and Samsung phones). In this work we will focus on the  base properties; voltage, energy density, specific energy, and the physical stability of the materials. No real battery fulfills all of these requirements. And most real batteries underperforms  We therefore leave the safety issues to the experimentalists.
+Some of the most desirable cell properties are; voltage, energy density, specific energy or capacity, flammability, available cell constructions, operating temperature range, shelf life or self discharge, low cost, and worldwide consumer distribution. Most of these properties are to an extent dictated by battery chemistry. Due to the complexity of the chemical processes involved, it is of high importance to be able to develop predictive modeling methods to search for better compositions and performance. In this work we will develop a method to predict; voltage, energy density, specific energy, and the physical stability of materials as electrodes.
 
 
 %*) What is a typical procedure for designing a new battery ( a general discussion from the experimental and theoretical point of view)
-The idea behind the designe of a battery is fairly simple, due to their similar procedure to create electricity. Two of the most important parts are the Anode and the Cathode. A cell produces electricity when placed into a medium that has conductive properties, namely the electrolyte.
+%The idea behind the design of a battery is fairly simple, due to their similar procedure to create electricity. Two of the most important parts are the Anode and the Cathode. A cell produces electricity when placed into a medium that has conductive properties, namely the electrolyte.
 
 
 %*) Focus on the theoretical part. What theoretical techniques are used today for the design of new batteries (i.e. DFT calculations,  molecular dynamics simulations etc). Provide some references.
 
-Today some of the main methods for theoretical advances in battery science are density functional theory (DFT), molecular dynamic simulations and
-
+Today some of the main methods for theoretical advances in battery science are density functional theory (\ac{DFT}), molecular dynamic (\ac{MD}) simulations and machine learning. In the field of computational materials science, a large amount of both theoretical and experimental data has been generated during the last couple of decades. This is due to the success of DFT, MD simulations and the increase in computational power. These methods combined with the high-throughput (\ac{HT}) approach have generated a lot of data and made it, in cooperation with big projects like the Materials Genome Initiative, easily available. DFT is a cornerstone for simulation procedure in material science \cite{schleder2019dft} \cite{pour2011structural} \cite{kirklin2013high}, while MD simulation is, among other things, know to be well suited to explore solid-state materials at the atomic level \cite{kaneko2003local} \cite{ammundsen1999lattice} \cite{islam2000atomistic} \cite{braithwaite2000computational}. 
 
 %*) Make clear if the theoretical results provide useful information during the whole process of building a new battery.
 
+
 %*) Start discussing that experimental and traditional theoretical approaches are expensive and computationally demanding. From that point on start introducing the need of new theoretical approaches
 
-%*) Make a short introduction to ML. Here you should make clear the following.
-%    -- There are already a lot of theoretical and experimental data. Can we use these data for making predictions for unknown materials?
-%    -- ML is an approach that  uses past data trying to find relations and correlations between them. Based on them (this is called ML model) the model created can be used for prediction in new unknown materials.
-%   -- What are the advantages of the ML approach:
-%      a) Is computationally efficient (few minutes/hours to build a model, and no time for making predictions)
-%     b) In principle, there is no need to provide any mathematical/physical equations or laws (which maybe are unknown or dont exist) in order to have predictions. The ML model will find them (even though for most of the ML models, these relations can never be undestood by humans....!!!!)
- %    c) In principle you can provide to ML algorithm any information (input). If some of the information  is irrelevant, then the ML algorithm will give zero weight / importance to it. However, providing only a part of the relevant/important information to the ML algorithm will lead to poor predictions.
+The experimental and traditional approaches to improving battery technology come with a high cost and time-consuming procedures of synthesis. Different applications are usually locked to one type of material because of the investment associated with large-scale production. Changing material is thus rare, and viewed as a revolution. This is why the success of the initial material selected in one sector is crucial for that technology's lasting success. Many new inventions, with close following niches of technologies, demand the development of their own material set with properties tailored to that specific technology. Properties from compatibility to toxicity are essential and make the search for materials into a multi-dimensional problem \cite{curtarolo2013high}. 
 
- %    -- What are the challenges/difficulties of using ML models:
- %   a) Sufficient data (commonly called "examples" by ML experts)
-  %  b) Accuracy of the provided data (inputs and output)
-  %  c) Usage and if necessary design of the proper descriptors (I mean the inputs that the result depends on)
-  %  d) Use of the proper ML technique (i.e. Random forest, SVR, neural networks etc)
+Traditional computational methods, like DFT and MD, come with a high computational cost compared with machine learning methods. ML uses past data to find relations and correlations in between the data. Based on them, the models (ML models) created can be used for prediction in new unknown materials. For a ML model to be accurate there are two requirements; a large set of data, often referred to as "big data", and that the model is given the right descriptors. Big data, in the form of material databases already exist, like Material Project (\ac{MP}) \cite{Jain2013}, AFLOWLIB consortium \cite{curtarolo2012aflowlib}, OQMD \cite{saal2013materials}, NOMAD \cite{draxl2018nomad}, and others \cite{schleder2019dft}.  
 
-%*) Make the statement that usually in real problems of physical chamisty the ML methods can provide good estimations (at best) but not exact predictions. There are several reasons for that, such as, small training examples, accuracy of the training data, not providing all relavant information (descriptors) etc. HOwever, we hope that a good ML model will finally provide us with the most promising materials for a specific application, reducing significantly the number of candidates that the theoretical/experimental studies should focus from this point on. 
+The advantages of the ML approach are several - it is computational efficient - it only takes a few minutes/hours to build a model, and seconds to making predictions. One example of a ML approach towards  the search of novel materials are exemplified in Sendek et al., where their ML approach took $<1$ second per prediction, while their DFT approach took approximately four weeks per prediction, on solid Li-ion conducting materials \cite{sendek2018machine}. 
+
+Another advantage of a ML approach is that no mathematical or physical relation, and no laws of nature is needed for a good predictions. The ML model will find these relations, but for most of the models these relations are difficult to interpret. In principle a ML algorithm can be given any information (input), and if some of the information is irrelevant, then the ML algorithm will give zero weight to that information. However, if only a part of the relevant information is given to the ML algorithm, the model will not give good predictions.  
+
+There are a couple of challenges of using ML models, as mentioned, a need for big data and a sufficient amount of \textit{examples}. The accuracy of the said data is important, since without accurate data there are no accurate predictions. Descriptors need to be formulated in such a way that the ML model understands the input. Lastly, the choice of classifier is of importance, i.e. Random forest, Support Vector Regression (\ac{SVR}), neural networks, etc.  
+
+In real physical or chemical problems, the ML method can provide good estimations, but these are not exact predictions. There are several reason for this, i.e. small training examples, accuracy of the training data, not providing all relevant descriptors etc.  However, a good ML model can provide us with the most promising materials for a given application, or as a minimum, significantly reduce the number of material candidates that experimental studies should focus on. 
+
+\subsection{Scope of the thesis}
+This work aims to develop a methodology to predict selected battery properties accurately without the need of large scale simulations, or computer heavy calculations. Using state-of-the-art machine learning, and base properties taken from the existing database Materials Project, we propose a set of predictors to discover the properties of new, not yet explored electrodes, or even new properties in already well known electrodes. The properties used as targets for our predictions are; average voltage, gravimetric and volumetric capacity, specific energy, energy density and the stability of the materials. More specifically, this work look at the theoretical values of the given targets, and not experimental values. 
+	
+	The main objective of this thesis is to acquire knowledge about which features should be included for electrode predictions of the given targets by investigating a range of possible inputs, their configurations and their effect on prediction accuracy. It examines both features found in the Material Project database, and uncommonly used features in literature. In our opinion, a general examination of possible features for electrodes are lacking in research. Knowledge of which features improve prediction accuracy is useful in several ways. Even though material data generation is done faster then ever before, data acquisition and formatting can be time consuming, especially if an abundance of data is used. It can therefore be of great value to know what type of data that should be prioritized, and give focus to the areas we know will improve our predictions. This saves time from gathering data and testing. Knowledge about properties required can also expose, both, the effectiveness of less obvious features, that can be overlooked by other developers of ML-models, and the need for not yet introduced characteristics. Reducing the number of features will also reduce the complexity of the model, which saves energy and time. This work tries out different sets of features which should be considered when doing predictions on electrode materials.
 
 %*) Start describing what are the goals of the present work. Give first the battery properties that you consider more important (e.g. capacity). The goal of the work is more or less the following (expand it): can the use as ML descriptors (input) of elemental atomic properties (e.g. atomization energy), and compounds properties (e.g. geometrical features, AP_RDF) can provide reasonable predictions for your goals. 
 
-\subsubsection{Research Question}
 
-How to better batteries?
+\subsubsection{Research Question} \label{sec:RQ}
 
-RQ1: Is there potential for the use machine learning to easy the search for better battery materials?
+Specifically, this work seeks to answer the following questions: 
 
-RQ2: Which ML method would be the most optimal for such a search?
+\textbf{\ac{RQ}1:} Is there potential for the of use machine learning to improve the search for good battery materials?
 
-RQ3: What predictors are the most suited for such a task, and which would yield the most efficient training.
+\textbf{RQ2:} What predictors are suited for such a task?
 
-RQ4: How does the size of the database affect the results? 
+\textbf{RQ3:} Does features overlap? What features should be removed from the feature space to achieve the most efficient training?
+
+\textbf{RQ4:} How does the size of the database affect the results?
+
+\textbf{RQ5:} Which ML method would be the most optimal for such a search?
+
+%\textbf{RQ6:} Does the features proposed function for other materials or are they limited to electrode materials 
 
 \subsubsection{Approach}
 
-The choice of features examined in this work is inspired by an extensive survey done on similar project especially in the field of Metal Organic Framework(MOFS) done by my supervisors in Crete, and dictated, to some degree by the lack of more data.(REF)
+RQ1 regards the need to establish a database that is comprehensive enough to be of value for the selected machine learning method, and it must have the relevant information needed to get good predictions.
 
-To answer the questions s
+RQ2 concerns the choice of features examined in this work. They are inspired by a survey done on a similar project especially in the field of Metal Organic Framework (\ac{MOFS}) preformed by collaborators from the university of Crete \cite{fanourgakis2019robust} \cite{fanourgakis2020universal} and another research project done on MOFS by Fernandez et al.\cite{fernandez2013atomic}. Our choice of predictors were also, to a degree, dictated by the lack of more data, the difficulty of finding said data, and by the data we had. 
 
-In order to evaluate the effect of different features, a prediction approach using principle component analysis was utilized. First we used physical descriptors, geometrical properties of the unit cell, for instance. This because it was greatly efficient in similar studies(REF) on MOFS, and is straightforward. 
-Other descriptors are needed, and the void fraction seemed like the next obvious one, that is both geometrical and easy to obtain. Afte
+Regarding what descriptors applied, first we used physical descriptors, such as geometrical properties(volume, number of sites, etc.) of the unit cell. This because it was greatly efficient in similar studies on MOFS, and it is straightforward. Other descriptors were needed, and the void fraction seemed like a good candidate due to the nature of intercalation type batteries, and that both a geometrical feature and computationally cheap to obtain. We still needed a more chemical approach without doing large DFT type calculations, so we tried to make an atomic property weighted radial distribution function - approach, to include listed values like electronegativity, van der waals volume and magnetization. Before lastly, using the already known results, or targets, to make predictions on the other targets. That are more easily obtainable, with DFT, to account for the missing chemical intuition.
+
+RQ3 examines the evaluation of the features space and how to limit its size. To achieve the most effective training principal component analysis was applied, thus systematically removing the redundancy within features. This is statistical procedure that uses a orthogonal transformation on the data to make a set of linearly uncorrelated variables and rank these after variance. 
+
+RQ4 concerns the size of the database. All of the features were tested alone, and up against each other, both for a smaller database of Mg-ion intercalation batteries, and a bigger database of Li-ion intercalation batteries. The results of these two different databases might not be purely comparable, but due to the algorithm mainly using fundamental properties we will compare the results and look for trends as our database increases in size. 
+
+RQ5 is approached as follows: Which machine learning method is more likely to yield correlation in our data?
 
 \subsection{Structure of the thesis}
+In this section a short presentation of how this thesis is structured is given. 
 
-First the most essential concepts from the fields of batteries, machine learning, and work already explored on these two fields conjoined, are introduced. Then the method will be explained before rounding up our results so far before trying to put this all into perspective.
+\noindent{\textbf{Part II: Foundation}}
+
+\noindent{\textbf{Chapter 2: Batteries}}
+
+	In this chapter a short history of batteries and their evolution are given, before going deeper into the state-of-the-art of Li ion batteries. An introduction to the theory of battery cells, their operation principles and design, is given. Before the battery properties of particular interest and their features related to this work, are presented. 
+
+\noindent{\textbf{Chapter 3: Machine Learning}}
+
+This chapter introduces the field of machine learning along with some key concepts. Challenges concerning the application of machine learning are also discussed. The subgroup of machine learning algorithms ensemble methods are introduced in the context of decision trees with a special emphasis on Random forest.The evaluation methods used in this work (e.g. root mean square error deviation, K-fold cross validation, etc.), as well as principle component analysis are presented. And Finally a introduction to state-of-the-art computational material design with an emphasis on electrodes and battery related works, are given. 
+
+
+\noindent{\textbf{Part III: Experimental method}}
+
+\noindent{\textbf{Chapter 4: Method}}
+
+This works relies on data from the materials project database. These datasets are introduced in this chapter, as well as the features we used for our analysis, and a brief touch on the preprocessing of the data. Lastly the experimental environment is explained with the prediction pipeline. 
+
+
+\noindent{\textbf{Part IV: Results and discussion }}
+
+\noindent{\textbf{Chapter 5: Results}}
+
+This chapter presents and discuss results for RQ1, RQ2, RQ3 and RQ4 with experiments performed for both databases and predictors on all targets. The first section of the chapter investigates the predictors one by one, and compare their results on the different databases. All the calculations are available on github (\url{https://github.com/sondrt/Creten_Stuff} \cite{github}).
+
+
+\noindent{\textbf{Part V: Summary}}
+
+\noindent{\textbf{Chapter 6: Conclusion and future work}}
+
+In this chapter the most important finding from this research are revisited and put into perspective. In addition, suggestions for future work are laid out.
+
+

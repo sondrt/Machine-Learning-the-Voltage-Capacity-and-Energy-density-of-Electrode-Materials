@@ -1,0 +1,41 @@
+# generated using pymatgen
+data_MnBO3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.40332585
+_cell_length_b   8.40174557
+_cell_length_c   3.07303413
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.01174976
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   MnBO3
+_chemical_formula_sum   'Mn3 B3 O9'
+_cell_volume   187.87427311
+_cell_formula_units_Z   3
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  B  B0  1  0.333372  0.666686  0.500000  1
+  B  B1  1  -0.000031  -0.000031  0.000000  1
+  B  B2  1  0.666670  0.333270  0.500000  1
+  O  O3  1  0.148867  0.612403  0.500000  1
+  O  O4  1  0.716882  0.198876  0.500000  1
+  O  O5  1  0.801084  0.517844  0.500000  1
+  O  O6  1  0.073047  0.886964  0.000000  1
+  O  O7  1  0.813793  0.926859  0.000000  1
+  O  O8  1  0.113011  0.186111  0.000000  1
+  O  O9  1  0.482151  0.283081  0.500000  1
+  O  O10  1  0.387734  0.536551  0.500000  1
+  O  O11  1  0.463542  0.851308  0.500000  1
+  Mn  Mn12  1  0.375093  0.367650  0.000000  1
+  Mn  Mn13  1  0.992567  0.624963  0.000000  1
+  Mn  Mn14  1  0.632224  0.007466  0.000000  1

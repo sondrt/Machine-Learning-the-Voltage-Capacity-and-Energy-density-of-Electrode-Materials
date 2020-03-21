@@ -36,6 +36,7 @@
  ! Generation of nitrogen-accessible lattice             !
  !-------------------------------------------------------!
 
+  The system is NOT percolated in ANY direction 
  !-------------------------------------------------------!
  ! Generation of nitrogen-accessible lattice complete    !
  !-------------------------------------------------------!
@@ -46,7 +47,7 @@
  !-------------------------------------------------------!
 
  System volume in A^3:         527.398
- System mass, g/mol:           735.784
+ System mass, g/mol:           735.783
  System density, g/cm^3:         2.317
  -------------------------------------------------------
  If calculated density is  different from the  reported 
@@ -54,11 +55,11 @@
  atoms from the adsrobent structure file
  ------------------------------------------------------
 
- Helium volume in A^3:        1284.401
- Helium volume in cm^3/g:        1.051
+ Helium volume in A^3:           5.302
+ Helium volume in cm^3/g:        0.004
 
- Geometric (point accessible) volume in A^3:         502.083
- Geometric (point accessible) volume in cm^3/g:        0.411
+ Geometric (point accessible) volume in A^3:         170.877
+ Geometric (point accessible) volume in cm^3/g:        0.140
 
  !-------------------------------------------------------!
  ! Pore volume calculations complete                     !
@@ -69,24 +70,9 @@
  ! Starting surface area calculations                    !
  !-------------------------------------------------------!
 
- Accessible surface area in A^2:                       154.86
- Accessible surface area per volume in m^2/cm^3:      2936.25
- Accessible surface area per mass in m^2/g:           1267.45
-
- !-------------------------------------------------------!
- ! Surface area calculations complete                    !
- !-------------------------------------------------------!
-
  Step 7/8
  !-------------------------------------------------------!
  ! Starting pore size distribution calculations          !
- !-------------------------------------------------------!
-
- Cumulative PSD and differential PSD 
- have been stored in files psd_cumulative.txt
- and psd.txt
- !-------------------------------------------------------!
- ! Pore size distribution calculations complete          !
  !-------------------------------------------------------!
 
  Step 8/8
@@ -95,8 +81,8 @@
  ! analysis                                              !
  !-------------------------------------------------------!
 
- Pore limiting diameter in A:        11.76
- Maximum pore diameter in A:         12.85
+ Pore limiting diameter in A:         1.42
+ Maximum pore diameter in A:          2.00
   The system is percolated in            1  dimension (channels)
  !-------------------------------------------------------!
  ! Limiting pore diameter and maximum pore size          !

@@ -1,0 +1,56 @@
+# generated using pymatgen
+data_LiCo2(CO3)3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.39989235
+_cell_length_b   7.59058806
+_cell_length_c   7.54647082
+_cell_angle_alpha   110.20906914
+_cell_angle_beta   108.21464767
+_cell_angle_gamma   108.13941407
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LiCo2(CO3)3
+_chemical_formula_sum   'Li2 Co4 C6 O18'
+_cell_volume   333.44192562
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.360600  0.638223  0.895628  1
+  Li  Li1  1  0.831988  0.274586  0.572497  1
+  Co  Co2  1  0.041655  0.543756  0.170224  1
+  Co  Co3  1  0.158357  0.037057  0.533369  1
+  Co  Co4  1  0.429134  0.425048  0.446328  1
+  Co  Co5  1  0.533528  0.159566  0.036230  1
+  C  C6  1  0.169302  0.258429  0.933786  1
+  C  C7  1  0.233717  0.916655  0.155228  1
+  C  C8  1  0.381903  0.796000  0.585334  1
+  C  C9  1  0.608951  0.395826  0.806184  1
+  C  C10  1  0.795754  0.580767  0.395178  1
+  C  C11  1  0.922917  0.175500  0.239395  1
+  O  O12  1  0.109520  0.408434  0.946981  1
+  O  O13  1  0.055694  0.744412  0.069915  1
+  O  O14  1  0.059342  0.083099  0.759538  1
+  O  O15  1  0.392421  0.977175  0.702091  1
+  O  O16  1  0.077795  0.347082  0.274812  1
+  O  O17  1  0.333594  0.740545  0.385489  1
+  O  O18  1  0.421002  0.681537  0.665756  1
+  O  O19  1  0.416017  0.374328  0.764319  1
+  O  O20  1  0.352429  0.918558  0.058282  1
+  O  O21  1  0.288579  0.083982  0.326793  1
+  O  O22  1  0.344521  0.298010  0.089728  1
+  O  O23  1  0.718107  0.387151  0.976442  1
+  O  O24  1  0.684177  0.417885  0.680383  1
+  O  O25  1  0.691681  0.663248  0.462478  1
+  O  O26  1  0.745179  0.380634  0.341957  1
+  O  O27  1  0.960295  0.690831  0.374505  1
+  O  O28  1  0.750217  0.061436  0.056370  1
+  O  O29  1  0.942029  0.124335  0.387771  1

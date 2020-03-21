@@ -1,0 +1,54 @@
+# generated using pymatgen
+data_Na5Li4Ti5O14
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.18933501
+_cell_length_b   7.01390967
+_cell_length_c   5.22651559
+_cell_angle_alpha   97.69316911
+_cell_angle_beta   101.97291678
+_cell_angle_gamma   88.74489151
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Na5Li4Ti5O14
+_chemical_formula_sum   'Na5 Li4 Ti5 O14'
+_cell_volume   291.02772944
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.502131  0.000042  0.488049  1
+  Na  Na1  1  0.640307  0.143136  0.083441  1
+  Na  Na2  1  0.204858  0.705007  0.352994  1
+  Na  Na3  1  0.357360  0.865225  0.927702  1
+  Na  Na4  1  0.784286  0.276629  0.642104  1
+  Li  Li5  1  0.065480  0.566907  0.783022  1
+  Li  Li6  1  0.283227  0.291671  0.138674  1
+  Li  Li7  1  0.936049  0.425135  0.221961  1
+  Li  Li8  1  0.860776  0.849805  0.431606  1
+  Ti  Ti9  1  0.003792  0.007169  0.997778  1
+  Ti  Ti10  1  0.140430  0.150471  0.568806  1
+  Ti  Ti11  1  0.417962  0.427402  0.714711  1
+  Ti  Ti12  1  0.577664  0.571862  0.288934  1
+  Ti  Ti13  1  0.730017  0.714535  0.861187  1
+  O  O14  1  0.043954  0.255742  0.888387  1
+  O  O15  1  0.217943  0.018223  0.256881  1
+  O  O16  1  0.372296  0.169246  0.792574  1
+  O  O17  1  0.181843  0.416486  0.503450  1
+  O  O18  1  0.350850  0.554867  0.030196  1
+  O  O19  1  0.093384  0.898047  0.691944  1
+  O  O20  1  0.518783  0.324636  0.404553  1
+  O  O21  1  0.662613  0.452598  0.969655  1
+  O  O22  1  0.921857  0.137179  0.311509  1
+  O  O23  1  0.486429  0.686540  0.601687  1
+  O  O24  1  0.624443  0.817951  0.167072  1
+  O  O25  1  0.800609  0.582370  0.534874  1
+  O  O26  1  0.951934  0.722282  0.066329  1
+  O  O27  1  0.768324  0.969139  0.779721  1
