@@ -47,23 +47,28 @@ def readandplotaprdf():
     
     plot = True
     show = False
-    sample = True #only change a few samples: set maxcount.
+    sample = False #only change a few samples: set maxcount.
     maxcount = 2
 
     count = 0
     for file in files:
 
         if fnmatch.fnmatch(file,'m*.aprdf'):
-            R,elneg,vdw,polar = read_aprdf(file)
+            df = read_aprdf(file)
+            R = df['radius']
+            elneg = df['elneg']
+            vdw = df['vdw']
+            polar = df['polar']
 
             if plot is True:
                 plt.title(file)
                 plt.plot(elneg)
                 plt.plot(vdw)
                 plt.plot(polar)
+                plt.xlabel('radius')
                 plt.xlim(2,15)
                 plt.ylim(0,2)
-                plt.yticks([])
+                # plt.yticks([])
 
                 if show is True:
                     plt.show()
@@ -157,9 +162,9 @@ def aprdf_df_merger(battery_row):
 
 
 
-writer()
+# writer()
 #print(merge_charged_discharged_aprdf('mp-540570','mvc-12771'))
-# readandplotaprdf()
+readandplotaprdf()
 
 
 

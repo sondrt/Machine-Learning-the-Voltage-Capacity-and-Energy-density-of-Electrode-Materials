@@ -31,15 +31,16 @@ ncv = 10
 multi_run = []
 WAPE = []
 lists = {key:[] for key in ['xlist','ylist','wlist','error1','error2']  }
-l1 = [100]#[5, 10, 25, 50, 100, 250, 500, 1000]
+l1 = [100]#[10,25,50,100,250,500,1000]
 l2 = [0.05,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1]
-l2plot = True
-l_plot   = False
+l2plot = False
+l_plot   = True
+scatter_pca_plot = False
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
 for j in l1:
 
-   total    = 1      #j% of totalt db 
+   total    = 1     #j% of totalt db 
    train_size = [0.95]
    n_estimators = j   #j   Number of estimators
    print(n_estimators)
@@ -63,84 +64,65 @@ for j in l1:
       #nshuffles=1
       #ncv=10
       emptyframe = pd.DataFrame()
+
       sc = StandardScaler()
-      clf = RandomForestRegressor(n_estimators=n_estimators, random_state=105)
+      regr = RandomForestRegressor(n_estimators=n_estimators, random_state=105)
       X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = tesize,  train_size=trsize )#, stratify=X)
 
       # print(X['energy'])
-
       pca = PCA(0.99)#0.99) #pca = PCA(n_components=compontent)
       # pca =  PCA(copy=True, iterated_power ='auto', n_components=pca.n_components, random_state=None, svd_solver='auto', tol=0.0, whiten= False)
       # pca.fit(X)
-      XX = sc.fit_transform(X)
-      X_pca = pca.fit_transform(XX)
-      print("original shape:   ", X.shape)
-      print("transformed shape:", X_pca.shape)
+      sc_X_train = sc.fit_transform(X_train)
+      pca_sc_X_train = pca.fit_transform(sc_X_train)
+      print("original shape:   ", X_train.shape)
+      print("transformed shape:", pca_sc_X_train.shape)
 
-      # sc_train = sc.fit_transform(X_train)
-      # sc_test = sc.transform(X_test)
-
-      N = len(X_pca) #213 #1657
+      N = len(pca_sc_X_train) #213 #1657
       print(N)
-      N_test = len(X_test)
-      N_train = len(X_train)
-
+      # N_test = len(X_test)
+      # N_train = len(X_train)
       colors = np.random.rand(N)
+      # print(X_train)
+      # print(sc_X_train)
+      # print(pca_sc_X_train)
+      if scatter_pca_plot:
 
-      plt.scatter(X_pca[:,0], X_pca[:,1], c =colors,edgecolor='none',alpha=0.5,cmap=plt.cm.get_cmap('rainbow',10))# c = colors)
+            plt.scatter(sc_X_train[:,0], sc_X_train[:,1], c =colors,edgecolor='none',alpha=0.5,cmap=plt.cm.get_cmap('rainbow',10))# c = colors)
+            plt.xlabel('component 1')
+            plt.ylabel('component 2')
+            plt.colorbar();
+            plt.show()
+            plt.close()
 
-      plt.xlabel('component 1')
-      plt.ylabel('component 2')
-      plt.colorbar();
-      # plt.show()
-      plt.close()
-
-      plt.plot(np.cumsum(pca.explained_variance_ratio_))
-      plt.xlabel('number of components')
-      plt.ylabel('cumulative explained variance');
-      # plt.grid(True)
-      plt.plot([55,55],[0,1.5],c='red',ls='--')
-      plt.plot([-5,130],[1,1],c='red',ls='--')
-      plt.show()
-      plt.close()
-
-      exit()
-
-
-      # print(X_test)
-      # tester = pca.fit_transform(X_train)
-      #bytt tilbake fra tester til sc_train
+            plt.scatter(pca_sc_X_train[:,0], pca_sc_X_train[:,1], c =colors,edgecolor='none',alpha=0.5,cmap=plt.cm.get_cmap('rainbow',10))# c = colors)
+            plt.xlabel('component 1')
+            plt.ylabel('component 2')
+            plt.colorbar();
+            plt.show()
+            plt.close()
 
 
+            plt.plot(np.cumsum(pca.explained_variance_ratio_))
+            plt.xlabel('number of components')
+            plt.ylabel('cumulative explained variance');
+            # plt.grid(True)
+            plt.plot([42,42],[0,1.5],c='red',ls='--')
+            plt.plot([-5,130],[1,1],c='red',ls='--')
+            plt.show()
+            plt.close()
 
-      # print(sc_test)
-      # print(sc_train)
-      # sc_y_train = sc.fit_transform(y_train)  #remove
-      # sc_y_test = sc.transform(t_test)        #remove
-      pca_sc_train = pca.fit_transform(sc_train)
-      pca_sc_test = pca.fit(sc_test)
-      A = sc.fit_transform(X_train)
-      # print(A.min())
-      # print(sc.transform(X_train))
-      # print(pca_sc_train,"---------------------------------")
-      # print(pca_sc_test)
-
-      exit()      
-      # print('pca explained_variance_ratio_: ')
-      # print(pca.explained_variance_ratio_)
-      # print('singular_values_: ')
-      # print(pca.singular_values_)
       print('Components: ', pca.n_components_)
-
-      trained_model=clf.fit(sc_train, y_train)
-      pred = clf.predict(sc_test)
-      pred_train = clf.predict(sc_train)
+      regr.fit(X_train,y_train)
+      # trained_model=regr.fit(pca_sc_X_train, y_train)
+      pred = regr.predict(X_test)
+      pred_train = regr.predict(X_train)
       N = 1657 #213 #1657
       N_test = len(X_test)
       N_train = len(X_train)
 
       colors = np.random.rand(N)
-      pca = PCA().fit(sc_train)
+      # pca = PCA().fit(sc_train)
       # pca = PCA().fit(digits.data)
 
       # plt.title('pca.fit_transform on X_train')
@@ -148,7 +130,6 @@ for j in l1:
 
       # print(type(pred))
       # print(pred_train)
-'''
       r2score_test = r2_score(y_test, pred,  multioutput='variance_weighted')
       r2score_train= r2_score(y_train, pred_train,  multioutput='variance_weighted')
       print ('r2score = ', r2score_test)
@@ -169,9 +150,9 @@ for j in l1:
 
 
 
-      scores = cross_val_score(clf, X_train, y_train, cv=ncv) #only one CPU used
-      # print('CROSS_VALIDATION: Accuracy: %0.4f (+/- %0.4f)\n\n' % (scores.mean(), scores.std() * 2))
-      # print('scores=', scores)
+      scores = cross_val_score(regr, X_train, y_train, cv=ncv) #only one CPU used
+      print('CROSS_VALIDATION: Accuracy: %0.4f (+/- %0.4f)\n\n' % (scores.mean(), scores.std() * 2))
+      print('scores=', scores)
 
       ss = sorted(scores)
       SUM = 0
@@ -180,9 +161,9 @@ for j in l1:
          # print('ss[i+1]',ss[i+1])
          SUM += ss[i+1]
       mean = SUM/(len(scores)-2.)
-      # print("mean: ",mean)
-      # print(ss)
-      # print("---------------------------------- ")
+      print("mean: ",mean)
+      print(ss)
+      print("---------------------------------- ")
 
 
 
@@ -192,16 +173,16 @@ for j in l1:
 
       if l_plot:
 
-         plt.title('pca.fit_transform on X_train')
-         plt.scatter(sc_train[:,0], sc_train[:,1], c = colors)
-         plt.show()
-         plt.close()
+         # plt.title('pca.fit_transform on X_train')
+         # plt.scatter(sc_train[:,0], sc_train[:,1], c = colors)
+         # # plt.show()
+         # plt.close()
 
-         plt.title('pca.fit_transform on a standardscaled X_train')
-         plt.scatter(pca_sc_train[:,0],pca_sc_train[:,1],c=colors)
-         plt.colorbar()
-         plt.show()
-         plt.close() 
+         # plt.title('pca.fit_transform on a standardscaled X_train')
+         # plt.scatter(pca_sc_train[:,0],pca_sc_train[:,1],c=colors)
+         # plt.colorbar()
+         # # plt.show()
+         # plt.close() 
 
          maxp =  1.2*max(max(y_test), max(y_train))
          dx = maxp*0.05
@@ -231,11 +212,11 @@ for j in l1:
          plt.text(0.65*maxp, 0.40*maxp-3.*dx, 'MAE=%.3f'%(MAE_test), color='red', fontsize=fnt)
          plt.text(0.65*maxp, 0.40*maxp-4.*dx, 'WAPE=%.3f'%(WAPE_test), color='red', fontsize=fnt)
 
-         plt.show()
-      #   plt.savefig("Results/2019-06-11/mg_2AV-t=AV_p=msp_n.jpg", dpi=None, facecolor='w', edgecolor='w',
-      #        orientation='portrait', papertype=None, format=None,
-      #        transparent=False, bbox_inches=None, pad_inches=0.1,
-      #        frameon=None, metadata=None)
+         # plt.show()
+         plt.savefig("Results/figures/msp_vnd-on-ED.pdf", format='pdf', dpi=None, facecolor='w', edgecolor='w',
+             orientation='portrait', papertype=None,
+             transparent=False, bbox_inches=None, pad_inches=0.1,
+             metadata=None)
 
       multi_run.append(mean)
       WAPE.append(WAPE_train)
@@ -253,22 +234,21 @@ for j in l1:
    lists['wlist'].append(np.mean(WAPE))
    lists['error2'].append(np.std(WAPE))
 if l2plot:
-
+   # ax.set_title('Impact of size of database')
    # print(l1,lists['ylist'], lists['error1'])
 
    fig,ax=plt.subplots()
-#   ax.set_title('Impact of size of database')
    ax.errorbar(l1,lists['ylist'], lists['error1'], color = 'red',marker = 'o')
-   ax.set_xlabel('% of datbase')
-   ax.set_ylabel('R2-CVM in %',color='red',fontsize=14)
+   ax.set_xlabel('# of estimators')
+   ax.set_ylabel('R2-CVM',color='red',fontsize=14)
    ax2 = ax.twinx()
    ax2.errorbar(l1,lists['wlist'], lists['error2'], color = 'blue', marker = 'o')
    ax2.set_ylabel('WAPE', color='blue',fontsize=14)
-   ax.set_ylim(0,0.8)
-   ax.xaxis.set_ticks(np.arange(0, 1001, 100))
+   # ax.set_ylim(0,0.8)
+   ax.set_xlim(0,1001)
+   # ax.xaxis.set_ticks(np.arange(0, 1001, 100))
    # ax.xaxis.set_ticks([0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1])
    plt.show()
-   # fig.savefig('Results/figures/Li_size_db2.png',format = 'png',dpi = 100,bbox_inches='tight')
+   fig.savefig('Results/figures/Li_size_db2.png',format = 'png',dpi = 100,bbox_inches='tight')
    plt.close('all')
-'''
 exit()

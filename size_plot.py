@@ -5,6 +5,134 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+
+
+'''
+csv =  'for_ML.csv' #'Li_allFiles.csv'  #'newapproch_aprdf.csv
+df = pd.read_csv(csv, sep=',', low_memory=False)    
+header = df.head()
+for col in df.columns:
+	print(col)
+
+ax = df.plot.bar(rot=0)
+ax.set_xlim(0,10)
+
+plt.show()
+fig.savefig('Results/figures/columnsplotAV.pdf',format = 'pdf',dpi = 100,bbox_inches='tight')
+plt.close()
+
+'''
+#Li diff pred
+'''
+x_predictors = ['msp','msp+stab','msp + vnd','combo']
+AV 	= [0.5807576174506466,0.6382352521590721,0.6889475417554051, 0.7434585478459865,   ]
+GC 	= [0.42486507985539385,0.40973673978825065 , 0.6287597245517911,0.6392378928534125   ]
+VC 	= [0.46523200049569025, 0.47261421608939863, 0.7127950029643826,0.6889267179947649 ]
+SE 	= [0.444673400127916, 0.4334842121982636 ,0.6329753454633711, 0.6437486035928914 ]
+ED 	= [0.43023021580021564, 0.45534173933954647,0.6466194152371839, 0.6579819998670257 ]
+fig,ax=plt.subplots()
+ax.set_title('Unique predictors')
+# ax.label()
+# ax.errorbar(x,y,e1, color = 'red',marker = 'o')
+ax.plot(x_predictors,AV,'o',label='AV',marker = '*')
+ax.plot(x_predictors,GC,'o',label='GC',marker = 'o')
+ax.plot(x_predictors,VC,'o',label = 'VC',marker = 'p')
+ax.plot(x_predictors,SE,'o',label = 'SE',marker = 'P')
+ax.plot(x_predictors,ED,'o',label = 'ED',marker = 'v' )
+ax.legend()
+legend = ax.legend(loc='top left',shadow=True, fontsize='medium')
+
+
+legend.get_frame()
+fig.tight_layout()
+
+plt.grid(False)
+plt.show()
+fig.savefig('Results/figures/combo3.pdf',format = 'pdf',dpi = 100,bbox_inches='tight')
+plt.close()
+
+
+
+
+
+
+'''
+#Mg
+
+x_predictors = ['msp','vnd_chg','vnd_dis','vnd','vf','APRDF1','APRDF2','combo']
+AV 	= [0.60989, 0.58126,0.5885,0.6261,0.0621,0.0309,0.2336,0.7072 ]
+GC 	= [0.47107, 0.2464,0.6190,0.6622,0.3490,0.11039,0.3956,0.6805 ]
+VC 	= [0.4985, 0.3964,0.64017,0.6758,0.3943,0.13321,0.4438,0.7206 ]
+SE 	= [0.56822,0.5280,0.6115,0.64942,0.09092,0.04783,0.3611,0.7163 ]
+ED 	= [0.5247,0.5174,0.5980,0.6532,0.18253,0.05931,0.32963,0.62737 ]
+fig,ax=plt.subplots()
+# ax.set_title('Unique predictors')
+# ax.label()
+# ax.errorbar(x,y,e1, color = 'red',marker = 'o')
+ax.plot(x_predictors,AV,'o',label='AV',marker = '*')
+ax.plot(x_predictors,GC,'o',label='GC',marker = 'o')
+ax.plot(x_predictors,VC,'o',label = 'VC',marker = 'p')
+ax.plot(x_predictors,SE,'o',label = 'SE',marker = 'P')
+ax.plot(x_predictors,ED,'o',label = 'ED',marker = 'v' )
+ax.legend()
+ax.set_ylabel('R2',fontsize=14)
+ax.set_xlabel('descriptor type',fontsize=14)
+legend = ax.legend(loc='lower left',shadow=True, fontsize='medium')
+
+legend.get_frame()
+fig.tight_layout()
+
+plt.grid(False)
+plt.show()
+fig.savefig('Results/figures/Mg_pred_on_targ.pdf',format = 'pdf',dpi = 100,bbox_inches='tight')
+plt.close()
+
+#Li
+
+x_predictors = ['msp','vnd_chg','vnd_dis','vnd','vf','APRDF2','combo']
+AV 	= [0.5692, 0.5437,0.5319,0.5608,-0.06318,0.3075,0.6979 ]
+GC 	= [0.4456, 0.3692,0.3983,0.6191,0.05186,0.3379,0.6444 ]
+VC 	= [0.4985, 0.4352,0.4724,0.7186,0.159419,0.4474,0.71029 ]
+SE 	= [0.4572, 0.4324,0.4367,0.5619,-0.02663,0.3502,0.6713 ]
+ED 	= [0.4815, 0.4690,0.44020,0.6506,0.02518,0.3771,0.6590 ]
+fig,ax=plt.subplots()
+# ax.set_title('Unique predictors')
+# ax.label()
+# ax.errorbar(x,y,e1, color = 'red',marker = 'o')
+ax.plot(x_predictors,AV,'o',label='AV',marker = '*')
+ax.plot(x_predictors,GC,'o',label='GC',marker = 'o')
+ax.plot(x_predictors,VC,'o',label = 'VC',marker = 'p')
+ax.plot(x_predictors,SE,'o',label = 'SE',marker = 'P')
+ax.plot(x_predictors,ED,'o',label = 'ED',marker = 'v' )
+ax.legend()
+ax.set_ylabel('R2',fontsize=14)
+ax.set_xlabel('descriptor type',fontsize=14)
+legend = ax.legend(loc='lower left', shadow=True, fontsize='medium')
+
+legend.get_frame()
+fig.tight_layout()
+
+plt.grid(False)
+plt.show()
+fig.savefig('Results/figures/Li_pred_on_targ.pdf',format = 'pdf',dpi = 100,bbox_inches='tight')
+plt.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
+
 x = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1]
 y = [-2.4017124235613707,0.24395045820551758,0.47312341792468127,0.519129391443488,0.5562331686270996,0.60683981223302, 0.6062650739783519,0.614548061354786,0.6470347887381357,0.6788296072575222]
 e1 = [2.6416359077132228,0.18050826667655195,0.07522837739521984,0.06159779950763397,0.053596819780455836,0.038445933586554654,0.040814106969404434,0.042844826445907876,0.029624401692294293,0.03147230893335434]
@@ -29,7 +157,7 @@ plt.close()
 fig.savefig('Results/figures/size_db.png',format = 'png',dpi = 100,bbox_inches='tight')
 
 
-
+"""
 ################################
 '''
 

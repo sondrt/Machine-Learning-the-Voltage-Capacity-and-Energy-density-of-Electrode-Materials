@@ -57,8 +57,21 @@ Steps for use of python scripts:
 	12: Run cross-validation, remove outliers.
 
 
-    python prep_csv.py >> Results/2020-03-09/2020-03-09.txt; python PCA_randomforest_crossvalidation.py >>  Results/2020-03-09/2020-03-09.txt;
+    python prep_csv.py >> Results/2020-03-26/2020-03-26.txt; python PCA_randomforest_crossvalidation.py >>  Results/2020-03-26/2020-03-26.txt;
 
+visualize distribution of descriptors and targets - show what I have in the csv files. 
+
+https://pandas.pydata.org/pandas-docs/version/0.23.1/generated/pandas.DataFrame.plot.bar.html
+
+distribution of targets, plot
+y # appearanzes
+
+x = 0-6 
+
+
+R2 score 
+x descripor type
+y = point r2 score for AV, GVC, SE,ED
 
 
 cmd: 
@@ -98,3 +111,5 @@ A general-purpose machine learning framework for predicting properties of inorga
 
 joshi2019machine
 Machine Learning the Voltage of Electrode Materials in Metal-ion Batteries
+
+Teori om band gaps?
