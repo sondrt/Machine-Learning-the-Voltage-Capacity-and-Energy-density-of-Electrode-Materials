@@ -568,8 +568,8 @@ Random Forest(\ac{RF}) is a ensemble learning method, the idea is that one decis
 
 A new parameter is then introduced, at each node a random subset of features are given to the tree, it can only make decisions based on that specific subset, and not the original tree. This increases the randomness in the creation of each tree, and it speeds up the learning process. The reason to add randomness to the algorithm is to reduce variance without affecting bias. It also removes the need for decision tree \textit{pruning}, i.e. reducing the complexity of decision tree by removing the parts of the tree that don't help the classifier as well as reducing over-fitting. The process of creating trees is repeated until the error stops decreasing.
 
-When the forest is done, a majority vote system is used, which is a comparison of the mean response for regression. For a step by step algorithm, see the README.txt file on \href{https://github.com/sondrt/Machine-Learning-the-Voltage-Capacity-and-Energy-density-of-Electrode-Materials}{github}. 
-The reason for not using cross-validation in the learning algorithm, which is common in other Machine Learning methods \ref{sec:cross_validation}, is that our bootstrap method only uses about $65\%$ of the data, leaving $35\%$ on average which can give an estimated test error. 
+When the forest is done, a majority vote system is used, which is a comparison of the mean response for regression. For a step by step algorithm, see the README.txt file on \href{https://github.com/sondrt/Machine-Learning-the-Voltage-Capacity-and-Energy-density-of-Electrode-Materials}{github}.
+The reason for not using cross-validation in the learning algorithm, which is common in other Machine Learning methods \ref{sec:cross_validation}, is that our bootstrap method only uses about $65\%$ of the data, leaving $35\%$ on average which can give an estimated test error.
 
 The main reasoning behind choosing Random Forest is due to an article by \cite{fernandez2014we} and the findings from both our collaborators \cite{tsamardinos2020automated} and Shandiz and colleagues \cite{shandiz2016application}, that clearly state Random Forest is the preferred Machine Learning algorithm when you want to test for correlations. Another reason and a main advantages of RF is that it has high performance and does not require any particular optimization of its hyper-parameters(e.g. number of decision trees for RF). On the other hand, methods like support vector regression(SVR) require an extensive search for the optimum hyper-parameters before providing reasonable results.
 
@@ -581,7 +581,7 @@ The main reasoning behind choosing Random Forest is due to an article by \cite{f
 	
 
 \subsection{Evaluation method}\label{sec:evaluation_method} %Mean square error, Root mean square deviation and Mean absolute error, Weighted absolute percentage error}
-%In this section different evaluation methods used in the work will be explained. 
+%In this section different evaluation methods used in the work will be explained.
 %These are Mean square error, Root mean square deviation, Mean absolute error, Weighted absolute percentage error, The Coefficient of Determination, k-fold cross validation.
 
 
@@ -600,14 +600,14 @@ from which:
 E[X] =\mu^2 + \sigma^2
 \end{align}
 
-can be derived. For a ML model, a prediction is done with an accuracy $x_acc$ on training data and its prediction accuracy on test data is $y$ then: 
+can be derived. For a ML model, a prediction is done with an accuracy $x_acc$ on training data and its prediction accuracy on test data is $y$ then:
 \begin{align}
 \text{var} = x_{acc} - y
 \end{align}
 
 \subsubsection{Standard deviation}
 
-Standard deviation (\ac{std}) is a tool to quantify the measure of spread. It is very similar to variance by yielding the measure of deviation whereas variance provides the squared value. Standard deviation is defined as:
+Standard deviation (\ac{Stdev}) is a tool to quantify the measure of spread. It is very similar to variance by yielding the measure of deviation whereas variance provides the squared value. Standard deviation is defined as:
 
 \begin{align}
 std[X] = \sqrt{var[X]}
@@ -619,21 +619,21 @@ std[X] = \sqrt{var[X]}
 std = \sqrt{\frac{\sum^N_{i=1} (x_i- \hat{x})^2}{N-1}}
 \end{align}
 
-\subsubsection{Mean square error} 
- 
+\subsubsection{Mean square error}
+
 The Mean Square Error (\ac{MSE}) can give a measure of the quality of our estimator \cite{robert2014machine}. It is defined as
 \begin{equation}\label{eq: mse}
 	\text{MSE}(\epsilon) = \frac{1}{n}\sum_n^{n-1}\epsilon^2 = \frac{1}{n_\text{samples}} \sum_n^{n_{\text{samples}}-1}(y_i - \hat{y_i})^2
 	\end{equation}
 	Where $\hat{y_i}$ is the predicted value of the $i$-th sample, and $y_i$ is the corresponding true value.
-As such it can be thought of  as the average of the square of our residuals. Therefore the MSE can never have negative values, and smaller values mean that we have a better prediction, where at zero there is a perfect fit.
+As such it can be thought of as the average of the square of our residuals. Therefore the MSE can never have negative values, and smaller values mean that we have a better prediction, where at zero there is a perfect fit.
 
-\subsubsection{Root mean square deviation} 
-The Root mean square deviation, or root mean square Error (\ac{RMSE}), is defined as the square root of the MSE:
+\subsubsection{Root mean square deviation}
+The Root mean square deviation or root mean square Error (\ac{RMSE}), is defined as the square root of the MSE:
 $$\text{RMSE} = \sqrt{\text{MSE}} =  \sqrt{\frac{\sum^{n-1}_{n}(y_{i}-\hat{y_{i}})^2 }{n}} $$
-And is thus the distance, on average, of a data point from the fitted line, measured along a vertical line. The RSME is directly interpretable in terms of measurement units, and is therefore a better measure of goodness of fit than a correlation coefficient. 
+And is thus the distance, on average, of a data point from the fitted line, measured along a vertical line. The RSME is directly interpretable in terms of measurement units, and is therefore a better measure of fitness than a correlation coefficient.
 
-RMSE and Stdev can seem very similar, but they are not the same. Stdev measures the spread of data around the mean, while RMSE measure distance between some values and predictions for those values. If the mean error approaches $0$ and n approaches infinity Stdev and RMSE converge. 
+RMSE and Stdev can seem very similar, but they are not the same. Stdev measures the spread of data around the mean, while RMSE measure distance between some values and predictions for those values. If the mean error approaches $0$ and n approaches infinity Stdev and RMSE converge.
 
 \subsubsection{Mean absolute error}
 Mean absolute error (\ac{MAE}) is another statistical tool that is used to measure the difference between two continuous variables, in our case; the predicted values and the observed values. It corresponds to the expected values of the absolute error loss. The MAE is defined as:
@@ -642,37 +642,37 @@ Mean absolute error (\ac{MAE}) is another statistical tool that is used to measu
 \text{MAE} = \frac{1}{n_{samples}}\sum^{n_{samples}-1}_{i=0}\abs{y_i - \hat{y_i}}
 \end{align}
 
-where $y_i$ and $\hat{y_i}$ are defined as above. In geometrical terms, it is the average absolute vertical/horizontal distance between each point in a scatter plot and the $Y=X$ line. 
+where $y_i$ and $\hat{y_i}$ are defined as above. In geometrical terms, it is the average absolute vertical/horizontal distance between each point in a scatter plot and the $Y=X$ line.
 
 \subsubsection{Weighted absolute percentage error}
 
-Weighted absolute percentage error (\ac{WAPE}) is the mean absolute error divided by the mean ($\bar{y_i}$) multiplied by a hundred. This yields the mean error in percentage. 
+Weighted absolute percentage error (\ac{WAPE}) is the mean absolute error divided by the mean ($\bar{y_i}$) multiplied by a hundred. This yields the mean error in percentage.
 
 \begin{align}\label{eq:WAPE}
 \text{WAPE} = \frac{\text{MAE}}{\bar{y}_{i}} \cross 100 
 \end{align}
- 
+
 
 
 \subsubsection{$R^2$ score - The Coefficient of Determination}
 
-	In regression validation the $R^2$ is the standard when it comes to measuring goodness of fit \cite{james2013introduction}. In straight terms it is the proportion of the variance in the dependent variable that is predictable from the independent variable.
+	In regression validation the $R^2$ is the standard when it comes to measuring fitness \cite{james2013introduction}. In straight terms it is the proportion of the variance in the dependent variable that is predictable from the independent variable.
 
 \begin{equation}\label{eq: R squared}
 	R^2 =1 - \frac{SS_{res}}{SS_{tot}} =  1 - \frac{ \sum(y_i-f_i)^2 }{ \sum(y_i-\bar{y}_i)^2 }
 \end{equation}
 
-	Where $y_i$ are the indexed response variables (data  to be fitted) and $f_i$ the predictor variables from the model with $\epsilon_i = y_i - f_i$. The average of the response variables is denoted $\bar{y}_i$. The second term can also be considered as the ratio of MSE to the variance (the $1/n$ factors null each other out in a fraction), or the total sum of squares ($\ac{SS}_{tot}$). 
+	Where $y_i$ are the indexed response variables(data to be fitted) and $f_i$ the predictor variables from the model with $\epsilon_i = y_i - f_i$. The average of the response variables is denoted $\bar{y}_i$. The second term can also be considered as the ratio of MSE to the variance (the $1/n$ factors null each other out in a fraction), or the total sum of squares ($\ac{SS}_{tot}$).
 	
-	If the residual sum of squares ($SS_{res}$) is low the fit is good. However, this should be compared to the spread of the response variables. After all, if the response variables are all nicely distributed close to the mean, then getting a good $SS_{res}$ is not suspicious. We therefore do a normalization in the fraction, taking the scale of data into consideration. In the simplest polynomial fit, using a zero order polynomial (a constant), our model would just be a constant function of the mean. The sums being equal, returning unity on the fraction and the total $R^2$ score would be zero. In the other extreme, if the model fits perfectly, than $SS_{res}$ would be zero and the $R^2$ score would be one. In this sense we have a span of possible $R^2$ scores between zero and one, from the baseline of the simplest model at zero, and a perfect fit at one. In contradiction to most scores the value can be negative, because the model can get arbitrarily worse, thus giving negative values.
-	The $R^2$ score is useful as a measure of how good our model is at predicting future samples.
-	 
+	If the residual sum of squares ($SS_{res}$) is low the fit is good. However, this should be compared to the spread of the response variables. After all, if the response variables are all nicely distributed close to the mean, then getting a good $SS_{res}$ is not suspicious. We therefore do a normalization in the fraction, taking the scale of data into consideration. In the simplest polynomial fit, using a zero order polynomial(a constant), our model would just be a constant function of the mean. The sums being equal, returning unity on the fraction and the total $R^2$ score would be zero. In the other extreme, if the model fits perfectly, than $SS_{res}$ would be zero and the $R^2$ score would be one. In this sense we have a span of possible $R^2$ scores between zero and one, from the baseline of the simplest model at zero, and a perfect fit at one. In contradiction to most scores the value can be negative, because the model can get arbitrarily worse, thus giving negative values.
+	The $R^2$ score is useful as a measure of how good the model will predict future samples.
+
 \subsubsection{K-fold cross validation}\label{sec:cross_validation}
-	K-folding is a cross validation technique that allows us to generalize the trends in our data set to an independent data set. In this way we can circumvent typical problems like over-fitting and selection bias \cite{james2013introduction}. The approach for the technique is simple and represented in figure \ref{fig:cross-validation}. Instead of doing a regression on the entire data set, it is first segmented into $k$ number of subsets, or splits, of equal size (making sure to pick out the variables randomly before distributing them to the subsets). 
+	K-folding is a cross validation technique that allows us to generalize the trends in our data set to an independent data set. In this way we can circumvent typical problems like over-fitting and selection bias \cite{james2013introduction}. The approach for the technique is simple and represented in figure \ref{fig:cross-validation}. Instead of doing a regression on the entire data set, it is first segmented into $k$ number of subsets, or splits, of equal size (making sure to pick out the variables randomly before distributing them to the subsets).
+
+	Now one subset can be chosen to be the 'test' or 'validation' set while the rest of the subsets ($k-1$ of the folds) are the training sets. The desirable regression is then applied on the training set, arriving at some data fitting that is the prediction. From here it is a straight forward process to analyze how well our predicted variables compare to the validation variables, e.g. through the $R^2$ score function. However, even though the subsets are picked randomly, the validation subset used could potentially be a misrepresentative selection of the entire set. Therefore the process is repeated $k$ times, each time using a new subset as the validation subset. Finally, one can simply calculate the average of the scores to get the predictive power of our model. As an added benefit, since the calculations are done during the process, the average of the predictions can be used as the final fit.
 	
-	Now one subset can be chosen to be the 'test' or 'validation' set while the rest of the subsets ($k-1$ of the folds) are the training sets. The desirable regression is then applied on the training set, arriving at some data fitting that is the prediction. From here it is a straight forward process to analyze how well our predicted variables compare to the validation variables, e.g. through the $R^2$ score function. However, even though the subsets are picked randomly, the validation subset used could potentially not be a representative selection of the entire set. Therefore the process is repeated $k$ times, each time using a new subset as the validation subset. Finally, one can simply calculate the average of the scores to get the predictive power of our model. As an added benefit, since the calculations are done anyways, the average of the predictions can be used as the final fit. 
-	
-	Cross validation techniques are very useful when the gathering of new data is difficult or impossible, as we are using the extra computational power at our disposal to squeeze the most amount of relevant information out of our data. 
+	Cross validation techniques are very useful when gathering new data is difficult or impossible, as we are using the extra computational power at our disposal to squeeze as much relevant information out of our data as possible. 
 
 \begin{figure}[h]
     \centering
