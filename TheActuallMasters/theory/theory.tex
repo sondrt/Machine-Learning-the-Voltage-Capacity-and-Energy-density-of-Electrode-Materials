@@ -431,26 +431,26 @@ The anode is graphite, thus there is noe metallic $\ce{Li}$, which makes the Li-
 \pagebreak
 \section{Machine Learning}
 
-In this chapter we summarize some concepts of machine learning and related concepts. The first section introduces the basic ideas behind machine learning and one of the best known examples will be presented. Secondly the concepts of supervised and unsupervised learning will be presented with a clarification regarding the difference between regression and classification problems, so that we can discuss where in the field of machine learning this work resides in. Basics of methods utilized in this work will be introduced, emphasizing Random forest. Subsequently a short description of the validation methods used is given. These are; K-fold cross validation and how it is used in optimizing our random forest method, root mean square error (RMSE) and R-squared($R^2$). 
+In this chapter we introduce and summarize Machine Learning and related concepts. The first section introduces the basic ideas behind Machine Learning and one of the best known examples will be presented. Secondly the concepts of supervised and unsupervised learning will be presented with a clarification regarding the difference between regression and classification problems, so that we can discuss where this work resides in the field of Machine Learning. The basics of methods utilized in this work will then be introduced, emphasizing Random Forest. Subsequently a short description of the validation methods used is given, these include: K-fold cross validation and how it is used in optimizing our Random Forest method, root mean square error(RMSE) and R-squared($R^2$).
    
-We conclude this section with a brief explanation on the role of data, how features can affect the effectiveness of a model, of the concepts of over- and under-fitting, and how these are related to the bias-variance-trade-off. 
+We conclude this section with a brief explanation on the role of data in Machine Learning, how the selection of features in the data can affect the effectiveness of a model, of the concepts of over- and under-fitting, and how these are related to the bias-variance-trade-off.
 
 
 \myworries{Sondre: Did you forget something? Come back to this when done with the section.}
 
 
-\subsection{The basics of Machine Learning}
+\subsection{The Basics of Machine Learning}
 
-Machine learning comes from the field of pattern recognition and learning theory, and is defined as the field of study that gives computers the ability to learn without being explicitly programmed. Or more precise: "… A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with the experience E…"(\cite{mitchell1997machine}). At its core the ability to learn by detecting patterns in usually huge amounts of data that, more often then not, is impossible to perceive for a human. 
+Machine Learning comes from the field of pattern recognition and learning theory, and is defined as the field of study that gives computers the ability to learn without being explicitly programmed. Or more precisely: "… A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with the experience E…"(\cite{mitchell1997machine}). At its core the ability to learn by detecting patterns in typically huge amounts of data that, more often than not, are impossible to percieve for a human.
 
 
-	\subsubsection{The basics}\label{sec:introexample}
-	As an introduction on how machine learning was applied to learn and recognize patterns in our work, it will be useful to start with a simple example applied to the recognition of the handwritten number "5". 
+% 	\subsubsection{The basics}\label{sec:introexample}
+	As an introduction on how Machine Learning was applied to learn and recognize patterns in our work, it's useful to start with a simple example that regards the recognition of the handwritten number "5". 
 	
 
-	How two people writes a single digit may vary to an extensive degree. It might seem to be a easy problem, but if the recognition is to be done manually million of times, it is no longer a trivial task for any human being. Therefore a model which can recognize these digits would be useful. A model that takes a picture of a digit as input and outputs that digit in a way that is recognizable for a machine, i.e. a digital format.
+	How two people write a single digit may vary to an extensive degree. It might seem to be an easy problem, but if the recognition is to be done manually and correctly millions of times, it is no longer a trivial task for any human being. Therefore a machine model which can recognize these digits would be useful. A model that takes an image of a handwritten digit as input and outputs that digit in a way that is recognizable for a machine, i.e. a digital format.
 	
-	Machine learning only works when you have data, preferably a large amount of data. For instance data from the MNIST test dataset \cite{lecun1998gradient}. This database contain $60,000$ images of handwritten numbers that is commonly used for both various training, and testing in the field of machine learning. The images all are 18x18 pixels. The data is divided into two sets, one training set: $X_{Train}$ and one test set: $X_{test}$. Some numbers from the MNIST database are shown in figure \ref{fig:MNIST}. 
+	Machine Learning only works when you have data, preferably a large amount of data. For instance the data from the MNIST test dataset \cite{lecun1998gradient}. This database contains $60,000$ images of handwritten numbers that are commonly used for various training and testing in the field of Machine Learning. The images all are 18x18 pixels. The data is divided into two sets, one training set: $X_{Train}$ and one test set: $X_{test}$. Some numbers from the MNIST database are shown in figure \ref{fig:MNIST}.
 	
 \begin{figure}[ht]
     \centering
@@ -459,44 +459,43 @@ Machine learning comes from the field of pattern recognition and learning theory
     \label{fig:MNIST}
 \end{figure}
 	
-	How do one represent an image as something that makes logical sense to a computer? Most learning algorithms take numbers as input. To a computer one image a grid of numbers that represent how dark a pixel is. So each picture contains a gray-scale value that ranges from $0$ to $255$. Where each sample can be viewed as a vector consisting of 324 \textit{features}. Every sample has a corresponding label value, or \textit{target}, which is the digital equivalent to the handwritten sample. We let the corresponding targets be denoted: $y_{train}$ and $y_{test}$, for training and testing data. Next we designate our \textit{learner} denoted by function $h$. $h$ is then given our training set $S$, where $S = (X_{train1}, y_{train2}),..., (X_{trainN}, y_{trainN})$ and returns a prediction rule: $h: X \rightarrow y$. This rule is also called a predictor, in general, a classifier, or a regressor, depending on the problem in question. 
+	How does one represent an image as something that makes logical sense to a computer? Most learning algorithms take numbers as input. To a computer, one image is a grid of numbers called pixels that represent brightness. So in this case each pixel contains a value ranging from $0$ to $255$ that represents a gray-scale color. Furthermore each full sample image can be viewed as a vector consisting of 324 pixels or \textit{features}. Every sample has a corresponding label value, or \textit{target}, which is the digital equivalent to the handwritten sample. We let the corresponding targets be denoted: $y_{train}$ and $y_{test}$, for training and testing data. Next we designate our \textit{learner} denoted by function $h$. $h$ is then given our training set $S$, where $S = (X_{train1}, y_{train2}),..., (X_{trainN}, y_{trainN})$ and returns a prediction rule: $h: X \rightarrow y$. This rule is also called a predictor, in general, a classifier, or a regressor depending on the problem in question.
 	
-	The \textit{training phase} is a process where the learning algorithm gets tweaked to best capture the correlating structure of the data set, so that it can better predict new data. As mentioned in the last paragraph the output from the \textit{training phase} is called a \textit{predictor}. The next step is to introduce the \textit{predictor} for new, unseen data, so that it can be classified. Then we compare the $y_{test}$ to our predicted value $y_{pred}$ given by $h$ to see if our model generalizes well to unseen data in $X_{test}$. 
+	The \textit{training phase} is a process where the learning algorithm gets tweaked to best capture the correlating structure of the data set, so that it can better predict new data. As mentioned in the last paragraph the output from the \textit{training phase} is called a \textit{predictor}. The next step is to introduce the \textit{predictor} for new, unseen data, so that it can be classified. Then we compare the $y_{test}$ to our predicted value $y_{pred}$ given by $h$ to see if our model generalizes well to unseen data in $X_{test}$.
 	
 	\subsubsection{Supervised and Unsupervised Learning }
-	One of the most basic separations in machine learning is the partition between supervised learning and unsupervised learning \cite{gentle2012handbook}.
+	One of the most basic separations in Machine Learning is between supervised learning and unsupervised learning \cite{gentle2012handbook}.
 	
-	In the case of supervised learning, the answer to a problem is known and given to the computer. The computer then deduce its own logic to figure out how to get to that result, thus the name complete-date problem is commonly used. This is the most common type of learning. With unsupervised learning the machine is tasked with finding patterns and relationships in data sets without any prior knowledge of the system, incomplete-data problems. Some authors operate with a third and a forth category, namely reinforcement learning, where the machine learns by trial-and-error, and evolutionary learning, where they account for the biological evolution and that it can be seen as a learning process \cite{marsland2014machine}.
+	In the case of supervised learning, the answer to a problem is known and given to the computer. The computer can then deduce its own logic to figure out how to get to that result, thus the name complete-data problem is commonly used, this is the most common type of learning. With unsupervised learning the machine is tasked with finding patterns and relationships in data sets without any prior knowledge of the system, incomplete-data problems. Some authors operate with a third and a forth category, namely reinforcement learning, where the machine learns by trial-and-error, and evolutionary learning which borrows from biological evolution in using the concepts of populations and generations such that it can be seen as a learning process \cite{marsland2014machine}.
 		
-	In this thesis, only supervised learning is considered. Algorithms and challenges specifically related to unsupervised learning, reinforcement learning, and evolutionary learning, is therefore not further examined. 
+	In this thesis, only supervised learning is considered. Algorithms and challenges specifically related to unsupervised learning, reinforcement learning, and evolutionary learning, are therefore not further examined.
 
 	\subsubsection{Regression and Classification Problems}
-		A response variable can either be qualitative or quantitative in nature. For the qualitative response variable, let's assume a set of data points $ \vec{x}$ and a goal of finding the value of the output $y$ when $x = 0.5$. The value $x $ is not in the data points given so a way to \textit{predict} the value, is needed. Given in the example above, we assume that there exists a function $h$ that the value comes from. When that function is found one can find any given $y$ for any given $x$. This is what is known as a regression problem - The response variable takes form of a continuous numerical value. The regression problem is a problem of function approximation or interpolation. It may occur a scenario where there are multiple functions, lets say $h$ and $g$, that fits the given data perfectly. If this is the case one value in-between the data points is selected, and both the functions, $h$ and $g$, tries to predict its values and the results are compared to see which is better.
-	This does not seems as very intelligent behavior, but the problems of interpolation can be very difficult in higher dimensional space. This can also be observed in classification, the other aspect of what our algorithms can do.  
+        A response variable can either be qualitative or quantitative in nature. For the qualitative response variable, assume a set of data points $\vec{x}$ and a goal of finding the value of the output $y$ when $x = 0.5$. The value $x$ is not in the data points given so a way to \textit{predict} the value, is needed. Given the example above, we assume that there exists a function $h$ which can output the value. When that function is found one can find any given $y$ for any given $x$. This is what is known as a regression problem - The response variable takes form of a continuous numerical value. The regression problem is a problem of function approximation or interpolation. It may occur in a scenario where there are multiple functions, lets say $h$ and $g$, that fit the given data perfectly. If this is the case one value in-between the data points is selected, and both the functions, $h$ and $g$ try to predict its values and the results are compared to see which is a better fit.
+	This does not seems like very intelligent behavior, but problems of interpolation can be very difficult in higher dimensional space. This can also be observed in classification, the other aspect of what our algorithms can do.
 	
 	If the response variable is quantitative the problem is referred to as a classification problem. Such a problem consists of taking several input vectors and deciding which of $N$ classes they belong to. This decision or prediction comes from training on examples of each class. To be clear, classification problems are of a discrete nature - The input only belongs to one class, like the example given at the start of this section \ref{sec:introexample}.
 	
 	In this work we want to predict characteristics of batteries, these properties have continuous values, meaning that the task at hand is a regression problem.
 	
 	\subsubsection{Data collection, Preparation, Features and Feature Selection}
-	 
-	Normally the data collection is a large part of the work and not easily available, or, at the very least, needs to be assembled and prepared. If the problem is completely new it might be natural to engulf this step with the next one. (Which is, more or less, what this work tries to do.) With a small dataset with many different features one can experiment and try to figure out what features are the most useful before picking those and collecting a full dataset based on them and then perform a complete analysis. 
+	Normally the collection of data is a large portion of the work and not readily available, or at the very least needs to be assembled and prepared. If the problem is completely new it might be natural to engulf this step with the next one(Which is more or less what this work tries to do). With a small dataset with many different features one can experiment and try to figure out what features are the most useful before picking those and collecting a full dataset based on them to perform a complete analysis.
 	
-	A common problem in similar studies is that there are too many types of data that can be relevant, but that data is hard to find or represent in a way that makes sense for the machine. This can be because it requires too many measurements, or, something that is prevalent in this work, that they are in a variety of places and formats. For instance; if the measurements are already taken, but at vastly different temperatures they might be hard to compare or merge. It is important to have a \textit{clean} dataset, this means that the dataset does not have missing data, significant errors, and so on. On top of all of this, supervised learning requires a target $y$, which demands time and involvement of experts. 
+	A common problem in similar studies to this one is that there are many types of data that can be considered relevant but that data can be hard to find or represent in a way that makes sense for the machine. This can be because it requires too many measurements, something that is prevalent in this work or that they are in a variety of locations and formats. For instance if material measurements are taken but at vastly different temperatures they might be hard to compare or merge. It is important to have a \textit{clean} dataset, this means that the dataset does not have missing data, significant errors and so on. On top of all of this, supervised learning requires a target $y$, which demands the time and involvement of experts.
 	
-	The specific input to a model is normally referred to as a feature, that is, numerical representation of raw data. The amount of features are of importance for the machine learning algorithm to successfully make a good prediction. If there are to few relevant features one can not make an accurate prediction due to the lack of necessary data. And if there are to many features, or many of the features are irrelevant to the task the model will be more expensive.
+	The specific input to a model is normally referred to as a feature, that is numerical representation of raw data. The number of features is of importance to the Machine Learning algorithm to successfully make a good prediction. If there are too few relevant features one cannot make an accurate prediction due to the lack of necessary data. Likewise if there are too many features, or many of the features are irrelevant to the task, the model will be more expensive.
 	
-	The amount of information needed is extensive, and should be of high quality. A bigger dataset demands a higher cost, and predicting the amount of data required is a futile endeavor. Luckily Machine Learning is still less computationally costly than modeling full systems at a micro or nanoscale, which makes it interesting in the field of material science. 
+	The amount of information needed is extensive, and should be of high quality. A bigger dataset demands a higher cost, and predicting the amount of data required is a futile endeavor. Luckily Machine Learning is still less computationally costly than modeling full physical systems at a micro or nanoscale, which makes it interesting in the field of material science.
 	
 	
 \subsection{Bias-variance tradeoff}\label{sec:Bias-variance tradeoff}
 
-As the algorithm learns we need to make sure that it generalizes well to data not in its training set. Obviously the algorithm can not generalize beyond the limits of the training data. Therefore it is important to minimize the two sources of errors known as \textit{bias} and \textit{variance}. This is know as the \textit{bias-variance trade off}. It is the property of trying to minimize the two errors simultaneously, and should not be confused with the \textit{irreducible error} of a model which is a result of the noise of the data. These three together are the terms used to analyze an algorithms expected \textit{generalization error}, which is a measurement of how accurately an algorithm is able to predict outcome vales for unseen data.    
+As the algorithm learns we need to ensure that it generalizes well to data outside its training set. Obviously the algorithm cannot generalize reliably beyond the limits of the training data. Therefore it is important to minimize the two sources of errors known as \textit{bias} and \textit{variance}. This is known as the \textit{bias-variance trade off}. It is the property of trying to minimize the two errors simultaneously, and should not be confused with the \textit{irreducible error} of a model which is a result of noise in the data. These three together are the terms used to analyze an algorithm's expected \textit{generalization error}, which is a measurement of how accurately an algorithm is able to predict outcome vales for unseen data.
 
 
-Our machine is bias if it generalizes too much. The error is due to low variability in our training data, or that it did not adapt to the training data appropriately. The machine misses the relevant relations in the data set between the features and the output. This effect leads to that which is commonly referred to as under-fitting, see left on figure \ref{fig:bias_var}. 
+Our machine is biased if it generalizes too much. The error is due to low variability in our training data, or that it did not adapt to the training data properly. The machine misses the relevant relations in the data set between the features and the output. This effect leads to that which is commonly referred to as under-fitting, see left on figure \ref{fig:bias_var}.
 
-Variance is the error that stems from high variability, and the degrees of variability in most machine learning algorithms is large \cite{marsland2014machine}. In simple terms, there is a low degree of generalization. It might be a perfect fit, but as soon as new data are introduced the predictions plummet. This is commonly referred to as over-fitting, see right on figure \ref{fig:bias_var}. 
+Variance is the error that stems from high variability, and the degrees of variability in most Machine Learning algorithms is large \cite{marsland2014machine}. In simple terms, there is a low degree of generalization. It might be a perfect fit but as soon as new data is introduced the predictions plummet. This is commonly referred to as over-fitting, see right on figure \ref{fig:bias_var}.
 
 \begin{figure}[h]
      \centering
@@ -505,13 +504,13 @@ Variance is the error that stems from high variability, and the degrees of varia
      \label{fig:bias_var}
 \end{figure}
 
-A good way to understand the idea of the bias-variance tradeoff is, a more complex model with an increased number of features is not necessarily better at predicting what you want to predict. 
+A good way to understand the idea of the bias-variance tradeoff is: a more complex model with an increased number of features is not necessarily better at predicting what you want to predict.
 
 
 \subsection{Random Forest}
 
 \subsubsection{Ensemble learning}
-	There are many different machine learning algorithms, in this work we have focused on the \textit{ensemble method}; \textit{Random forest} \cite{breiman2001random}. The idea of ensemble learning is that two heads are better than one, so why not have many learners that all get slightly different results on the same data, and then combine them, as shown in figure \ref{fig:ensemble_learning}.
+	There are many different Machine Learning algorithms, in this work we have focused on the \textit{ensemble method}; \textit{Random Forest} \cite{breiman2001random}. The idea of ensemble learning is that two heads are better than one, so why not have many learners that all get slightly different results on the same data, and then combine them, as shown in figure \ref{fig:ensemble_learning}.
 	
 \begin{figure}[h]
      \centering
@@ -520,17 +519,17 @@ A good way to understand the idea of the bias-variance tradeoff is, a more compl
      \label{fig:ensemble_learning}
 \end{figure}	
 
-Ensemble methods are particularly useful in machine learning when there is little data, as well as when there are to much data, this is heavily due to cross-validation, which will be explained later \ref{sec:cross_validation}). 
+Ensemble methods are particularly useful in Machine Learning when there is little data, as well as when there is too much data, the reason for this is primarily due to cross-validation, which will be explained later \ref{sec:cross_validation}).
 
 \subsubsection{Decision tree}
 
-A decision tree is a low cost binary flowchart-like structure. It is one of the most common data structures in the field of computational science, both because of the low cost to make the tree, but also because the cost of using the tree is even lower; $\mathcal{O}(\log{N})$, where N is the number of data points \cite{marsland2014machine}. 
+A decision tree is a low cost binary flowchart-like structure. It is one of the most common data structures in the field of computational science, both because of the low cost to make the tree, but also because the cost of using the tree is even lower; $\mathcal{O}(\log{N})$, where N is the number of data points \cite{marsland2014machine}.
 
 Decision trees are structured much like a regular tree \ref{fig:decision_tree}, at the top there is a base, or a \textit{root}, down the branches there are chance nodes, and at the end of the branches there are \textit{leaves}, or end nodes. Every internal node is structured like an conditional statement on a feature.
 
-Let us say that you want to play tennis. You look out the window, and there are three possible weather states (root node); rain, overcast or sun. If it is overcast you will play either way, but if it is windy, you need to evaluate if that wind is strong or weak (chance node). If it is little wind, you will play. Else, it is strong and you will not play (end nodes). 
+Let us say that you want to play tennis. You look out the window, and there are three possible weather states (root node); rain, overcast or sun. If it is overcast you will play either way, but if it is windy, you need to evaluate if that wind is strong or weak (chance node). If there is little wind, you will play. Else, it is too strong and you will not play (end nodes).
 
-The chance nodes are the results from these tests, and the leaves are the class labels. The full route from root to leaf is the classification rule, or \textit{branch}. An advantage of random forest being based in decision trees is that the algorithm is much more like a "white box" compared to Neural networks "black box" approach, because we can retrace the decisions of each tree. This is especially helpful in the research done in this work where we want to figure out the roll of every feature, and how they affect the result.
+The chance nodes are the results from these tests, and the leaves are the class labels. The full route from root to leaf is the classification rule, or \textit{branch}. An advantage of Random Forest being based on decision trees is that the algorithm is much more like a "white box" compared to Neural networks "black box" approach, because we can retrace the decisions of each tree. This is especially helpful in this work's research where we want to figure out the role of every feature and how they affect the result.
 
 \begin{figure}[h]
 \centering
@@ -564,15 +563,15 @@ The chance nodes are the results from these tests, and the leaves are the class 
 \caption{A simple example of a decision tree for playing tennis. Root in red, leaf node in blue.}
 \label{fig:decision_tree}
 \end{figure}
-\subsubsection{Random forest}
-Random forest (\ac{RF}) is a ensemble learning method, the idea is that one decision tree is good and many trees, or a forest, is better. The most interesting part of random forest is the randomness that is introduces. Several classifiers are achieved by using the simple combination method \textit{bagging}. Bagging stands for \textit{bootstrap} aggregating. Bootstrapping is the process of taking a sample from the original dataset at random, and replacing parts of it with other original data, so that it is not equal to the original data. There will then be several samples where some of the data is equal, while others are completely different. For bootstrapping in random forest, one sample is taken from the dataset for each tree. 
+\subsubsection{Random Forest}
+Random Forest(\ac{RF}) is a ensemble learning method, the idea is that one decision tree is good and that many trees, a forest, is better. The most interesting part of Random Forest is the randomness that is introduces. Several classifiers are achieved by using the simple combination method \textit{bagging}. Bagging stands for \textit{bootstrap} aggregating. Bootstrapping is the process of taking a sample from the original dataset at random, and replacing parts of it with other original data, so that it is not equal to the original data. There will then be several samples where some of the data is equal, while others are completely different. For bootstrapping in Random Forest, one sample is taken from the dataset for each tree.
 
-A new parameter is then introduced, at each node a random subset of features are given to the tree, it can only make decisions based on that specific subset, and not the original tree. This increases the randomness in the creation of each tree, and it speeds up the learning process. The reason to add randomness to the algorithm is to reduce variance without effecting bias. It also removes the need for decision tree \textit{pruning}, i.e. reducing the complexity of decision tree by removing the parts of the tree that does not help the classifier and it reduces overfitting. The process of creating trees is repeated until the error stops decreasing. 
+A new parameter is then introduced, at each node a random subset of features are given to the tree, it can only make decisions based on that specific subset, and not the original tree. This increases the randomness in the creation of each tree, and it speeds up the learning process. The reason to add randomness to the algorithm is to reduce variance without affecting bias. It also removes the need for decision tree \textit{pruning}, i.e. reducing the complexity of decision tree by removing the parts of the tree that don't help the classifier as well as reducing over-fitting. The process of creating trees is repeated until the error stops decreasing.
 
-When the forest is done, we use a majority vote system, which is a comparison of the mean response for regression. For a step by step algorithm, see the README.txt file on \href{https://github.com/sondrt/Machine-Learning-the-Voltage-Capacity-and-Energy-density-of-Electrode-Materials}{github}. 
-The reason for not using cross-validation in the learning algorithm, which is common in other machine learning methods \ref{sec:cross_validation}, is that our bootstrap method only uses about $65\%$ of the data, leaving $35\%$ on average which can give a estimated test error. 
+When the forest is done, a majority vote system is used, which is a comparison of the mean response for regression. For a step by step algorithm, see the README.txt file on \href{https://github.com/sondrt/Machine-Learning-the-Voltage-Capacity-and-Energy-density-of-Electrode-Materials}{github}.
+The reason for not using cross-validation in the learning algorithm, which is common in other Machine Learning methods \ref{sec:cross_validation}, is that our bootstrap method only uses about $65\%$ of the data, leaving $35\%$ on average which can give an estimated test error.
 
-The main reason we decided to opt in for random forest is due to an article by \cite{fernandez2014we} and the findings from both our collaborators \cite{tsamardinos2020automated} and Shandiz and colleagues \cite{shandiz2016application}, that clearly state that random forest is the chosen machine learning algorithm when you want to test for correlations. Another reason and a main advantages of RF is that it is fast and does not require any particular optimization of its hyper-parameters (e.g. number of decision trees for RF). On the other hand, methods like support vector regression (SVR) require an extensive search for the optimum hyper-parameters before providing reasonable results.
+The main reasoning behind choosing Random Forest is due to an article by \cite{fernandez2014we} and the findings from both our collaborators \cite{tsamardinos2020automated} and Shandiz and colleagues \cite{shandiz2016application}, that clearly state Random Forest is the preferred Machine Learning algorithm when you want to test for correlations. Another reason and a main advantages of RF is that it has high performance and does not require any particular optimization of its hyper-parameters(e.g. number of decision trees for RF). On the other hand, methods like support vector regression(SVR) require an extensive search for the optimum hyper-parameters before providing reasonable results.
 
 %\subsection{Support Vector Regression}
 %	Dette bør brukes og kan da skrives om.
@@ -582,7 +581,7 @@ The main reason we decided to opt in for random forest is due to an article by \
 	
 
 \subsection{Evaluation method}\label{sec:evaluation_method} %Mean square error, Root mean square deviation and Mean absolute error, Weighted absolute percentage error}
-%In this section different evaluation methods used in the work will be explained. 
+%In this section different evaluation methods used in the work will be explained.
 %These are Mean square error, Root mean square deviation, Mean absolute error, Weighted absolute percentage error, The Coefficient of Determination, k-fold cross validation.
 
 
@@ -601,14 +600,14 @@ from which:
 E[X] =\mu^2 + \sigma^2
 \end{align}
 
-can be derived. For a ML model, a prediction is done with an accuracy $x_acc$ on training data and its prediction accuracy on test data is $y$ then: 
+can be derived. For a ML model, a prediction is done with an accuracy $x_acc$ on training data and its prediction accuracy on test data is $y$ then:
 \begin{align}
 \text{var} = x_{acc} - y
 \end{align}
 
 \subsubsection{Standard deviation}
 
-Standard deviation (\ac{std}) is a tool to quantify the measure of spread. It is very similar to variance by yielding the measure of deviation whereas variance provides the squared value. Standard deviation is defined as:
+Standard deviation (\ac{Stdev}) is a tool to quantify the measure of spread. It is very similar to variance by yielding the measure of deviation whereas variance provides the squared value. Standard deviation is defined as:
 
 \begin{align}
 std[X] = \sqrt{var[X]}
@@ -620,21 +619,21 @@ std[X] = \sqrt{var[X]}
 std = \sqrt{\frac{\sum^N_{i=1} (x_i- \hat{x})^2}{N-1}}
 \end{align}
 
-\subsubsection{Mean square error} 
- 
+\subsubsection{Mean square error}
+
 The Mean Square Error (\ac{MSE}) can give a measure of the quality of our estimator \cite{robert2014machine}. It is defined as
 \begin{equation}\label{eq: mse}
 	\text{MSE}(\epsilon) = \frac{1}{n}\sum_n^{n-1}\epsilon^2 = \frac{1}{n_\text{samples}} \sum_n^{n_{\text{samples}}-1}(y_i - \hat{y_i})^2
 	\end{equation}
 	Where $\hat{y_i}$ is the predicted value of the $i$-th sample, and $y_i$ is the corresponding true value.
-As such it can be thought of  as the average of the square of our residuals. Therefore the MSE can never have negative values, and smaller values mean that we have a better prediction, where at zero there is a perfect fit.
+As such it can be thought of as the average of the square of our residuals. Therefore the MSE can never have negative values, and smaller values mean that we have a better prediction, where at zero there is a perfect fit.
 
-\subsubsection{Root mean square deviation} 
-The Root mean square deviation, or root mean square Error (\ac{RMSE}), is defined as the square root of the MSE:
+\subsubsection{Root mean square deviation}
+The Root mean square deviation or root mean square Error (\ac{RMSE}), is defined as the square root of the MSE:
 $$\text{RMSE} = \sqrt{\text{MSE}} =  \sqrt{\frac{\sum^{n-1}_{n}(y_{i}-\hat{y_{i}})^2 }{n}} $$
-And is thus the distance, on average, of a data point from the fitted line, measured along a vertical line. The RSME is directly interpretable in terms of measurement units, and is therefore a better measure of goodness of fit than a correlation coefficient. 
+And is thus the distance, on average, of a data point from the fitted line, measured along a vertical line. The RSME is directly interpretable in terms of measurement units, and is therefore a better measure of fitness than a correlation coefficient.
 
-RMSE and Stdev can seem very similar, but they are not the same. Stdev measures the spread of data around the mean, while RMSE measure distance between some values and predictions for those values. If the mean error approaches $0$ and n approaches infinity Stdev and RMSE converge. 
+RMSE and Stdev can seem very similar, but they are not the same. Stdev measures the spread of data around the mean, while RMSE measure distance between some values and predictions for those values. If the mean error approaches $0$ and n approaches infinity Stdev and RMSE converge.
 
 \subsubsection{Mean absolute error}
 Mean absolute error (\ac{MAE}) is another statistical tool that is used to measure the difference between two continuous variables, in our case; the predicted values and the observed values. It corresponds to the expected values of the absolute error loss. The MAE is defined as:
@@ -643,37 +642,37 @@ Mean absolute error (\ac{MAE}) is another statistical tool that is used to measu
 \text{MAE} = \frac{1}{n_{samples}}\sum^{n_{samples}-1}_{i=0}\abs{y_i - \hat{y_i}}
 \end{align}
 
-where $y_i$ and $\hat{y_i}$ are defined as above. In geometrical terms, it is the average absolute vertical/horizontal distance between each point in a scatter plot and the $Y=X$ line. 
+where $y_i$ and $\hat{y_i}$ are defined as above. In geometrical terms, it is the average absolute vertical/horizontal distance between each point in a scatter plot and the $Y=X$ line.
 
 \subsubsection{Weighted absolute percentage error}
 
-Weighted absolute percentage error (\ac{WAPE}) is the mean absolute error divided by the mean ($\bar{y_i}$) multiplied by a hundred. This yields the mean error in percentage. 
+Weighted absolute percentage error (\ac{WAPE}) is the mean absolute error divided by the mean ($\bar{y_i}$) multiplied by a hundred. This yields the mean error in percentage.
 
 \begin{align}\label{eq:WAPE}
 \text{WAPE} = \frac{\text{MAE}}{\bar{y}_{i}} \cross 100 
 \end{align}
- 
+
 
 
 \subsubsection{$R^2$ score - The Coefficient of Determination}
 
-	In regression validation the $R^2$ is the standard when it comes to measuring goodness of fit \cite{james2013introduction}. In straight terms it is the proportion of the variance in the dependent variable that is predictable from the independent variable.
+	In regression validation the $R^2$ is the standard when it comes to measuring fitness \cite{james2013introduction}. In straight terms it is the proportion of the variance in the dependent variable that is predictable from the independent variable.
 
 \begin{equation}\label{eq: R squared}
 	R^2 =1 - \frac{SS_{res}}{SS_{tot}} =  1 - \frac{ \sum(y_i-f_i)^2 }{ \sum(y_i-\bar{y}_i)^2 }
 \end{equation}
 
-	Where $y_i$ are the indexed response variables (data  to be fitted) and $f_i$ the predictor variables from the model with $\epsilon_i = y_i - f_i$. The average of the response variables is denoted $\bar{y}_i$. The second term can also be considered as the ratio of MSE to the variance (the $1/n$ factors null each other out in a fraction), or the total sum of squares ($\ac{SS}_{tot}$). 
+	Where $y_i$ are the indexed response variables(data to be fitted) and $f_i$ the predictor variables from the model with $\epsilon_i = y_i - f_i$. The average of the response variables is denoted $\bar{y}_i$. The second term can also be considered as the ratio of MSE to the variance (the $1/n$ factors null each other out in a fraction), or the total sum of squares ($\ac{SS}_{tot}$).
 	
-	If the residual sum of squares ($SS_{res}$) is low the fit is good. However, this should be compared to the spread of the response variables. After all, if the response variables are all nicely distributed close to the mean, then getting a good $SS_{res}$ is not suspicious. We therefore do a normalization in the fraction, taking the scale of data into consideration. In the simplest polynomial fit, using a zero order polynomial (a constant), our model would just be a constant function of the mean. The sums being equal, returning unity on the fraction and the total $R^2$ score would be zero. In the other extreme, if the model fits perfectly, than $SS_{res}$ would be zero and the $R^2$ score would be one. In this sense we have a span of possible $R^2$ scores between zero and one, from the baseline of the simplest model at zero, and a perfect fit at one. In contradiction to most scores the value can be negative, because the model can get arbitrarily worse, thus giving negative values.
-	The $R^2$ score is useful as a measure of how good our model is at predicting future samples.
-	 
+	If the residual sum of squares ($SS_{res}$) is low the fit is good. However, this should be compared to the spread of the response variables. After all, if the response variables are all nicely distributed close to the mean, then getting a good $SS_{res}$ is not suspicious. We therefore do a normalization in the fraction, taking the scale of data into consideration. In the simplest polynomial fit, using a zero order polynomial(a constant), our model would just be a constant function of the mean. The sums being equal, returning unity on the fraction and the total $R^2$ score would be zero. In the other extreme, if the model fits perfectly, than $SS_{res}$ would be zero and the $R^2$ score would be one. In this sense we have a span of possible $R^2$ scores between zero and one, from the baseline of the simplest model at zero, and a perfect fit at one. In contradiction to most scores the value can be negative, because the model can get arbitrarily worse, thus giving negative values.
+	The $R^2$ score is useful as a measure of how good the model will predict future samples.
+
 \subsubsection{K-fold cross validation}\label{sec:cross_validation}
-	K-folding is a cross validation technique that allows us to generalize the trends in our data set to an independent data set. In this way we can circumvent typical problems like over-fitting and selection bias \cite{james2013introduction}. The approach for the technique is simple and represented in figure \ref{fig:cross-validation}. Instead of doing a regression on the entire data set, it is first segmented into $k$ number of subsets, or splits, of equal size (making sure to pick out the variables randomly before distributing them to the subsets). 
+	K-folding is a cross validation technique that allows us to generalize the trends in our data set to an independent data set. In this way we can circumvent typical problems like over-fitting and selection bias \cite{james2013introduction}. The approach for the technique is simple and represented in figure \ref{fig:cross-validation}. Instead of doing a regression on the entire data set, it is first segmented into $k$ number of subsets, or splits, of equal size (making sure to pick out the variables randomly before distributing them to the subsets).
+
+	Now one subset can be chosen to be the 'test' or 'validation' set while the rest of the subsets ($k-1$ of the folds) are the training sets. The desirable regression is then applied on the training set, arriving at some data fitting that is the prediction. From here it is a straight forward process to analyze how well our predicted variables compare to the validation variables, e.g. through the $R^2$ score function. However, even though the subsets are picked randomly, the validation subset used could potentially be a misrepresentative selection of the entire set. Therefore the process is repeated $k$ times, each time using a new subset as the validation subset. Finally, one can simply calculate the average of the scores to get the predictive power of our model. As an added benefit, since the calculations are done during the process, the average of the predictions can be used as the final fit.
 	
-	Now one subset can be chosen to be the 'test' or 'validation' set while the rest of the subsets ($k-1$ of the folds) are the training sets. The desirable regression is then applied on the training set, arriving at some data fitting that is the prediction. From here it is a straight forward process to analyze how well our predicted variables compare to the validation variables, e.g. through the $R^2$ score function. However, even though the subsets are picked randomly, the validation subset used could potentially not be a representative selection of the entire set. Therefore the process is repeated $k$ times, each time using a new subset as the validation subset. Finally, one can simply calculate the average of the scores to get the predictive power of our model. As an added benefit, since the calculations are done anyways, the average of the predictions can be used as the final fit. 
-	
-	Cross validation techniques are very useful when the gathering of new data is difficult or impossible, as we are using the extra computational power at our disposal to squeeze the most amount of relevant information out of our data. 
+	Cross validation techniques are very useful when gathering new data is difficult or impossible, as we are using the extra computational power at our disposal to squeeze as much relevant information out of our data as possible.
 
 \begin{figure}[h]
     \centering
@@ -683,12 +682,12 @@ Weighted absolute percentage error (\ac{WAPE}) is the mean absolute error divide
 \end{figure}
 
 \FloatBarrier
-\subsection{Principal Component Analysis }\label{sec:PCA}
-	Principal Component Analysis (\ac{PCA}) \cite{james2013introduction} is a procedure that uses orthogonal linear transformation to reduce the amount of feature subspaces. It goes under different names in different fields, but the most recognizable might be Single Value Decomposition. It consists in converting a set of possible correlated variables into a set of uncorrelated variables, called principal components (\ac{PC}s). 
+\subsection{Principal Component Analysis}\label{sec:PCA}
+	Principal Component Analysis (\ac{PCA}) \cite{james2013introduction} is a procedure that uses orthogonal linear transformation to reduce the number of feature subspaces. It goes under different names in different fields, but the most recognizable might be Single Value Decomposition. It consists in converting a set of possible correlated variables into a set of uncorrelated variables, called principal components (\ac{PC}s).
 	
-	The PCs are arrayed so that the first PC has the largest variance, meaning that it accounts for the largest possible amount of variability in the dataset. The second PC does the same, it accounts for as much variability as possible with the constraint of being orthogonal to all the former components. These orthogonal vectors are linear combinations of an uncorrelated orthogonal basis set. Graphically, the shortest vectors affect the predictions the least. Since PCA is sensitive to the relative scaling of the original variables, in \textit{sklearn.decomposition.PCA}, (the library we use), the input data are centered but not scaled, before performing the PCA.
+	The PCs are arrayed so that the first PC has the largest variance, meaning that it accounts for the largest possible amount of variability in the dataset. The second PC does the same, it accounts for as much variability as possible with the constraint of being orthogonal to all the former components. These orthogonal vectors are linear combinations of an uncorrelated orthogonal basis set. Graphically, the shortest vectors affect the predictions the least. Since PCA is sensitive to the relative scaling of the original variables, in \textit{sklearn.decomposition.PCA}(the library we use) the input data are centered but not scaled before performing the PCA.
 	
-	Figure \ref{fig:PCA} shows, the training data from the Mg-db plotted in two scatter plots. To the left is our original data uniformly scaled, scaled so that the variance is equal to one, the mean of the distribution is zero, and about $68\%$ of the values lies between $-1$ and $1$. To the right, a plot showing the affine transformation of these data (PCA), which have been translated, rotated and uniformly scaled. As can be seen in figure \ref{fig:PCA_b}, this affine transformation leads to clearly distinguishable classes.
+	Figure \ref{fig:PCA} shows, the training data from the Mg-db plotted in two scatter plots. To the left is our original data uniformly scaled, scaled so that the variance is equal to one, the mean of the distribution is zero, and about $68\%$ of the values lie between $-1$ and $1$. To the right, a plot showing the affine transformations of these data (PCA), which have been translated, rotated and uniformly scaled. As can be seen in figure \ref{fig:PCA_b}, the affine transformation leads to clearly distinguishable classes.
 
 \begin{figure}[h]
     \centering
@@ -698,7 +697,7 @@ Weighted absolute percentage error (\ac{WAPE}) is the mean absolute error divide
         \caption{}
         \label{fig:PCA_a}
     \end{subfigure}%
-    ~ 
+    ~
         \begin{subfigure}{0.48\textwidth}
         \centering
         \includegraphics[width=\linewidth]{theory/figures/standardscalar_apca.png}
@@ -709,21 +708,21 @@ Weighted absolute percentage error (\ac{WAPE}) is the mean absolute error divide
 	\label{fig:PCA}
 \end{figure}
 %\subsection{Mutual Information**}
-%Ranking of features. 
+%Ranking of features.
 %This can be useful.
 %\subsection{Machine Learning $\cross$ batteries}
 \subsection{Earlier work}
 
-The field of material science is blooming due to computing power being cheaper and more available than ever before. When the Human genome project started in the 1990 the main problem was lack of computational power, but because of Moore's law, the sequencing of all 3 billion letters of DNA is not even a challenge in todays computational standard. In the field of material science, researchers have known how to simulate materials since the early 1900, due to the discovery of quantum mechanics, the challenges are related to the of computational power.
+The field of material science is booming due to computing power being cheaper and more available than ever before. When the Human Genome Project started in the 1990 the main problem was lack of computational power, however because of Moore's law the sequencing of all 3 billion letters of DNA is not even a challenge by today's standard of computational power. In the field of material science researchers have known how to simulate materials since the early 1900s due to the discovery of quantum mechanics. However the algorithms required to perform this are still limited by computational power today.
 
-An advanced material have an order of $10^{23}$ electrons that demands computational methods to simplify the problem \cite{electromaterials}. The gap between the computation needed and what state-of-the-art systems are providing is increasing \cite{reddy2011linden}.
+An advanced material has on order of $10^{23}$ electrons which demands computational methods to simplify the problem \cite{electromaterials}. The gap between the computation needed and what state-of-the-art systems are providing is increasing \cite{reddy2011linden}.
 
-In the field of computational material design a subfield called 'high-throughput' (\ac{HT}) computational material science is on the rise \cite{potyrailo2011combinatorial} \cite{pang2020additive}. This area is based on computational quantum - mechanical - thermodynamic approaches, and a multitude of techniques both in database construction and in the field of intelligent data mining. The idea is simple; first construct a large enough database of accurate thermodynamic and electronic properties of existing and hypothesized materials. Secondly, use different algorithms and statistical models to intelligently analyze the data and find materials with desired properties. This method should continuously be validated by comparing the calculated values with real  (already known) materials, and later also on new hypothetical materials, to create a feedback loop to further improve the algorithm \cite{curtarolo2013high}. To simplify, a computational HT method consists of three tightly connected steps: Virtual material growth, rational material storage, and material characterizations and selection. This work is based on the second and third step, rational material storage and material characterization and selection, on intercalation type batteries.
+In the field of computational material design a subfield called 'high-throughput' (\ac{HT}) computational material science is on the rise \cite{potyrailo2011combinatorial} \cite{pang2020additive}. This area is based on computational quantum-mechanical - thermodynamic approaches, as well as a multitude of techniques both in database construction and in the field of intelligent data mining. The idea is simple; first construct a large enough database of accurate thermodynamic and electronic properties of existing and hypothesized materials. Secondly, use different algorithms and statistical models to intelligently analyze the data and find materials with desired properties. This method should continuously be validated by comparing the calculated values with real(already known) materials, and later also on new hypothetical materials, to create a feedback loop to further improve the algorithm \cite{curtarolo2013high}. To simplify, a computational HT method consists of three tightly connected steps: Virtual material growth, rational material storage, and material characterizations and selection. This work is based on the second and third step, rational material storage and material characterization and selection on intercalation type batteries.
 
-Several studies on batteries have applied machine learning and different degrees of HT, in particular to estimate their state of charge accurately and to improve their energy system management  \cite{kalawoun2015novel} \cite{chemali2018state} \cite{hu2015battery} \cite{ermon2013learning}.
-	In the direction of predicting battery properties only a handful of studies were found. Shandiz \textit{et al.} \cite{shandiz2016application} used classification methods to determine the crystal system of silicate cathodes. They found that the random forest classifier gave the highest accuracy of prediction, and that there is a strong correlation between the three major crystal system (monoclinic, orthorhombic and triclinic), and other features of cathodes. Their data was taken from the online database Materials project \cite{Jain2013} \cite{Zhou2004a} \cite{Adams2011a}.
-	Sendek and \textit{et al.} \cite{sendek2017holistic}, constructed a classification model using logistic regression to find possible solid state electrolytes for lithium-ion batteries. They concluded that simple atomistic descriptors alone, were not enough to obtain useful predictions. Instead, using a multi-descriptor model can yield good predictions.
-	Similar to this work Joshi \textit{et al.} \cite{joshi2019machine} employed ML techniques to predict electrode voltage for metal-ion batteries from the Materials Project database. Much like this thesis, their emphasis were on finding proper features vectors that could accurately represent the compounds.
+Several studies on batteries have applied Machine Learning and different degrees of HT, in particular to estimate their state of charge accurately and to improve their energy system management  \cite{kalawoun2015novel} \cite{chemali2018state} \cite{hu2015battery} \cite{ermon2013learning}.
+	In the field of predicting battery properties only a handful of studies were found. Shandiz \textit{et al.} \cite{shandiz2016application} used classification methods to determine the crystal system of silicate cathodes. They found that the Random Forest classifier gave the highest accuracy of prediction, and that there is a strong correlation between the three major crystal system (monoclinic, orthorhombic and triclinic), and other features of cathodes. Their data was taken from the online database Materials project \cite{Jain2013} \cite{Zhou2004a} \cite{Adams2011a}.
+	Sendek and \textit{et al.} \cite{sendek2017holistic}, constructed a classification model using logistic regression to find possible solid state electrolytes for lithium-ion batteries. They concluded that simple atomistic descriptors alone, were not enough to obtain useful predictions, instead, using a multi-descriptor model was found to yield good predictions.
+	Similar to this work Joshi \textit{et al.} \cite{joshi2019machine} employed ML techniques to predict electrode voltage for metal-ion batteries from the Materials Project database. Much like this thesis, their emphasis was on finding proper feature vectors that could accurately represent the compounds.
 
-%The idea of using higher valence cations such as magnesium or aluminum, which could increase capacity while at the same time reducing weight and volume, had not yet been considered in computational studies, in 2013. 
-Other areas where ML have shown promise are in the field of Nanoporous Materials \cite{fanourgakis2019robust}. Three a set of new descriptors for predictions on methane adsorption was proposed. Fanourgakis \textit{et al.} combined structural features, such as the helium void fraction, surface area, and pore volume, with other descriptors designed, such as the probe atoms of various sizes on MOFS. The work lead to a more general application of ML on nanoporous materials \cite{fanourgakis2020universal}. It was found that introducing "atom types" as descriptors in the ML algorithm to account for chemical character of both the MOFs and the Covalent Organic Frameworks (COFs) improved the ML predictions significantly. 
+%The idea of using higher valence cations such as magnesium or aluminum, which could increase capacity while at the same time reducing weight and volume, had not yet been considered in computational studies, in 2013.
+Other areas where ML has shown promise is in the field of Nanoporous Materials \cite{fanourgakis2019robust}. There a set of new descriptors for predictions on methane adsorption was proposed. Fanourgakis \textit{et al.} combined structural features, such as the helium void fraction, surface area, and pore volume, with other descriptors designed, such as the probe atoms of various sizes on MOFS. The work lead to a more general application of ML on nanoporous materials \cite{fanourgakis2020universal}. It was found that introducing "atom types" as descriptors in the ML algorithm to account for chemical character of both the MOFs and the Covalent Organic Frameworks (COFs) improved the ML predictions significantly.
