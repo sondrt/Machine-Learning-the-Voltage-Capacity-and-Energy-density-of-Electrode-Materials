@@ -672,7 +672,7 @@ Weighted absolute percentage error (\ac{WAPE}) is the mean absolute error divide
 
 	Now one subset can be chosen to be the 'test' or 'validation' set while the rest of the subsets ($k-1$ of the folds) are the training sets. The desirable regression is then applied on the training set, arriving at some data fitting that is the prediction. From here it is a straight forward process to analyze how well our predicted variables compare to the validation variables, e.g. through the $R^2$ score function. However, even though the subsets are picked randomly, the validation subset used could potentially be a misrepresentative selection of the entire set. Therefore the process is repeated $k$ times, each time using a new subset as the validation subset. Finally, one can simply calculate the average of the scores to get the predictive power of our model. As an added benefit, since the calculations are done during the process, the average of the predictions can be used as the final fit.
 	
-	Cross validation techniques are very useful when gathering new data is difficult or impossible, as we are using the extra computational power at our disposal to squeeze as much relevant information out of our data as possible. 
+	Cross validation techniques are very useful when gathering new data is difficult or impossible, as we are using the extra computational power at our disposal to squeeze as much relevant information out of our data as possible.
 
 \begin{figure}[h]
     \centering
@@ -682,12 +682,12 @@ Weighted absolute percentage error (\ac{WAPE}) is the mean absolute error divide
 \end{figure}
 
 \FloatBarrier
-\subsection{Principal Component Analysis }\label{sec:PCA}
-	Principal Component Analysis (\ac{PCA}) \cite{james2013introduction} is a procedure that uses orthogonal linear transformation to reduce the amount of feature subspaces. It goes under different names in different fields, but the most recognizable might be Single Value Decomposition. It consists in converting a set of possible correlated variables into a set of uncorrelated variables, called principal components (\ac{PC}s). 
+\subsection{Principal Component Analysis}\label{sec:PCA}
+	Principal Component Analysis (\ac{PCA}) \cite{james2013introduction} is a procedure that uses orthogonal linear transformation to reduce the number of feature subspaces. It goes under different names in different fields, but the most recognizable might be Single Value Decomposition. It consists in converting a set of possible correlated variables into a set of uncorrelated variables, called principal components (\ac{PC}s).
 	
-	The PCs are arrayed so that the first PC has the largest variance, meaning that it accounts for the largest possible amount of variability in the dataset. The second PC does the same, it accounts for as much variability as possible with the constraint of being orthogonal to all the former components. These orthogonal vectors are linear combinations of an uncorrelated orthogonal basis set. Graphically, the shortest vectors affect the predictions the least. Since PCA is sensitive to the relative scaling of the original variables, in \textit{sklearn.decomposition.PCA}, (the library we use), the input data are centered but not scaled, before performing the PCA.
+	The PCs are arrayed so that the first PC has the largest variance, meaning that it accounts for the largest possible amount of variability in the dataset. The second PC does the same, it accounts for as much variability as possible with the constraint of being orthogonal to all the former components. These orthogonal vectors are linear combinations of an uncorrelated orthogonal basis set. Graphically, the shortest vectors affect the predictions the least. Since PCA is sensitive to the relative scaling of the original variables, in \textit{sklearn.decomposition.PCA}(the library we use) the input data are centered but not scaled before performing the PCA.
 	
-	Figure \ref{fig:PCA} shows, the training data from the Mg-db plotted in two scatter plots. To the left is our original data uniformly scaled, scaled so that the variance is equal to one, the mean of the distribution is zero, and about $68\%$ of the values lies between $-1$ and $1$. To the right, a plot showing the affine transformation of these data (PCA), which have been translated, rotated and uniformly scaled. As can be seen in figure \ref{fig:PCA_b}, this affine transformation leads to clearly distinguishable classes.
+	Figure \ref{fig:PCA} shows, the training data from the Mg-db plotted in two scatter plots. To the left is our original data uniformly scaled, scaled so that the variance is equal to one, the mean of the distribution is zero, and about $68\%$ of the values lie between $-1$ and $1$. To the right, a plot showing the affine transformations of these data (PCA), which have been translated, rotated and uniformly scaled. As can be seen in figure \ref{fig:PCA_b}, the affine transformation leads to clearly distinguishable classes.
 
 \begin{figure}[h]
     \centering
@@ -697,7 +697,7 @@ Weighted absolute percentage error (\ac{WAPE}) is the mean absolute error divide
         \caption{}
         \label{fig:PCA_a}
     \end{subfigure}%
-    ~ 
+    ~
         \begin{subfigure}{0.48\textwidth}
         \centering
         \includegraphics[width=\linewidth]{theory/figures/standardscalar_apca.png}
@@ -708,7 +708,7 @@ Weighted absolute percentage error (\ac{WAPE}) is the mean absolute error divide
 	\label{fig:PCA}
 \end{figure}
 %\subsection{Mutual Information**}
-%Ranking of features. 
+%Ranking of features.
 %This can be useful.
 %\subsection{Machine Learning $\cross$ batteries}
 \subsection{Earlier work}
