@@ -431,7 +431,7 @@ The anode is graphite, thus there is noe metallic $\ce{Li}$, which makes the Li-
 \pagebreak
 \section{Machine Learning}
 
-In this chapter we introduce and summarize machine learning and related concepts. The first section introduces the basic ideas behind machine learning and one of the best known examples will be presented. Secondly the concepts of supervised and unsupervised learning will be presented with a clarification regarding the difference between regression and classification problems, so that we can discuss where this work resides in the field of machine learning. The basics of methods utilized in this work will then be introduced, emphasizing Random Forest. Subsequently a short description of the validation methods used is given. These are; K-fold cross validation and how it is used in optimizing our Random Forest method, root mean square error(RMSE) and R-squared($R^2$).
+In this chapter we introduce and summarize Machine Learning and related concepts. The first section introduces the basic ideas behind Machine Learning and one of the best known examples will be presented. Secondly the concepts of supervised and unsupervised learning will be presented with a clarification regarding the difference between regression and classification problems, so that we can discuss where this work resides in the field of Machine Learning. The basics of methods utilized in this work will then be introduced, emphasizing Random Forest. Subsequently a short description of the validation methods used is given. These are; K-fold cross validation and how it is used in optimizing our Random Forest method, root mean square error(RMSE) and R-squared($R^2$).
    
 We conclude this section with a brief explanation on the role of data, how features can affect the effectiveness of a model, of the concepts of over- and under-fitting, and how these are related to the bias-variance-trade-off. 
 
@@ -441,16 +441,16 @@ We conclude this section with a brief explanation on the role of data, how featu
 
 \subsection{The Basics of Machine Learning}
 
-Machine learning comes from the field of pattern recognition and learning theory, and is defined as the field of study that gives computers the ability to learn without being explicitly programmed. Or more precise: "… A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with the experience E…"(\cite{mitchell1997machine}). At its core the ability to learn by detecting patterns in usually huge amounts of data that, more often then not, is impossible to perceive for a human. 
+Machine Learning comes from the field of pattern recognition and learning theory, and is defined as the field of study that gives computers the ability to learn without being explicitly programmed. Or more precise: "… A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with the experience E…"(\cite{mitchell1997machine}). At its core the ability to learn by detecting patterns in usually huge amounts of data that, more often then not, is impossible to perceive for a human. 
 
 
-	\subsubsection{The basics}\label{sec:introexample}
-	As an introduction on how machine learning was applied to learn and recognize patterns in our work, it will be useful to start with a simple example applied to the recognition of the handwritten number "5". 
+% 	\subsubsection{The basics}\label{sec:introexample}
+	As an introduction on how Machine Learning was applied to learn and recognize patterns in our work, it will be useful to start with a simple example applied to the recognition of the handwritten number "5". 
 	
 
 	How two people writes a single digit may vary to an extensive degree. It might seem to be a easy problem, but if the recognition is to be done manually million of times, it is no longer a trivial task for any human being. Therefore a model which can recognize these digits would be useful. A model that takes a picture of a digit as input and outputs that digit in a way that is recognizable for a machine, i.e. a digital format.
 	
-	Machine learning only works when you have data, preferably a large amount of data. For instance data from the MNIST test dataset \cite{lecun1998gradient}. This database contain $60,000$ images of handwritten numbers that is commonly used for both various training, and testing in the field of machine learning. The images all are 18x18 pixels. The data is divided into two sets, one training set: $X_{Train}$ and one test set: $X_{test}$. Some numbers from the MNIST database are shown in figure \ref{fig:MNIST}. 
+	Machine Learning only works when you have data, preferably a large amount of data. For instance data from the MNIST test dataset \cite{lecun1998gradient}. This database contain $60,000$ images of handwritten numbers that is commonly used for both various training, and testing in the field of Machine Learning. The images all are 18x18 pixels. The data is divided into two sets, one training set: $X_{Train}$ and one test set: $X_{test}$. Some numbers from the MNIST database are shown in figure \ref{fig:MNIST}. 
 	
 \begin{figure}[ht]
     \centering
@@ -464,7 +464,7 @@ Machine learning comes from the field of pattern recognition and learning theory
 	The \textit{training phase} is a process where the learning algorithm gets tweaked to best capture the correlating structure of the data set, so that it can better predict new data. As mentioned in the last paragraph the output from the \textit{training phase} is called a \textit{predictor}. The next step is to introduce the \textit{predictor} for new, unseen data, so that it can be classified. Then we compare the $y_{test}$ to our predicted value $y_{pred}$ given by $h$ to see if our model generalizes well to unseen data in $X_{test}$. 
 	
 	\subsubsection{Supervised and Unsupervised Learning }
-	One of the most basic separations in machine learning is the partition between supervised learning and unsupervised learning \cite{gentle2012handbook}.
+	One of the most basic separations in Machine Learning is the partition between supervised learning and unsupervised learning \cite{gentle2012handbook}.
 	
 	In the case of supervised learning, the answer to a problem is known and given to the computer. The computer then deduce its own logic to figure out how to get to that result, thus the name complete-date problem is commonly used. This is the most common type of learning. With unsupervised learning the machine is tasked with finding patterns and relationships in data sets without any prior knowledge of the system, incomplete-data problems. Some authors operate with a third and a forth category, namely reinforcement learning, where the machine learns by trial-and-error, and evolutionary learning, where they account for the biological evolution and that it can be seen as a learning process \cite{marsland2014machine}.
 		
@@ -484,7 +484,7 @@ Machine learning comes from the field of pattern recognition and learning theory
 	
 	A common problem in similar studies is that there are too many types of data that can be relevant, but that data is hard to find or represent in a way that makes sense for the machine. This can be because it requires too many measurements, or, something that is prevalent in this work, that they are in a variety of places and formats. For instance; if the measurements are already taken, but at vastly different temperatures they might be hard to compare or merge. It is important to have a \textit{clean} dataset, this means that the dataset does not have missing data, significant errors, and so on. On top of all of this, supervised learning requires a target $y$, which demands time and involvement of experts. 
 	
-	The specific input to a model is normally referred to as a feature, that is, numerical representation of raw data. The amount of features are of importance for the machine learning algorithm to successfully make a good prediction. If there are to few relevant features one can not make an accurate prediction due to the lack of necessary data. And if there are to many features, or many of the features are irrelevant to the task the model will be more expensive.
+	The specific input to a model is normally referred to as a feature, that is, numerical representation of raw data. The amount of features are of importance for the Machine Learning algorithm to successfully make a good prediction. If there are to few relevant features one can not make an accurate prediction due to the lack of necessary data. And if there are to many features, or many of the features are irrelevant to the task the model will be more expensive.
 	
 	The amount of information needed is extensive, and should be of high quality. A bigger dataset demands a higher cost, and predicting the amount of data required is a futile endeavor. Luckily Machine Learning is still less computationally costly than modeling full systems at a micro or nanoscale, which makes it interesting in the field of material science. 
 	
@@ -496,7 +496,7 @@ As the algorithm learns we need to make sure that it generalizes well to data no
 
 Our machine is bias if it generalizes too much. The error is due to low variability in our training data, or that it did not adapt to the training data appropriately. The machine misses the relevant relations in the data set between the features and the output. This effect leads to that which is commonly referred to as under-fitting, see left on figure \ref{fig:bias_var}. 
 
-Variance is the error that stems from high variability, and the degrees of variability in most machine learning algorithms is large \cite{marsland2014machine}. In simple terms, there is a low degree of generalization. It might be a perfect fit, but as soon as new data are introduced the predictions plummet. This is commonly referred to as over-fitting, see right on figure \ref{fig:bias_var}. 
+Variance is the error that stems from high variability, and the degrees of variability in most Machine Learning algorithms is large \cite{marsland2014machine}. In simple terms, there is a low degree of generalization. It might be a perfect fit, but as soon as new data are introduced the predictions plummet. This is commonly referred to as over-fitting, see right on figure \ref{fig:bias_var}. 
 
 \begin{figure}[h]
      \centering
@@ -511,7 +511,7 @@ A good way to understand the idea of the bias-variance tradeoff is, a more compl
 \subsection{Random Forest}
 
 \subsubsection{Ensemble learning}
-	There are many different machine learning algorithms, in this work we have focused on the \textit{ensemble method}; \textit{Random Forest} \cite{breiman2001random}. The idea of ensemble learning is that two heads are better than one, so why not have many learners that all get slightly different results on the same data, and then combine them, as shown in figure \ref{fig:ensemble_learning}.
+	There are many different Machine Learning algorithms, in this work we have focused on the \textit{ensemble method}; \textit{Random Forest} \cite{breiman2001random}. The idea of ensemble learning is that two heads are better than one, so why not have many learners that all get slightly different results on the same data, and then combine them, as shown in figure \ref{fig:ensemble_learning}.
 	
 \begin{figure}[h]
      \centering
@@ -520,7 +520,7 @@ A good way to understand the idea of the bias-variance tradeoff is, a more compl
      \label{fig:ensemble_learning}
 \end{figure}	
 
-Ensemble methods are particularly useful in machine learning when there is little data, as well as when there are to much data, this is heavily due to cross-validation, which will be explained later \ref{sec:cross_validation}). 
+Ensemble methods are particularly useful in Machine Learning when there is little data, as well as when there are to much data, this is heavily due to cross-validation, which will be explained later \ref{sec:cross_validation}). 
 
 \subsubsection{Decision tree}
 
@@ -570,9 +570,9 @@ Random Forest (\ac{RF}) is a ensemble learning method, the idea is that one deci
 A new parameter is then introduced, at each node a random subset of features are given to the tree, it can only make decisions based on that specific subset, and not the original tree. This increases the randomness in the creation of each tree, and it speeds up the learning process. The reason to add randomness to the algorithm is to reduce variance without effecting bias. It also removes the need for decision tree \textit{pruning}, i.e. reducing the complexity of decision tree by removing the parts of the tree that does not help the classifier and it reduces overfitting. The process of creating trees is repeated until the error stops decreasing. 
 
 When the forest is done, we use a majority vote system, which is a comparison of the mean response for regression. For a step by step algorithm, see the README.txt file on \href{https://github.com/sondrt/Machine-Learning-the-Voltage-Capacity-and-Energy-density-of-Electrode-Materials}{github}. 
-The reason for not using cross-validation in the learning algorithm, which is common in other machine learning methods \ref{sec:cross_validation}, is that our bootstrap method only uses about $65\%$ of the data, leaving $35\%$ on average which can give a estimated test error. 
+The reason for not using cross-validation in the learning algorithm, which is common in other Machine Learning methods \ref{sec:cross_validation}, is that our bootstrap method only uses about $65\%$ of the data, leaving $35\%$ on average which can give a estimated test error. 
 
-The main reason we decided to opt in for Random Forest is due to an article by \cite{fernandez2014we} and the findings from both our collaborators \cite{tsamardinos2020automated} and Shandiz and colleagues \cite{shandiz2016application}, that clearly state that Random Forest is the chosen machine learning algorithm when you want to test for correlations. Another reason and a main advantages of RF is that it is fast and does not require any particular optimization of its hyper-parameters (e.g. number of decision trees for RF). On the other hand, methods like support vector regression (SVR) require an extensive search for the optimum hyper-parameters before providing reasonable results.
+The main reason we decided to opt in for Random Forest is due to an article by \cite{fernandez2014we} and the findings from both our collaborators \cite{tsamardinos2020automated} and Shandiz and colleagues \cite{shandiz2016application}, that clearly state that Random Forest is the chosen Machine Learning algorithm when you want to test for correlations. Another reason and a main advantages of RF is that it is fast and does not require any particular optimization of its hyper-parameters (e.g. number of decision trees for RF). On the other hand, methods like support vector regression (SVR) require an extensive search for the optimum hyper-parameters before providing reasonable results.
 
 %\subsection{Support Vector Regression}
 %	Dette bør brukes og kan da skrives om.
@@ -720,7 +720,7 @@ An advanced material have an order of $10^{23}$ electrons that demands computati
 
 In the field of computational material design a subfield called 'high-throughput' (\ac{HT}) computational material science is on the rise \cite{potyrailo2011combinatorial} \cite{pang2020additive}. This area is based on computational quantum - mechanical - thermodynamic approaches, and a multitude of techniques both in database construction and in the field of intelligent data mining. The idea is simple; first construct a large enough database of accurate thermodynamic and electronic properties of existing and hypothesized materials. Secondly, use different algorithms and statistical models to intelligently analyze the data and find materials with desired properties. This method should continuously be validated by comparing the calculated values with real  (already known) materials, and later also on new hypothetical materials, to create a feedback loop to further improve the algorithm \cite{curtarolo2013high}. To simplify, a computational HT method consists of three tightly connected steps: Virtual material growth, rational material storage, and material characterizations and selection. This work is based on the second and third step, rational material storage and material characterization and selection, on intercalation type batteries.
 
-Several studies on batteries have applied machine learning and different degrees of HT, in particular to estimate their state of charge accurately and to improve their energy system management  \cite{kalawoun2015novel} \cite{chemali2018state} \cite{hu2015battery} \cite{ermon2013learning}.
+Several studies on batteries have applied Machine Learning and different degrees of HT, in particular to estimate their state of charge accurately and to improve their energy system management  \cite{kalawoun2015novel} \cite{chemali2018state} \cite{hu2015battery} \cite{ermon2013learning}.
 	In the direction of predicting battery properties only a handful of studies were found. Shandiz \textit{et al.} \cite{shandiz2016application} used classification methods to determine the crystal system of silicate cathodes. They found that the Random Forest classifier gave the highest accuracy of prediction, and that there is a strong correlation between the three major crystal system (monoclinic, orthorhombic and triclinic), and other features of cathodes. Their data was taken from the online database Materials project \cite{Jain2013} \cite{Zhou2004a} \cite{Adams2011a}.
 	Sendek and \textit{et al.} \cite{sendek2017holistic}, constructed a classification model using logistic regression to find possible solid state electrolytes for lithium-ion batteries. They concluded that simple atomistic descriptors alone, were not enough to obtain useful predictions. Instead, using a multi-descriptor model can yield good predictions.
 	Similar to this work Joshi \textit{et al.} \cite{joshi2019machine} employed ML techniques to predict electrode voltage for metal-ion batteries from the Materials Project database. Much like this thesis, their emphasis were on finding proper features vectors that could accurately represent the compounds.
