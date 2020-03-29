@@ -490,12 +490,12 @@ Machine Learning comes from the field of pattern recognition and learning theory
 	
 \subsection{Bias-variance tradeoff}\label{sec:Bias-variance tradeoff}
 
-As the algorithm learns we need to make sure that it generalizes well to data not in its training set. Obviously the algorithm can not generalize beyond the limits of the training data. Therefore it is important to minimize the two sources of errors known as \textit{bias} and \textit{variance}. This is know as the \textit{bias-variance trade off}. It is the property of trying to minimize the two errors simultaneously, and should not be confused with the \textit{irreducible error} of a model which is a result of the noise of the data. These three together are the terms used to analyze an algorithms expected \textit{generalization error}, which is a measurement of how accurately an algorithm is able to predict outcome vales for unseen data.    
+As the algorithm learns we need to ensure that it generalizes well to data outside its training set. Obviously the algorithm cannot generalize reliably beyond the limits of the training data. Therefore it is important to minimize the two sources of errors known as \textit{bias} and \textit{variance}. This is known as the \textit{bias-variance trade off}. It is the property of trying to minimize the two errors simultaneously, and should not be confused with the \textit{irreducible error} of a model which is a result of noise in the data. These three together are the terms used to analyze an algorithm's expected \textit{generalization error}, which is a measurement of how accurately an algorithm is able to predict outcome vales for unseen data.
 
 
-Our machine is bias if it generalizes too much. The error is due to low variability in our training data, or that it did not adapt to the training data appropriately. The machine misses the relevant relations in the data set between the features and the output. This effect leads to that which is commonly referred to as under-fitting, see left on figure \ref{fig:bias_var}. 
+Our machine is biased if it generalizes too much. The error is due to low variability in our training data, or that it did not adapt to the training data properly. The machine misses the relevant relations in the data set between the features and the output. This effect leads to that which is commonly referred to as under-fitting, see left on figure \ref{fig:bias_var}.
 
-Variance is the error that stems from high variability, and the degrees of variability in most Machine Learning algorithms is large \cite{marsland2014machine}. In simple terms, there is a low degree of generalization. It might be a perfect fit, but as soon as new data are introduced the predictions plummet. This is commonly referred to as over-fitting, see right on figure \ref{fig:bias_var}. 
+Variance is the error that stems from high variability, and the degrees of variability in most Machine Learning algorithms is large \cite{marsland2014machine}. In simple terms, there is a low degree of generalization. It might be a perfect fit but as soon as new data is introduced the predictions plummet. This is commonly referred to as over-fitting, see right on figure \ref{fig:bias_var}.
 
 \begin{figure}[h]
      \centering
@@ -504,7 +504,7 @@ Variance is the error that stems from high variability, and the degrees of varia
      \label{fig:bias_var}
 \end{figure}
 
-A good way to understand the idea of the bias-variance tradeoff is, a more complex model with an increased number of features is not necessarily better at predicting what you want to predict. 
+A good way to understand the idea of the bias-variance tradeoff is: a more complex model with an increased number of features is not necessarily better at predicting what you want to predict.
 
 
 \subsection{Random Forest}
