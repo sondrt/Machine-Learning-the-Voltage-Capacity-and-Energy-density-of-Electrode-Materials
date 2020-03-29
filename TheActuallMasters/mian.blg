@@ -1,0 +1,5 @@
+[0] Config.pm:304> INFO - This is Biber 2.12
+[0] Config.pm:307> INFO - Logfile is 'mian.blg'
+[37] biber-darwin:315> INFO - === Fri Mar 27, 2020, 22:01:25
+[188] Utils.pm:209> ERROR - Cannot find control file 'mian.bcf'! - Did latex run successfully on your .tex file before you ran biber?
+[189] Biber.pm:114> INFO - ERRORS: 1

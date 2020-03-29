@@ -34,7 +34,7 @@ lists = {key:[] for key in ['xlist','ylist','wlist','error1','error2']  }
 l1 = [100]#[10,25,50,100,250,500,1000]
 l2 = [0.05,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1]
 l2plot = False
-l_plot   = True
+l_plot   = False
 scatter_pca_plot = False
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
@@ -44,8 +44,8 @@ for j in l1:
    train_size = [0.95]
    n_estimators = j   #j   Number of estimators
    print(n_estimators)
-
    infile   = 'for_ML.csv'
+
    for i in range(1):
 
       # print ('working on file: %s'%(infile))
@@ -241,6 +241,7 @@ if l2plot:
    ax.errorbar(l1,lists['ylist'], lists['error1'], color = 'red',marker = 'o')
    ax.set_xlabel('# of estimators')
    ax.set_ylabel('R2-CVM',color='red',fontsize=14)
+   # ax.set_ylim(0.5,0.8)
    ax2 = ax.twinx()
    ax2.errorbar(l1,lists['wlist'], lists['error2'], color = 'blue', marker = 'o')
    ax2.set_ylabel('WAPE', color='blue',fontsize=14)

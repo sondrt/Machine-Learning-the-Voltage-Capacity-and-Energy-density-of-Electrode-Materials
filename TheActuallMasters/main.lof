@@ -1,0 +1,31 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {english}{}
+\ttl@tocsep 
+\ttl@tocsep 
+\ttl@tocsep 
+\ttl@tocsep 
+\contentsline {figure}{\numberline {1}{\ignorespaces A voltaic pile, the first battery \cite {decker2005volta}\relax }}{11}{figure.caption.1}% 
+\contentsline {figure}{\numberline {2}{\ignorespaces format=plain}}{12}{figure.caption.2}% 
+\contentsline {figure}{\numberline {3}{\ignorespaces The two-dimensional structure of $\ce {TiS_2}$. From a slight angle along the b-axis. The titanium in \leavevmode {\color {gray}grey}, sulfur, in \leavevmode {\color {yellow}\textbf {yellow}}. Lithium-ions would intercalate into the space between the $\ce {TiS_2}$ layers \cite {materialsproject:TiS2}.\relax }}{14}{figure.caption.3}% 
+\contentsline {figure}{\numberline {4}{\ignorespaces Schematic illustration of the first Li-ion battery $\ce {LiCoO_2/Li^+}$ electrolyte/graphite \cite {goodenough2013li}.\relax }}{15}{figure.caption.4}% 
+\contentsline {figure}{\numberline {5}{\ignorespaces Crystal structures of the layers in a) $\ce {LiCoO_2}, $ \cite {wiki:LiCoO2} b) the 3-dimensional channels in $\ce {LiMn_2O_4}$ \cite {zhang2013understanding}, c) and the 2-dimensional channels in $\ce {LiFePO_4}$ \cite {materialsproject:LiFePO4} are illustrated.\relax }}{16}{figure.caption.5}% 
+\contentsline {figure}{\numberline {6}{\ignorespaces Number from the MNIST database \cite {MNIST}\relax }}{30}{figure.caption.6}% 
+\contentsline {figure}{\numberline {7}{\ignorespaces Simplified illustration showing the concepts of bias-variance problem. Left to right; high bias, low bias and low variance, high variance \ref {fig:bias_var}\relax }}{34}{figure.caption.7}% 
+\contentsline {figure}{\numberline {8}{\ignorespaces Combining different classifiers trained on the same data, which in combination can make a much better decision boundary on the target data. Adopted from \cite {marsland2014machine}\relax }}{35}{figure.caption.8}% 
+\contentsline {figure}{\numberline {9}{\ignorespaces A simple example of a decision tree for playing tennis. Root in red, leaf node in blue.\relax }}{36}{figure.caption.9}% 
+\contentsline {figure}{\numberline {10}{\ignorespaces A representation of how cross-validation is done. First the data is split into $K$ number of sets, then one of these sets are left out as test data. The model trains on the training data before being tested on the test data. This process is repeated $K$ times, and the mean is taken \cite {fig:cross_validation}.\relax }}{43}{figure.caption.10}% 
+\contentsline {figure}{\numberline {11}{\ignorespaces Two scatter plots; On the left, some of our data from the Mg-ion database before PCA. On the right, our data after PCA, showing that there are distinguishable classes.\relax }}{44}{figure.caption.11}% 
+\ttl@tocsep 
+\ttl@tocsep 
+\contentsline {figure}{\numberline {12}{\ignorespaces a)-e) are the distribution of the targets Average Voltage, Gravimetric Capacity, Volumetric Capacity, Specific Energy and Energy Density, for the Mg-ion database. The x-axis are the target values and the y-axis are the number of appearances for that range of target values.\relax }}{57}{figure.caption.12}% 
+\contentsline {figure}{\numberline {13}{\ignorespaces a)-e) are the distribution of the targets: Average Voltage, Gravimetric Capacity, Volumetric Capacity, Specific Energy and Energy Density, for the Li-ion database. The x-axis are the target values and the y-axis are the number of appearances for that range of target values.\relax }}{58}{figure.caption.13}% 
+\contentsline {figure}{\numberline {14}{\ignorespaces The number of estimators used plottet vs. $R^2-CVM$ and WAPE. The predictions are done with the same combination of features as in table \ref {tab:Li-vnd-msp-vf-stability}, with Average Voltage as the target.\relax }}{59}{figure.caption.14}% 
+\contentsline {figure}{\numberline {15}{\ignorespaces Indicates the impact of the size of the database. Percentage of the database is plottet vs. $R^2-CVM$ and WAPE. The predictions are done with the same combination of features as in table \ref {tab:Li-vnd-msp-vf-stability}, with Average Voltage as the target.\relax }}{60}{figure.caption.15}% 
+\contentsline {figure}{\numberline {16}{\ignorespaces Principal component analysis for the feature vectors leads to a reduction of: a) $40.2\%$ of the dimensionality, removing $29$ features from the $72$ predictions applied to the Mg-ion database. And b) $56.0\%$ of the dimensionality, removing $70$ of the $124$ features form the prediction applied to the Li-ion database.\relax }}{60}{figure.caption.16}% 
+\contentsline {figure}{\numberline {17}{\ignorespaces These are the distributions of the $8$ material specific properties that account for the most variance, for both the \leavevmode {\color {green}charged} and \leavevmode {\color {red}discharged} material for the Mg-ion database. The x-axis are the feature values and the y-axis are the number of appearances for that range of feature values.\relax }}{62}{figure.caption.17}% 
+\contentsline {figure}{\numberline {18}{\ignorespaces Distribution of the void fraction predictors, geometric volume and helium volume, as calculated by Poreblazer for the Mg-ion db. \leavevmode {\color {teal}Charged} features in green and \leavevmode {\color {red}discharged} features in red\relax }}{68}{figure.caption.26}% 
+\contentsline {figure}{\numberline {19}{\ignorespaces Distribution of the void fraction predictors, geometric volume and helium volume, as calculated by Poreblazer for the Li-ion db.\relax }}{69}{figure.caption.27}% 
+\contentsline {figure}{\numberline {20}{\ignorespaces Mg\relax }}{74}{figure.caption.35}% 
+\contentsline {figure}{\numberline {21}{\ignorespaces Li\relax }}{75}{figure.caption.36}% 
+\contentsline {figure}{\numberline {22}{\ignorespaces Li\relax }}{77}{figure.caption.39}% 
+\ttl@tocsep 

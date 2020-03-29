@@ -48,12 +48,12 @@ def readandplotaprdf():
     plot = True
     show = False
     sample = False #only change a few samples: set maxcount.
-    maxcount = 2
+    maxcount = 10
 
     count = 0
     for file in files:
 
-        if fnmatch.fnmatch(file,'m*.aprdf'):
+        if fnmatch.fnmatch(file,'m*_B25.aprdf'):
             df = read_aprdf(file)
             R = df['radius']
             elneg = df['elneg']
@@ -62,24 +62,27 @@ def readandplotaprdf():
 
             if plot is True:
                 plt.title(file)
-                plt.plot(elneg)
-                plt.plot(vdw)
-                plt.plot(polar)
+                plt.plot(elneg, label='elngeg')
+                plt.plot(vdw,label='vdw')
+                plt.plot(polar,label='polar')
                 plt.xlabel('radius')
                 plt.xlim(2,15)
-                plt.ylim(0,2)
+                plt.ylim(0,1)
                 # plt.yticks([])
-
+                legend = plt.legend(loc='upper right',shadow=True, fontsize='medium')
+                legend.get_frame()
+                plt.tight_layout()
                 if show is True:
                     plt.show()
 
                 date_nameoffig= d1 + file.replace('.aprdf','.jpg')
                 location_date_nameoffig = 'aprdf_result_plots/' + date_nameoffig
+
         #        print('Name of fig: ', nameoffig)
                 plt.savefig(location_date_nameoffig, dpi=None, facecolor='w', edgecolor='w',
                     orientation='portrait', papertype=None, format=None,
                     transparent=False, bbox_inches=None, pad_inches=0.1,
-                    frameon=None, metadata=None)
+                    metadata=None)
                 plt.clf()
             if sample is True:
                 print("round: ", count)
@@ -97,6 +100,7 @@ def writer():
     sample = False #only change a few samples: set maxcount.
     maxcount = 3
     count = 0
+    selectfiles = 0
     for file in files:
         if fnmatch.fnmatch(file,'m*.aprdf'):
             print(file)

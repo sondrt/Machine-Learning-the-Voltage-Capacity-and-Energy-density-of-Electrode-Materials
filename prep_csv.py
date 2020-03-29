@@ -17,11 +17,11 @@ T = True
 F = False
 
 def main():
-    csv = 'Li_allFiles.csv'    #'newapproch_aprdf.csv' #Li_allFiles.csv #'battery_data_after_aprdf_merge.csv' , "allFiles.csv"
+    csv = 'aprdf2.csv'    #'newapproch_aprdf.csv' #Li_allFiles.csv #'battery_data_after_aprdf_merge.csv' , "allFiles.csv"
     outcsv = 'for_ML.csv'
     print('File: ', csv)
 
-    Target              = 'E Density Wh/l'
+    Target              = 'Average_Voltage'
 # Targets: Average_Voltage, Capacity_Grav, Capacity_Vol, Specific_E_Wh/kg, E Density Wh/l
 
 
@@ -40,15 +40,14 @@ def main():
     
     # 'Average_Voltage',
     
-    # 'Capacity_Grav',
-    # 'Capacity_Vol',
+    'Capacity_Grav',
+    'Capacity_Vol',
     
-    # 'Specific_E_Wh/kg',
-    # 'E Density Wh/l',
+    'Specific_E_Wh/kg',
+    'E Density Wh/l',
     
     'Stability Discharge',                                    
     'Stability Charge',                                       
-
 
     'energy',
     'energy_dis',
@@ -75,10 +74,10 @@ def main():
     'elasticity_dis',
 
 
-    # 'helvol',                                                 
-    # 'geomvol',
-    # 'helvol_dis',
-    # 'geomvol_dis',
+    'helvol',                                                 
+    'geomvol',
+    'helvol_dis',
+    'geomvol_dis',
 
 
 #operational with right csv
@@ -123,50 +122,91 @@ def main():
     
     if APRDF:
         for ii in [
-    'elneg_r2.0','elnegdis_r2.0','elneg_r2.25','elnegdis_r2.25','elneg_r2.5','elnegdis_r2.5','elneg_r2.75','elnegdis_r2.75',
-    'elneg_r3.0','elnegdis_r3.0','elneg_r3.25','elnegdis_r3.25','elneg_r3.5','elnegdis_r3.5','elneg_r3.75','elnegdis_r3.75',
-    'elneg_r4.0','elnegdis_r4.0','elneg_r4.25','elnegdis_r4.25','elneg_r4.5','elnegdis_r4.5','elneg_r4.75','elnegdis_r4.75',
-    'elneg_r5.0','elnegdis_r5.0','elneg_r5.25','elnegdis_r5.25','elneg_r5.5','elnegdis_r5.5','elneg_r5.75','elnegdis_r5.75',
-    'elneg_r6.0','elnegdis_r6.0','elneg_r6.25','elnegdis_r6.25','elneg_r6.5','elnegdis_r6.5','elneg_r6.75','elnegdis_r6.75',
-    'elneg_r7.0','elnegdis_r7.0','elneg_r7.25','elnegdis_r7.25','elneg_r7.5','elnegdis_r7.5','elneg_r7.75','elnegdis_r7.75',
-    'elneg_r8.0','elnegdis_r8.0','elneg_r8.25','elnegdis_r8.25','elneg_r8.5','elnegdis_r8.5','elneg_r8.75','elnegdis_r8.75',
-    'elneg_r9.0','elnegdis_r9.0','elneg_r9.25','elnegdis_r9.25','elneg_r9.5','elnegdis_r9.5','elneg_r9.75','elnegdis_r9.75',
-    'elneg_r10.0','elnegdis_r10.0','elneg_r10.25','elnegdis_r10.25','elneg_r10.5','elnegdis_r10.5','elneg_r10.75','elnegdis_r10.75',
-    'elneg_r11.0','elnegdis_r11.0','elneg_r11.25','elnegdis_r11.25','elneg_r11.5','elnegdis_r11.5','elneg_r11.75','elnegdis_r11.75',
-    'elneg_r12.0','elnegdis_r12.0','elneg_r12.25','elnegdis_r12.25','elneg_r12.5','elnegdis_r12.5','elneg_r12.75','elnegdis_r12.75',
-    'elneg_r13.0','elnegdis_r13.0','elneg_r13.25','elnegdis_r13.25','elneg_r13.5','elnegdis_r13.5','elneg_r13.75','elnegdis_r13.75',
-    'elneg_r14.0','elnegdis_r14.0','elneg_r14.25','elnegdis_r14.25','elneg_r14.5','elnegdis_r14.5','elneg_r14.75','elnegdis_r14.75',
-    'elneg_r15.0','elnegdis_r15.0',
+    # 'elneg_r2.0','elneg_r2.25','elneg_r2.5','elneg_r2.75',
+    # 'elneg_r3.0','elneg_r3.25','elneg_r3.5','elneg_r3.75',
+    # 'elneg_r4.0','elneg_r4.25','elneg_r4.5','elneg_r4.75',
+    # 'elneg_r5.0','elneg_r5.25','elneg_r5.5','elneg_r5.75',
+    # 'elneg_r6.0','elneg_r6.25','elneg_r6.5','elneg_r6.75',
+    # 'elneg_r7.0','elneg_r7.25','elneg_r7.5','elneg_r7.75',
+    # 'elneg_r8.0','elneg_r8.25','elneg_r8.5','elneg_r8.75',
+    # 'elneg_r9.0','elneg_r9.25','elneg_r9.5','elneg_r9.75',
+    # 'elneg_r10.0','elneg_r10.25','elneg_r10.5','elneg_r10.75',
+    # 'elneg_r11.0','elneg_r11.25','elneg_r11.5','elneg_r11.75',
+    # 'elneg_r12.0','elneg_r12.25','elneg_r12.5','elneg_r12.75',
+    # 'elneg_r13.0','elneg_r13.25','elneg_r13.5','elneg_r13.75',
+    # 'elneg_r14.0','elneg_r14.25','elneg_r14.5','elneg_r14.75',
+    # 'elneg_r15.0',
 
-        'vdw_r2.0','vdwdis_r2.0','vdw_r2.25','vdwdis_r2.25','vdw_r2.5','vdwdis_r2.5','vdw_r2.75','vdwdis_r2.75',
-    'vdw_r3.0','vdwdis_r3.0','vdw_r3.25','vdwdis_r3.25','vdw_r3.5','vdwdis_r3.5','vdw_r3.75','vdwdis_r3.75',
-    'vdw_r4.0','vdwdis_r4.0','vdw_r4.25','vdwdis_r4.25','vdw_r4.5','vdwdis_r4.5','vdw_r4.75','vdwdis_r4.75',
-    'vdw_r5.0','vdwdis_r5.0','vdw_r5.25','vdwdis_r5.25','vdw_r5.5','vdwdis_r5.5','vdw_r5.75','vdwdis_r5.75',
-    'vdw_r6.0','vdwdis_r6.0','vdw_r6.25','vdwdis_r6.25','vdw_r6.5','vdwdis_r6.5','vdw_r6.75','vdwdis_r6.75',
-    'vdw_r7.0','vdwdis_r7.0','vdw_r7.25','vdwdis_r7.25','vdw_r7.5','vdwdis_r7.5','vdw_r7.75','vdwdis_r7.75',
-    'vdw_r8.0','vdwdis_r8.0','vdw_r8.25','vdwdis_r8.25','vdw_r8.5','vdwdis_r8.5','vdw_r8.75','vdwdis_r8.75',
-    'vdw_r9.0','vdwdis_r9.0','vdw_r9.25','vdwdis_r9.25','vdw_r9.5','vdwdis_r9.5','vdw_r9.75','vdwdis_r9.75',
-    'vdw_r10.0','vdwdis_r10.0','vdw_r10.25','vdwdis_r10.25','vdw_r10.5','vdwdis_r10.5','vdw_r10.75','vdwdis_r10.75',
-    'vdw_r11.0','vdwdis_r11.0','vdw_r11.25','vdwdis_r11.25','vdw_r11.5','vdwdis_r11.5','vdw_r11.75','vdwdis_r11.75',
-    'vdw_r12.0','vdwdis_r12.0','vdw_r12.25','vdwdis_r12.25','vdw_r12.5','vdwdis_r12.5','vdw_r12.75','vdwdis_r12.75',
-    'vdw_r13.0','vdwdis_r13.0','vdw_r13.25','vdwdis_r13.25','vdw_r13.5','vdwdis_r13.5','vdw_r13.75','vdwdis_r13.75',
-    'vdw_r14.0','vdwdis_r14.0','vdw_r14.25','vdwdis_r14.25','vdw_r14.5','vdwdis_r14.5','vdw_r14.75','vdwdis_r14.75',
-    'vdw_r15.0','vdwdis_r15.0',
+    'elnegdis_r2.0','elnegdis_r2.25','elnegdis_r2.5','elnegdis_r2.75',
+    'elnegdis_r3.0','elnegdis_r3.25','elnegdis_r3.5','elnegdis_r3.75',
+    'elnegdis_r4.0','elnegdis_r4.25','elnegdis_r4.5','elnegdis_r4.75',
+    'elnegdis_r5.0','elnegdis_r5.25','elnegdis_r5.5','elnegdis_r5.75',
+    'elnegdis_r6.0','elnegdis_r6.25','elnegdis_r6.5','elnegdis_r6.75',
+    'elnegdis_r7.0','elnegdis_r7.25','elnegdis_r7.5','elnegdis_r7.75',
+    'elnegdis_r8.0','elnegdis_r8.25','elnegdis_r8.5','elnegdis_r8.75',
+    'elnegdis_r9.0','elnegdis_r9.25','elnegdis_r9.5','elnegdis_r9.75',
+    'elnegdis_r10.0','elnegdis_r10.25','elnegdis_r10.5','elnegdis_r10.75',
+    'elnegdis_r11.0','elnegdis_r11.25','elnegdis_r11.5','elnegdis_r11.75',
+    'elnegdis_r12.0','elnegdis_r12.25','elnegdis_r12.5','elnegdis_r12.75',
+    'elnegdis_r13.0','elnegdis_r13.25','elnegdis_r13.5','elnegdis_r13.75',
+    'elnegdis_r14.0','elnegdis_r14.25','elnegdis_r14.5','elnegdis_r14.75',
+    'elnegdis_r15.0',
 
-        'polar_r2.0','polardis_r2.0','polar_r2.25','polardis_r2.25','polar_r2.5','polardis_r2.5','polar_r2.75','polardis_r2.75',
-    'polar_r3.0','polardis_r3.0','polar_r3.25','polardis_r3.25','polar_r3.5','polardis_r3.5','polar_r3.75','polardis_r3.75',
-    'polar_r4.0','polardis_r4.0','polar_r4.25','polardis_r4.25','polar_r4.5','polardis_r4.5','polar_r4.75','polardis_r4.75',
-    'polar_r5.0','polardis_r5.0','polar_r5.25','polardis_r5.25','polar_r5.5','polardis_r5.5','polar_r5.75','polardis_r5.75',
-    'polar_r6.0','polardis_r6.0','polar_r6.25','polardis_r6.25','polar_r6.5','polardis_r6.5','polar_r6.75','polardis_r6.75',
-    'polar_r7.0','polardis_r7.0','polar_r7.25','polardis_r7.25','polar_r7.5','polardis_r7.5','polar_r7.75','polardis_r7.75',
-    'polar_r8.0','polardis_r8.0','polar_r8.25','polardis_r8.25','polar_r8.5','polardis_r8.5','polar_r8.75','polardis_r8.75',
-    'polar_r9.0','polardis_r9.0','polar_r9.25','polardis_r9.25','polar_r9.5','polardis_r9.5','polar_r9.75','polardis_r9.75',
-    'polar_r10.0','polardis_r10.0','polar_r10.25','polardis_r10.25','polar_r10.5','polardis_r10.5','polar_r10.75','polardis_r10.75',
-    'polar_r11.0','polardis_r11.0','polar_r11.25','polardis_r11.25','polar_r11.5','polardis_r11.5','polar_r11.75','polardis_r11.75',
-    'polar_r12.0','polardis_r12.0','polar_r12.25','polardis_r12.25','polar_r12.5','polardis_r12.5','polar_r12.75','polardis_r12.75',
-    'polar_r13.0','polardis_r13.0','polar_r13.25','polardis_r13.25','polar_r13.5','polardis_r13.5','polar_r13.75','polardis_r13.75',
-    'polar_r14.0','polardis_r14.0','polar_r14.25','polardis_r14.25','polar_r14.5','polardis_r14.5','polar_r14.75','polardis_r14.75',
-    'polar_r15.0','polardis_r15.0'
+    #     'vdw_r2.0','vdw_r2.25','vdw_r2.5','vdw_r2.75',
+    # 'vdw_r3.0','vdw_r3.25','vdw_r3.5','vdw_r3.75',
+    # 'vdw_r4.0','vdw_r4.25','vdw_r4.5','vdw_r4.75',
+    # 'vdw_r5.0','vdw_r5.25','vdw_r5.5','vdw_r5.75',
+    # 'vdw_r6.0','vdw_r6.25','vdw_r6.5','vdw_r6.75',
+    # 'vdw_r7.0','vdw_r7.25','vdw_r7.5','vdw_r7.75',
+    # 'vdw_r8.0','vdw_r8.25','vdw_r8.5','vdw_r8.75',
+    # 'vdw_r9.0','vdw_r9.25','vdw_r9.5','vdw_r9.75',
+    # 'vdw_r10.0','vdw_r10.25','vdw_r10.5','vdw_r10.75',
+    # 'vdw_r11.0','vdw_r11.25','vdw_r11.5','vdw_r11.75',
+    # 'vdw_r12.0','vdw_r12.25','vdw_r12.5','vdw_r12.75',
+    # 'vdw_r13.0','vdw_r13.25','vdw_r13.5','vdw_r13.75',
+    # 'vdw_r14.0','vdw_r14.25','vdw_r14.5','vdw_r14.75',
+    # 'vdw_r15.0',
+
+'vdwdis_r2.0','vdwdis_r2.25','vdwdis_r2.5','vdwdis_r2.75','vdwdis_r3.0',
+'vdwdis_r3.25','vdwdis_r3.5','vdwdis_r3.75','vdwdis_r4.0','vdwdis_r4.25',
+'vdwdis_r4.5','vdwdis_r4.75','vdwdis_r5.0','vdwdis_r5.25','vdwdis_r5.5',
+'vdwdis_r5.75','vdwdis_r6.0','vdwdis_r6.25','vdwdis_r6.5','vdwdis_r6.75',
+'vdwdis_r7.0','vdwdis_r7.25','vdwdis_r7.5','vdwdis_r7.75','vdwdis_r8.0',
+'vdwdis_r8.25','vdwdis_r8.5','vdwdis_r8.75','vdwdis_r9.0','vdwdis_r9.25',
+'vdwdis_r9.5','vdwdis_r9.75','vdwdis_r10.0','vdwdis_r10.25','vdwdis_r10.5',
+'vdwdis_r10.75','vdwdis_r11.0','vdwdis_r11.25','vdwdis_r11.5','vdwdis_r11.75',
+'vdwdis_r12.0','vdwdis_r12.25','vdwdis_r12.5','vdwdis_r12.75','vdwdis_r13.0',
+'vdwdis_r13.25','vdwdis_r13.5','vdwdis_r13.75','vdwdis_r14.0','vdwdis_r14.25',
+'vdwdis_r14.5','vdwdis_r14.75','vdwdis_r15.0',
+
+    #     'polar_r2.0','polar_r2.25','polar_r2.5','polar_r2.75',
+    # 'polar_r3.0','polar_r3.25','polar_r3.5','polar_r3.75',
+    # 'polar_r4.0','polar_r4.25','polar_r4.5','polar_r4.75',
+    # 'polar_r5.0','polar_r5.25','polar_r5.5','polar_r5.75',
+    # 'polar_r6.0','polar_r6.25','polar_r6.5','polar_r6.75',
+    # 'polar_r7.0','polar_r7.25','polar_r7.5','polar_r7.75',
+    # 'polar_r8.0','polar_r8.25','polar_r8.5','polar_r8.75',
+    # 'polar_r9.0','polar_r9.25','polar_r9.5','polar_r9.75',
+    # 'polar_r10.0','polar_r10.25',','polar_r10.5','polar_r10.75',',
+    # 'polar_r11.0','polar_r11.25',','polar_r11.5','polar_r11.75',',
+    # 'polar_r12.0','polar_r12.25',','polar_r12.5','polar_r12.75',',
+    # 'polar_r13.0','polar_r13.25',','polar_r13.5','polar_r13.75',',
+    # 'polar_r14.0','polar_r14.25',','polar_r14.5','polar_r14.75',',
+    # 'polar_r15.0',
+'polardis_r2.0','polardis_r2.25','polardis_r2.5','polardis_r2.75',
+'polardis_r3.0','polardis_r3.25','polardis_r3.5','polardis_r3.75',
+'polardis_r4.0','polardis_r4.25','polardis_r4.5','polardis_r4.75',
+'polardis_r5.0','polardis_r5.25','polardis_r5.5','polardis_r5.75',
+'polardis_r6.0','polardis_r6.25','polardis_r6.5','polardis_r6.75',
+'polardis_r7.0','polardis_r7.25','polardis_r7.5','polardis_r7.75',
+'polardis_r8.0','polardis_r8.25','polardis_r8.5','polardis_r8.75',
+'polardis_r9.0','polardis_r9.25','polardis_r9.5','polardis_r9.75',
+'polardis_r10.0','polardis_r10.25','polardis_r10.5','polardis_r10.75',
+'polardis_r11.0','polardis_r11.25','polardis_r11.5','polardis_r11.75',
+'polardis_r12.0','polardis_r12.25','polardis_r12.5','polardis_r12.75',
+'polardis_r13.0','polardis_r13.25','polardis_r13.5','polardis_r13.75',
+'polardis_r14.0','polardis_r14.25','polardis_r14.5','polardis_r14.75',
+'polardis_r15.0',
 
 
     ]:
@@ -187,8 +227,8 @@ def main():
     'Rb_vol','Sc_vol','Pt_vol','Au_vol','Al_vol',
     'In_vol','Pd_vol','Rb_vol',
     'Sr_vol','Se_vol','Ge_vol','Zn_vol',
-    'Ta_vol', 'Tl_vol','Nd_vol',
-
+    # 'Ta_vol', 'Tl_vol','Nd_vol',
+#
 ]:
            list_of_predictors.append(ii)
     if l_discharged_atoms_Li:
@@ -205,7 +245,7 @@ def main():
 'Zn_vol_dis','Rb_vol_dis','Ca_vol_dis','Y_vol_dis','Re_vol_dis',
 'Ga_vol_dis','Cs_vol_dis','Pr_vol_dis','U_vol_dis',
 'Zr_vol_dis','Cl_vol_dis','Se_vol_dis',
-'Ta_vol_dis','Tl_vol_dis','Nd_vol_dis'
+# 'Ta_vol_dis','Tl_vol_dis','Nd_vol_dis'
 
     ]:
             list_of_predictors.append(ii)

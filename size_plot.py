@@ -4,35 +4,63 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-
-
-
+import seaborn as sns
 
 '''
-csv =  'for_ML.csv' #'Li_allFiles.csv'  #'newapproch_aprdf.csv
+color = 'red'
+titles = ['Mg Batteries','Li Batteries']
+
+targets =[ 'elnegdis_r2.0','elnegdis_r2.25','elnegdis_r2.5','elnegdis_r2.75',
+    'elnegdis_r3.0','elnegdis_r3.25','elnegdis_r3.5','elnegdis_r3.75',
+    'elnegdis_r4.0']
+abbr = ['AV','GC','VC','SE','ED']
+files = ['newapproch_aprdf.csv','Li_allFiles.csv',	'aprdf2.csv']
+csv = files[2]
 df = pd.read_csv(csv, sep=',', low_memory=False)    
 header = df.head()
-for col in df.columns:
-	print(col)
+for i in range(6):
+	sns.distplot(df[targets[i]], hist=True, kde=False, bins=10, color = color, hist_kws={'edgecolor':'black'})
+	plt.title(titles[1], fontsize=18)
+	plt.xlabel(targets[i], fontsize=14)
+	plt.ylabel('number of appearances', fontsize=14)
+	figname = 'Results/figures/columnsplotMg2_' + targets[i].replace(' ','_') +  '.pdf'
+	plt.savefig(figname,format = 'pdf',dpi = 100,bbox_inches='tight')
+	plt.show()
+	plt.close()
 
-ax = df.plot.bar(rot=0)
-ax.set_xlim(0,10)
+color = 'blue'
+titles = ['Mg Batteries','Li Batteries']
 
-plt.show()
-fig.savefig('Results/figures/columnsplotAV.pdf',format = 'pdf',dpi = 100,bbox_inches='tight')
-plt.close()
-
+targets =['Average_Voltage', 'Capacity_Grav', 'Capacity_Vol', 'Specific_E_Wh/kg', 'E Density Wh/l']
+abbr = ['AV','GC','VC','SE','ED']
+files = ['newapproch_aprdf.csv','Li_allFiles.csv']
+csv = files[0]
+df = pd.read_csv(csv, sep=',', low_memory=False)    
+header = df.head()
+for i in range(5):
+	sns.distplot(df[targets[i]], hist=True, kde=False, bins=10, color = color, hist_kws={'edgecolor':'black'})
+	plt.title(titles[0], fontsize=18)
+	plt.xlabel(abbr[i], fontsize=14)
+	plt.ylabel('number of appearances', fontsize=14)
+	figname = 'Results/figures/columnsplotMg_' + abbr[i] +  '.pdf'
+	plt.savefig(figname,format = 'pdf',dpi = 100,bbox_inches='tight')
+	# plt.show()
+	plt.close()
 '''
+
+
+
 #Li diff pred
+
 '''
-x_predictors = ['msp','msp+stab','msp + vnd','combo']
-AV 	= [0.5807576174506466,0.6382352521590721,0.6889475417554051, 0.7434585478459865,   ]
-GC 	= [0.42486507985539385,0.40973673978825065 , 0.6287597245517911,0.6392378928534125   ]
-VC 	= [0.46523200049569025, 0.47261421608939863, 0.7127950029643826,0.6889267179947649 ]
-SE 	= [0.444673400127916, 0.4334842121982636 ,0.6329753454633711, 0.6437486035928914 ]
-ED 	= [0.43023021580021564, 0.45534173933954647,0.6466194152371839, 0.6579819998670257 ]
+x_predictors = ['msp','msp+stab'			,'co+vnd'		,'co+vf'		,'co+AV'			, 'co+GCVC'		,'co+SEED']
+AV 	= [0.5807576174506466	,0.6382352521590721		,0.6889475417554051	,0.7434585478459865,0					, 0.7241229224122133, 0.7390134629839741	]	
+GC 	= [0.42486507985539385	,0.40973673978825065 	,0.6287597245517911	,0.6392378928534125,0.6057972768715484	, 0 	 			, 0.8606302267077546	]
+VC 	= [0.46523200049569025	,0.47261421608939863	,0.7127950029643826	,0.6889267179947649, 0.7126270639446217	, 0 				, 0.8753624146262561]
+SE 	= [0.444673400127916	,0.4334842121982636 	,0.6329753454633711	,0.6437486035928914, 0.6900349150430399	, 0.8458952696501991, 0	 ]
+ED 	= [0.43023021580021564	,0.45534173933954647	,0.6466194152371839	,0.6579819998670257, 0.721783961574168	, 0.8870882181162133, 0	]
 fig,ax=plt.subplots()
-ax.set_title('Unique predictors')
+ax.set_title('Combination of predictors and targets')
 # ax.label()
 # ax.errorbar(x,y,e1, color = 'red',marker = 'o')
 ax.plot(x_predictors,AV,'o',label='AV',marker = '*')
@@ -40,8 +68,9 @@ ax.plot(x_predictors,GC,'o',label='GC',marker = 'o')
 ax.plot(x_predictors,VC,'o',label = 'VC',marker = 'p')
 ax.plot(x_predictors,SE,'o',label = 'SE',marker = 'P')
 ax.plot(x_predictors,ED,'o',label = 'ED',marker = 'v' )
+ax.set_ylim(0.1,1)
 ax.legend()
-legend = ax.legend(loc='top left',shadow=True, fontsize='medium')
+legend = ax.legend(loc='lower right',shadow=True, fontsize='medium')
 
 
 legend.get_frame()
@@ -49,14 +78,14 @@ fig.tight_layout()
 
 plt.grid(False)
 plt.show()
-fig.savefig('Results/figures/combo3.pdf',format = 'pdf',dpi = 100,bbox_inches='tight')
+fig.savefig('Results/figures/comboofpred.pdf',format = 'pdf',dpi = 100,bbox_inches='tight')
 plt.close()
 
 
 
 
 
-
+'''
 '''
 #Mg
 
@@ -126,7 +155,7 @@ plt.close()
 
 
 
-
+'''
 
 
 

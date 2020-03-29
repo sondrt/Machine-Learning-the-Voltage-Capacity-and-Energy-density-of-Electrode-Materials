@@ -77,7 +77,7 @@ def pdb_to_aprdf():
     print("Calculating AP-RDF values.")
     for file in files:
         #print('This is file: ', file)
-        filein = file. replace(".pdb","")+ '.aprdf'
+        filein = file.replace(".pdb","")+ '_B10.aprdf'
         if fnmatch.fnmatch(file, "m*.pdb"):
             #Fix the parameters!
             cmd = "./ap-rdf.x -i " + file +" -bfac 10.0 -rmin 2.0 -rmax 15.0 -ngrid 53 -of " + filein
@@ -87,7 +87,7 @@ def pdb_to_aprdf():
 
 # getCIFfromcsvfile()
 # cif_to_pdb()
-# pdb_to_aprdf()
+pdb_to_aprdf()
 
 
 

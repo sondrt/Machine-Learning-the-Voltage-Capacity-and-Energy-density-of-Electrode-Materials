@@ -1,0 +1,127 @@
+\section{Introduction and Overview}
+%Introduce the task at hand.
+
+	This work focus in Machine Learning (\ac{ML}) applied in the field of batteries. Specifically, a new method is developed to predict chemical properties like voltage, capacity and energy density of chosen electrode materials.
+
+	In the introduction a general background for this work will be given. The chapter includes a motivation, the scope of the thesis and its structure. 
+ 
+
+\subsection{Motivation}
+%*) Why batteries are important (i.e. cell phones, cars). 
+
+The motivation for this work originates from the rapidly increasing demand for improved batteries, both for vehicular and stationary applications, with longer life, lower cost, and adequate energy storage options.
+
+%\myworries{elaborate more on predictive modeling ... }
+
+%Clarify what you want to cover. 
+%Write more about: PV, wind, solar -> storage.
+
+%"At what cost can one charge stationary secondary batteries with solar/wind power efficiently, and provide a centralized energy storage? For what shelf and cycle life? with how rapid a respons  a power outage or fluctuation in the grid. And with how large a capacity, at a competitive cost? " \myworries{where?}
+
+
+%Why batteries are important(Cars how many in how long? )
+Batteries are vastly complex and much efforts have been devoted to their development, in recent times \cite{blomgren2016development} \cite{hosaka2020research} \cite{cao2020batteries}, and even 3-D printed batteries are on the rise \cite{pang2020additive}. Yet, with all the efforts put in to electrochemical cells, there are still a never ending chase for batteries that can push the limits of their properties even further. The demand for better batteries are growing faster than ever. The global electric car fleet, for instance, is exceeding 5.1 million , almost doubling the number of new electric car registrations in the last year. According to the EV30@30 Scenario \cite{international2018global} the aim is to reach a $30\%$ market share for electric vehicles (\ac{EV}) in all models except two wheelers by 2030. This is because more than one quarter of global greenhouse gas emissions comes from this sector alone. The EV sales per year are then predicted to be more than 43 milion, and the stock numbering more than 250 milion. It is clear that millions of EVs will push the demands on the battery technology sector \cite{xiong2020overview}, with the market requiring high capacity and energy density batteries. 
+
+
+%*) What are the most important properties that todays batteries should improved (i.e. higher capacities, longer life times (durability) etc.)
+Some of the most desirable cell properties are; voltage, energy density, specific energy or capacity, flammability, available cell constructions, operating temperature range, shelf life or self discharge, low cost, and worldwide consumer distribution. Most of these properties are to an extent dictated by battery chemistry. Due to the complexity of the chemical processes involved, it is of high importance to be able to develop predictive modeling methods to search for better compositions and performance. In this work we will develop a method to predict; voltage, energy density, specific energy, and the physical stability of materials as electrodes.
+
+
+%*) What is a typical procedure for designing a new battery ( a general discussion from the experimental and theoretical point of view)
+%The idea behind the design of a battery is fairly simple, due to their similar procedure to create electricity. Two of the most important parts are the Anode and the Cathode. A cell produces electricity when placed into a medium that has conductive properties, namely the electrolyte.
+
+
+%*) Focus on the theoretical part. What theoretical techniques are used today for the design of new batteries (i.e. DFT calculations,  molecular dynamics simulations etc). Provide some references.
+
+Today some of the main methods for theoretical advances in battery science are density functional theory (\ac{DFT}), molecular dynamic (\ac{MD}) simulations and machine learning. In the field of computational materials science, a large amount of both theoretical and experimental data has been generated during the last couple of decades. This is due to the success of DFT, MD simulations and the increase in computational power. These methods combined with the high-throughput (\ac{HT}) approach have generated a lot of data and made it, in cooperation with big projects like the Materials Genome Initiative, easily available. DFT is a cornerstone for simulation procedure in material science \cite{schleder2019dft} \cite{pour2011structural} \cite{kirklin2013high}, while MD simulation is, among other things, know to be well suited to explore solid-state materials at the atomic level \cite{kaneko2003local} \cite{ammundsen1999lattice} \cite{islam2000atomistic} \cite{braithwaite2000computational}. 
+
+%*) Make clear if the theoretical results provide useful information during the whole process of building a new battery.
+
+
+%*) Start discussing that experimental and traditional theoretical approaches are expensive and computationally demanding. From that point on start introducing the need of new theoretical approaches
+
+The experimental and traditional approaches to improving battery technology come with a high cost and time-consuming procedures of synthesis. Different applications are usually locked to one type of material because of the investment associated with large-scale production. Changing material is thus rare, and can be considered a revolution. This is why the success of the initial material selected in one sector is crucial for that technology's lasting success. Many new inventions, with close following niches of technologies, demand the development of their own material set with properties tailored to that specific technology. Properties from compatibility to toxicity are essential and make the search for materials into a multi-dimensional problem \cite{curtarolo2013high}. 
+
+Traditional computational methods, like DFT and MD, come with a high computational cost compared with machine learning methods. ML uses past data to find relations and correlations in between the data. Based on them, the models (ML models) created can be used for prediction in new unknown materials. For a ML model to be accurate there are two requirements; a large set of data, often referred to as "big data", and that the model is given the right \textit{descriptors}, where descriptors can be though of as representations, a individual measurable property or characteristic, of a compound. Big data, in the form of material databases already exist, like Material Project (\ac{MP}) \cite{Jain2013}, AFLOWLIB consortium \cite{curtarolo2012aflowlib}, OQMD \cite{saal2013materials}, NOMAD \cite{draxl2018nomad}, and others \cite{schleder2019dft}.  \myworries{Ida?}
+
+The advantages of the ML approach are several - it is computational efficient - it only takes a few minutes/hours to build a model, and seconds to making predictions. One example of a ML approach towards  the search of novel materials are exemplified in Sendek et al., where their ML approach took $<1$ second per prediction, while their DFT approach took approximately four weeks per prediction, on solid Li-ion conducting materials \cite{sendek2018machine}. 
+
+Another advantage of a ML approach is that no mathematical or physical relation, and no laws of nature is needed for a good predictions. The ML model will find these relations, but for most of the models these relations are difficult to interpret. In principle, a ML algorithm can be given any information (input). If some of the information is irrelevant, then the ML algorithm will give zero weight to that information. However, if only one part of the relevant information is given to the ML algorithm, the model will not give good predictions.  
+
+There are a couple of challenges of using ML models, as mentioned, a need for big data and a sufficient amount of \textit{examples}. The accuracy of the said data is important, since without accurate data there are no accurate predictions. Descriptors need to be formulated in such a way that the ML model understands the input. Lastly, the choice of ML method is of importance, i.e. Random forest, Support Vector Regression (\ac{SVR}), neural networks, etc.  
+
+In real physical or chemical problems, the ML method can provide good estimations, but these are not exact predictions. There are several reason for this, i.e. small training examples, accuracy of the training data, not providing all relevant descriptors etc.  However, a good ML model can provide us with the most promising materials for a given application, or as a minimum, significantly reduce the number of material candidates that experimental studies should focus on. 
+
+\subsection{Scope of the thesis}
+This work aims to develop a methodology to predict selected battery properties accurately without the need of large scale simulations, or computer heavy calculations. Using state-of-the-art machine learning, and properties taken from the existing database Materials Project, we propose a set of predictors to discover the properties of new, not yet explored electrodes, or even new properties in already well known electrodes. The properties used as targets for our predictions are; average voltage, gravimetric and volumetric capacity, specific energy, energy density and the stability of the materials. More specifically, this work look at the theoretical values of the given targets, and not experimental values. 
+	
+	The main objective of this thesis is to acquire knowledge about which features (i.e. descriptors) should be included for electrode predictions of the given targets by investigating a range of possible inputs, their configurations and their effect on prediction accuracy. It examines both features found in the Material Project database, and uncommonly used features in literature. In our opinion, a general examination of possible features for electrodes are lacking in research. Knowledge of which features improve prediction accuracy is useful in several ways. Even though material data generation is done faster than ever before, data acquisition and formatting can be time consuming, especially if an abundance of data is used. It can therefore be of great value to know what type of data that should be prioritized, therefor, giving focus to the areas we know will improve our predictions. This saves time from gathering data and testing. Knowledge about which properties that are required can also expose, both, the effectiveness of less obvious features that can be overlooked by other developers of ML-models, and the need for not yet introduced characteristics. Reducing the number of features required will also reduce the complexity of the model, which saves energy and time. This work tries out different sets of features which should be considered when doing predictions on electrode materials.
+
+%*) Start describing what are the goals of the present work. Give first the battery properties that you consider more important (e.g. capacity). The goal of the work is more or less the following (expand it): can the use as ML descriptors (input) of elemental atomic properties (e.g. atomization energy), and compounds properties (e.g. geometrical features, AP_RDF) can provide reasonable predictions for your goals. 
+
+
+\subsubsection{Research Question} \label{sec:RQ}
+
+Specifically, this work seeks to answer the following questions: 
+
+\textbf{\ac{RQ}1:} Is there potential for the of use machine learning to improve the search for good battery materials?
+
+\textbf{RQ2:} What predictors are suited for such a task?
+
+\textbf{RQ3:} Does features overlap? What features should be removed from the feature space to achieve the most efficient training?
+
+\textbf{RQ4:} How does the size of the database affect the results?
+
+\textbf{RQ5:} Which ML method would be the most optimal for such a search?
+
+%\textbf{RQ6:} Does the features proposed function for other materials or are they limited to electrode materials 
+
+\subsubsection{Approach}
+
+RQ1 regards the need to establish a database that is comprehensive enough to be of value for the selected machine learning method, and it must have the relevant information needed to get good predictions.
+
+RQ2 concerns the choice of features examined in this work. They are inspired by a survey done on a similar project especially in the field of Metal Organic Framework (\ac{MOFS}) preformed by collaborators from the university of Crete \cite{fanourgakis2019robust} \cite{fanourgakis2020universal} and another research project done on MOFS by Fernandez et al.\cite{fernandez2013atomic}. Our choice of predictors were also, to a degree, dictated by the lack of more data, the difficulty of finding said data, and by the data we had. 
+
+Regarding what descriptors applied, first we used physical descriptors, such as geometrical properties(volume, number of sites, etc.) of the unit cell. This because it was greatly efficient in similar studies on MOFS, and it is straightforward. Other descriptors were needed, and the void fraction seemed like a good candidate due to the nature of intercalation type batteries, and that both a geometrical feature and computationally cheap to obtain. We still need a more chemical approach without doing large DFT type calculations, so we tried to make an atomic property weighted radial distribution function - approach, to include listed values like electronegativity, van der waals volume and magnetization. Before lastly, using the already known results, or targets, to make predictions on the other targets. That are more easily obtainable, with DFT, to account for the missing chemical intuition.
+
+RQ3 examines the evaluation of the features space and how to limit its size. To achieve the most effective training principal component analysis was applied, thus systematically removing the redundancy within features. This is statistical procedure that uses a orthogonal transformation on the data to make a set of linearly uncorrelated variables and rank these after variance. 
+
+RQ4 concerns the size of the database. All of the features were tested alone, and up against each other, both for a smaller database of Mg-ion intercalation batteries, and a bigger database of Li-ion intercalation batteries. The results of these two different databases might not be purely comparable, but due to the algorithm mainly using fundamental properties we will compare the results and look for trends as our database increases in size. 
+
+RQ5 is approached as follows: Which machine learning method is more likely to yield correlation in our data?
+
+\subsection{Structure of the thesis}
+In this section a short presentation of how this thesis is structured is given. 
+
+\noindent{\textbf{Part II: Foundation}}
+
+\noindent{\textbf{Chapter 2: Batteries}}
+
+	In this chapter a short history of batteries and their evolution are given, before going deeper into the state-of-the-art of Li ion batteries. An introduction to the theory of battery cells, their operation principles and design, is given. Before the battery properties of particular interest and their features related to this work, are presented. 
+
+\noindent{\textbf{Chapter 3: Machine Learning}}
+
+This chapter introduces the field of machine learning along with some key concepts. Challenges concerning the application of machine learning are also discussed. The subgroup of machine learning algorithms ensemble methods are introduced in the context of decision trees with a special emphasis on Random forest.The evaluation methods used in this work (e.g. root mean square error deviation, K-fold cross validation, etc.), as well as principle component analysis are presented. And Finally a introduction to state-of-the-art computational material design with an emphasis on electrodes and battery related works, are given. 
+
+
+\noindent{\textbf{Part III: Experimental method}}
+
+\noindent{\textbf{Chapter 4: Method}}
+
+This works relies on data from the materials project database. These datasets are introduced in this chapter, as well as the features we used for our analysis, and a brief touch on the preprocessing of the data. Lastly the experimental environment is explained with the prediction pipeline. 
+
+
+\noindent{\textbf{Part IV: Results and discussion }}
+
+\noindent{\textbf{Chapter 5: Results}}
+
+This chapter presents and discuss results for RQ1, RQ2, RQ3 and RQ4 with experiments performed for both databases and predictors on all targets. The first section of the chapter investigates the predictors one by one, and compare their results on the different databases. All the calculations are available on github (\url{https://github.com/sondrt/Creten_Stuff} \cite{github}).
+
+
+\noindent{\textbf{Part V: Summary}}
+
+\noindent{\textbf{Chapter 6: Conclusion and future work}}
+
+In this chapter the most important finding from this research are revisited and put into perspective. In addition, suggestions for future work are laid out.
+
+
