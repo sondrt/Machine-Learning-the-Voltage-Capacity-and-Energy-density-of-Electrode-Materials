@@ -47,13 +47,13 @@ def readandplotaprdf():
     
     plot = True
     show = False
-    sample = False #only change a few samples: set maxcount.
+    sample = True #only change a few samples: set maxcount.
     maxcount = 10
 
     count = 0
-    for file in files:
+    for file in ['mp-755429_B10000.aprdf']:#files:
 
-        if fnmatch.fnmatch(file,'m*_B25.aprdf'):
+        if fnmatch.fnmatch(file,'m*_B10000.aprdf'):
             df = read_aprdf(file)
             R = df['radius']
             elneg = df['elneg']
@@ -67,7 +67,7 @@ def readandplotaprdf():
                 plt.plot(polar,label='polar')
                 plt.xlabel('radius')
                 plt.xlim(2,15)
-                plt.ylim(0,1)
+                # plt.ylim(0,1)
                 # plt.yticks([])
                 legend = plt.legend(loc='upper right',shadow=True, fontsize='medium')
                 legend.get_frame()

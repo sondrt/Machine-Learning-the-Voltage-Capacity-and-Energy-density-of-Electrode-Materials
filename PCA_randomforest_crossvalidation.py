@@ -46,7 +46,7 @@ for j in l1:
    print(n_estimators)
    infile   = 'for_ML.csv'
 
-   for i in range(1):
+   for i in range(3):
 
       # print ('working on file: %s'%(infile))
       data     = pd.read_csv(infile, sep=',')
@@ -148,11 +148,12 @@ for j in l1:
       WAPE_train = MAE_train/Mean_train * 100
       stdev_train = np.std(y_train-pred_train)
 
+      print("MAE_train:", MAE_train)
 
 
       scores = cross_val_score(regr, X_train, y_train, cv=ncv) #only one CPU used
-      print('CROSS_VALIDATION: Accuracy: %0.4f (+/- %0.4f)\n\n' % (scores.mean(), scores.std() * 2))
-      print('scores=', scores)
+      # print('CROSS_VALIDATION: Accuracy: %0.4f (+/- %0.4f)\n\n' % (scores.mean(), scores.std() * 2))
+      # print('scores=', scores)
 
       ss = sorted(scores)
       SUM = 0
@@ -161,9 +162,9 @@ for j in l1:
          # print('ss[i+1]',ss[i+1])
          SUM += ss[i+1]
       mean = SUM/(len(scores)-2.)
-      print("mean: ",mean)
-      print(ss)
-      print("---------------------------------- ")
+      # print("mean: ",mean)
+      # print(ss)
+      # print("---------------------------------- ")
 
 
 
@@ -220,7 +221,8 @@ for j in l1:
 
       multi_run.append(mean)
       WAPE.append(WAPE_train)
-
+   
+   print("---------------------------------- ")
    print('\n', 'END DATA','\n')  
    print(multi_run)
    print('multirun: ',np.mean(multi_run),np.std(multi_run))

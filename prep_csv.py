@@ -21,15 +21,15 @@ def main():
     outcsv = 'for_ML.csv'
     print('File: ', csv)
 
-    Target              = 'Average_Voltage'
+    Target              = 'Capacity_Grav'
 # Targets: Average_Voltage, Capacity_Grav, Capacity_Vol, Specific_E_Wh/kg, E Density Wh/l
 
 
     l_charged_atoms     = F    #turns on fraction density predictor for charged material
     l_discharged_atoms  = F   #turns on fraction density predictor for discharged material
     APRDF = False
-    l_charged_atoms_Li     = T
-    l_discharged_atoms_Li  = T
+    l_charged_atoms_Li     = F
+    l_discharged_atoms_Li  = F
 
     list_of_predictors= ['Battid', 
     # 'Reduced_Cell_Formula',           # Not operational.
@@ -40,11 +40,11 @@ def main():
     
     # 'Average_Voltage',
     
-    'Capacity_Grav',
-    'Capacity_Vol',
+    # 'Capacity_Grav',
+    # 'Capacity_Vol',
     
-    'Specific_E_Wh/kg',
-    'E Density Wh/l',
+    # 'Specific_E_Wh/kg',
+    # 'E Density Wh/l',
     
     'Stability Discharge',                                    
     'Stability Charge',                                       
@@ -53,10 +53,7 @@ def main():
     'energy_dis',
 
     'energy_per_atom',
-    'energy_per_atom_dis',                                          #  1 
-
-    'volume',
-    'volume_dis',                                               
+    'energy_per_atom_dis',                                          #  1                       
 
     'band_gap',
     'band_gap_dis',                                                 #  1
@@ -73,11 +70,20 @@ def main():
     'elasticity',
     'elasticity_dis',
 
+    'volume',
+    'volume_dis', 
+
 
     'helvol',                                                 
     'geomvol',
     'helvol_dis',
     'geomvol_dis',
+
+    'vf_geomvol',
+    'vf_geomvol_dis',
+    'vf_helvol',
+    'vf_helvol_dis',
+
 
 
 #operational with right csv
@@ -122,20 +128,20 @@ def main():
     
     if APRDF:
         for ii in [
-    # 'elneg_r2.0','elneg_r2.25','elneg_r2.5','elneg_r2.75',
-    # 'elneg_r3.0','elneg_r3.25','elneg_r3.5','elneg_r3.75',
-    # 'elneg_r4.0','elneg_r4.25','elneg_r4.5','elneg_r4.75',
-    # 'elneg_r5.0','elneg_r5.25','elneg_r5.5','elneg_r5.75',
-    # 'elneg_r6.0','elneg_r6.25','elneg_r6.5','elneg_r6.75',
-    # 'elneg_r7.0','elneg_r7.25','elneg_r7.5','elneg_r7.75',
-    # 'elneg_r8.0','elneg_r8.25','elneg_r8.5','elneg_r8.75',
-    # 'elneg_r9.0','elneg_r9.25','elneg_r9.5','elneg_r9.75',
-    # 'elneg_r10.0','elneg_r10.25','elneg_r10.5','elneg_r10.75',
-    # 'elneg_r11.0','elneg_r11.25','elneg_r11.5','elneg_r11.75',
-    # 'elneg_r12.0','elneg_r12.25','elneg_r12.5','elneg_r12.75',
-    # 'elneg_r13.0','elneg_r13.25','elneg_r13.5','elneg_r13.75',
-    # 'elneg_r14.0','elneg_r14.25','elneg_r14.5','elneg_r14.75',
-    # 'elneg_r15.0',
+    'elneg_r2.0','elneg_r2.25','elneg_r2.5','elneg_r2.75',
+    'elneg_r3.0','elneg_r3.25','elneg_r3.5','elneg_r3.75',
+    'elneg_r4.0','elneg_r4.25','elneg_r4.5','elneg_r4.75',
+    'elneg_r5.0','elneg_r5.25','elneg_r5.5','elneg_r5.75',
+    'elneg_r6.0','elneg_r6.25','elneg_r6.5','elneg_r6.75',
+    'elneg_r7.0','elneg_r7.25','elneg_r7.5','elneg_r7.75',
+    'elneg_r8.0','elneg_r8.25','elneg_r8.5','elneg_r8.75',
+    'elneg_r9.0','elneg_r9.25','elneg_r9.5','elneg_r9.75',
+    'elneg_r10.0','elneg_r10.25','elneg_r10.5','elneg_r10.75',
+    'elneg_r11.0','elneg_r11.25','elneg_r11.5','elneg_r11.75',
+    'elneg_r12.0','elneg_r12.25','elneg_r12.5','elneg_r12.75',
+    'elneg_r13.0','elneg_r13.25','elneg_r13.5','elneg_r13.75',
+    'elneg_r14.0','elneg_r14.25','elneg_r14.5','elneg_r14.75',
+    'elneg_r15.0',
 
     'elnegdis_r2.0','elnegdis_r2.25','elnegdis_r2.5','elnegdis_r2.75',
     'elnegdis_r3.0','elnegdis_r3.25','elnegdis_r3.5','elnegdis_r3.75',
@@ -152,20 +158,20 @@ def main():
     'elnegdis_r14.0','elnegdis_r14.25','elnegdis_r14.5','elnegdis_r14.75',
     'elnegdis_r15.0',
 
-    #     'vdw_r2.0','vdw_r2.25','vdw_r2.5','vdw_r2.75',
-    # 'vdw_r3.0','vdw_r3.25','vdw_r3.5','vdw_r3.75',
-    # 'vdw_r4.0','vdw_r4.25','vdw_r4.5','vdw_r4.75',
-    # 'vdw_r5.0','vdw_r5.25','vdw_r5.5','vdw_r5.75',
-    # 'vdw_r6.0','vdw_r6.25','vdw_r6.5','vdw_r6.75',
-    # 'vdw_r7.0','vdw_r7.25','vdw_r7.5','vdw_r7.75',
-    # 'vdw_r8.0','vdw_r8.25','vdw_r8.5','vdw_r8.75',
-    # 'vdw_r9.0','vdw_r9.25','vdw_r9.5','vdw_r9.75',
-    # 'vdw_r10.0','vdw_r10.25','vdw_r10.5','vdw_r10.75',
-    # 'vdw_r11.0','vdw_r11.25','vdw_r11.5','vdw_r11.75',
-    # 'vdw_r12.0','vdw_r12.25','vdw_r12.5','vdw_r12.75',
-    # 'vdw_r13.0','vdw_r13.25','vdw_r13.5','vdw_r13.75',
-    # 'vdw_r14.0','vdw_r14.25','vdw_r14.5','vdw_r14.75',
-    # 'vdw_r15.0',
+        'vdw_r2.0','vdw_r2.25','vdw_r2.5','vdw_r2.75',
+    'vdw_r3.0','vdw_r3.25','vdw_r3.5','vdw_r3.75',
+    'vdw_r4.0','vdw_r4.25','vdw_r4.5','vdw_r4.75',
+    'vdw_r5.0','vdw_r5.25','vdw_r5.5','vdw_r5.75',
+    'vdw_r6.0','vdw_r6.25','vdw_r6.5','vdw_r6.75',
+    'vdw_r7.0','vdw_r7.25','vdw_r7.5','vdw_r7.75',
+    'vdw_r8.0','vdw_r8.25','vdw_r8.5','vdw_r8.75',
+    'vdw_r9.0','vdw_r9.25','vdw_r9.5','vdw_r9.75',
+    'vdw_r10.0','vdw_r10.25','vdw_r10.5','vdw_r10.75',
+    'vdw_r11.0','vdw_r11.25','vdw_r11.5','vdw_r11.75',
+    'vdw_r12.0','vdw_r12.25','vdw_r12.5','vdw_r12.75',
+    'vdw_r13.0','vdw_r13.25','vdw_r13.5','vdw_r13.75',
+    'vdw_r14.0','vdw_r14.25','vdw_r14.5','vdw_r14.75',
+    'vdw_r15.0',
 
 'vdwdis_r2.0','vdwdis_r2.25','vdwdis_r2.5','vdwdis_r2.75','vdwdis_r3.0',
 'vdwdis_r3.25','vdwdis_r3.5','vdwdis_r3.75','vdwdis_r4.0','vdwdis_r4.25',
@@ -179,20 +185,20 @@ def main():
 'vdwdis_r13.25','vdwdis_r13.5','vdwdis_r13.75','vdwdis_r14.0','vdwdis_r14.25',
 'vdwdis_r14.5','vdwdis_r14.75','vdwdis_r15.0',
 
-    #     'polar_r2.0','polar_r2.25','polar_r2.5','polar_r2.75',
-    # 'polar_r3.0','polar_r3.25','polar_r3.5','polar_r3.75',
-    # 'polar_r4.0','polar_r4.25','polar_r4.5','polar_r4.75',
-    # 'polar_r5.0','polar_r5.25','polar_r5.5','polar_r5.75',
-    # 'polar_r6.0','polar_r6.25','polar_r6.5','polar_r6.75',
-    # 'polar_r7.0','polar_r7.25','polar_r7.5','polar_r7.75',
-    # 'polar_r8.0','polar_r8.25','polar_r8.5','polar_r8.75',
-    # 'polar_r9.0','polar_r9.25','polar_r9.5','polar_r9.75',
-    # 'polar_r10.0','polar_r10.25',','polar_r10.5','polar_r10.75',',
-    # 'polar_r11.0','polar_r11.25',','polar_r11.5','polar_r11.75',',
-    # 'polar_r12.0','polar_r12.25',','polar_r12.5','polar_r12.75',',
-    # 'polar_r13.0','polar_r13.25',','polar_r13.5','polar_r13.75',',
-    # 'polar_r14.0','polar_r14.25',','polar_r14.5','polar_r14.75',',
-    # 'polar_r15.0',
+        'polar_r2.0','polar_r2.25','polar_r2.5','polar_r2.75',
+    'polar_r3.0','polar_r3.25','polar_r3.5','polar_r3.75',
+    'polar_r4.0','polar_r4.25','polar_r4.5','polar_r4.75',
+    'polar_r5.0','polar_r5.25','polar_r5.5','polar_r5.75',
+    'polar_r6.0','polar_r6.25','polar_r6.5','polar_r6.75',
+    'polar_r7.0','polar_r7.25','polar_r7.5','polar_r7.75',
+    'polar_r8.0','polar_r8.25','polar_r8.5','polar_r8.75',
+    'polar_r9.0','polar_r9.25','polar_r9.5','polar_r9.75',
+    'polar_r10.0','polar_r10.25','polar_r10.5','polar_r10.75',
+    'polar_r11.0','polar_r11.25','polar_r11.5','polar_r11.75',
+    'polar_r12.0','polar_r12.25','polar_r12.5','polar_r12.75',
+    'polar_r13.0','polar_r13.25','polar_r13.5','polar_r13.75',
+    'polar_r14.0','polar_r14.25','polar_r14.5','polar_r14.75',
+    'polar_r15.0',
 'polardis_r2.0','polardis_r2.25','polardis_r2.5','polardis_r2.75',
 'polardis_r3.0','polardis_r3.25','polardis_r3.5','polardis_r3.75',
 'polardis_r4.0','polardis_r4.25','polardis_r4.5','polardis_r4.75',
@@ -251,11 +257,14 @@ def main():
             list_of_predictors.append(ii)
 
 
-    
     list_of_predictors.append(Target)
     
     
     data = pd.read_csv(csv, sep=',', low_memory=False)    #Swap data and df in to_csv
+    data['vf_geomvol']= 0
+    data['vf_geomvol_dis']= 0
+    data['vf_helvol']= 0
+    data['vf_helvol_dis'] = 0
 
     # headers = list(data.head())
 
@@ -269,9 +278,22 @@ def main():
     df = df.round(6)
     df = df.fillna(0)
     df = df.sample(frac=1)
+    # if ('vf_geomvol_dis') in df: 
+        
+    #     df['vf_geomvol'] = df['geomvol'].div(df['volume'].values,axis=0)
+    #     df['vf_geomvol_dis'] = df['geomvol_dis'].div(df['volume_dis'].values,axis=0)
+    #     df['vf_helvol'] = df['helvol'].div(df['volume'].values,axis=0)
+    #     df['vf_helvol_dis'] = df['helvol_dis'].div(df['volume_dis'].values,axis=0)
+    #     # df = df.drop(['helvol','geomvol','helvol_dis','geomvol_dis'],axis=1)
+
+
+    
+    # df = df.insert(loc = 1, column= 'vf_geomvol_dis', value=0)
+    # df['vf_geomvol_dis'] = df['geomvol_dis'].div(df['volume_dis'].values,axis=0)
+    # df[['vf_geomvol','vf_geomvol_dis']] = df[['geomvol_dis','geomvol']].div(df['volume_dis','volume'].values,axis=0)
     df.to_csv(outcsv,sep=',',index=False)
 
-    print(Target, list_of_predictors)
+    print(df.columns)
 
 
 

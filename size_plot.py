@@ -9,25 +9,28 @@ import seaborn as sns
 '''
 color = 'red'
 titles = ['Mg Batteries','Li Batteries']
+    # 'helvol','geomvol','helvol_dis','geomvol_dis',
 
-targets =[ 'elnegdis_r2.0','elnegdis_r2.25','elnegdis_r2.5','elnegdis_r2.75',
-    'elnegdis_r3.0','elnegdis_r3.25','elnegdis_r3.5','elnegdis_r3.75',
-    'elnegdis_r4.0']
+targets =['nsites_dis','elasticity_dis']#'nsites_dis','elasticity_dis'
 abbr = ['AV','GC','VC','SE','ED']
 files = ['newapproch_aprdf.csv','Li_allFiles.csv',	'aprdf2.csv']
-csv = files[2]
+csv = files[0]
 df = pd.read_csv(csv, sep=',', low_memory=False)    
 header = df.head()
-for i in range(6):
+for i in range(len(targets)):
 	sns.distplot(df[targets[i]], hist=True, kde=False, bins=10, color = color, hist_kws={'edgecolor':'black'})
-	plt.title(titles[1], fontsize=18)
-	plt.xlabel(targets[i], fontsize=14)
-	plt.ylabel('number of appearances', fontsize=14)
+	plt.title(titles[0], fontsize=24)
+	plt.xlabel(targets[i], fontsize=40)
+	plt.ylabel('# of appearances', fontsize=30)
 	figname = 'Results/figures/columnsplotMg2_' + targets[i].replace(' ','_') +  '.pdf'
 	plt.savefig(figname,format = 'pdf',dpi = 100,bbox_inches='tight')
 	plt.show()
 	plt.close()
+'''
 
+
+
+'''
 color = 'blue'
 titles = ['Mg Batteries','Li Batteries']
 
@@ -46,21 +49,18 @@ for i in range(5):
 	plt.savefig(figname,format = 'pdf',dpi = 100,bbox_inches='tight')
 	# plt.show()
 	plt.close()
+
 '''
-
-
-
+0.6345900894296043
 #Li diff pred
-
-'''
-x_predictors = ['msp','msp+stab'			,'co+vnd'		,'co+vf'		,'co+AV'			, 'co+GCVC'		,'co+SEED']
-AV 	= [0.5807576174506466	,0.6382352521590721		,0.6889475417554051	,0.7434585478459865,0					, 0.7241229224122133, 0.7390134629839741	]	
-GC 	= [0.42486507985539385	,0.40973673978825065 	,0.6287597245517911	,0.6392378928534125,0.6057972768715484	, 0 	 			, 0.8606302267077546	]
-VC 	= [0.46523200049569025	,0.47261421608939863	,0.7127950029643826	,0.6889267179947649, 0.7126270639446217	, 0 				, 0.8753624146262561]
-SE 	= [0.444673400127916	,0.4334842121982636 	,0.6329753454633711	,0.6437486035928914, 0.6900349150430399	, 0.8458952696501991, 0	 ]
-ED 	= [0.43023021580021564	,0.45534173933954647	,0.6466194152371839	,0.6579819998670257, 0.721783961574168	, 0.8870882181162133, 0	]
+x_predictors = ['msp',		'msp+stab'				,'co+vnd'			,'combo'			]#,'combo + AV'			, 'combo + GC VC'		,'combo + SE ED']
+AV 	= [0.5807576174506466	,0.6382352521590721		,0.6889475417554051	,0.7434585478459865]#,0					, 0.7241229224122133, 0.7390134629839741	]	
+GC 	= [0.42486507985539385	,0.40973673978825065 	,0.6287597245517911	,0.6392378928534125]#,0.6057972768715484	, 0 	 			, 0.8606302267077546	]
+VC 	= [0.46523200049569025	,0.47261421608939863	,0.7127950029643826	,0.6889267179947649]#, 0.7126270639446217	, 0 				, 0.8753624146262561]
+SE 	= [0.444673400127916	,0.4334842121982636 	,0.6329753454633711	,0.6437486035928914]#, 0.6900349150430399	, 0.8458952696501991, 0	 ]
+ED 	= [0.43023021580021564	,0.45534173933954647	,0.6466194152371839	,0.6579819998670257]#, 0.721783961574168	, 0.8870882181162133, 0	]
 fig,ax=plt.subplots()
-ax.set_title('Combination of predictors and targets')
+ax.set_title('Combination of predictors and targets on the Li-ion db')
 # ax.label()
 # ax.errorbar(x,y,e1, color = 'red',marker = 'o')
 ax.plot(x_predictors,AV,'o',label='AV',marker = '*')
@@ -71,6 +71,7 @@ ax.plot(x_predictors,ED,'o',label = 'ED',marker = 'v' )
 ax.set_ylim(0.1,1)
 ax.legend()
 legend = ax.legend(loc='lower right',shadow=True, fontsize='medium')
+ax.set_ylabel('R2',fontsize=14)
 
 
 legend.get_frame()
@@ -85,20 +86,21 @@ plt.close()
 
 
 
-'''
-'''
-#Mg
 
-x_predictors = ['msp','vnd_chg','vnd_dis','vnd','vf','APRDF1','APRDF2','combo']
+
+#Mg
+'''
+x_predictors = ['msp','vnd_chg','vnd_dis','vnd','pv','APRDF-CV','APRDF','combo']
 AV 	= [0.60989, 0.58126,0.5885,0.6261,0.0621,0.0309,0.2336,0.7072 ]
 GC 	= [0.47107, 0.2464,0.6190,0.6622,0.3490,0.11039,0.3956,0.6805 ]
 VC 	= [0.4985, 0.3964,0.64017,0.6758,0.3943,0.13321,0.4438,0.7206 ]
 SE 	= [0.56822,0.5280,0.6115,0.64942,0.09092,0.04783,0.3611,0.7163 ]
 ED 	= [0.5247,0.5174,0.5980,0.6532,0.18253,0.05931,0.32963,0.62737 ]
 fig,ax=plt.subplots()
-# ax.set_title('Unique predictors')
 # ax.label()
 # ax.errorbar(x,y,e1, color = 'red',marker = 'o')
+ax.set_title('Unique predictors for the Mg-ion db')
+
 ax.plot(x_predictors,AV,'o',label='AV',marker = '*')
 ax.plot(x_predictors,GC,'o',label='GC',marker = 'o')
 ax.plot(x_predictors,VC,'o',label = 'VC',marker = 'p')
@@ -119,14 +121,14 @@ plt.close()
 
 #Li
 
-x_predictors = ['msp','vnd_chg','vnd_dis','vnd','vf','APRDF2','combo']
+x_predictors = ['msp','vnd_chg','vnd_dis','vnd','pv','APRDF','combo']
 AV 	= [0.5692, 0.5437,0.5319,0.5608,-0.06318,0.3075,0.6979 ]
 GC 	= [0.4456, 0.3692,0.3983,0.6191,0.05186,0.3379,0.6444 ]
 VC 	= [0.4985, 0.4352,0.4724,0.7186,0.159419,0.4474,0.71029 ]
 SE 	= [0.4572, 0.4324,0.4367,0.5619,-0.02663,0.3502,0.6713 ]
 ED 	= [0.4815, 0.4690,0.44020,0.6506,0.02518,0.3771,0.6590 ]
 fig,ax=plt.subplots()
-# ax.set_title('Unique predictors')
+ax.set_title('Unique predictors for the Li-ion db')
 # ax.label()
 # ax.errorbar(x,y,e1, color = 'red',marker = 'o')
 ax.plot(x_predictors,AV,'o',label='AV',marker = '*')
@@ -147,6 +149,7 @@ plt.show()
 fig.savefig('Results/figures/Li_pred_on_targ.pdf',format = 'pdf',dpi = 100,bbox_inches='tight')
 plt.close()
 
+"""
 
 
 
@@ -154,8 +157,6 @@ plt.close()
 
 
 
-
-'''
 
 
 
@@ -186,7 +187,7 @@ plt.close()
 fig.savefig('Results/figures/size_db.png',format = 'png',dpi = 100,bbox_inches='tight')
 
 
-"""
+"""'''
 ################################
 '''
 

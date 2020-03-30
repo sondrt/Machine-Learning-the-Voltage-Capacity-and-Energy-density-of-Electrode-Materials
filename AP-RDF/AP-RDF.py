@@ -71,16 +71,17 @@ def cif_to_pdb():
 #Maa kjøres fra mappen med ./ap-rdf.x og ha alle pdb filene i samme mappe. 
 
 def pdb_to_aprdf():
+    #remember to adjust B factor
     dirin = '../cif_info_dir/pdb_for_aprdf/'
     dir_aprdf = '../cif_info_dir/aprdf_for_rf/'
     files = os.listdir(dirin)
     print("Calculating AP-RDF values.")
-    for file in files:
-        #print('This is file: ', file)
-        filein = file.replace(".pdb","")+ '_B10.aprdf'
+    for file in ['mp-755429.pdb']:#files:
+        print('This is file: ', file)
+        filein = file.replace(".pdb","")+ '_B10000.aprdf'
         if fnmatch.fnmatch(file, "m*.pdb"):
             #Fix the parameters!
-            cmd = "./ap-rdf.x -i " + file +" -bfac 10.0 -rmin 2.0 -rmax 15.0 -ngrid 53 -of " + filein
+            cmd = "./ap-rdf.x -i " + file +" -bfac 10000.0 -rmin 2.0 -rmax 15.0 -ngrid 53 -of " + filein
             #print("running: " + cmd)
             os.system(cmd)
     return
