@@ -1,0 +1,7 @@
+FOBJ=ap-rdf.o neighlist_mod.o 
+
+./ap-rdf.x: $(FOBJ)
+	$(FC) -o $@ $(FFLAGS) $(LDFLAGS) $(FOBJ) $(LIBS)
+
+ap-rdf.o : ap-rdf.f90 neighlist_mod.o 
+neighlist_mod.o : neighlist_mod.f90 
