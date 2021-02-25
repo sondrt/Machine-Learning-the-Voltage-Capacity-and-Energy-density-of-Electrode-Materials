@@ -5,7 +5,41 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+markersize = 12
+#Mg-ion db >2% std. msp -vnd - stability
+'''
+x_predictors = ['Mg-db',				'Li-db'					,'All Electrodes'	]#,'combo + AV'			, 'combo + GC VC'		,'combo + SE ED']
+AV 	= 			[0.6764076435690609		,0.7328127730109661		,0.8426405713692688	]#,0					, 0.7241229224122133, 0.7390134629839741	]	
+GC 	= 			[0.6501062315240425		,0.6308629677825108 	,0.775187245432993	]#,0.6057972768715484	, 0 	 			, 0.8606302267077546	]
+VC 	= 			[0.6932935702061792		,0.7027230874598316		,0.8343085236525721	]#, 0.7126270639446217	, 0 				, 0.8753624146262561]
+SE 	= 			[0.6879119496920174		,0.6539135629501239 	,0.7438566624743509	]#, 0.6900349150430399	, 0.8458952696501991, 0	 ]
+ED 	= 			[0.6479217325376261		,0.6668477342502813		,0.7500996685628056	]#, 0.721783961574168	, 0.8870882181162133, 0	]
+fig,ax=plt.subplots()
+ax.set_title('msp and vnd on different db\'s')
+# ax.label()
+# ax.errorbar(x,y,e1, color = 'red',marker = 'o')
+ax.plot(x_predictors,AV,'o',label='AV',marker = '*', markersize = markersize)
+ax.plot(x_predictors,GC,'o',label='GC',marker = 'o', markersize = markersize)
+ax.plot(x_predictors,VC,'o',label = 'VC',marker = 'p',markersize = markersize)
+ax.plot(x_predictors,SE,'o',label = 'SE',marker = 'P',markersize = markersize)
+ax.plot(x_predictors,ED,'o',label = 'ED',marker = 'v',markersize = markersize)
+# ax.set_ylim(0.1,s1)
+ax.legend()
+legend = ax.legend(loc='upper left',shadow=True, fontsize= 16)
+ax.set_ylabel('R2',fontsize=20)
 
+plt.setp(ax.get_xticklabels(), rotation='horizontal', fontsize=14)
+plt.setp(ax.get_yticklabels(), rotation='horizontal', fontsize=14)
+
+legend.get_frame()
+fig.tight_layout()
+# plt.style.use('default')
+plt.grid(False)
+plt.show()
+fig.savefig('Results/figures/comparing_dbs.pdf',format = 'pdf',dpi = 100,bbox_inches='tight')
+plt.close()
+exit()
+'''
 '''
 color = 'red'
 titles = ['Mg Batteries','Li Batteries']
@@ -51,35 +85,74 @@ for i in range(5):
 	plt.close()
 
 '''
-0.6345900894296043
+'''
 #Li diff pred
-x_predictors = ['msp',		'msp+stab'				,'co+vnd'			,'combo'			]#,'combo + AV'			, 'combo + GC VC'		,'combo + SE ED']
-AV 	= [0.5807576174506466	,0.6382352521590721		,0.6889475417554051	,0.7434585478459865]#,0					, 0.7241229224122133, 0.7390134629839741	]	
-GC 	= [0.42486507985539385	,0.40973673978825065 	,0.6287597245517911	,0.6392378928534125]#,0.6057972768715484	, 0 	 			, 0.8606302267077546	]
-VC 	= [0.46523200049569025	,0.47261421608939863	,0.7127950029643826	,0.6889267179947649]#, 0.7126270639446217	, 0 				, 0.8753624146262561]
-SE 	= [0.444673400127916	,0.4334842121982636 	,0.6329753454633711	,0.6437486035928914]#, 0.6900349150430399	, 0.8458952696501991, 0	 ]
-ED 	= [0.43023021580021564	,0.45534173933954647	,0.6466194152371839	,0.6579819998670257]#, 0.721783961574168	, 0.8870882181162133, 0	]
+ #['msp',		'msp+stab'				,'co+vnd'			,'combo'			]
+x_predictors =['combo', 'co+AV'			, 'co+GCVC'		,'co+SEED']
+# AV 	= [0.5807576174506466	,0.6382352521590721		,0.6889475417554051	,0.7434585478459865]
+AV = [0.7434585478459865 ,0					, 0.7241229224122133, 0.7390134629839741	]	
+# GC 	= [0.42486507985539385	,0.40973673978825065 	,0.6287597245517911	,0.6392378928534125]
+GC = [0.6392378928534125, 0.6057972768715484	, 0 	 			, 0.8606302267077546	]
+# VC 	= [0.46523200049569025	,0.47261421608939863	,0.7127950029643826	,0.6889267179947649]
+VC = [0.6889267179947649, 0.7126270639446217	, 0 				, 0.8753624146262561]
+# SE 	= [0.444673400127916	,0.4334842121982636 	,0.6329753454633711	,0.6437486035928914]
+SE = [0.6437486035928914, 0.6900349150430399	, 0.8458952696501991, 0	 ]
+#ED 	= [0.43023021580021564	,0.45534173933954647	,0.6466194152371839	,0.6579819998670257]
+ED = [0.6579819998670257, 0.721783961574168	, 0.8870882181162133, 0	]
 fig,ax=plt.subplots()
 ax.set_title('Combination of predictors and targets on the Li-ion db')
-# ax.label()
-# ax.errorbar(x,y,e1, color = 'red',marker = 'o')
-ax.plot(x_predictors,AV,'o',label='AV',marker = '*')
-ax.plot(x_predictors,GC,'o',label='GC',marker = 'o')
-ax.plot(x_predictors,VC,'o',label = 'VC',marker = 'p')
-ax.plot(x_predictors,SE,'o',label = 'SE',marker = 'P')
-ax.plot(x_predictors,ED,'o',label = 'ED',marker = 'v' )
-ax.set_ylim(0.1,1)
-ax.legend()
-legend = ax.legend(loc='lower right',shadow=True, fontsize='medium')
-ax.set_ylabel('R2',fontsize=14)
 
+ax.plot(x_predictors,AV,'o',label='AV',marker = '*', markersize = markersize)
+ax.plot(x_predictors,GC,'o',label='GC',marker = 'o', markersize = markersize)
+ax.plot(x_predictors,VC,'o',label = 'VC',marker = 'p', markersize = markersize)
+ax.plot(x_predictors,SE,'o',label = 'SE',marker = 'P', markersize = markersize)
+ax.plot(x_predictors,ED,'o',label = 'ED',marker = 'v' , markersize = markersize)
+ax.set_ylim(0.4,1)
+ax.legend()
+ax.set_ylabel('R2',fontsize=20)
+# ax.set_xlabel('descriptor type',fontsize=16)
+legend = ax.legend(loc='lower right',shadow=True, fontsize=12)
+plt.setp(ax.get_xticklabels(), rotation='horizontal', fontsize=16)
+plt.setp(ax.get_yticklabels(), rotation='horizontal', fontsize=16)
+
+legend.get_frame()
+fig.tight_layout()
+
+plt.grid(False)
+# plt.show()
+# fig.savefig('Results/figures/comboofpred_pres.pdf',format = 'pdf',dpi = 100,bbox_inches='tight')
+plt.close()
+
+
+#Li diff pred
+x_predictors =['msp',		'msp+stab'				,'co+vnd'			,'combo']
+AV 	= [0.5807576174506466	,0.6382352521590721		,0.6889475417554051	,0.7434585478459865]
+GC 	= [0.42486507985539385	,0.40973673978825065 	,0.6287597245517911	,0.6392378928534125]
+VC 	= [0.46523200049569025	,0.47261421608939863	,0.7127950029643826	,0.6889267179947649]
+SE 	= [0.444673400127916	,0.4334842121982636 	,0.6329753454633711	,0.6437486035928914]
+ED 	= [0.43023021580021564	,0.45534173933954647	,0.6466194152371839	,0.6579819998670257]
+fig,ax=plt.subplots()
+ax.set_title('Combination of predictors and targets on the Li-ion db')
+
+ax.plot(x_predictors,AV,'o',label='AV',marker = '*', markersize = markersize)
+ax.plot(x_predictors,GC,'o',label='GC',marker = 'o', markersize = markersize)
+ax.plot(x_predictors,VC,'o',label = 'VC',marker = 'p', markersize = markersize)
+ax.plot(x_predictors,SE,'o',label = 'SE',marker = 'P', markersize = markersize)
+ax.plot(x_predictors,ED,'o',label = 'ED',marker = 'v' , markersize = markersize)
+ax.set_ylim(0.3,0.8)
+ax.legend()
+ax.set_ylabel('R2',fontsize=20)
+# ax.set_xlabel('descriptor type',fontsize=16)
+legend = ax.legend(loc='lower right',shadow=True, fontsize=12)
+plt.setp(ax.get_xticklabels(), rotation='horizontal', fontsize=16)
+plt.setp(ax.get_yticklabels(), rotation='horizontal', fontsize=16)
 
 legend.get_frame()
 fig.tight_layout()
 
 plt.grid(False)
 plt.show()
-fig.savefig('Results/figures/comboofpred.pdf',format = 'pdf',dpi = 100,bbox_inches='tight')
+fig.savefig('Results/figures/triptrapcombo.pdf',format = 'pdf',dpi = 100,bbox_inches='tight')
 plt.close()
 
 
@@ -89,7 +162,7 @@ plt.close()
 
 
 #Mg
-'''
+
 x_predictors = ['msp','vnd_chg','vnd_dis','vnd','pv','APRDF-CV','APRDF','combo']
 AV 	= [0.60989, 0.58126,0.5885,0.6261,0.0621,0.0309,0.2336,0.7072 ]
 GC 	= [0.47107, 0.2464,0.6190,0.6622,0.3490,0.11039,0.3956,0.6805 ]
@@ -101,28 +174,32 @@ fig,ax=plt.subplots()
 # ax.errorbar(x,y,e1, color = 'red',marker = 'o')
 ax.set_title('Unique predictors for the Mg-ion db')
 
-ax.plot(x_predictors,AV,'o',label='AV',marker = '*')
-ax.plot(x_predictors,GC,'o',label='GC',marker = 'o')
-ax.plot(x_predictors,VC,'o',label = 'VC',marker = 'p')
-ax.plot(x_predictors,SE,'o',label = 'SE',marker = 'P')
-ax.plot(x_predictors,ED,'o',label = 'ED',marker = 'v' )
+ax.plot(x_predictors,AV,'o',label='AV',marker = '*', markersize = markersize)
+ax.plot(x_predictors,GC,'o',label='GC',marker = 'o', markersize = markersize)
+ax.plot(x_predictors,VC,'o',label = 'VC',marker = 'p', markersize = markersize)
+ax.plot(x_predictors,SE,'o',label = 'SE',marker = 'P', markersize = markersize)
+ax.plot(x_predictors,ED,'o',label = 'ED',marker = 'v' , markersize = markersize)
 ax.legend()
-ax.set_ylabel('R2',fontsize=14)
-ax.set_xlabel('descriptor type',fontsize=14)
-legend = ax.legend(loc='lower left',shadow=True, fontsize='medium')
+ax.set_ylabel('R2',fontsize=20)
+# ax.set_xlabel('descriptor type',fontsize=16)
+legend = ax.legend(loc='lower left',shadow=True, fontsize=10)
+plt.setp(ax.get_xticklabels(), rotation='vertical', fontsize=14)
+plt.setp(ax.get_yticklabels(), rotation='horizontal', fontsize=14)
 
 legend.get_frame()
 fig.tight_layout()
 
 plt.grid(False)
 plt.show()
-fig.savefig('Results/figures/Mg_pred_on_targ.pdf',format = 'pdf',dpi = 100,bbox_inches='tight')
+fig.savefig('Results/figures/Mg_pred_on_targ2.pdf',format = 'pdf',dpi = 100,bbox_inches='tight')
 plt.close()
 
+
+'''
 #Li
 
 x_predictors = ['msp','vnd_chg','vnd_dis','vnd','pv','APRDF','combo']
-AV 	= [0.5692, 0.5437,0.5319,0.5608,-0.06318,0.3075,0.6979 ]
+AV 	= [0.5692, 0.5437,0.5319,0.5608,-0.06318,0.3075,0.7434585478459865]
 GC 	= [0.4456, 0.3692,0.3983,0.6191,0.05186,0.3379,0.6444 ]
 VC 	= [0.4985, 0.4352,0.4724,0.7186,0.159419,0.4474,0.71029 ]
 SE 	= [0.4572, 0.4324,0.4367,0.5619,-0.02663,0.3502,0.6713 ]
@@ -131,26 +208,26 @@ fig,ax=plt.subplots()
 ax.set_title('Unique predictors for the Li-ion db')
 # ax.label()
 # ax.errorbar(x,y,e1, color = 'red',marker = 'o')
-ax.plot(x_predictors,AV,'o',label='AV',marker = '*')
-ax.plot(x_predictors,GC,'o',label='GC',marker = 'o')
-ax.plot(x_predictors,VC,'o',label = 'VC',marker = 'p')
-ax.plot(x_predictors,SE,'o',label = 'SE',marker = 'P')
-ax.plot(x_predictors,ED,'o',label = 'ED',marker = 'v' )
+ax.plot(x_predictors,AV,'o',label ='AV',marker = '*', markersize = markersize)
+ax.plot(x_predictors,GC,'o',label ='GC',marker = 'o', markersize = markersize)
+ax.plot(x_predictors,VC,'o',label = 'VC',marker = 'p', markersize = markersize)
+ax.plot(x_predictors,SE,'o',label = 'SE',marker = 'P', markersize = markersize)
+ax.plot(x_predictors,ED,'o',label = 'ED',marker = 'v', markersize = markersize)
 ax.legend()
-ax.set_ylabel('R2',fontsize=14)
-ax.set_xlabel('descriptor type',fontsize=14)
-legend = ax.legend(loc='lower left', shadow=True, fontsize='medium')
+ax.set_ylabel('R2',fontsize=20)
+# ax.set_xlabel('descriptor type',fontsize=16)
+legend = ax.legend(loc='lower left',shadow=True, fontsize=10)
+plt.setp(ax.get_xticklabels(), rotation='vertical', fontsize=14)
+plt.setp(ax.get_yticklabels(), rotation='horizontal', fontsize=14)
 
 legend.get_frame()
 fig.tight_layout()
 
 plt.grid(False)
 plt.show()
-fig.savefig('Results/figures/Li_pred_on_targ.pdf',format = 'pdf',dpi = 100,bbox_inches='tight')
+fig.savefig('Results/figures/Li_pred_on_targ2.pdf',format = 'pdf',dpi = 100,bbox_inches='tight')
 plt.close()
-
-"""
-
+exit()
 
 
 
@@ -187,7 +264,7 @@ plt.close()
 fig.savefig('Results/figures/size_db.png',format = 'png',dpi = 100,bbox_inches='tight')
 
 
-"""'''
+"""
 ################################
 '''
 

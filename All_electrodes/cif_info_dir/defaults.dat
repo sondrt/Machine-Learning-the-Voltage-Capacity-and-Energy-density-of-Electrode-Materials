@@ -1,0 +1,19 @@
+UFF_all.atoms
+2.58, 10.22, 3.314, 298
+10.,  50000
+1.0
+12.8, 0.25
+21908391 
+1
+! Default forcefield: UFF
+! Helium atom sigma (A), helium atom epsilon (K), nitrogen atom sigma (A), temperature (K)
+!2.58, 10.22, 3.314, 298
+!3.0, 50., 3.314, 298
+! Cutoff distance (A), accessible surface area coefficient (1.0 for hard sphere 
+! surface, 1.122 for potential minimum surface), number of trials for surface area 
+! calculation
+! 0.2: Cubelet size (A)
+! Largest anticipated pore diameter (A), size of the bin for PSD (A)
+! Random number seed
+
+! Do not change these values unless you know what you are doing 

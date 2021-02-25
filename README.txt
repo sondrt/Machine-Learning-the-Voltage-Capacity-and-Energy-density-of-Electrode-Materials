@@ -57,28 +57,9 @@ Steps for use of python scripts:
 	12: Run cross-validation, remove outliers.
 
 
-    python prep_csv.py >> Results/2020-03-27/2020-03-27.txt; python PCA_randomforest_crossvalidation.py >>  Results/2020-03-27/2020-03-27.txt;
-
-visualize distribution of descriptors and targets - show what I have in the csv files. 
-
-https://pandas.pydata.org/pandas-docs/version/0.23.1/generated/pandas.DataFrame.plot.bar.html
-
-distribution of targets, plot
-y # appearanzes
-
-x = 0-6 
-
-
-R2 score 
-x descripor type
-y = point r2 score for AV, GVC, SE,ED
-
-
 cmd: 
 
-#Open all relevant files.
-open 
-
+#    python prep_csv.py >> Results/2020-03-27/2020-03-27.txt; python PCA_randomforest_crossvalidation.py >>  Results/2020-03-27/2020-03-27.txt;
 
 #Run point 0 through 10.
 python3 mp_battery_scrape.py; python3 fillproperties.py; python3 elements.py; python3 add_features.py; python3 forPoreblazer.py; python3 process_cif.py; python3 merger.py; python3 prep_csv.py; python3 randomforest.py; python3 rf_CROSSVAL.py
@@ -91,32 +72,3 @@ python3 mp_battery_scrape.py; python3 fillproperties.py; python3 elements.py; py
 
 
 
-Things that does not work as it is supposed to.
-
-
-add_features.py
-
-A program to get the pure cif files in to the ./cif_for_poreblazer/cif_files/ 
-
-To be checked:
-- assuming that rf ignores NaN values. 
-
-
-#GOTTA ADD AP-RDF and run_aprdf
-
-FOR DISCUSSION 
-
-ward2016general
-A general-purpose machine learning framework for predicting properties of inorganic material
-
-joshi2019machine
-Machine Learning the Voltage of Electrode Materials in Metal-ion Batteries
-
-
-
-SE  = Wh/kg
-
-ED = Wh/L
-
-pore volume - descriptor
-Helium pore volume 

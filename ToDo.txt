@@ -1,0 +1,35 @@
+# In the futur this will be an active todo list. As of now it is more a doodle
+
+#Dont need forPoreblazer?
+
+
+
+Things that does not work as it is supposed to.
+
+
+add_features.py
+
+A program to get the pure cif files in to the ./cif_for_poreblazer/cif_files/ 
+
+To be checked:
+- assuming that rf ignores NaN values. 
+
+
+#GOTTA ADD AP-RDF and run_aprdf
+
+FOR DISCUSSION 
+
+ward2016general
+A general-purpose machine learning framework for predicting properties of inorganic material
+
+joshi2019machine
+Machine Learning the Voltage of Electrode Materials in Metal-ion Batteries
+
+
+
+SE  = Wh/kg
+
+ED = Wh/L
+
+pore volume - descriptor
+Helium pore volume 
