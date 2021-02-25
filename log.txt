@@ -1,0 +1,6 @@
+#This is a log file for what has been done recently on this project. Every entery requires a date and an introduction to whatever is being discussed. 
+#I.e. thought: blablabla.
+
+
+25-02-2021
+Should always employ all electrodes, the models performe better.
